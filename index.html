@@ -1,0 +1,1839 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#ffd7ec">
+<meta name="description" content="Claw Machine Cuties — a super kawaii arcade of claw machines full of adorable plushies.">
+<title>Claw Machine Cuties 🧸</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧸</text></svg>">
+<style>
+/* ============================================================
+   CLAW MACHINE CUTIES — all art, sound and logic is hand-made.
+   No images, no fonts, no libraries. Just vibes.
+   ============================================================ */
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:ui-rounded,"SF Pro Rounded","Hiragino Maru Gothic ProN","Baloo 2",Nunito,"Comic Sans MS",system-ui,sans-serif;
+  color:#5b3a52;
+  background:#ffd9ee;
+  overflow:hidden;
+  user-select:none;
+  -webkit-user-select:none;
+  touch-action:manipulation;
+}
+
+/* ---------- dreamy arcade backdrop ---------- */
+#bg{position:fixed;inset:0;z-index:0;overflow:hidden;
+  background:
+    radial-gradient(120% 80% at 50% -10%, #fff3fb 0%, #ffdff2 30%, #ffc9ea 55%, #e9c6ff 100%);
+}
+#bg .stripes{position:absolute;inset:-20%;opacity:.35;
+  background:repeating-conic-gradient(from 0deg at 50% 0%, rgba(255,255,255,.85) 0deg 7deg, transparent 7deg 14deg);
+  animation:spin 90s linear infinite;transform-origin:50% 0%}
+@keyframes spin{to{transform:rotate(360deg)}}
+#bg .floor{position:absolute;left:-10%;right:-10%;bottom:0;height:34%;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,0) 0%, rgba(255,255,255,.5) 40%),
+    repeating-linear-gradient(90deg,#ffc0e4 0 40px,#ffd9f0 40px 80px);
+  transform:perspective(400px) rotateX(58deg);transform-origin:50% 100%;opacity:.55}
+.sparkle{position:absolute;font-size:18px;opacity:.7;animation:floaty 9s ease-in-out infinite;pointer-events:none;filter:drop-shadow(0 2px 4px rgba(255,120,190,.4))}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-8deg) scale(1)}50%{transform:translateY(-26px) rotate(10deg) scale(1.15)}}
+
+#stage{position:relative;z-index:1;height:100dvh;height:100vh}
+.screen{position:absolute;inset:0;display:none;flex-direction:column;
+  padding:max(8px,env(safe-area-inset-top)) 10px max(8px,env(safe-area-inset-bottom));}
+.screen.on{display:flex;animation:popIn .38s cubic-bezier(.2,1.5,.4,1)}
+@keyframes popIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+
+/* ---------- shared chrome ---------- */
+.iconbtn{
+  border:none;background:#fff;color:#e0559a;font-size:20px;line-height:1;
+  width:44px;height:44px;border-radius:16px;cursor:pointer;flex:0 0 auto;
+  box-shadow:0 4px 0 #f3a8cd, 0 6px 12px rgba(224,85,154,.25);
+  transition:transform .08s, box-shadow .08s;
+  display:grid;place-items:center;
+}
+.iconbtn:active{transform:translateY(4px);box-shadow:0 0 0 #f3a8cd,0 2px 6px rgba(224,85,154,.25)}
+.topbar{display:flex;align-items:center;gap:8px;flex:0 0 auto;padding:2px 2px 6px}
+.topbar .grow{flex:1 1 auto;min-width:0}
+
+/* ---------- lobby ---------- */
+#lobby{overflow:hidden}
+.title{
+  text-align:center;flex:0 0 auto;
+  font-size:clamp(26px,7.5vw,50px);font-weight:900;letter-spacing:.5px;line-height:1;
+  color:#fff;margin:2px 0 2px;
+  text-shadow:0 2px 0 #ff8ec4,0 4px 0 #ef65ab,0 8px 14px rgba(190,40,120,.35);
+  animation:bounceT 3s ease-in-out infinite;
+}
+@keyframes bounceT{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-6px) rotate(1deg)}}
+.subtitle{text-align:center;font-size:clamp(11px,3.2vw,15px);color:#a4548a;font-weight:800;margin-bottom:8px;flex:0 0 auto}
+.lobbyScroll{flex:1 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;padding:4px 2px 18px;scrollbar-width:thin}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));max-width:820px;margin:0 auto}
+.card{
+  position:relative;border-radius:24px;padding:10px 10px 12px;cursor:pointer;border:none;
+  background:linear-gradient(180deg,#ffffff,#fff1f9);
+  box-shadow:0 6px 0 #f0a5cf,0 12px 22px rgba(196,60,133,.22);
+  transition:transform .14s cubic-bezier(.2,1.6,.4,1),box-shadow .14s;
+  display:flex;flex-direction:column;align-items:center;gap:6px;font-family:inherit;color:inherit;
+}
+.card:not(.locked):hover{transform:translateY(-4px) rotate(-1deg)}
+.card:not(.locked):active{transform:translateY(4px);box-shadow:0 2px 0 #f0a5cf,0 6px 12px rgba(196,60,133,.22)}
+.card .thumb{width:100%;aspect-ratio:1/1.05;border-radius:18px;overflow:hidden;display:block}
+.card .nm{font-weight:900;font-size:14px;color:#c93f88;text-align:center;line-height:1.1}
+.card.locked{filter:grayscale(.92) brightness(.94);cursor:not-allowed;box-shadow:0 4px 0 #cfc3cc,0 8px 16px rgba(90,60,80,.18)}
+.card.locked .nm{color:#8b7b87}
+.card .lock{position:absolute;inset:0;display:grid;place-items:center;font-size:40px;
+  background:rgba(80,60,80,.16);border-radius:24px;filter:grayscale(0) drop-shadow(0 4px 8px rgba(0,0,0,.3))}
+.card .lockhint{position:absolute;bottom:8px;left:6px;right:6px;text-align:center;font-size:10px;font-weight:900;
+  color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.card.done::after{content:"⭐";position:absolute;top:-8px;right:-6px;font-size:28px;animation:floaty 3s ease-in-out infinite;filter:drop-shadow(0 3px 4px rgba(210,110,20,.5))}
+.card.next{animation:wiggleCard 1.6s ease-in-out infinite}
+@keyframes wiggleCard{0%,100%{transform:rotate(-1.5deg) scale(1)}50%{transform:rotate(1.5deg) scale(1.03)}}
+.dots{display:flex;gap:5px;justify-content:center;align-items:center}
+.dots i{font-style:normal;font-size:15px;line-height:1;filter:grayscale(1) opacity(.45);transition:.2s}
+.dots i.f{filter:none;transform:scale(1.18)}
+
+/* ---------- game ---------- */
+#game{padding-top:max(6px,env(safe-area-inset-top))}
+.mtitle{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:0}
+.mtitle .nm{font-weight:900;font-size:clamp(14px,4vw,20px);color:#fff;text-shadow:0 2px 0 #ef65ab,0 4px 8px rgba(190,40,120,.4);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:52vw}
+.cabwrap{flex:1 1 auto;min-height:0;display:grid;place-items:center}
+#cab{width:100%;height:100%;max-width:min(96vw,660px);display:block;filter:drop-shadow(0 14px 22px rgba(150,40,100,.3))}
+.panel{flex:0 0 auto;display:flex;align-items:center;justify-content:center;gap:clamp(14px,6vw,54px);
+  padding:6px 4px 4px;max-width:560px;margin:0 auto;width:100%}
+#joy{width:clamp(104px,29vw,140px);height:clamp(104px,29vw,140px);touch-action:none;cursor:grab;flex:0 0 auto}
+#joy:active{cursor:grabbing}
+.dropbtn{
+  border:none;cursor:pointer;flex:0 0 auto;font-family:inherit;
+  width:clamp(104px,29vw,140px);height:clamp(104px,29vw,140px);border-radius:50%;
+  font-size:clamp(17px,4.6vw,23px);font-weight:900;color:#fff;letter-spacing:1px;
+  background:radial-gradient(circle at 34% 28%,#ff9ec4,#ff4f92 55%,#e01f6e);
+  box-shadow:0 9px 0 #b8125a,0 14px 22px rgba(190,20,90,.4),inset 0 -6px 12px rgba(120,0,50,.3),inset 0 8px 14px rgba(255,255,255,.5);
+  text-shadow:0 2px 3px rgba(140,0,60,.5);
+  transition:transform .07s,box-shadow .07s;
+}
+.dropbtn:active,.dropbtn.pressed{transform:translateY(8px);box-shadow:0 1px 0 #b8125a,0 4px 10px rgba(190,20,90,.4),inset 0 -4px 10px rgba(120,0,50,.35)}
+.dropbtn[disabled]{filter:grayscale(.6) brightness(.9);cursor:default}
+.hint{position:absolute;left:0;right:0;bottom:2px;text-align:center;font-size:10px;font-weight:800;color:#b964a0;opacity:.85}
+
+/* ---------- overlays ---------- */
+svg{font-family:inherit}
+.overlay{position:fixed;inset:0;z-index:40;display:none;align-items:center;justify-content:center;padding:14px;
+  background:rgba(90,30,70,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.overlay.on{display:flex}
+.sheet{
+  background:linear-gradient(180deg,#fff,#fff0f8);border-radius:30px;padding:16px 16px 18px;
+  box-shadow:0 10px 0 #eb9cc9,0 24px 50px rgba(120,20,80,.45);
+  max-width:520px;width:100%;max-height:88dvh;max-height:88vh;overflow:auto;text-align:center;
+  animation:popIn .4s cubic-bezier(.2,1.6,.4,1);position:relative
+}
+.sheet h2{margin:2px 0 6px;font-size:clamp(22px,6.4vw,34px);color:#e0287f;text-shadow:0 2px 0 #ffd0e8}
+.sheet p{margin:4px 0 10px;font-weight:800;color:#96547f;font-size:14px}
+.bigbtn{
+  border:none;font-family:inherit;font-weight:900;font-size:17px;color:#fff;cursor:pointer;
+  padding:13px 26px;border-radius:20px;background:linear-gradient(180deg,#ff86bd,#ff3f8e);
+  box-shadow:0 6px 0 #c81264,0 10px 18px rgba(190,20,90,.35);transition:transform .08s,box-shadow .08s;margin:4px
+}
+.bigbtn:active{transform:translateY(6px);box-shadow:0 0 0 #c81264,0 4px 8px rgba(190,20,90,.3)}
+.bigbtn.alt{background:linear-gradient(180deg,#a6d8ff,#5fb0f7);box-shadow:0 6px 0 #2c7fc7,0 10px 18px rgba(30,110,180,.3)}
+.bigbtn.ghost{background:linear-gradient(180deg,#fff,#ffe7f4);color:#d13c85;box-shadow:0 5px 0 #f0a9cf}
+
+/* result banner */
+#banner{position:fixed;inset:0;z-index:45;display:none;align-items:center;justify-content:center;pointer-events:none}
+#banner.on{display:flex}
+#banner .txt div{text-shadow:0 2px 5px rgba(90,20,60,.45);font-weight:900}
+#banner .txt{font-size:clamp(34px,12vw,86px);font-weight:900;letter-spacing:1px;
+  animation:bannerPop .5s cubic-bezier(.2,1.8,.4,1);text-align:center;line-height:1.05}
+@keyframes bannerPop{0%{transform:scale(.3) rotate(-14deg);opacity:0}60%{transform:scale(1.12) rotate(3deg)}100%{transform:scale(1) rotate(0);opacity:1}}
+.win-txt{color:#fff;text-shadow:0 3px 0 #ff5aa0,0 6px 0 #e0287f,0 12px 26px rgba(180,20,100,.6)}
+.lose-txt{color:#fff;text-shadow:0 3px 0 #8ab4e8,0 6px 0 #5c86c4,0 12px 26px rgba(40,60,120,.5)}
+.slip-txt{color:#fff;text-shadow:0 3px 0 #ffb14a,0 6px 0 #e9832a,0 12px 26px rgba(150,80,10,.55)}
+
+/* toast */
+#toast{position:fixed;left:0;right:0;top:calc(env(safe-area-inset-top) + 8px);z-index:60;display:flex;justify-content:center;pointer-events:none}
+#toast .t{background:#fff;color:#d13c85;font-weight:900;padding:9px 18px;border-radius:18px;font-size:14px;
+  box-shadow:0 5px 0 #f0a9cf,0 10px 20px rgba(180,60,120,.3);animation:toastIn .35s cubic-bezier(.2,1.7,.4,1)}
+@keyframes toastIn{from{transform:translateY(-24px) scale(.8);opacity:0}to{transform:none;opacity:1}}
+
+/* album */
+#albumGrid{display:grid;gap:9px;grid-template-columns:repeat(auto-fill,minmax(74px,1fr));margin:6px 0 4px}
+.slot{background:#fff6fb;border-radius:16px;padding:5px 3px 6px;box-shadow:inset 0 0 0 2px #ffd9ec;position:relative}
+.slot.have{background:linear-gradient(180deg,#fff,#ffeaf6);box-shadow:inset 0 0 0 2px #ffb3da,0 3px 0 #ffcbe5}
+.slot svg{width:100%;height:auto;display:block}
+.slot.miss svg{filter:brightness(0) opacity(.13)}
+.slot .lbl{font-size:9px;font-weight:900;color:#c9539a;margin-top:2px;line-height:1.05;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.slot.miss .lbl{color:#bda8b8}
+.slot .cnt{position:absolute;top:-5px;right:-4px;background:#ff4f92;color:#fff;font-size:9px;font-weight:900;
+  border-radius:9px;padding:1px 6px;box-shadow:0 2px 4px rgba(180,20,90,.4)}
+.albHead{display:flex;align-items:center;gap:8px;margin:14px 0 2px}
+.albHead .ln{flex:1;height:3px;border-radius:2px;background:#ffd3ea}
+.albHead b{font-size:13px;color:#d13c85;white-space:nowrap}
+
+/* parade */
+#parade{background:linear-gradient(180deg,#ffe6f7 0%,#ffd0ee 45%,#f6c8ff 100%);flex-direction:column;justify-content:flex-start;gap:0;padding:0}
+#paradeSky{position:absolute;inset:0;overflow:hidden}
+#paradeTitle{position:relative;z-index:3;margin-top:7vh;text-align:center;font-size:clamp(24px,7vw,48px);font-weight:900;color:#fff;
+  text-shadow:0 3px 0 #ff5aa0,0 6px 0 #e0287f,0 14px 26px rgba(180,20,100,.5);animation:bounceT 1.8s ease-in-out infinite}
+#paradeSub{position:relative;z-index:3;text-align:center;font-weight:900;color:#b64493;margin-top:6px;font-size:clamp(12px,3.4vw,17px)}
+#paradeRoad{position:absolute;left:0;right:0;bottom:0;height:48%;z-index:2;overflow:hidden}
+#paradeRoad .road{position:absolute;left:-10%;right:-10%;bottom:0;height:43%;
+  background:linear-gradient(180deg,#e9a9dd,#c97ec0);border-top:6px solid #fff}
+#paradeRoad .road::after{content:"";position:absolute;left:0;right:0;top:44%;height:6px;
+  background:repeating-linear-gradient(90deg,#fff 0 28px,transparent 28px 56px);opacity:.8}
+.float{position:absolute;bottom:10%;left:0;will-change:transform;
+  width:clamp(118px,27vw,178px);height:clamp(140px,32vw,210px)}
+.bunting{position:absolute;top:0;left:-4%;width:108%;height:52px;z-index:3;pointer-events:none}
+.pcloud{position:absolute;width:120px;height:44px;background:#fff;border-radius:40px;opacity:.55;
+  box-shadow:34px -15px 0 -7px #fff,-32px -11px 0 -11px #fff;animation:drift 30s linear infinite}
+@keyframes drift{from{transform:translateX(-34vw)}to{transform:translateX(124vw)}}
+.float .rider{animation:riderBob 1.05s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes riderBob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-7px) rotate(4deg)}}
+#paradeBtn{position:relative;z-index:5;margin-top:22px}
+#modal{z-index:52}
+#album{z-index:48}
+#parade{z-index:44}
+.confetti{position:fixed;z-index:70;pointer-events:none;font-size:16px;will-change:transform,opacity}
+
+/* misc */
+.rowbtns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:6px}
+.stat{display:inline-block;background:#fff2f9;border-radius:14px;padding:6px 12px;margin:3px;font-size:12px;font-weight:900;color:#c9539a}
+.prizeShow{width:min(58vw,190px);height:auto;margin:2px auto;display:block;animation:prizeDance 1.4s ease-in-out infinite}
+@keyframes prizeDance{0%,100%{transform:rotate(-5deg) translateY(0)}50%{transform:rotate(5deg) translateY(-9px)}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important}}
+@media (max-height:560px) and (orientation:landscape){
+  .title{font-size:24px}.subtitle{display:none}
+}
+</style>
+</head>
+<body>
+<div id="bg"><div class="stripes"></div><div class="floor"></div></div>
+
+<div id="stage">
+
+  <!-- ============ LOBBY ============ -->
+  <section id="lobby" class="screen on">
+    <div class="topbar">
+      <button class="iconbtn" id="btnAlbum" title="Collection">📖</button>
+      <div class="grow"></div>
+      <button class="iconbtn" id="btnHelp" title="How to play">❓</button>
+      <button class="iconbtn" id="btnMute" title="Sound">🔊</button>
+    </div>
+    <h1 class="title">Claw Machine<br>Cuties</h1>
+    <div class="subtitle">✨ win 3 plushies to unlock the next machine ✨</div>
+    <div class="lobbyScroll"><div class="grid" id="machineGrid"></div></div>
+  </section>
+
+  <!-- ============ GAME ============ -->
+  <section id="game" class="screen">
+    <div class="topbar">
+      <button class="iconbtn" id="btnBack" title="Back to arcade">←</button>
+      <div class="grow mtitle">
+        <div class="nm" id="mName">Teddy Bear Bonanza</div>
+        <div class="dots" id="mDots"></div>
+      </div>
+      <button class="iconbtn" id="btnAlbum2" title="Collection">📖</button>
+      <button class="iconbtn" id="btnMute2" title="Sound">🔊</button>
+    </div>
+    <div class="cabwrap"><svg id="cab" viewBox="0 0 640 700" preserveAspectRatio="xMidYMid meet"></svg></div>
+    <div class="panel">
+      <svg id="joy" viewBox="0 0 140 140"></svg>
+      <button class="dropbtn" id="btnDrop">DROP</button>
+    </div>
+  </section>
+
+</div>
+
+<div id="banner"><div class="txt"></div></div>
+<div id="toast"></div>
+
+<div class="overlay" id="modal"><div class="sheet" id="modalSheet"></div></div>
+
+<div class="overlay" id="album">
+  <div class="sheet">
+    <h2>📖 My Plushie Album</h2>
+    <p id="albumCount"></p>
+    <div id="albumBody"></div>
+    <div class="rowbtns">
+      <button class="bigbtn" id="albumClose">Close</button>
+      <button class="bigbtn ghost" id="btnReset">Reset progress</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="parade">
+  <div id="paradeSky"></div>
+  <div id="paradeTitle">🎉 PARADE! 🎉</div>
+  <div id="paradeSub"></div>
+  <div id="paradeRoad"><div class="road"></div></div>
+  <button class="bigbtn" id="paradeBtn">Continue ➜</button>
+</div>
+
+<script>
+"use strict";
+/* ============================================================
+   0. TINY HELPERS
+   ============================================================ */
+const $  = (s, r) => (r || document).querySelector(s);
+const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
+const lerp  = (a, b, t) => a + (b - a) * t;
+const rand  = (a, b) => a + Math.random() * (b - a);
+const randi = (a, b) => Math.floor(rand(a, b + 1));
+const pick  = arr => arr[Math.floor(Math.random() * arr.length)];
+const easeOut = t => 1 - Math.pow(1 - t, 3);
+const easeInOut = t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+
+function buzz(ms) { if (navigator.vibrate) { try { navigator.vibrate(ms); } catch (e) {} } }
+
+/* ============================================================
+   1. SOUND — everything synthesised live, zero audio files
+   ============================================================ */
+const Sfx = (() => {
+  let ctx = null, master, musBus, sfxBus, muted = false;
+  let musicTimer = null, step = 0, nextTime = 0, musicWanted = false;
+  const EIGHTH = 60 / 132 / 2;
+
+  const mtof = m => 440 * Math.pow(2, (m - 69) / 12);
+
+  function ensure() {
+    if (ctx) return ctx;
+    const C = window.AudioContext || window.webkitAudioContext;
+    if (!C) return null;
+    ctx = new C();
+    master = ctx.createGain(); master.gain.value = 0.9; master.connect(ctx.destination);
+    musBus = ctx.createGain(); musBus.gain.value = 0.0; musBus.connect(master);
+    sfxBus = ctx.createGain(); sfxBus.gain.value = 0.85; sfxBus.connect(master);
+    return ctx;
+  }
+
+  function tone(o) {
+    const c = ensure(); if (!c || muted) return;
+    const t0 = o.t || c.currentTime, dur = o.dur || .18;
+    const osc = c.createOscillator();
+    osc.type = o.type || 'sine';
+    osc.frequency.setValueAtTime(Math.max(1, o.f), t0);
+    if (o.f2) osc.frequency.exponentialRampToValueAtTime(Math.max(1, o.f2), t0 + dur * (o.slide || 1));
+    const g = c.createGain();
+    g.gain.setValueAtTime(0.0001, t0);
+    g.gain.linearRampToValueAtTime(o.v == null ? .18 : o.v, t0 + (o.a || .008));
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    osc.connect(g); g.connect(o.bus || sfxBus);
+    osc.start(t0); osc.stop(t0 + dur + .04);
+  }
+
+  function noise(o) {
+    const c = ensure(); if (!c || muted) return;
+    const t0 = o.t || c.currentTime, dur = o.dur || .12;
+    const len = Math.max(1, Math.ceil(c.sampleRate * dur));
+    const buf = c.createBuffer(1, len, c.sampleRate);
+    const d = buf.getChannelData(0);
+    for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / len);
+    const src = c.createBufferSource(); src.buffer = buf;
+    const bp = c.createBiquadFilter();
+    bp.type = o.type || 'bandpass';
+    bp.frequency.setValueAtTime(o.f || 1200, t0);
+    if (o.f2) bp.frequency.exponentialRampToValueAtTime(Math.max(40, o.f2), t0 + dur);
+    bp.Q.value = o.q || 1;
+    const g = c.createGain();
+    g.gain.setValueAtTime(o.v == null ? .12 : o.v, t0);
+    g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    src.connect(bp); bp.connect(g); g.connect(o.bus || sfxBus);
+    src.start(t0); src.stop(t0 + dur + .02);
+  }
+
+  /* ---- the little arcade tune ---- */
+  const CHORDS = [[60, 64, 67], [57, 60, 64], [53, 57, 60], [55, 59, 62]];
+  const MELODY = [72, null, 76, 72, 79, null, 76, null,
+                  74, null, 72, 74, 76, null, null, null,
+                  72, null, 69, 72, 74, null, 76, null,
+                  79, 77, 76, 74, 72, null, null, null];
+
+  function scheduleStep(s, t) {
+    const bar = Math.floor(s / 8) % 4, ch = CHORDS[bar], beat = s % 8;
+    // bass
+    if (beat % 2 === 0) tone({ f: mtof(ch[0] - 24), dur: .22, type: 'triangle', v: .16, t, bus: musBus });
+    // sparkly arp
+    tone({ f: mtof(ch[beat % 3] + 12), dur: .16, type: 'sine', v: .055, t, bus: musBus });
+    // melody
+    const m = MELODY[s % 32];
+    if (m != null) tone({ f: mtof(m), dur: .19, type: 'triangle', v: .085, t, bus: musBus });
+    // percussion
+    if (beat === 0 || beat === 4) noise({ f: 160, f2: 60, dur: .1, v: .1, t, bus: musBus, type: 'lowpass' });
+    if (beat % 2 === 1) noise({ f: 7000, dur: .03, v: .028, t, bus: musBus, q: .6 });
+  }
+
+  function musicTick() {
+    const c = ensure(); if (!c) return;
+    while (nextTime < c.currentTime + .18) {
+      if (nextTime < c.currentTime) nextTime = c.currentTime + .05;
+      scheduleStep(step, nextTime);
+      step = (step + 1) % 32;
+      nextTime += EIGHTH;
+    }
+  }
+
+  function startMusic() {
+    musicWanted = true;
+    const c = ensure(); if (!c || muted) return;
+    if (musicTimer) return;
+    nextTime = c.currentTime + .1; step = 0;
+    musBus.gain.cancelScheduledValues(c.currentTime);
+    musBus.gain.setValueAtTime(0.0001, c.currentTime);
+    musBus.gain.linearRampToValueAtTime(.17, c.currentTime + 1.4);
+    musicTimer = setInterval(musicTick, 30);
+  }
+  function stopMusic() {
+    musicWanted = false;
+    if (musicTimer) { clearInterval(musicTimer); musicTimer = null; }
+    if (ctx) { musBus.gain.cancelScheduledValues(ctx.currentTime); musBus.gain.linearRampToValueAtTime(0.0001, ctx.currentTime + .3); }
+  }
+
+  const S = {
+    unlockAudio() {
+      const c = ensure(); if (!c) return;
+      if (c.state === 'suspended') c.resume();
+      if (musicWanted && !musicTimer && !muted) startMusic();
+    },
+    setMuted(m) {
+      muted = m;
+      if (ctx) master.gain.setTargetAtTime(m ? 0 : .9, ctx.currentTime, .05);
+      if (m) { if (musicTimer) { clearInterval(musicTimer); musicTimer = null; } }
+      else if (musicWanted) startMusic();
+    },
+    music: startMusic,
+    musicOff: stopMusic,
+
+    tap()   { tone({ f: 880, f2: 1320, dur: .07, type: 'square', v: .07 }); },
+    move()  { tone({ f: 520, dur: .04, type: 'square', v: .035 }); },
+    press() { tone({ f: 300, f2: 620, dur: .1, type: 'square', v: .12 }); noise({ f: 2400, dur: .05, v: .05 }); },
+    coin()  { const c = ensure(); if (!c) return; const t = c.currentTime;
+              tone({ f: 1245, dur: .07, type: 'square', v: .11, t }); tone({ f: 1660, dur: .16, type: 'square', v: .11, t: t + .06 }); },
+    whirr(dur) {
+      const c = ensure(); if (!c || muted) return;
+      const t0 = c.currentTime;
+      tone({ f: 210, f2: 150, dur: dur, type: 'sawtooth', v: .05, t: t0 });
+      noise({ f: 900, f2: 500, dur: dur, v: .05, t: t0, q: 3 });
+    },
+    clamp() { noise({ f: 1800, f2: 600, dur: .09, v: .16, q: 2 }); tone({ f: 420, f2: 180, dur: .1, type: 'square', v: .1 }); },
+    thud()  { noise({ f: 260, f2: 80, dur: .16, v: .16, type: 'lowpass' }); },
+    bonk()  { tone({ f: 300, f2: 120, dur: .13, type: 'triangle', v: .12 }); },
+    lift()  { tone({ f: 380, f2: 700, dur: .35, type: 'sine', v: .07 }); },
+    win() {
+      const c = ensure(); if (!c) return; const t = c.currentTime;
+      [0, 4, 7, 12, 16, 19].forEach((n, i) => tone({ f: mtof(72 + n), dur: .3, type: 'triangle', v: .16, t: t + i * .075 }));
+      [0, 4, 7, 12].forEach((n, i) => tone({ f: mtof(84 + n), dur: .5, type: 'sine', v: .08, t: t + .45 + i * .05 }));
+      noise({ f: 6000, dur: .5, v: .05, t: t + .4 });
+    },
+    lose() {
+      const c = ensure(); if (!c) return; const t = c.currentTime;
+      [64, 61, 57].forEach((n, i) => tone({ f: mtof(n), dur: .26, type: 'triangle', v: .13, t: t + i * .13 }));
+    },
+    slip() {
+      const c = ensure(); if (!c) return; const t = c.currentTime;
+      tone({ f: 900, f2: 120, dur: .45, type: 'sawtooth', v: .1, t });
+      noise({ f: 300, f2: 90, dur: .2, v: .12, t: t + .4, type: 'lowpass' });
+    },
+    key() {
+      const c = ensure(); if (!c) return; const t = c.currentTime;
+      [0, 7, 12, 16].forEach((n, i) => tone({ f: mtof(76 + n), dur: .4, type: 'sine', v: .14, t: t + i * .06 }));
+      noise({ f: 5200, dur: .7, v: .06, t: t + .1 });
+    },
+    fanfare() {
+      const c = ensure(); if (!c) return; const t = c.currentTime;
+      const seq = [[60, 0], [64, .12], [67, .24], [72, .36], [76, .48], [79, .6], [84, .72]];
+      seq.forEach(([n, d]) => {
+        tone({ f: mtof(n), dur: .5, type: 'triangle', v: .17, t: t + d });
+        tone({ f: mtof(n + 12), dur: .4, type: 'sine', v: .07, t: t + d });
+      });
+      for (let i = 0; i < 5; i++) noise({ f: 5000 + i * 500, dur: .5, v: .05, t: t + .7 + i * .1 });
+    }
+  };
+  return S;
+})();
+
+/* ============================================================
+   2. ART — every plushie is drawn by hand in SVG paths.
+   Design space: roughly -46..46 on both axes, centred on (0,0).
+   ============================================================ */
+const INK = '#553244';
+
+function eye(x, y, r) {
+  return `<ellipse cx="${x}" cy="${y}" rx="${r}" ry="${r * 1.12}" fill="${INK}"/>` +
+         `<circle cx="${x - r * .32}" cy="${y - r * .44}" r="${r * .42}" fill="#fff"/>` +
+         `<circle cx="${x + r * .3}" cy="${y + r * .36}" r="${r * .19}" fill="#fff" opacity=".85"/>`;
+}
+function blush(x, y, r, c) {
+  return `<ellipse cx="${x}" cy="${y}" rx="${r}" ry="${r * .64}" fill="${c || '#ff87b8'}" opacity=".48"/>`;
+}
+function smile(x, y, w, c) {
+  return `<path d="M${x - w} ${y} q${w} ${w * .9} ${w * 2} 0" stroke="${c || INK}" stroke-width="2.3" fill="none" stroke-linecap="round"/>`;
+}
+function bowArt(x, y, s, c, cd, rot) {
+  return `<g transform="translate(${x},${y}) rotate(${rot == null ? -12 : rot}) scale(${s})">
+    <path d="M0 0 L-16 -10 Q-21 0 -16 10 Z" fill="${c}"/>
+    <path d="M0 0 L16 -10 Q21 0 16 10 Z" fill="${c}"/>
+    <path d="M0 0 L-16 -10 Q-12 -3 -7 0 Z" fill="${cd}" opacity=".5"/>
+    <path d="M0 0 L16 -10 Q12 -3 7 0 Z" fill="${cd}" opacity=".5"/>
+    <circle r="5.2" fill="${cd}"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#fff" opacity=".65"/>
+  </g>`;
+}
+function sparkleArt(x, y, s, c) {
+  return `<path transform="translate(${x},${y}) scale(${s})" d="M0 -10 Q1.6 -1.6 10 0 Q1.6 1.6 0 10 Q-1.6 1.6 -10 0 Q-1.6 -1.6 0 -10 Z" fill="${c || '#fff'}"/>`;
+}
+/* the golden key that rides on the last plushie of every machine */
+function keyArt(x, y, s) {
+  return `<g transform="translate(${x},${y}) scale(${s})">
+    <path d="M-2 -22 q-14 6 -6 16" stroke="#ff5c9d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+    <path d="M2 -22 q14 6 6 16" stroke="#ff5c9d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+    <circle cy="-2" r="9" fill="#ffd447" stroke="#e8a417" stroke-width="2.4"/>
+    <circle cy="-2" r="3.4" fill="#fff5cc"/>
+    <path d="M-2.6 5 h5.2 v18 h-5.2 z" fill="#ffd447" stroke="#e8a417" stroke-width="2"/>
+    <path d="M2.6 13 h7 v4 h-7 z M2.6 20 h5 v4 h-5 z" fill="#ffd447" stroke="#e8a417" stroke-width="1.6"/>
+    ${sparkleArt(11, -10, .5, '#fffbe6')}
+  </g>`;
+}
+
+/* ---------------- TEDDY BEAR ---------------- */
+function artTeddy(c) {
+  return `<g>
+    <ellipse cx="-27" cy="16" rx="11" ry="9" fill="${c.dark}" transform="rotate(-24 -27 16)"/>
+    <ellipse cx="27" cy="16" rx="11" ry="9" fill="${c.dark}" transform="rotate(24 27 16)"/>
+    <ellipse cx="-16" cy="36" rx="13" ry="11" fill="${c.dark}"/>
+    <ellipse cx="16" cy="36" rx="13" ry="11" fill="${c.dark}"/>
+    <ellipse cx="-16" cy="37" rx="7" ry="5.5" fill="${c.pad}"/>
+    <ellipse cx="16" cy="37" rx="7" ry="5.5" fill="${c.pad}"/>
+    <ellipse cx="0" cy="22" rx="25" ry="21" fill="${c.fur}"/>
+    <ellipse cx="0" cy="25" rx="14" ry="12" fill="${c.pad}" opacity=".75"/>
+    <circle cx="-25" cy="-27" r="13" fill="${c.fur}"/><circle cx="-25" cy="-27" r="6.6" fill="${c.pad}"/>
+    <circle cx="25" cy="-27" r="13" fill="${c.fur}"/><circle cx="25" cy="-27" r="6.6" fill="${c.pad}"/>
+    <circle cx="0" cy="-8" r="28" fill="${c.fur}"/>
+    <ellipse cx="0" cy="4" rx="15" ry="11.5" fill="${c.pad}"/>
+    <ellipse cx="0" cy="-1" rx="5.4" ry="4.2" fill="${INK}"/>
+    <path d="M0 3 v3.5 M0 6.5 q-5 4.5 -8.5 .5 M0 6.5 q5 4.5 8.5 .5" stroke="${INK}" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    ${eye(-11.5, -11, 5)}${eye(11.5, -11, 5)}
+    ${blush(-20, -1, 7)}${blush(20, -1, 7)}
+    ${bowArt(20, -30, .72, c.bow, c.bowD, -16)}
+  </g>`;
+}
+
+/* ---------------- BUNNY ---------------- */
+function artBunny(c) {
+  return `<g>
+    <g transform="rotate(-13 -11 -18)"><ellipse cx="-11" cy="-40" rx="9" ry="25" fill="${c.fur}"/><ellipse cx="-11" cy="-41" rx="4.6" ry="17" fill="${c.inner}"/></g>
+    <g transform="rotate(13 11 -18)"><ellipse cx="11" cy="-40" rx="9" ry="25" fill="${c.fur}"/><ellipse cx="11" cy="-41" rx="4.6" ry="17" fill="${c.inner}"/></g>
+    <circle cx="28" cy="26" r="10" fill="${c.tail || '#fff'}"/>
+    <ellipse cx="-25" cy="18" rx="10" ry="8" fill="${c.dark}" transform="rotate(-20 -25 18)"/>
+    <ellipse cx="25" cy="18" rx="10" ry="8" fill="${c.dark}" transform="rotate(20 25 18)"/>
+    <ellipse cx="-15" cy="36" rx="13" ry="10" fill="${c.dark}"/>
+    <ellipse cx="15" cy="36" rx="13" ry="10" fill="${c.dark}"/>
+    <ellipse cx="-15" cy="37" rx="6.5" ry="4.8" fill="${c.inner}"/>
+    <ellipse cx="15" cy="37" rx="6.5" ry="4.8" fill="${c.inner}"/>
+    <ellipse cx="0" cy="22" rx="23" ry="20" fill="${c.fur}"/>
+    <ellipse cx="0" cy="25" rx="13" ry="11" fill="${c.inner}" opacity=".5"/>
+    <circle cx="0" cy="-6" r="26" fill="${c.fur}"/>
+    <ellipse cx="-7" cy="4" rx="9" ry="7" fill="${c.pad || '#fff'}" opacity=".65"/>
+    <ellipse cx="7" cy="4" rx="9" ry="7" fill="${c.pad || '#fff'}" opacity=".65"/>
+    <path d="M0 -2 l4.6 3.6 h-9.2 z" fill="#ff7aa8" stroke="#ff7aa8" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M0 2 v3.5 M0 5.5 q-4.5 4 -7.5 .5 M0 5.5 q4.5 4 7.5 .5" stroke="${INK}" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <rect x="-4.6" y="9" width="9.2" height="6.5" rx="2.4" fill="#fff" stroke="${INK}" stroke-width="1.2"/>
+    <path d="M0 9 v6.5" stroke="${INK}" stroke-width="1.1"/>
+    ${eye(-12, -9, 5.4)}${eye(12, -9, 5.4)}
+    ${blush(-20, 1, 6.5)}${blush(20, 1, 6.5)}
+    ${bowArt(-21, -25, .62, c.bow, c.bowD, 18)}
+  </g>`;
+}
+
+/* ---------------- DINO ---------------- */
+function artDino(c) {
+  return `<g>
+    <path d="M20 20 q30 6 34 -18 q10 30 -26 34 z" fill="${c.dark}"/>
+    <path d="M50 4 l7 -9 l3 11 z" fill="${c.spike}"/>
+    <ellipse cx="-16" cy="35" rx="14" ry="11" fill="${c.dark}"/>
+    <ellipse cx="16" cy="35" rx="14" ry="11" fill="${c.dark}"/>
+    <path d="M-24 40 h16 M-22 34 h12" stroke="${c.belly}" stroke-width="2.4" stroke-linecap="round" opacity=".7"/>
+    <path d="M8 40 h16 M10 34 h12" stroke="${c.belly}" stroke-width="2.4" stroke-linecap="round" opacity=".7"/>
+    <path d="M-18 -34 l6 -12 l7 11 z M0 -40 l6 -13 l7 12 z M16 -32 l8 -10 l5 12 z" fill="${c.spike}"/>
+    <ellipse cx="0" cy="14" rx="27" ry="23" fill="${c.body}"/>
+    <ellipse cx="0" cy="20" rx="17" ry="15" fill="${c.belly}"/>
+    <path d="M-14 12 h28 M-15 21 h30 M-13 29 h26" stroke="${c.body}" stroke-width="1.6" opacity=".28" stroke-linecap="round"/>
+    <ellipse cx="-26" cy="8" rx="9" ry="7" fill="${c.dark}" transform="rotate(-28 -26 8)"/>
+    <ellipse cx="26" cy="8" rx="9" ry="7" fill="${c.dark}" transform="rotate(28 26 8)"/>
+    <circle cx="0" cy="-12" r="26" fill="${c.body}"/>
+    <ellipse cx="0" cy="-2" rx="19" ry="14" fill="${c.body}"/>
+    <ellipse cx="-5.5" cy="-4" rx="1.8" ry="2.4" fill="${INK}" opacity=".65"/>
+    <ellipse cx="5.5" cy="-4" rx="1.8" ry="2.4" fill="${INK}" opacity=".65"/>
+    <path d="M-11 5 q11 10 22 0" stroke="${INK}" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <path d="M-4 8.4 l0 4.4 l4 -3.4 z" fill="#fff"/>
+    ${eye(-11, -16, 5.6)}${eye(11, -16, 5.6)}
+    ${blush(-19, -6, 6.5)}${blush(19, -6, 6.5)}
+  </g>`;
+}
+
+/* ---------------- BUTTERFLY ---------------- */
+function artFly(c) {
+  const wing = `
+    <path d="M-3 -8 C-26 -46 -60 -36 -52 -9 C-47 6 -19 7 -3 -8 Z" fill="${c.w}"/>
+    <path d="M-6 -10 C-24 -36 -48 -30 -43 -11 C-39 0 -19 1 -6 -10 Z" fill="${c.w2}" opacity=".9"/>
+    <path d="M-4 4 C-25 6 -44 18 -37 33 C-31 45 -9 31 -4 12 Z" fill="${c.w}"/>
+    <path d="M-6 6 C-22 9 -35 18 -30 28 C-26 35 -10 26 -6 12 Z" fill="${c.w2}" opacity=".9"/>
+    <circle cx="-33" cy="-19" r="6" fill="${c.dot}" opacity=".95"/>
+    <circle cx="-45" cy="-8" r="3.4" fill="${c.dot}" opacity=".8"/>
+    <circle cx="-22" cy="22" r="4.6" fill="${c.dot}" opacity=".9"/>
+    <circle cx="-31" cy="12" r="2.6" fill="${c.dot}" opacity=".7"/>`;
+  return `<g>
+    <g>${wing}</g><g transform="scale(-1,1)">${wing}</g>
+    <path d="M-4 -30 q-9 -10 -16 -14" stroke="${c.body}" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M4 -30 q9 -10 16 -14" stroke="${c.body}" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <circle cx="-21" cy="-45" r="4.4" fill="${c.dot}"/><circle cx="21" cy="-45" r="4.4" fill="${c.dot}"/>
+    <ellipse cx="0" cy="10" rx="8" ry="22" fill="${c.body}"/>
+    <path d="M-7 2 h14 M-7.6 11 h15.2 M-6 20 h12" stroke="#fff" stroke-width="1.8" opacity=".38" stroke-linecap="round"/>
+    <circle cx="0" cy="-20" r="12.5" fill="${c.body}"/>
+    ${eye(-4.8, -21, 3.8)}${eye(4.8, -21, 3.8)}
+    ${smile(-3, -14, 3, '#fff')}
+    ${blush(-9, -15.5, 4, '#ff9dc6')}${blush(9, -15.5, 4, '#ff9dc6')}
+  </g>`;
+}
+
+/* ---------------- CANDY (8 different sweets) ---------------- */
+function artCandy(c) {
+  const face = (y, s) => `${eye(-7 * s, y, 4 * s)}${eye(7 * s, y, 4 * s)}${smile(0, y + 8 * s, 4 * s)}${blush(-14 * s, y + 5 * s, 5 * s)}${blush(14 * s, y + 5 * s, 5 * s)}`;
+  switch (c.shape) {
+    case 'lolli': return `<g>
+      <rect x="-4" y="4" width="8" height="42" rx="4" fill="#fff3e0" stroke="#e8d5be" stroke-width="1.6"/>
+      <circle cx="0" cy="-6" r="32" fill="${c.a}"/>
+      <path d="M0 -6 q0 -10 10 -10 q17 0 17 17 q0 24 -24 24 q-31 0 -31 -31" stroke="${c.b}" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <circle cx="0" cy="-6" r="32" fill="none" stroke="${c.b}" stroke-width="3" opacity=".5"/>
+      ${face(-9, 1)}${bowArt(19, 22, .52, c.b, c.a, -30)}
+      ${sparkleArt(-19, -24, .5, '#fff')}</g>`;
+    case 'gum': return `<g>
+      <path d="M-30 32 q-4 -50 30 -50 q34 0 30 50 z" fill="${c.a}"/>
+      <path d="M-22 30 q-3 -38 22 -38 q10 0 15 10" fill="none" stroke="#fff" stroke-width="4" opacity=".35" stroke-linecap="round"/>
+      <ellipse cx="0" cy="32" rx="30" ry="6" fill="${c.b}"/>
+      ${[[-20, 12], [18, 4], [-6, 24], [12, 22], [24, 16], [-24, -2]].map(p => `<circle cx="${p[0]}" cy="${p[1]}" r="2" fill="#fff" opacity=".85"/>`).join('')}
+      ${face(0, 1)}</g>`;
+    case 'wrap': return `<g>
+      <path d="M-30 -2 l-16 -16 q-4 16 0 32 z" fill="${c.b}"/>
+      <path d="M30 -2 l16 -16 q4 16 0 32 z" fill="${c.b}"/>
+      <path d="M-30 -14 l-8 -6 M-30 6 l-8 8 M30 -14 l8 -6 M30 6 l8 8" stroke="${c.a}" stroke-width="2" opacity=".55" stroke-linecap="round"/>
+      <circle cx="0" cy="0" r="31" fill="${c.a}"/>
+      <path d="M-22 -16 q22 -8 40 8" stroke="#fff" stroke-width="6" opacity=".35" fill="none" stroke-linecap="round"/>
+      <path d="M-14 20 q14 8 28 -6" stroke="${c.b}" stroke-width="4" opacity=".45" fill="none" stroke-linecap="round"/>
+      ${face(-4, 1)}</g>`;
+    case 'corn': return `<g>
+      <path d="M0 -44 q10 22 26 68 q-26 8 -52 0 q16 -46 26 -68 z" fill="#ffe98a"/>
+      <path d="M0 -44 q8 18 20 52 q-20 6 -40 0 q12 -34 20 -52 z" fill="#ffab5c"/>
+      <path d="M0 -44 q5 10 11 26 q-11 4 -22 0 q6 -16 11 -26 z" fill="#fffdf5"/>
+      ${face(2, 1)}${sparkleArt(-20, 14, .45, '#fff')}</g>`;
+    case 'macaron': return `<g>
+      <path d="M-31 -4 q0 -24 31 -24 q31 0 31 24 q-31 8 -62 0 z" fill="${c.a}"/>
+      <path d="M-30 10 q0 22 30 22 q30 0 30 -22 q-30 -8 -60 0 z" fill="${c.a}"/>
+      <path d="M-30 -2 q30 10 60 0 q0 14 -30 14 q-30 0 -30 -14 z" fill="${c.b}"/>
+      <path d="M-26 -12 q10 -8 22 -7" stroke="#fff" stroke-width="4" opacity=".4" fill="none" stroke-linecap="round"/>
+      ${face(-14, .9)}</g>`;
+    case 'donut': return `<g>
+      <path fill="${c.a}" fill-rule="evenodd" d="M0 -32 a32 32 0 1 0 .1 0 z M0 -12 a12 12 0 1 1 -.1 0 z"/>
+      <path fill="${c.b}" d="M-31 -6 q-2 -26 31 -26 q33 0 31 26 q-6 6 -14 2 q-4 -12 -17 -12 q-13 0 -17 12 q-8 4 -14 -2 z"/>
+      ${[['#ff6f9c', -20, -18, 20], ['#7fd8ff', -2, -26, -14], ['#ffe066', 16, -20, 40], ['#a4f0a0', 24, -6, 8], ['#c9a4ff', -26, -4, -30]].map(s => `<rect x="${s[1]}" y="${s[2]}" width="8" height="3.4" rx="1.7" fill="${s[0]}" transform="rotate(${s[3]} ${s[1] + 4} ${s[2] + 1.7})"/>`).join('')}
+      ${eye(-11, 6, 4)}${eye(11, 6, 4)}${blush(-19, 12, 5)}${blush(19, 12, 5)}
+      <path d="M-5 22 q5 5 10 0" stroke="${INK}" stroke-width="2.2" fill="none" stroke-linecap="round"/></g>`;
+    case 'cupcake': return `<g>
+      <path d="M-26 4 h52 l-7 34 q-19 5 -38 0 z" fill="${c.b}"/>
+      <path d="M-19 6 l-3 32 M-7 6 l-1 34 M7 6 l1 34 M19 6 l3 32" stroke="#fff" stroke-width="3" opacity=".45"/>
+      <path d="M-28 6 q2 -20 14 -22 q4 -14 16 -13 q13 -1 16 13 q13 3 13 22 z" fill="${c.a}"/>
+      <path d="M-16 -12 q8 -8 18 -6" stroke="#fff" stroke-width="4" opacity=".45" fill="none" stroke-linecap="round"/>
+      <circle cx="0" cy="-30" r="7.5" fill="#ff5d7e"/><path d="M2 -36 q4 -8 9 -9" stroke="#7bbf5a" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      ${face(14, .9)}</g>`;
+    default: return `<g>
+      <rect x="-30" y="-26" width="60" height="56" rx="18" fill="${c.a}"/>
+      <rect x="-30" y="-26" width="60" height="22" rx="16" fill="#fff" opacity=".55"/>
+      <rect x="-24" y="18" width="48" height="10" rx="5" fill="${c.b}" opacity=".55"/>
+      ${face(-2, 1)}${sparkleArt(20, -18, .5, '#fff')}</g>`;
+  }
+}
+
+/* ---------------- UNICORN ---------------- */
+function artUni(c) {
+  const m = c.mane;
+  return `<g>
+    <path d="M24 22 q28 0 34 -26 q14 32 -22 44 z" fill="${m[0]}"/>
+    <path d="M28 26 q22 -2 28 -22 q8 26 -20 34 z" fill="${m[1]}"/>
+    <path d="M32 30 q16 -2 22 -16 q4 18 -16 25 z" fill="${m[2]}"/>
+    <ellipse cx="-15" cy="35" rx="12" ry="10" fill="${c.dark}"/>
+    <ellipse cx="15" cy="35" rx="12" ry="10" fill="${c.dark}"/>
+    <ellipse cx="-15" cy="39" rx="12" ry="6" fill="${c.hoof}"/>
+    <ellipse cx="15" cy="39" rx="12" ry="6" fill="${c.hoof}"/>
+    <ellipse cx="0" cy="21" rx="24" ry="20" fill="${c.body}"/>
+    <path d="M-30 -22 q-16 6 -14 24 q-12 -2 -10 -18 q-10 -6 -2 -18 q-6 -14 8 -18 q6 -12 20 -8 z" fill="${m[0]}"/>
+    <path d="M-27 -20 q-12 6 -11 20 q-8 -4 -6 -16 q-8 -6 -1 -15 q-4 -11 7 -14 z" fill="${m[1]}"/>
+    <path d="M-24 -18 q-8 6 -8 16 q-6 -6 -3 -14 q-4 -8 3 -12 z" fill="${m[2]}"/>
+    <path d="M-24 -28 l-4 -13 l10 6 z" fill="${c.body}"/>
+    <path d="M24 -28 l4 -13 l-10 6 z" fill="${c.body}"/>
+    <circle cx="0" cy="-8" r="27" fill="${c.body}"/>
+    <path d="M-2 -34 l4 -26 l6 26 z" fill="${c.horn}"/>
+    <path d="M-0.5 -40 l6.2 -1.6 M0.7 -47 l4.4 -1.2 M1.9 -53 l2.8 -1" stroke="#fff" stroke-width="1.8" opacity=".75" stroke-linecap="round"/>
+    <path d="M-18 -26 q14 -10 32 -2 q-14 12 -32 2 z" fill="${m[0]}"/>
+    <path d="M-12 -25 q12 -7 24 -2 q-12 8 -24 2 z" fill="${m[2]}" opacity=".9"/>
+    <ellipse cx="0" cy="4" rx="14" ry="10" fill="${c.snout}"/>
+    <ellipse cx="-5" cy="2" rx="1.7" ry="2.4" fill="${INK}" opacity=".55"/>
+    <ellipse cx="5" cy="2" rx="1.7" ry="2.4" fill="${INK}" opacity=".55"/>
+    <path d="M-4.5 8 q4.5 4.5 9 0" stroke="${INK}" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M-17 -10 q5.5 -8 11 0" stroke="${INK}" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M6 -10 q5.5 -8 11 0" stroke="${INK}" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M-19 -16 l-5 -3 M19 -16 l5 -3" stroke="${INK}" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+    ${blush(-20, -1, 7, '#ff9ec9')}${blush(20, -1, 7, '#ff9ec9')}
+    ${sparkleArt(-30, -34, .55, '#fff6bd')}${sparkleArt(30, -30, .4, '#fff6bd')}
+  </g>`;
+}
+
+const ARTISTS = { teddy: artTeddy, bunny: artBunny, dino: artDino, fly: artFly, candy: artCandy, uni: artUni };
+function stuffyArt(v) { return (ARTISTS[v.type] || artTeddy)(v.c); }
+function stuffySVG(v, withKey, cls) {
+  return `<svg viewBox="-60 -72 120 130" class="${cls || ''}" xmlns="http://www.w3.org/2000/svg">${stuffyArt(v)}${withKey ? keyArt(28, 26, .95) : ''}</svg>`;
+}
+
+/* ============================================================
+   3. THE ARCADE — machines and their plushie rosters
+   ============================================================ */
+const T = (fur, dark, pad, bow, bowD) => ({ fur, dark, pad, bow, bowD });
+const B = (fur, dark, inner, bow, bowD, tail) => ({ fur, dark, inner, bow, bowD, tail: tail || '#fff', pad: '#fff' });
+const D = (body, dark, belly, spike) => ({ body, dark, belly, spike });
+const F = (w, w2, dot, body) => ({ w, w2, dot, body });
+const C = (shape, a, b) => ({ shape, a, b });
+const U = (body, dark, snout, hoof, horn, mane) => ({ body, dark, snout, hoof, horn, mane });
+
+const MACHINES = [
+  {
+    key: 'teddy', name: 'Teddy Bear Bonanza', emoji: '🧸', tag: 'the cosiest bears in town',
+    grip: 0.62, count: 12, size: 34,
+    skin: { body: '#ff87b8', dark: '#e4568f', trim: '#ffd9ec', glass: '#fff2f9', light: '#ffe4f2', marquee: '#ff4f92' },
+    roster: [
+      { id: 't0', name: 'Honeypaw', type: 'teddy', rare: 0, c: T('#f0c08a', '#e0a96c', '#ffe6c8', '#ff87b8', '#e4568f') },
+      { id: 't1', name: 'Marshmellow', type: 'teddy', rare: 0, c: T('#fff1e2', '#f3ddc7', '#fffaf3', '#7fe0c4', '#3fbfa0') },
+      { id: 't2', name: 'Cocoa Puff', type: 'teddy', rare: 0, c: T('#b98058', '#a06b46', '#e8c9ab', '#c9a4ff', '#9a6ded') },
+      { id: 't3', name: 'Butterscotch', type: 'teddy', rare: 0, c: T('#ffcf8f', '#f0b96f', '#fff0d4', '#86c8ff', '#4d9ce8') },
+      { id: 't4', name: 'Strawberry Cream', type: 'teddy', rare: 1, c: T('#ffd3d8', '#f5b9c1', '#fff0f2', '#ffe071', '#f0bf2c') },
+      { id: 't5', name: 'Caramel Chip', type: 'teddy', rare: 0, c: T('#d8a06a', '#c08b56', '#f5dcc0', '#ff8a6b', '#e85c3c') },
+      { id: 't6', name: 'Blueberry Bear', type: 'teddy', rare: 1, c: T('#b9c8f2', '#9fb0e0', '#e6ecff', '#ffb37a', '#f08c42') },
+      { id: 't7', name: 'Sir Roosevelt', type: 'teddy', rare: 2, c: T('#efe4d2', '#dcd0ba', '#fffaf0', '#ff4d6d', '#c81f45') }
+    ]
+  },
+  {
+    key: 'bunny', name: 'Bunny Hop Hop', emoji: '🐰', tag: 'floppy ears, fluffy tails',
+    grip: 0.51, count: 13, size: 33,
+    skin: { body: '#7fe0c4', dark: '#3fbfa0', trim: '#d6fff2', glass: '#f0fffa', light: '#ddfff4', marquee: '#22b892' },
+    roster: [
+      { id: 'b0', name: 'Mochi', type: 'bunny', rare: 0, c: B('#fffdf8', '#f0ebe0', '#ffc9dd', '#ff87b8', '#e4568f') },
+      { id: 'b1', name: 'Lavender', type: 'bunny', rare: 0, c: B('#d9c9f5', '#c4b0e8', '#f0e2ff', '#a4f0a0', '#5cc75c') },
+      { id: 'b2', name: 'Peaches', type: 'bunny', rare: 0, c: B('#ffd0b0', '#f0b894', '#ffeadd', '#7fd8ff', '#3aabe8') },
+      { id: 'b3', name: 'Clover', type: 'bunny', rare: 1, c: B('#c8ecc0', '#aad9a0', '#eafce6', '#ffe071', '#f0bf2c') },
+      { id: 'b4', name: 'Snowdrop', type: 'bunny', rare: 0, c: B('#ffffff', '#e9e9f2', '#ffd9e8', '#86c8ff', '#4d9ce8') },
+      { id: 'b5', name: 'Cinnamon', type: 'bunny', rare: 0, c: B('#d9a273', '#c08b5c', '#ffd7c2', '#ff8a6b', '#e85c3c', '#ffe8d6') },
+      { id: 'b6', name: 'Bubblegum', type: 'bunny', rare: 1, c: B('#ffb3d9', '#f292c4', '#fff0f7', '#c9a4ff', '#9a6ded') },
+      { id: 'b7', name: 'Moonpie', type: 'bunny', rare: 2, c: B('#cfd8ef', '#b4bfdc', '#eef3ff', '#ffe071', '#e8a417') }
+    ]
+  },
+  {
+    key: 'dino', name: 'Dino Stomp', emoji: '🦕', tag: 'tiny roars, big hearts',
+    grip: 0.40, count: 14, size: 35,
+    skin: { body: '#8fd85f', dark: '#5fae32', trim: '#ddffc4', glass: '#f4ffea', light: '#e8ffd4', marquee: '#4a9c22' },
+    roster: [
+      { id: 'd0', name: 'Sprout', type: 'dino', rare: 0, c: D('#8fd85f', '#6cbb3e', '#eaffd4', '#ffe071') },
+      { id: 'd1', name: 'Blueberry Rex', type: 'dino', rare: 0, c: D('#7fb8f5', '#5c96d8', '#e2f1ff', '#ffb3d9') },
+      { id: 'd2', name: 'Tangerine Tail', type: 'dino', rare: 0, c: D('#ffb069', '#ef934a', '#ffe8d0', '#7fe0c4') },
+      { id: 'd3', name: 'Bubble Stego', type: 'dino', rare: 1, c: D('#ff9ec9', '#ef7bb0', '#ffe3f0', '#c9a4ff') },
+      { id: 'd4', name: 'Mintosaur', type: 'dino', rare: 0, c: D('#87e8cf', '#5cc9ad', '#e2fff7', '#ffd166') },
+      { id: 'd5', name: 'Grape Soda', type: 'dino', rare: 0, c: D('#b79cf0', '#9679df', '#efe6ff', '#a4f0a0') },
+      { id: 'd6', name: 'Sunny Spike', type: 'dino', rare: 1, c: D('#ffdf6b', '#efc73f', '#fff8d6', '#ff8a6b') },
+      { id: 'd7', name: 'Rainbow Rawr', type: 'dino', rare: 2, c: D('#ffc2e0', '#e896c0', '#fff0f8', '#7fd8ff') }
+    ]
+  },
+  {
+    key: 'fly', name: 'Butterfly Breeze', emoji: '🦋', tag: 'flutter flutter, sparkle sparkle',
+    grip: 0.31, count: 14, size: 33,
+    skin: { body: '#c9a4ff', dark: '#9a6ded', trim: '#eee2ff', glass: '#f9f4ff', light: '#efe4ff', marquee: '#8452e0' },
+    roster: [
+      { id: 'f0', name: 'Flutterpuff', type: 'fly', rare: 0, c: F('#ff8fbe', '#ffc2da', '#fff0a0', '#8a5c74') },
+      { id: 'f1', name: 'Skywing', type: 'fly', rare: 0, c: F('#7fc8ff', '#c2e6ff', '#fff', '#4d6f8a') },
+      { id: 'f2', name: 'Buttercup', type: 'fly', rare: 0, c: F('#ffdd6b', '#fff0b8', '#ff9ec9', '#a08040') },
+      { id: 'f3', name: 'Lilac Wisp', type: 'fly', rare: 1, c: F('#bb9cf5', '#ded0ff', '#fff0a0', '#6b5490') },
+      { id: 'f4', name: 'Minty Moth', type: 'fly', rare: 0, c: F('#87e8cf', '#ccfff0', '#ffb3d9', '#4d8a7a') },
+      { id: 'f5', name: 'Sherbet', type: 'fly', rare: 0, c: F('#ffab6b', '#ffd6b3', '#fff0a0', '#9c6438') },
+      { id: 'f6', name: 'Rosewing', type: 'fly', rare: 1, c: F('#ff6f9c', '#ffb0cb', '#fff', '#8a3f5c') },
+      { id: 'f7', name: 'Aurora', type: 'fly', rare: 2, c: F('#a4e8ff', '#ffd0f0', '#fff0a0', '#6b5490') }
+    ]
+  },
+  {
+    key: 'candy', name: 'Sweet Tooth Sugar Rush', emoji: '🍬', tag: 'do not lick the glass',
+    grip: 0.24, count: 15, size: 32,
+    skin: { body: '#ff9a7a', dark: '#ef6a4a', trim: '#ffe4d4', glass: '#fff6f0', light: '#ffe8dc', marquee: '#f0492a' },
+    roster: [
+      { id: 'c0', name: 'Swirlypop', type: 'candy', rare: 0, c: C('lolli', '#ff8fbe', '#fff') },
+      { id: 'c1', name: 'Gummy Drop', type: 'candy', rare: 0, c: C('gum', '#8fe86f', '#5cc73c') },
+      { id: 'c2', name: 'Twinkle Taffy', type: 'candy', rare: 0, c: C('wrap', '#c9a4ff', '#8f5ce0') },
+      { id: 'c3', name: 'Corny', type: 'candy', rare: 0, c: C('corn', '#ffab5c', '#ffe98a') },
+      { id: 'c4', name: 'Macaroon', type: 'candy', rare: 1, c: C('macaron', '#ffc8d8', '#ff8fbe') },
+      { id: 'c5', name: 'Sprinkle Ring', type: 'candy', rare: 0, c: C('donut', '#e8b07a', '#ff9ec9') },
+      { id: 'c6', name: 'Cupcakey', type: 'candy', rare: 1, c: C('cupcake', '#fff0a0', '#ff9ec9') },
+      { id: 'c7', name: 'Mallow King', type: 'candy', rare: 2, c: C('mallow', '#ffd6e8', '#ff8fbe') }
+    ]
+  },
+  {
+    key: 'uni', name: 'Unicorn Dream Machine', emoji: '🦄', tag: 'every cutie, all at once',
+    grip: 0.19, count: 16, size: 34,
+    skin: { body: '#ffc2e8', dark: '#e88fc9', trim: '#fff0fa', glass: '#fdf7ff', light: '#ffeaf8', marquee: '#ff6fbe' },
+    rainbow: true,
+    roster: [
+      { id: 'u0', name: 'Starlight', type: 'uni', rare: 0, c: U('#fffdfa', '#f0e8e0', '#ffe4ef', '#ffd447', '#ffd447', ['#ff9ec9', '#c9a4ff', '#87d8ff']) },
+      { id: 'u1', name: 'Bubblegum Dream', type: 'uni', rare: 0, c: U('#ffd0e8', '#f0b0d0', '#fff0f7', '#ffd447', '#fff0a0', ['#fff0a0', '#a4f0d0', '#87c8ff']) },
+      { id: 'u2', name: 'Sir Bearington', type: 'teddy', rare: 1, c: T('#f5e0c0', '#e0c9a4', '#fff8ec', '#ffd447', '#e8a417') },
+      { id: 'u3', name: 'Sky Bun', type: 'bunny', rare: 1, c: B('#cfe8ff', '#aecff0', '#eaf6ff', '#ffd447', '#e8a417') },
+      { id: 'u4', name: 'Dino Deluxe', type: 'dino', rare: 1, c: D('#7fe0d0', '#5cc0b0', '#e6fffa', '#ffd447') },
+      { id: 'u5', name: 'Prism Wings', type: 'fly', rare: 1, c: F('#ffb3e0', '#c2e6ff', '#ffe071', '#7a5c8a') },
+      { id: 'u6', name: 'Sugar Crown', type: 'candy', rare: 1, c: C('lolli', '#ffd447', '#fff6d0') },
+      { id: 'u7', name: 'Celestia', type: 'uni', rare: 2, c: U('#f2eaff', '#ded0f0', '#fff0fa', '#ffd447', '#ffd447', ['#ff8fbe', '#ffd447', '#87e8cf']) }
+    ]
+  }
+];
+const RARE_W = [1, .42, .15];
+const RARE_LABEL = ['', '✨ rare', '👑 legendary'];
+const WINS_NEEDED = 3;
+const byId = {};
+MACHINES.forEach((m, mi) => m.roster.forEach(v => { v.mi = mi; byId[v.id] = v; }));
+
+function rollVariant(m) {
+  let total = 0;
+  for (const v of m.roster) total += RARE_W[v.rare];
+  let r = Math.random() * total;
+  for (const v of m.roster) { r -= RARE_W[v.rare]; if (r <= 0) return v; }
+  return m.roster[0];
+}
+
+/* ============================================================
+   4. SAVE DATA
+   ============================================================ */
+const SAVE_KEY = 'clawcuties.v1';
+let save = null;
+function freshSave() {
+  return { unlocked: 1, wins: MACHINES.map(() => 0), got: {}, tries: 0, muted: false, seenHelp: false, done: false };
+}
+function loadSave() {
+  try {
+    const raw = localStorage.getItem(SAVE_KEY);
+    if (raw) {
+      const s = JSON.parse(raw);
+      const f = freshSave();
+      save = Object.assign(f, s);
+      if (!Array.isArray(save.wins) || save.wins.length !== MACHINES.length) save.wins = f.wins;
+      if (!save.got || typeof save.got !== 'object') save.got = {};
+      return;
+    }
+  } catch (e) {}
+  save = freshSave();
+}
+function persist() { try { localStorage.setItem(SAVE_KEY, JSON.stringify(save)); } catch (e) {} }
+const totalGot = () => Object.values(save.got).reduce((a, b) => a + b, 0);
+const uniqueGot = () => Object.keys(save.got).length;
+
+/* ordered list of every plushie the player owns (for the parade) */
+function collectionList() {
+  const out = [];
+  MACHINES.forEach(m => m.roster.forEach(v => { const n = save.got[v.id] || 0; for (let i = 0; i < n; i++) out.push(v); }));
+  return out;
+}
+
+/* ============================================================
+   5. LOBBY
+   ============================================================ */
+function machineThumb(m, i) {
+  const s = m.skin;
+  const showcase = [m.roster[0], m.roster[3], m.roster[6]];
+  return `<svg viewBox="0 0 100 105" class="thumb" xmlns="http://www.w3.org/2000/svg">
+    <rect x="6" y="2" width="88" height="101" rx="12" fill="${s.body}"/>
+    <rect x="6" y="2" width="88" height="20" rx="10" fill="${s.marquee}"/>
+    <text x="50" y="16.5" font-size="11" text-anchor="middle" fill="#fff">${m.emoji}${m.emoji}</text>
+    <rect x="12" y="26" width="76" height="52" rx="8" fill="${s.glass}"/>
+    <rect x="12" y="26" width="76" height="52" rx="8" fill="none" stroke="${s.trim}" stroke-width="3"/>
+    <g transform="translate(28,62) scale(.30)">${stuffyArt(showcase[0])}</g>
+    <g transform="translate(52,66) scale(.30)">${stuffyArt(showcase[1])}</g>
+    <g transform="translate(72,60) scale(.28)">${stuffyArt(showcase[2])}</g>
+    <g stroke="${s.dark}" fill="none" stroke-linecap="round">
+      <path d="M18 31 h64" stroke-width="2.2" opacity=".7"/>
+      <path d="M50 31 v11" stroke-width="2.2"/>
+      <path d="M50 44 q-5 4 -7 12 M50 44 q5 4 7 12" stroke-width="3"/>
+    </g>
+    <ellipse cx="50" cy="43" rx="7" ry="4" fill="${s.dark}"/>
+    <rect x="14" y="28" width="26" height="48" rx="6" fill="#fff" opacity=".28"/>
+    <rect x="12" y="82" width="76" height="17" rx="6" fill="${s.trim}"/>
+    <circle cx="26" cy="90.5" r="5.5" fill="${s.dark}"/><circle cx="24.5" cy="89" r="1.8" fill="#fff" opacity=".6"/>
+    <rect x="40" y="86" width="34" height="9" rx="4.5" fill="${s.marquee}" opacity=".7"/>
+  </svg>`;
+}
+
+function renderLobby() {
+  const grid = $('#machineGrid');
+  grid.innerHTML = MACHINES.map((m, i) => {
+    const locked = i >= save.unlocked;
+    const w = save.wins[i], done = w >= WINS_NEEDED;
+    const isNext = !locked && !done && (i === save.unlocked - 1);
+    const dots = Array.from({ length: WINS_NEEDED }, (_, k) =>
+      `<i class="${k < w ? 'f' : ''}">${k === WINS_NEEDED - 1 ? '🔑' : '🩷'}</i>`).join('');
+    return `<button class="card ${locked ? 'locked' : ''} ${done ? 'done' : ''} ${isNext ? 'next' : ''}" data-i="${i}">
+      ${machineThumb(m, i)}
+      <div class="nm">${m.name}</div>
+      <div class="dots">${dots}</div>
+      ${locked ? `<div class="lock">🔒</div><div class="lockhint">win 3 from<br>${MACHINES[i - 1].name}</div>` : ''}
+    </button>`;
+  }).join('');
+  $$('#machineGrid .card').forEach(el => el.addEventListener('click', () => {
+    const i = +el.dataset.i;
+    if (i >= save.unlocked) { Sfx.bonk(); return; }
+    Sfx.coin(); openMachine(i);
+  }));
+}
+
+/* ============================================================
+   6. ALBUM
+   ============================================================ */
+function renderAlbum() {
+  $('#albumCount').innerHTML = `<span class="stat">🧸 ${totalGot()} caught</span>
+    <span class="stat">🌈 ${uniqueGot()}/${MACHINES.length * 8} kinds</span>
+    <span class="stat">🕹️ ${save.tries} tries</span>`;
+  $('#albumBody').innerHTML = MACHINES.map((m, i) => {
+    const locked = i >= save.unlocked;
+    return `<div class="albHead"><b>${m.emoji} ${m.name}${locked ? ' 🔒' : ''}</b><div class="ln"></div></div>
+    <div class="albumGrid" style="display:grid;gap:9px;grid-template-columns:repeat(auto-fill,minmax(74px,1fr))">
+    ${m.roster.map(v => {
+      const n = save.got[v.id] || 0;
+      return `<div class="slot ${n ? 'have' : 'miss'}">
+        ${n > 1 ? `<div class="cnt">×${n}</div>` : ''}
+        ${stuffySVG(v)}
+        <div class="lbl">${n ? v.name : '???'}</div>
+        ${n && v.rare ? `<div class="lbl" style="font-size:8px;color:#e8a417">${RARE_LABEL[v.rare]}</div>` : ''}
+      </div>`;
+    }).join('')}</div>`;
+  }).join('');
+}
+
+/* ============================================================
+   7. THE CLAW MACHINE
+   world space: x -205..205, z 0(front)..150(back), y 0(floor)..up
+   ============================================================ */
+const SVGNS = 'http://www.w3.org/2000/svg';
+const PITX = 205, PITZ = 150, FLOORY = 500, REST_Y = 296;
+const HOLE = { x: -152, z: 34 };
+const sOf  = z => 1 - z * 0.0017;
+const projX = (x, z) => 320 + x * sOf(z);
+const projY = (y, z) => FLOORY - y * sOf(z) - z * 0.60;
+
+let M = null, mi = 0;                 // current machine
+let bodies = [], nextBid = 1;
+let pitG = null, clawG = null, carriageG = null, cableEl = null, prongs = [], holeShade = null;
+let raf = 0, lastT = 0, running = false, lastOrder = '';
+
+const claw = {
+  x: 0, z: 78, y: REST_Y, open: 1, state: 'idle', t: 0,
+  holding: null, outcome: null, slipAt: 0, fromX: 0, fromZ: 0, sway: 0, swayV: 0
+};
+const input = { x: 0, y: 0 };
+
+/* ---------- cabinet chrome ---------- */
+function buildCabinet(m) {
+  const s = m.skin;
+  const bulbs = [];
+  for (let i = 0; i < 14; i++) {
+    const bx = 58 + i * 38.5;
+    bulbs.push(`<circle class="bulb" cx="${bx}" cy="${i % 2 ? 12 : 88}" r="5.5" fill="#fff8c4" style="animation-delay:${(i * .09).toFixed(2)}s"/>`);
+  }
+  const shine = `<linearGradient id="gShine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".42" stop-color="#fff" stop-opacity=".07"/>
+      <stop offset=".62" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>`;
+  return `<defs>
+    ${shine}
+    <linearGradient id="gBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${s.body}"/><stop offset="1" stop-color="${s.dark}"/></linearGradient>
+    <linearGradient id="gBack" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${s.light}"/><stop offset="1" stop-color="${s.glass}"/></linearGradient>
+    <radialGradient id="gHole"><stop offset="0" stop-color="#2b1524"/><stop offset="1" stop-color="#5a3049"/></radialGradient>
+    <style>
+      .bulb{animation:bulbB 1.1s ease-in-out infinite}
+      @keyframes bulbB{0%,100%{opacity:.35;r:4.6}50%{opacity:1;r:6.4}}
+      .marqueeTxt{font:900 27px ui-rounded,"SF Pro Rounded",Nunito,"Comic Sans MS",system-ui,sans-serif;letter-spacing:.5px}
+      .plateTxt{font:900 15px ui-rounded,"SF Pro Rounded",Nunito,"Comic Sans MS",system-ui,sans-serif}
+    </style>
+  </defs>
+
+  <!-- cabinet shell -->
+  <rect x="34" y="2" width="572" height="694" rx="34" fill="url(#gBody)"/>
+  <rect x="34" y="2" width="572" height="694" rx="34" fill="none" stroke="${s.dark}" stroke-width="5"/>
+  <rect x="46" y="4" width="548" height="96" rx="26" fill="${s.marquee}"/>
+  ${bulbs.join('')}
+  <text class="marqueeTxt" x="320" y="60" text-anchor="middle" fill="#fff" stroke="${s.dark}" stroke-width="5" paint-order="stroke" >${m.emoji} ${m.name.toUpperCase()} ${m.emoji}</text>
+
+  <!-- interior box -->
+  <g>
+    <polygon points="108,118 532,118 473,160 167,160" fill="${s.light}"/>
+    <rect x="167" y="160" width="306" height="250" fill="url(#gBack)"/>
+    <polygon points="108,118 167,160 167,410 115,500" fill="${s.light}" opacity=".92"/>
+    <polygon points="532,118 473,160 473,410 525,500" fill="${s.light}" opacity=".78"/>
+    <polygon points="115,500 525,500 473,410 167,410" fill="${s.glass}"/>
+    <polygon points="115,500 525,500 473,410 167,410" fill="none" stroke="${s.trim}" stroke-width="2"/>
+    <!-- polka dots on the back wall, because kawaii -->
+    ${[[210, 200], [300, 240], [400, 195], [250, 300], [370, 320], [440, 265], [190, 350], [320, 180]].map((p, i) =>
+      `<circle cx="${p[0]}" cy="${p[1]}" r="${8 + (i % 3) * 3}" fill="${s.trim}" opacity=".55"/>`).join('')}
+    <g opacity=".8">
+      <rect x="242" y="302" width="156" height="46" rx="14" fill="${s.trim}"/>
+      <rect x="242" y="302" width="156" height="46" rx="14" fill="none" stroke="${s.body}" stroke-width="3"/>
+      <text x="320" y="333" text-anchor="middle" font-size="21" font-weight="900" fill="${s.dark}">GRAB ME!</text>
+    </g>
+  </g>
+
+  <!-- prize hole -->
+  <ellipse cx="${projX(HOLE.x, HOLE.z)}" cy="${projY(0, HOLE.z)}" rx="${52 * sOf(HOLE.z)}" ry="${19 * sOf(HOLE.z)}" fill="url(#gHole)"/>
+  <ellipse cx="${projX(HOLE.x, HOLE.z)}" cy="${projY(0, HOLE.z) - 3}" rx="${52 * sOf(HOLE.z)}" ry="${19 * sOf(HOLE.z)}" fill="none" stroke="${s.marquee}" stroke-width="4"/>
+  <text x="${projX(HOLE.x, HOLE.z)}" y="${projY(0, HOLE.z) + 34}" text-anchor="middle" font-size="15" font-weight="900" fill="${s.dark}">PRIZE</text>
+
+  <!-- rails -->
+  <path d="M112 122 L167 158 M528 122 L473 158" stroke="${s.dark}" stroke-width="7" stroke-linecap="round" opacity=".75"/>
+
+  <g id="pit"></g>
+
+  <g id="gantry"></g>
+
+  <!-- glass -->
+  <rect x="108" y="112" width="424" height="396" rx="12" fill="url(#gShine)" pointer-events="none"/>
+  <path d="M126 496 L232 124 L288 124 L182 496 Z" fill="#fff" opacity=".13" pointer-events="none"/>
+  <path d="M300 496 L406 124 L432 124 L326 496 Z" fill="#fff" opacity=".09" pointer-events="none"/>
+  <rect x="100" y="104" width="440" height="412" rx="20" fill="none" stroke="${s.trim}" stroke-width="15"/>
+  <rect x="100" y="104" width="440" height="412" rx="20" fill="none" stroke="${s.dark}" stroke-width="4"/>
+
+  <!-- base / chute -->
+  <rect x="56" y="524" width="528" height="160" rx="24" fill="${s.trim}"/>
+  <rect x="56" y="524" width="528" height="160" rx="24" fill="none" stroke="${s.dark}" stroke-width="4"/>
+  <rect x="92" y="556" width="150" height="106" rx="16" fill="#3d2136"/>
+  <rect x="92" y="556" width="150" height="52" rx="14" fill="${s.dark}" opacity=".9"/>
+  <text x="167" y="590" text-anchor="middle" class="plateTxt" fill="#fff">PRIZES ↓</text>
+  <g id="chuteFx"></g>
+  <rect x="272" y="560" width="272" height="98" rx="16" fill="#fff" opacity=".65"/>
+  <text x="408" y="600" text-anchor="middle" class="plateTxt" fill="${s.dark}">${m.tag}</text>
+  <text x="408" y="634" text-anchor="middle" font-size="26">${m.emoji}💖${m.emoji}</text>`;
+}
+
+/* ---------- claw ---------- */
+const CLAW_SCALE = 1.35;
+function prongPath(sign, len, w, light) {
+  const d = `M0 2 C${9 * sign} ${len * .38} ${20 * sign} ${len * .55} ${23 * sign} ${len}`;
+  return `<path d="${d}" stroke="${light ? '#aab8d2' : '#c9d4e8'}" stroke-width="${w}" fill="none" stroke-linecap="round"/>
+    <path d="${d}" stroke="#8fa0c0" stroke-width="${w * .34}" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="${23 * sign}" cy="${len}" r="${w * .68}" fill="${light ? '#d4dcec' : '#eaf0fb'}" stroke="#8fa0c0" stroke-width="2"/>`;
+}
+function buildClaw() {
+  const g = document.createElementNS(SVGNS, 'g');
+  g.innerHTML = `<g class="scaler">
+    <g class="prong p2" opacity=".85" transform-origin="0 0">${prongPath(-.45, 34, 9, true)}</g>
+    <g class="prong p0">${prongPath(-1, 42, 12)}</g>
+    <g class="prong p1">${prongPath(1, 42, 12)}</g>
+    <ellipse cy="-4" rx="25" ry="15" fill="#dfe7f5"/>
+    <ellipse cy="-8" rx="25" ry="15" fill="#f2f6ff"/>
+    <rect x="-11" y="-36" width="22" height="26" rx="7" fill="#c9d4e8"/>
+    <circle cy="-2" r="6" fill="#ff8fbe"/>
+    <circle cy="-2" r="2.4" fill="#fff" opacity=".7"/>
+    <ellipse cx="-9" cy="-13" rx="7" ry="4" fill="#fff" opacity=".85" transform="rotate(-18 -9 -13)"/>
+  </g>`;
+  return g;
+}
+
+/* ---------- bodies ---------- */
+function makeBody(v, x, y, z, r, keyed) {
+  const g = document.createElementNS(SVGNS, 'g');
+  const b = {
+    id: nextBid++, v, x, y, z, r, vx: 0, vy: 0, vz: 0,
+    rot: rand(-14, 14), rotv: 0, el: g, keyed: !!keyed, bob: rand(0, 6.28), held: false, gone: false
+  };
+  paintBody(b);
+  return b;
+}
+function paintBody(b) {
+  b.el.innerHTML = stuffyArt(b.v) + (b.keyed ? keyArt(24, 26, .82) : '');
+}
+function setKeyed(on) {
+  bodies.forEach(b => { if (b.keyed !== on) { b.keyed = on; paintBody(b); } });
+}
+
+function spawnPit(fresh) {
+  const keyed = save.wins[mi] === WINS_NEEDED - 1;
+  for (let i = 0; i < M.count; i++) {
+    const v = rollVariant(M);
+    const r = M.size + rand(-2, 2);
+    const b = makeBody(v, rand(-PITX + r + 6, PITX - r - 6), fresh ? rand(120, 460) : rand(80, 240),
+      rand(r * .6, PITZ - r * .5), r, keyed);
+    bodies.push(b);
+    pitG.appendChild(b.el);
+  }
+}
+/* top the pit back up after a win, so the machine never quietly gets
+   easier as it empties — density is part of the difficulty */
+function restock() {
+  const keyed = save.wins[mi] === WINS_NEEDED - 1;
+  const need = Math.max(0, (M.count - 1) - bodies.length);
+  for (let i = 0; i < need; i++) {
+    const v = rollVariant(M);
+    const r = M.size + rand(-2, 2);
+    const b = makeBody(v, rand(-PITX + r + 6, PITX - r - 6), rand(340, 470) + i * 60, rand(r * .6, PITZ - r * .5), r, keyed);
+    bodies.push(b); pitG.appendChild(b.el);
+  }
+  if (need) setTimeout(() => Sfx.thud(), 500);
+}
+
+/* ---------- physics ---------- */
+function step(dt) {
+  const G = 1500;
+  for (const b of bodies) {
+    if (b.held) continue;
+    b.vy -= G * dt;
+    b.x += b.vx * dt; b.y += b.vy * dt; b.z += b.vz * dt;
+    b.rot += b.rotv * dt;
+    b.rotv *= .965;
+    b.vx *= .995; b.vz *= .995;
+
+    const restY = b.r * .58;
+    if (b.y < restY) {
+      b.y = restY;
+      if (b.vy < -260) { b.rotv += b.vx * .25 + rand(-40, 40); }
+      b.vy *= -0.18;
+      if (Math.abs(b.vy) < 30) b.vy = 0;
+      b.vx *= .74; b.vz *= .74;
+      b.rotv *= .8;
+    }
+    const lim = PITX - b.r * .82;
+    if (b.x < -lim) { b.x = -lim; b.vx = Math.abs(b.vx) * .4; b.rotv += 30; }
+    if (b.x > lim) { b.x = lim; b.vx = -Math.abs(b.vx) * .4; b.rotv -= 30; }
+    const zMin = b.r * .42, zMax = PITZ - b.r * .3;
+    if (b.z < zMin) { b.z = zMin; b.vz = Math.abs(b.vz) * .4; }
+    if (b.z > zMax) { b.z = zMax; b.vz = -Math.abs(b.vz) * .4; }
+    // settle rotation upright when resting
+    if (b.y <= restY + .5 && Math.abs(b.vx) < 26) b.rot = lerp(b.rot, 0, Math.min(1, dt * 2.2));
+  }
+  // plushie vs plushie
+  for (let i = 0; i < bodies.length; i++) {
+    for (let j = i + 1; j < bodies.length; j++) {
+      const a = bodies[i], c = bodies[j];
+      if (a.held && c.held) continue;
+      let dx = c.x - a.x, dy = c.y - a.y, dz = c.z - a.z;
+      const min = (a.r + c.r) * .84;
+      let d2 = dx * dx + dy * dy + dz * dz;
+      if (d2 >= min * min || d2 === 0) continue;
+      let d = Math.sqrt(d2) || .01;
+      const push = (min - d) / d * .5;
+      const px = dx * push, py = dy * push, pz = dz * push;
+      const aM = a.held ? 0 : 1, cM = c.held ? 0 : 1, tot = aM + cM || 1;
+      a.x -= px * 2 * aM / tot; a.y -= py * 2 * aM / tot; a.z -= pz * 2 * aM / tot;
+      c.x += px * 2 * cM / tot; c.y += py * 2 * cM / tot; c.z += pz * 2 * cM / tot;
+      const nx = dx / d, ny = dy / d, nz = dz / d;
+      const rel = (c.vx - a.vx) * nx + (c.vy - a.vy) * ny + (c.vz - a.vz) * nz;
+      if (rel < 0) {
+        const imp = -rel * .58;
+        if (!a.held) { a.vx -= imp * nx; a.vy -= imp * ny; a.vz -= imp * nz; a.rotv -= imp * .1; }
+        if (!c.held) { c.vx += imp * nx; c.vy += imp * ny; c.vz += imp * nz; c.rotv += imp * .1; }
+      }
+    }
+  }
+}
+
+/* the claw shoves plushies around as it dives — this is what makes
+   repositioning over several tries an actual strategy */
+function clawShove(dt) {
+  for (const b of bodies) {
+    if (b.held) continue;
+    const dx = b.x - claw.x, dz = b.z - claw.z, dy = b.y - claw.y;
+    const hd = Math.hypot(dx, dz);
+    if (hd < b.r * .8 + 16 && Math.abs(dy) < b.r + 22) {
+      const f = (1 - hd / (b.r * .8 + 16)) * 340;
+      const nx = hd < .01 ? rand(-1, 1) : dx / hd, nz = hd < .01 ? rand(-1, 1) : dz / hd;
+      b.vx += nx * f * dt * 6; b.vz += nz * f * dt * 6;
+      b.rotv += nx * 40 * dt * 6;
+      if (dy > 0) b.vy += 120 * dt * 6;
+    }
+  }
+}
+
+/* ---------- the honest grab maths ---------- */
+function evaluateGrab() {
+  let best = null, bestScore = -1;
+  for (const b of bodies) {
+    if (b.gone) continue;
+    const d = Math.hypot(b.x - claw.x, b.z - claw.z);
+    const reach = b.r * .88 + 8;
+    if (d > reach) continue;
+    if (b.y + b.r * .9 < claw.y - 14) continue;          // claw came down beside it, not on it
+    // how centred was the drop?
+    const aim = clamp(1.15 - d / (reach * .78), 0, 1.15);
+    // how buried is it?
+    let above = 0;
+    for (const o of bodies) {
+      if (o === b || o.gone) continue;
+      if (o.y > b.y + b.r * .5 && Math.hypot(o.x - b.x, o.z - b.z) < b.r * 1.3) above++;
+    }
+    const exposure = clamp(1 - .32 * above, .2, 1);
+    const score = M.grip * aim * exposure;
+    if (score > bestScore) { bestScore = score; best = b; }
+  }
+  if (!best) return { outcome: 'air', target: null, score: 0 };
+  const score = clamp(bestScore, 0, .92);
+  const roll = Math.random();
+  let outcome;
+  if (roll < score) outcome = 'win';
+  else if (roll < score + .28) outcome = 'slip';
+  else outcome = 'fumble';
+  return { outcome, target: best, score };
+}
+
+/* ---------- claw state machine ---------- */
+function dropClaw() {
+  if (claw.state !== 'idle' || !running) return;
+  save.tries++; persist();
+  claw.state = 'falling'; claw.t = 0;
+  Sfx.press(); Sfx.whirr(1.0); buzz(18);
+  $('#btnDrop').disabled = true;
+}
+
+function clawTick(dt) {
+  const S = claw;
+  switch (S.state) {
+    case 'idle': {
+      const sp = 205;
+      if (input.x || input.y) {
+        S.x = clamp(S.x + input.x * sp * dt, -PITX + 34, PITX - 34);
+        S.z = clamp(S.z - input.y * sp * dt, 12, PITZ - 12);
+        S.moveSnd = (S.moveSnd || 0) + dt;
+        if (S.moveSnd > .11) { S.moveSnd = 0; Sfx.move(); }
+      }
+      S.open = lerp(S.open, 1, Math.min(1, dt * 8));
+      S.y = lerp(S.y, REST_Y, Math.min(1, dt * 8));
+      break;
+    }
+    case 'falling': {
+      S.y -= 560 * dt;
+      clawShove(dt);
+      let stop = 24;
+      for (const b of bodies) {
+        if (b.gone) continue;
+        const d = Math.hypot(b.x - S.x, b.z - S.z);
+        if (d < b.r * .95 + 12) stop = Math.max(stop, b.y + b.r * .92);
+      }
+      if (S.y <= stop) {
+        S.y = stop; S.state = 'closing'; S.t = 0;
+        const res = evaluateGrab();
+        S.outcome = res.outcome; S.target = res.target; S.score = res.score;
+        S.slipAt = rand(.28, .78);
+        Sfx.clamp(); buzz(28);
+      }
+      break;
+    }
+    case 'closing': {
+      S.t += dt;
+      S.open = clamp(1 - S.t / .34, 0, 1);
+      if (S.t >= .38) {
+        if (S.outcome === 'win' || S.outcome === 'slip') {
+          S.holding = S.target; S.holding.held = true;
+          S.holding.vx = S.holding.vy = S.holding.vz = 0;
+          S.sway = rand(-8, 8); S.swayV = 0;
+        } else if (S.target) {
+          // fumble: the claw nudges it and lets go. cruel, but fair.
+          S.target.vy = rand(110, 200); S.target.vx = rand(-90, 90); S.target.rotv = rand(-160, 160);
+        }
+        S.state = 'lifting'; S.t = 0; Sfx.lift();
+      }
+      break;
+    }
+    case 'lifting': {
+      S.y = Math.min(REST_Y, S.y + 300 * dt);
+      if (S.holding) S.open = clamp(.16 + Math.sin(performance.now() / 90) * .015, 0, 1);
+      else S.open = lerp(S.open, 1, Math.min(1, dt * 3));
+      if (S.y >= REST_Y - .5) {
+        S.y = REST_Y;
+        if (S.holding) { S.state = 'travelling'; S.t = 0; S.fromX = S.x; S.fromZ = S.z; }
+        else { finishRound(false, null); S.state = 'idle'; $('#btnDrop').disabled = false; }
+      }
+      break;
+    }
+    case 'travelling': {
+      S.t += dt;
+      const k = clamp(S.t / 1.5, 0, 1), e = easeInOut(k);
+      S.x = lerp(S.fromX, HOLE.x, e);
+      S.z = lerp(S.fromZ, HOLE.z, e);
+      if (S.outcome === 'slip' && k >= S.slipAt) {
+        const b = S.holding;
+        b.held = false; b.vy = 20; b.vx = rand(-70, 70); b.vz = rand(-40, 40); b.rotv = rand(-220, 220);
+        S.holding = null; S.open = 1;
+        Sfx.slip(); buzz([30, 60, 30]);
+        showBanner('SO CLOSE!', 'it slipped right out 😭', 'slip-txt', 900);
+        setTimeout(() => finishRound(false, null), 950);
+        S.state = 'returning'; S.t = 0; S.fromX = S.x; S.fromZ = S.z;
+        break;
+      }
+      if (k >= 1) { S.state = 'dropping-in'; S.t = 0; }
+      break;
+    }
+    case 'dropping-in': {
+      S.t += dt;
+      S.open = clamp(S.t / .3, 0, 1);
+      if (S.t > .22 && S.holding) {
+        const b = S.holding; b.held = false; b.gone = true; b.vy = -40; b.vx = 0; b.vz = 0;
+        S.holding = null;
+        const won = b.v, startY = b.y, base = (b.r / 40) * sOf(b.z);
+        // tumble down into the prize hole
+        const t0 = performance.now();
+        const sink = () => {
+          const p = clamp((performance.now() - t0) / 640, 0, 1);
+          const yy = lerp(startY, -34, p * p);                    // accelerating, like gravity
+          const shrink = p < .62 ? 1 : 1 - (p - .62) / .38 * .8;
+          b.el.setAttribute('transform',
+            `translate(${projX(b.x, b.z)},${projY(yy, b.z)}) rotate(${(p * 46).toFixed(1)}) scale(${(base * shrink).toFixed(3)})`);
+          b.el.style.opacity = String(p < .72 ? 1 : Math.max(0, 1 - (p - .72) / .28));
+          if (p < 1) requestAnimationFrame(sink);
+          else { b.el.remove(); bodies = bodies.filter(x => x !== b); }
+        };
+        b.held = true; requestAnimationFrame(sink);
+        setTimeout(() => { Sfx.thud(); chuteSparkle(); }, 400);
+        setTimeout(() => finishRound(true, won), 560);
+        S.state = 'returning'; S.t = 0; S.fromX = S.x; S.fromZ = S.z;
+      }
+      break;
+    }
+    case 'returning': {
+      S.t += dt;
+      const k = clamp(S.t / 1.0, 0, 1), e = easeInOut(k);
+      S.x = lerp(S.fromX, 0, e); S.z = lerp(S.fromZ, 78, e);
+      S.open = lerp(S.open, 1, Math.min(1, dt * 5));
+      if (k >= 1) { S.state = 'idle'; $('#btnDrop').disabled = false; }
+      break;
+    }
+  }
+
+  // dangling plushie follows the claw with a lazy sway
+  if (S.holding) {
+    const b = S.holding;
+    const targetX = S.x, targetZ = S.z;
+    S.swayV += (targetX - (b.x)) * 18 * dt;
+    S.swayV *= .93;
+    b.x += S.swayV * dt * 3;
+    b.x = lerp(b.x, targetX, Math.min(1, dt * 5));
+    b.z = lerp(b.z, targetZ, Math.min(1, dt * 6));
+    b.y = lerp(b.y, S.y - b.r * .92, Math.min(1, dt * 12));
+    b.rot = lerp(b.rot, clamp((targetX - b.x) * -2.2, -22, 22), Math.min(1, dt * 6));
+  }
+}
+
+/* ---------- render ---------- */
+function render() {
+  const order = [];
+  for (const b of bodies) {
+    if (b.gone) continue;
+    order.push({ z: b.z, y: b.y, el: b.el, b });
+  }
+  // when the claw is carrying a plushie the prongs must wrap in FRONT of it
+  order.push({ z: claw.holding ? claw.z - 1 : claw.z, y: claw.holding ? -9e9 : claw.y - 200, el: clawG, b: null });
+  order.sort((p, q) => (q.z - p.z) || (q.y - p.y));
+
+  const sig = order.map(o => o.b ? o.b.id : 'C').join(',');
+  if (sig !== lastOrder) { lastOrder = sig; order.forEach(o => pitG.appendChild(o.el)); }
+
+  for (const o of order) {
+    const b = o.b;
+    if (!b) continue;
+    const sc = (b.r / 40) * sOf(b.z);
+    const bob = b.held ? 0 : Math.sin(performance.now() / 520 + b.bob) * 1.2;
+    b.el.setAttribute('transform',
+      `translate(${projX(b.x, b.z).toFixed(2)},${(projY(b.y, b.z) + bob).toFixed(2)}) rotate(${b.rot.toFixed(1)}) scale(${sc.toFixed(3)})`);
+  }
+
+  // claw + cable + carriage
+  const cs = sOf(claw.z) * CLAW_SCALE;
+  const cx = projX(claw.x, claw.z), cy = projY(claw.y, claw.z);
+  clawG.setAttribute('transform', `translate(${cx.toFixed(2)},${cy.toFixed(2)}) scale(${cs.toFixed(3)})`);
+  // positive rotation swings the LEFT prong outward, negative the right one
+  const ang = 3 + claw.open * 30;
+  prongs.l.setAttribute('transform', `rotate(${ang})`);
+  prongs.r.setAttribute('transform', `rotate(${-ang})`);
+  prongs.b.setAttribute('transform', `rotate(${ang * .55})`);
+
+  const t = claw.z / PITZ;
+  const railY = lerp(122, 158, t);
+  const xL = lerp(112, 167, t), xR = lerp(528, 473, t);
+  cableEl.setAttribute('d', `M${xL} ${railY} H${xR} M${cx} ${railY} V${cy - 30 * cs}`);
+  carriageG.querySelector('.car').setAttribute('transform', `translate(${cx},${railY}) scale(${cs})`);
+}
+
+function loop(now) {
+  raf = requestAnimationFrame(loop);
+  if (!lastT) lastT = now;
+  let dt = Math.min(.05, (now - lastT) / 1000);
+  lastT = now;
+  let acc = dt;
+  while (acc > 0) { const s = Math.min(acc, 1 / 120); step(s); clawTick(s); acc -= s; }
+  render();
+}
+
+/* ============================================================
+   8. JUICE — banners, confetti, sparkles, toasts
+   ============================================================ */
+let bannerTimer = 0;
+function showBanner(txt, sub, cls, ms) {
+  const b = $('#banner');
+  b.querySelector('.txt').className = 'txt ' + cls;
+  b.querySelector('.txt').innerHTML = txt + (sub ? `<div style="font-size:.36em;margin-top:6px;opacity:.95">${sub}</div>` : '');
+  b.classList.add('on');
+  clearTimeout(bannerTimer);
+  bannerTimer = setTimeout(() => b.classList.remove('on'), ms || 1200);
+}
+function toast(msg, ms) {
+  const t = $('#toast');
+  t.innerHTML = `<div class="t">${msg}</div>`;
+  setTimeout(() => { t.innerHTML = ''; }, ms || 1800);
+}
+const CONFETTI = ['💖', '⭐', '✨', '🌸', '🍬', '🎀', '💫', '🧁', '🌟', '💗'];
+function confetti(n, cx, cy, power) {
+  n = n || 26;
+  const W = innerWidth, H = innerHeight;
+  cx = cx == null ? W / 2 : cx; cy = cy == null ? H * .42 : cy;
+  const parts = [];
+  for (let i = 0; i < n; i++) {
+    const el = document.createElement('div');
+    el.className = 'confetti';
+    el.textContent = pick(CONFETTI);
+    el.style.left = cx + 'px'; el.style.top = cy + 'px';
+    el.style.fontSize = rand(14, 30).toFixed(0) + 'px';
+    document.body.appendChild(el);
+    const a = rand(0, Math.PI * 2), sp = rand(180, 520) * (power || 1);
+    parts.push({ el, x: 0, y: 0, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 260, r: rand(-360, 360), rr: 0, life: 0 });
+  }
+  let last = performance.now();
+  (function tick(now) {
+    const dt = Math.min(.05, (now - last) / 1000); last = now;
+    let alive = 0;
+    for (const p of parts) {
+      if (!p.el) continue;
+      p.life += dt;
+      p.vy += 1250 * dt; p.vx *= .992;
+      p.x += p.vx * dt; p.y += p.vy * dt; p.rr += p.r * dt;
+      p.el.style.transform = `translate(${p.x.toFixed(1)}px,${p.y.toFixed(1)}px) rotate(${p.rr.toFixed(0)}deg)`;
+      p.el.style.opacity = String(clamp(1.8 - p.life, 0, 1));
+      if (p.life > 1.9 || p.y > H) { p.el.remove(); p.el = null; } else alive++;
+    }
+    if (alive) requestAnimationFrame(tick);
+  })(performance.now());
+}
+function chuteSparkle() {
+  const fx = $('#chuteFx'); if (!fx) return;
+  for (let i = 0; i < 9; i++) {
+    const c = document.createElementNS(SVGNS, 'circle');
+    c.setAttribute('cx', 167 + rand(-55, 55)); c.setAttribute('cy', 610 + rand(-30, 30));
+    c.setAttribute('r', rand(3, 8)); c.setAttribute('fill', pick(['#fff6bd', '#ffb3d9', '#a4e8ff', '#fff']));
+    fx.appendChild(c);
+    const t0 = performance.now(), dx = rand(-70, 70), dy = rand(-90, -30);
+    (function f(now) {
+      const p = (now - t0) / 800;
+      c.setAttribute('transform', `translate(${dx * p},${dy * p})`);
+      c.setAttribute('opacity', String(Math.max(0, 1 - p)));
+      if (p < 1) requestAnimationFrame(f); else c.remove();
+    })(t0);
+  }
+}
+
+/* ============================================================
+   9. MODALS
+   ============================================================ */
+function showModal(html) { $('#modalSheet').innerHTML = html; $('#modal').classList.add('on'); }
+function closeModal() { $('#modal').classList.remove('on'); }
+
+function helpModal() {
+  showModal(`<h2>How to play 🕹️</h2>
+    <p>Move the claw with the <b>joystick</b> (or the <b>arrow keys</b>), then smash <b>DROP</b> (or <b>space</b>).</p>
+    <p>Aim <b>dead centre</b> on a plushie sitting <b>on top of the pile</b> — that is genuinely the whole trick. Buried plushies almost never come up, but every failed grab shoves the pile around, so keep digging.</p>
+    <p>Win <b>3 plushies</b> from a machine to finish it. The third one comes with a 🔑 <b>golden key</b> that unlocks the next machine… and throws a parade.</p>
+    <p style="color:#c9539a">It is hard on purpose. It is not rigged. Pinky promise. 🤙</p>
+    <button class="bigbtn" id="helpOk">Let's go!</button>`);
+  $('#helpOk').onclick = () => { Sfx.tap(); closeModal(); };
+}
+
+function winModal(v, keyed) {
+  const stars = v.rare ? `<p style="color:#e8a417;font-size:16px">${RARE_LABEL[v.rare]}!</p>` : '';
+  const prog = save.wins[mi];
+  showModal(`
+    <h2>${keyed ? '🔑 KEY GET! 🔑' : '🎉 YOU WIN! 🎉'}</h2>
+    ${stuffySVG(v, keyed, 'prizeShow')}
+    <h2 style="font-size:22px;margin:0">${v.name}</h2>
+    ${stars}
+    <p>${keyed
+      ? `It came with the golden key to <b>${MACHINES[mi + 1] ? MACHINES[mi + 1].name : 'the whole arcade'}</b>!`
+      : `Plushie ${prog} of ${WINS_NEEDED} from ${M.name}. ${prog === WINS_NEEDED - 1 ? 'The next one carries the 🔑!' : 'Keep going!'}`}</p>
+    <div class="rowbtns">
+      ${keyed
+        ? `<button class="bigbtn" id="toParade">🎊 PARADE TIME 🎊</button>`
+        : `<button class="bigbtn" id="again">Play again</button><button class="bigbtn ghost" id="toLobby">Arcade</button>`}
+    </div>`);
+  const again = $('#again'), lob = $('#toLobby'), par = $('#toParade');
+  if (again) again.onclick = () => { Sfx.tap(); closeModal(); };
+  if (lob) lob.onclick = () => { Sfx.tap(); closeModal(); goLobby(); };
+  if (par) par.onclick = () => { Sfx.tap(); closeModal(); startParade(mi === MACHINES.length - 1); };
+}
+
+function finaleModal() {
+  showModal(`<h2>👑 ARCADE MASTER 👑</h2>
+    <div style="font-size:52px;line-height:1.2">🧸🐰🦕<br>🦋🍬🦄</div>
+    <p>You cleared <b>every single machine</b>. The plushies have elected you mayor of the arcade.</p>
+    <p><span class="stat">🧸 ${totalGot()} plushies</span><span class="stat">🌈 ${uniqueGot()}/48 kinds</span><span class="stat">🕹️ ${save.tries} tries</span></p>
+    <div class="rowbtns"><button class="bigbtn" id="fin1">Back to the arcade</button>
+    <button class="bigbtn alt" id="fin2">📖 See my album</button></div>`);
+  $('#fin1').onclick = () => { Sfx.tap(); closeModal(); goLobby(); };
+  $('#fin2').onclick = () => { Sfx.tap(); closeModal(); goLobby(); openAlbum(); };
+}
+
+/* ============================================================
+   10. ROUND RESOLUTION
+   ============================================================ */
+function updateDots() {
+  const w = save.wins[mi];
+  $('#mDots').innerHTML = Array.from({ length: WINS_NEEDED }, (_, k) =>
+    `<i class="${k < w ? 'f' : ''}">${k === WINS_NEEDED - 1 ? '🔑' : '🩷'}</i>`).join('');
+}
+
+function finishRound(won, v) {
+  if (!won) {
+    Sfx.lose();
+    showBanner('YOU LOSE', 'no plushie this time 💔', 'lose-txt', 1250);
+    buzz(70);
+    return;   // nothing left the pit, so nothing to restock — keep the pile the player is digging
+  }
+  const wasKeyRound = save.wins[mi] === WINS_NEEDED - 1;
+  save.got[v.id] = (save.got[v.id] || 0) + 1;
+  save.wins[mi] = Math.min(WINS_NEEDED, save.wins[mi] + 1);
+  const complete = save.wins[mi] >= WINS_NEEDED && wasKeyRound;
+  persist(); updateDots();
+
+  if (complete) {
+    grantUnlock();
+    Sfx.key(); buzz([40, 40, 40, 40, 120]);
+    showBanner('YOU WIN!', '🔑 it has the key!! 🔑', 'win-txt', 1500);
+    confetti(60, innerWidth / 2, innerHeight * .4, 1.25);
+    setTimeout(() => confetti(40, innerWidth * .2, innerHeight * .5), 350);
+    setTimeout(() => confetti(40, innerWidth * .8, innerHeight * .5), 620);
+    setTimeout(() => winModal(v, true), 1450);
+  } else {
+    Sfx.win(); buzz([25, 40, 25]);
+    showBanner('YOU WIN!', v.name + ' is yours!', 'win-txt', 1200);
+    confetti(34);
+    setTimeout(() => winModal(v, false), 1150);
+  }
+  setTimeout(() => { setKeyed(save.wins[mi] === WINS_NEEDED - 1); restock(); }, 700);
+}
+
+/* ============================================================
+   11. PARADE
+   ============================================================ */
+function floatSVG(v, i) {
+  const hues = ['#ff8fbe', '#7fd8ff', '#a4f0a0', '#ffd447', '#c9a4ff', '#ff9a7a'];
+  const h = hues[i % hues.length], h2 = hues[(i + 3) % hues.length];
+  return `<svg viewBox="-64 -104 128 152" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;overflow:visible">
+    <g class="rider"><g transform="translate(0,-46) scale(.74)">${stuffyArt(v)}</g></g>
+    <path d="M-52 -8 q52 -22 104 0 l-6 18 q-46 -18 -92 0 z" fill="${h2}" opacity=".9"/>
+    <path d="M-48 6 h96 l-8 26 h-80 z" fill="${h}"/>
+    <path d="M-48 6 h96 l-2 7 h-92 z" fill="#fff" opacity=".55"/>
+    <path d="M-44 -8 l0 14 M-22 -14 l0 20 M0 -16 l0 22 M22 -14 l0 20 M44 -8 l0 14" stroke="#fff" stroke-width="2.4" opacity=".5"/>
+    ${[-36, -12, 12, 36].map((x, k) => `<path d="M${x - 9} -10 h18 l-9 14 z" fill="${k % 2 ? '#fff' : h2}"/>`).join('')}
+    <circle cx="-28" cy="38" r="12" fill="#5b3a52"/><circle cx="-28" cy="38" r="5" fill="#fff"/>
+    <circle cx="28" cy="38" r="12" fill="#5b3a52"/><circle cx="28" cy="38" r="5" fill="#fff"/>
+    <rect x="-42" y="14" width="84" height="15" rx="7" fill="#fff" opacity=".9"/>
+    <text x="0" y="25.5" text-anchor="middle" font-size="11" font-weight="900" fill="#b8437f"
+      textLength="${Math.min(78, v.name.length * 6.6)}" lengthAdjust="spacingAndGlyphs">${v.name}</text>
+  </svg>`;
+}
+
+let paradeRaf = 0, paradeItems = [], paradeX = 0;
+function paradeLoop() {
+  const road = $('#paradeRoad');
+  const W = road.clientWidth || innerWidth;
+  const fw = paradeItems[0] ? (paradeItems[0].offsetWidth || 120) : 120;
+  const spacing = fw * 1.45;
+  const total = Math.max(paradeItems.length * spacing, W + fw + 90);
+  let last = performance.now();
+  const tick = now => {
+    const dt = Math.min(.05, (now - last) / 1000); last = now;
+    paradeX += 145 * dt;
+    paradeItems.forEach((el, i) => {
+      let x = W + 30 - ((paradeX + i * spacing) % total);
+      el.style.transform = `translateX(${x.toFixed(1)}px)`;
+    });
+    paradeRaf = requestAnimationFrame(tick);
+  };
+  cancelAnimationFrame(paradeRaf);
+  paradeRaf = requestAnimationFrame(tick);
+}
+
+function startParade(finale) {
+  const road = $('#paradeRoad');
+  $$('.float', road).forEach(e => e.remove());
+  const list = collectionList();
+  const show = list.slice(-30);
+  paradeItems = show.map((v, i) => {
+    const d = document.createElement('div');
+    d.className = 'float';
+    d.innerHTML = floatSVG(v, i);
+    road.appendChild(d);
+    return d;
+  });
+  $('#paradeSky').innerHTML = `
+    ${[[18, .9, 0], [46, .6, -11], [30, 1.15, -21], [58, .75, -6]].map(([top, sc, delay]) =>
+      `<div class="pcloud" style="top:${top}%;transform-origin:0 0;zoom:${sc};animation-delay:${delay}s"></div>`).join('')}
+    <svg class="bunting" viewBox="0 0 1200 52" preserveAspectRatio="none">
+    <path d="M0 8 Q300 44 600 8 Q900 44 1200 8" stroke="#fff" stroke-width="4" fill="none"/>
+    ${Array.from({ length: 24 }, (_, i) => {
+      const c = ['#ff8fbe', '#ffd447', '#7fd8ff', '#a4f0a0', '#c9a4ff'][i % 5];
+      const x = 25 + i * 50, t = (x % 600) / 600;
+      const y = (1 - t) * (1 - t) * 8 + 2 * (1 - t) * t * 44 + t * t * 8;   // sag of the swag
+      return `<path d="M${x - 14} ${y} h28 l-14 25 z" fill="${c}" opacity=".95"/>`;
+    }).join('')}</svg>`;
+  paradeX = (road.clientWidth || innerWidth) * .8;
+  paradeLoop();
+  const nextM = finale ? null : (MACHINES[mi + 1] || null);
+  $('#paradeSub').innerHTML = finale
+    ? `every cutie you rescued 💖 <b>${list.length}</b> plushies strong`
+    : (nextM ? `🔓 <b>${nextM.name}</b> is unlocked!<br>here come your <b>${list.length}</b> plushies!` : `your <b>${list.length}</b> plushies say thank you!`);
+  $('#paradeTitle').innerHTML = finale ? '👑 GRAND PARADE 👑' : '🎉 PARADE! 🎉';
+  $('#parade').classList.add('on');
+  Sfx.fanfare();
+  buzz([40, 60, 40, 60, 40]);
+  let bursts = 0;
+  const iv = setInterval(() => {
+    confetti(18, rand(0, innerWidth), rand(innerHeight * .2, innerHeight * .5), .8);
+    if (++bursts > 7) clearInterval(iv);
+  }, 700);
+  $('#parade').dataset.finale = finale ? '1' : '';
+}
+
+function endParade() {
+  $('#parade').classList.remove('on');
+  const finale = $('#parade').dataset.finale === '1';
+  cancelAnimationFrame(paradeRaf); paradeRaf = 0; paradeItems = [];
+  $$('#paradeRoad .float').forEach(e => e.remove());
+  if (finale) { finaleModal(); return; }
+  goLobby();
+  setTimeout(() => {
+    const card = $(`#machineGrid .card[data-i="${save.unlocked - 1}"]`);
+    if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 120);
+}
+
+/* unlock happens the moment the key is won, the parade just celebrates it */
+function grantUnlock() {
+  if (save.wins[mi] < WINS_NEEDED) return;
+  if (mi + 1 < MACHINES.length && save.unlocked < mi + 2) {
+    save.unlocked = mi + 2; persist();
+  } else if (mi === MACHINES.length - 1 && !save.done) {
+    save.done = true; persist();
+  }
+}
+
+/* ============================================================
+   12. SCREENS
+   ============================================================ */
+function show(id) {
+  $$('.screen').forEach(s => s.classList.toggle('on', s.id === id));
+}
+function goLobby() {
+  running = false;
+  cancelAnimationFrame(raf); raf = 0; lastT = 0;
+  renderLobby();
+  show('lobby');
+}
+function openMachine(i) {
+  mi = i; M = MACHINES[i];
+  const cab = $('#cab');
+  cab.innerHTML = buildCabinet(M);
+  pitG = $('#pit', cab);
+  const gan = $('#gantry', cab);
+  gan.innerHTML = `<path class="cable" d="" stroke="#9fadc7" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+    <g class="car"><rect x="-24" y="-14" width="48" height="28" rx="9" fill="#dbe3f2" stroke="#9fadc7" stroke-width="3"/>
+    <circle cx="-12" cy="0" r="4.2" fill="#ff8fbe"/><circle cx="12" cy="0" r="4.2" fill="#7fd8ff"/>
+    <rect x="-8" y="-20" width="16" height="8" rx="4" fill="#9fadc7"/></g>`;
+  cableEl = $('.cable', gan); carriageG = gan;
+
+  bodies = []; nextBid = 1; lastOrder = '';
+  clawG = buildClaw();
+  pitG.appendChild(clawG);
+  prongs = { l: $('.p0', clawG), r: $('.p1', clawG), b: $('.p2', clawG) };
+  spawnPit(true);
+
+  claw.x = 0; claw.z = 78; claw.y = REST_Y; claw.open = 1;
+  claw.state = 'idle'; claw.holding = null; claw.outcome = null; claw.t = 0;
+  input.x = input.y = 0; setKnob(0, 0);
+
+  $('#mName').textContent = M.name;
+  updateDots();
+  $('#btnDrop').disabled = false;
+  show('game');
+  running = true; lastT = 0;
+  cancelAnimationFrame(raf); raf = requestAnimationFrame(loop);
+
+  if (!save.seenHelp) { save.seenHelp = true; persist(); setTimeout(helpModal, 320); }
+  else toast(`${M.emoji} ${M.name} — ${save.wins[mi]}/${WINS_NEEDED}`, 1600);
+}
+
+function openAlbum() { renderAlbum(); $('#album').classList.add('on'); }
+
+/* ============================================================
+   13. CONTROLS
+   ============================================================ */
+const JOY_R = 40;
+function buildJoystick() {
+  $('#joy').innerHTML = `
+    <circle cx="70" cy="70" r="60" fill="#ffd9ec"/>
+    <circle cx="70" cy="70" r="60" fill="none" stroke="#f3a8cd" stroke-width="5"/>
+    <circle cx="70" cy="70" r="46" fill="#fff3fa"/>
+    <g fill="#f3a8cd">
+      <path d="M70 16 l9 12 h-18 z"/><path d="M70 124 l9 -12 h-18 z"/>
+      <path d="M16 70 l12 9 v-18 z"/><path d="M124 70 l-12 9 v-18 z"/>
+    </g>
+    <g class="knob">
+      <ellipse cx="70" cy="86" rx="22" ry="9" fill="#c9377f" opacity=".28"/>
+      <rect x="62" y="52" width="16" height="34" rx="8" fill="#e8e8f2"/>
+      <circle cx="70" cy="52" r="26" fill="#ff5c9d"/>
+      <circle cx="70" cy="52" r="26" fill="none" stroke="#d22f74" stroke-width="3"/>
+      <ellipse cx="61" cy="42" rx="9" ry="6" fill="#fff" opacity=".6" transform="rotate(-25 61 42)"/>
+      <circle cx="63" cy="50" r="3.2" fill="#5b3a52"/><circle cx="77" cy="50" r="3.2" fill="#5b3a52"/>
+      <path d="M66 58 q4 4 8 0" stroke="#5b3a52" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    </g>`;
+}
+function setKnob(nx, ny) {
+  const k = $('.knob', $('#joy'));
+  if (k) k.setAttribute('transform', `translate(${(nx * 15).toFixed(1)},${(ny * 13).toFixed(1)}) rotate(${(nx * 7).toFixed(1)} 70 86)`);
+}
+function setInput(nx, ny) {
+  const m = Math.hypot(nx, ny);
+  if (m > 1) { nx /= m; ny /= m; }
+  input.x = Math.abs(nx) < .18 ? 0 : nx;
+  input.y = Math.abs(ny) < .18 ? 0 : ny;
+  setKnob(input.x, input.y);
+}
+function wireJoystick() {
+  const el = $('#joy');
+  let active = false;
+  const at = e => {
+    const r = el.getBoundingClientRect();
+    const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+    const scale = r.width / 140;
+    setInput((e.clientX - cx) / (JOY_R * scale), (e.clientY - cy) / (JOY_R * scale));
+  };
+  el.addEventListener('pointerdown', e => { active = true; el.setPointerCapture(e.pointerId); at(e); Sfx.unlockAudio(); e.preventDefault(); });
+  el.addEventListener('pointermove', e => { if (active) at(e); });
+  const up = () => { active = false; setInput(0, 0); };
+  el.addEventListener('pointerup', up);
+  el.addEventListener('pointercancel', up);
+  el.addEventListener('lostpointercapture', up);
+}
+const keyMap = { ArrowLeft: 'l', KeyA: 'l', ArrowRight: 'r', KeyD: 'r', ArrowUp: 'u', KeyW: 'u', ArrowDown: 'd', KeyS: 'd' };
+const held = {};
+function applyKeys() {
+  if (!$('#game').classList.contains('on')) return;
+  setInput((held.r ? 1 : 0) - (held.l ? 1 : 0), (held.d ? 1 : 0) - (held.u ? 1 : 0));
+}
+addEventListener('keydown', e => {
+  Sfx.unlockAudio();
+  if ($('#modal').classList.contains('on') || $('#album').classList.contains('on')) {
+    if (e.code === 'Escape') { closeModal(); $('#album').classList.remove('on'); }
+    return;
+  }
+  if ($('#parade').classList.contains('on')) {
+    if (e.code === 'Space' || e.code === 'Enter') { e.preventDefault(); endParade(); }
+    return;
+  }
+  const k = keyMap[e.code];
+  if (k) { held[k] = true; applyKeys(); e.preventDefault(); return; }
+  if ((e.code === 'Space' || e.code === 'Enter') && $('#game').classList.contains('on')) {
+    e.preventDefault();
+    const btn = $('#btnDrop');
+    btn.classList.add('pressed'); setTimeout(() => btn.classList.remove('pressed'), 130);
+    dropClaw();
+  }
+  if (e.code === 'Escape' && $('#game').classList.contains('on')) goLobby();
+});
+addEventListener('keyup', e => { const k = keyMap[e.code]; if (k) { held[k] = false; applyKeys(); } });
+addEventListener('blur', () => { held.l = held.r = held.u = held.d = false; setInput(0, 0); });
+
+/* ============================================================
+   14. BOOT
+   ============================================================ */
+function sprinkleBackdrop() {
+  const bg = $('#bg'), em = ['🧸', '🐰', '🦕', '🦋', '🍬', '🦄', '💖', '⭐', '🎀', '✨'];
+  for (let i = 0; i < 14; i++) {
+    const s = document.createElement('div');
+    s.className = 'sparkle';
+    s.textContent = em[i % em.length];
+    s.style.left = rand(2, 94).toFixed(1) + '%';
+    s.style.top = rand(4, 92).toFixed(1) + '%';
+    s.style.fontSize = rand(14, 34).toFixed(0) + 'px';
+    s.style.animationDelay = (-rand(0, 9)).toFixed(1) + 's';
+    s.style.animationDuration = rand(7, 13).toFixed(1) + 's';
+    bg.appendChild(s);
+  }
+}
+function setMuteUI() {
+  const icon = save.muted ? '🔇' : '🔊';
+  $('#btnMute').textContent = icon; $('#btnMute2').textContent = icon;
+  Sfx.setMuted(save.muted);
+}
+
+function boot() {
+  loadSave();
+  sprinkleBackdrop();
+  buildJoystick();
+  wireJoystick();
+  renderLobby();
+  setMuteUI();
+
+  $('#btnDrop').addEventListener('pointerdown', e => { e.preventDefault(); Sfx.unlockAudio(); dropClaw(); });
+  $('#btnBack').onclick = () => { Sfx.tap(); goLobby(); };
+  $('#btnHelp').onclick = () => { Sfx.tap(); helpModal(); };
+  $('#btnAlbum').onclick = () => { Sfx.tap(); openAlbum(); };
+  $('#btnAlbum2').onclick = () => { Sfx.tap(); openAlbum(); };
+  $('#albumClose').onclick = () => { Sfx.tap(); $('#album').classList.remove('on'); };
+  $('#btnReset').onclick = () => {
+    showModal(`<h2>Start over? 🥺</h2><p>This wipes every plushie, key and unlocked machine. Forever!</p>
+      <div class="rowbtns"><button class="bigbtn ghost" id="rNo">No, keep them</button>
+      <button class="bigbtn" id="rYes">Yes, reset</button></div>`);
+    $('#rNo').onclick = () => { Sfx.tap(); closeModal(); };
+    $('#rYes').onclick = () => {
+      Sfx.bonk(); save = freshSave(); persist();
+      closeModal(); $('#album').classList.remove('on'); setMuteUI(); goLobby();
+      toast('fresh arcade, fresh luck ✨');
+    };
+  };
+  const toggleMute = () => { save.muted = !save.muted; persist(); setMuteUI(); if (!save.muted) { Sfx.unlockAudio(); Sfx.tap(); } };
+  $('#btnMute').onclick = toggleMute;
+  $('#btnMute2').onclick = toggleMute;
+  $('#paradeBtn').onclick = () => { Sfx.tap(); endParade(); };
+  $('#banner').addEventListener('pointerdown', () => $('#banner').classList.remove('on'));
+
+  // audio needs a gesture on basically every platform
+  const kick = () => {
+    Sfx.unlockAudio(); Sfx.music();
+    document.removeEventListener('pointerdown', kick);
+    document.removeEventListener('keydown', kick);
+  };
+  document.addEventListener('pointerdown', kick);
+  document.addEventListener('keydown', kick);   // desktop players may never tap
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { Sfx.musicOff(); }
+    else if (!save.muted) { Sfx.music(); }
+  });
+}
+boot();
+</script>
+</body>
+</html>
