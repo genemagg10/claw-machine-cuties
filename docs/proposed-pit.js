@@ -14,23 +14,32 @@ function pitMock(mode, skin) {
   const proposed = mode === 'proposed';
   const wallFill = proposed ? cream : s.light;
   const floorFill = proposed ? creamD : s.glass;
-  // pile layout: [x, y, z, variantIndex, prop] — y stacks the pile UP,
-  // which is what fills the box and gives the claw something to reach into
+  // pile layout: [x, y, z, colourIndex, buildIndex]
+  const BUILDS = [
+    { body:'sit',  ears:'round',face:'sparkle',dress:'none' },
+    { body:'loaf', ears:'none', face:'happy',  dress:'none' },
+    { body:'ball', ears:'none', face:'oh',     dress:'mushroom' },
+    { body:'stand',ears:'tuft', face:'tongue', dress:'wings' },
+    { body:'pear', ears:'side', face:'wink',   dress:'hood' },
+    { body:'curl', ears:'flop', face:'sleep',  dress:'none' },
+    { body:'loaf', ears:'tall', face:'sparkle',dress:'bubble' },
+    { body:'pear', ears:'round',face:'tongue', dress:'shell' },
+    { body:'sit',  ears:'tuft', face:'happy',  dress:'bloom' },
+    { body:'ball', ears:'side', face:'sparkle',dress:'pumpkin' }
+  ];
+  const LEGEND = { body:'stand', ears:'round', face:'happy', dress:'crown' };
+
   const pile = proposed
-    ? [ // back row, deep
-        [-155, 24,132,2,'none'],[-78, 24,138,5,'leaf'],[  4, 24,128,4,'none'],[ 84, 24,140,6,'none'],[158, 24,130,1,'none'],
-        [-120, 26, 96,4,'none'],[-40, 26,100,6,'flowers'],[ 44, 26, 92,0,'none'],[124, 26, 98,3,'none'],
-        // middle band, sitting on the back row
-        [-140, 78,118,3,'none'],[-58, 80,124,1,'mushroom'],[ 26, 78,112,5,'none'],[108, 80,120,2,'none'],
-        [-100,132,104,6,'none'],[ -8,134,108,0,'strawberry'],[ 78,132, 98,4,'none'],
-        // the crown of the pile
-        [ -50,182,110,7,'crown'],[ 34,178,116,3,'none'],
-        // front row, closest to the glass
-        [-150, 24, 18,0,'strawberry'],[-72, 24, 14,3,'none'],[ 10, 24, 26,1,'mushroom'],[ 92, 24, 16,5,'none'],[164, 24, 30,2,'none'],
-        [-112, 76, 22,4,'flowers'],[ -26, 78, 20,6,'none'],[ 58, 76, 24,0,'none'],[142, 78, 28,3,'leaf'] ]
-    : [ [-150,22, 20,0,'none'],[-70,22, 20,3,'none'],[ 10,22, 20,1,'none'],[ 92,22, 20,5,'none'],[158,22, 20,2,'none'],
-        [-118,22, 72,4,'none'],[-38,22, 72,6,'none'],[ 46,22, 72,0,'none'],[126,22, 72,3,'none'],
-        [-152,22,120,2,'none'],[-72,22,120,5,'none'],[  8,22,120,4,'none'],[ 86,22,120,6,'none'],[156,22,120,1,'none'] ];
+    ? [ [-156, 24,134,2,1],[-78, 24,140,5,5],[  4, 24,130,4,0],[ 86, 24,142,6,8],[158, 24,132,1,2],
+        [-122, 26, 98,4,7],[-40, 26,102,6,9],[ 46, 26, 94,0,1],[126, 26,100,3,3],
+        [-142, 80,120,3,0],[-58, 82,126,1,2],[ 26, 80,114,5,6],[110, 82,122,2,5],
+        [-102,136,106,6,8],[ -8,138,110,0,4],[ 80,136,100,4,1],
+        [ -48,188,112,7,-1],[ 36,184,118,3,9],
+        [-152, 24, 18,0,4],[-72, 24, 14,3,1],[ 12, 24, 26,1,3],[ 94, 24, 16,5,6],[166, 24, 30,2,0],
+        [-114, 78, 22,4,9],[ -26, 80, 20,6,5],[ 60, 78, 24,0,7],[144, 80, 28,3,2] ]
+    : [ [-150,22, 20,0,0],[-70,22, 20,3,0],[ 10,22, 20,1,0],[ 92,22, 20,5,0],[158,22, 20,2,0],
+        [-118,22, 72,4,0],[-38,22, 72,6,0],[ 46,22, 72,0,0],[126,22, 72,3,0],
+        [-152,22,120,2,0],[-72,22,120,5,0],[  8,22,120,4,0],[ 86,22,120,6,0],[156,22,120,1,0] ];
 
   // the game's own projection
   const PITZ=150, FLOORY = proposed ? 470 : 500;
@@ -38,13 +47,16 @@ function pitMock(mode, skin) {
   const projX = (x,z) => 320 + x*sOf(z);
   const projY = (y,z) => FLOORY - y*sOf(z) - z*0.60;
   const R = MACHINES[0].roster;
-  const claw = { x: 150, z: 40 };
+  const claw = { x: -66, z: 8 };
 
-  const bodies = pile.map(([x,y,z,vi,prop]) => {
-    const sc = (34/40)*sOf(z)*(proposed?1.5:1.35);
+  const bodies = pile.map(([x,y,z,vi,bi]) => {
+    const legend = bi < 0;
+    const sc = (34/40)*sOf(z)*(proposed?1.25:1.35);
     const px = projX(x,z), py = projY(y,z);
     const art = proposed
-      ? `<g filter="url(#${prop==='crown'?'diecutGold':'diecut'})">${teddySticker(R[vi].c, prop)}${prop==='crown'?legendGarnish():''}</g>`
+      ? `<g filter="url(#diecut2${legend?'Gold':''})">${cutie(legend?LEGEND:BUILDS[bi], R[vi].c)}` +
+        (legend ? [[-50,-40,.6],[48,-28,.46],[-44,36,.42],[46,40,.54]]
+                  .map(q=>sparkleBit(q[0],q[1],q[2],'#ffd447')).join('') : '') + `</g>`
       : stuffyArt(R[vi]);
     const lift = clampP((y - 22) / 170, 0, 1);
     const shadow = proposed
@@ -68,7 +80,7 @@ function pitMock(mode, skin) {
     <ellipse cx="${projX(-166,6)}" cy="${projY(0,6)}" rx="${54*sOf(6)}" ry="${20*sOf(6)}" fill="#4a2840"/>`;
 
   return `<svg viewBox="100 104 440 412" style="width:100%;height:auto;display:block">
-    ${proposed ? stickerDefs() : ''}
+    ${proposed ? cutieDefs() : ''}
     <defs><clipPath id="cl${mode}"><rect x="108" y="112" width="424" height="396" rx="12"/></clipPath></defs>
     <g clip-path="url(#cl${mode})">
       <polygon points="108,118 532,118 473,160 167,160" fill="${wallFill}"/>
@@ -84,9 +96,9 @@ function pitMock(mode, skin) {
             .map((p,i)=>`<circle cx="${p[0]}" cy="${p[1]}" r="${8+(i%3)*3}" fill="${s.trim}" opacity=".55"/>`).join('')}
            <g opacity=".8"><rect x="242" y="302" width="156" height="46" rx="14" fill="${s.trim}" stroke="${s.body}" stroke-width="3"/>
            <text x="320" y="333" text-anchor="middle" font-size="21" font-weight="900" fill="${s.dark}">GRAB ME!</text></g>`}
-      ${aim}
       ${bodies}
       ${chute}
+      ${aim}
     </g>
     <rect x="100" y="104" width="440" height="412" rx="20" fill="none" stroke="${s.trim}" stroke-width="15"/>
     <rect x="100" y="104" width="440" height="412" rx="20" fill="none" stroke="${s.dark}" stroke-width="4"/>
