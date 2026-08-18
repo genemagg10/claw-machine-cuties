@@ -1,0 +1,329 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 816 1056"
+  width="816" height="1056" font-family="'Baloo 2','Nunito',ui-rounded,'SF Pro Rounded','Hiragino Maru Gothic ProN','Comic Sans MS',system-ui,sans-serif">
+<defs>
+  <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
+    <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
+    <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
+  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
+  
+</defs>
+
+<rect width="816" height="1056" fill="#fffaf6"/>
+
+<!-- header band -->
+<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
+<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">The Miss That Feels Good</text>
+<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
+  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">7</text></g>
+<g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
+    <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
+      fill="#fff" letter-spacing="1">PROPOSED</text></g>
+<text x="137.2" y="122" font-size="15" font-weight="700" fill="#a4548a">four out of five drops are a miss — make them the best part</text>
+
+
+  <g>
+    <rect x="40" y="150" width="736" height="124" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
+    <rect x="40" y="150" width="736" height="124" rx="16" fill="#e0287f" opacity=".07"/>
+    
+    <text x="54" y="176" font-size="15.5" font-weight="800" fill="#e0287f">Four out of every five drops are a miss. That is the game.</text>
+    <text x="54" y="198" font-size="13" font-weight="600" fill="#7a3f66">
+      <tspan x="54" dy="0">The grab rates are 48% at the easiest machine and 14% at the hardest, and that is on purpose — a claw</tspan><tspan x="54" dy="17">machine that always wins is not a claw machine. But right now a miss shows a grey banner that says YOU</tspan><tspan x="54" dy="17">LOSE and then nothing happens. The most common thing in the whole game is also the least interesting</tspan><tspan x="54" dy="17">thing in the whole game. That is the bug. Not the difficulty — the silence.</tspan>
+    </text>
+  </g>
+
+  <rect x="40" y="300" width="236" height="292" rx="22" fill="#fff" stroke="#ff9a7a" stroke-width="3"/>
+    <rect x="40" y="300" width="236" height="40" rx="20" fill="#ff9a7a"/>
+    <text x="158" y="327" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">THE SLIP</text>
+  <g transform="translate(158,442)">
+    <g transform="translate(0,-72) scale(.62)"><g transform="scale(1)">
+    <g class="prong" opacity=".85" transform="rotate(-11.7)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="-10.35" cy="34" r="6.12" fill="#d4dcec" stroke="#8fa0c0" stroke-width="2"/></g>
+    <g transform="rotate(19.5)"><path d="M0 2 C-9 15.96 -20 23.1 -23 42" stroke="#c9d4e8" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C-9 15.96 -20 23.1 -23 42" stroke="#8fa0c0" stroke-width="4.08" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="-23" cy="42" r="8.16" fill="#eaf0fb" stroke="#8fa0c0" stroke-width="2"/></g>
+    <g transform="rotate(-19.5)"><path d="M0 2 C9 15.96 20 23.1 23 42" stroke="#c9d4e8" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C9 15.96 20 23.1 23 42" stroke="#8fa0c0" stroke-width="4.08" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="23" cy="42" r="8.16" fill="#eaf0fb" stroke="#8fa0c0" stroke-width="2"/></g>
+    <ellipse cy="-4" rx="25" ry="15" fill="#dfe7f5"/>
+    <ellipse cy="-8" rx="25" ry="15" fill="#f2f6ff"/>
+    <rect x="-11" y="-36" width="22" height="26" rx="7" fill="#c9d4e8"/>
+    <ellipse cx="-7" cy="-9" rx="4.6" ry="5.289999999999999" fill="#553244"/>
+    <circle cx="-8.379999999999999" cy="-11.07" r="1.8399999999999999" fill="#fff"/><ellipse cx="7" cy="-9" rx="4.6" ry="5.289999999999999" fill="#553244"/>
+    <circle cx="5.62" cy="-11.07" r="1.8399999999999999" fill="#fff"/>
+                            <ellipse cy="0" rx="4" ry="5" fill="#553244"/>
+                            <path d="M17 -14 q5 6 0 10 q-5 -4 0 -10 z" fill="#7fd8ff"/><ellipse cx="-13" cy="-3" rx="5" ry="3.2" fill="#ff9ec9" opacity=".48"/><ellipse cx="13" cy="-3" rx="5" ry="3.2" fill="#ff9ec9" opacity=".48"/>
+    <ellipse cx="-9" cy="-13" rx="7" ry="4" fill="#fff" opacity=".85" transform="rotate(-18 -9 -13)"/>
+  </g></g>
+    <g transform="translate(6,42) scale(.72) rotate(24)"><g transform="scale(1,1)">
+    <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#f3ddc7" transform="rotate(-24 -27 16)"/><ellipse cx="36" cy="-22" rx="10" ry="13" fill="#f3ddc7" transform="rotate(52 36 -22)"/>
+    <ellipse cx="-16" cy="36" rx="13" ry="11" fill="#f3ddc7"/>
+    <ellipse cx="16" cy="36" rx="13" ry="11" fill="#f3ddc7"/>
+    <ellipse cx="-16" cy="37" rx="7" ry="5.5" fill="#fffaf3"/>
+    <ellipse cx="16" cy="37" rx="7" ry="5.5" fill="#fffaf3"/>
+    <ellipse cx="0" cy="22" rx="25" ry="21" fill="#fff1e2"/>
+    <ellipse cx="0" cy="25" rx="14" ry="12" fill="#fffaf3" opacity=".75"/>
+    <g transform="scale(1,1)">
+    <circle cx="-25" cy="-27" r="13" fill="#fff1e2"/><circle cx="-25" cy="-27" r="6.6" fill="#fffaf3"/>
+    <circle cx="25" cy="-27" r="13" fill="#fff1e2"/><circle cx="25" cy="-27" r="6.6" fill="#fffaf3"/>
+    <circle cx="0" cy="-8" r="28" fill="#fff1e2"/>
+    <ellipse cx="0" cy="4" rx="15" ry="11.5" fill="#fffaf3"/>
+    <ellipse cx="0" cy="-1" rx="5.4" ry="4.2" fill="#553244"/>
+    <ellipse cx="-20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/><ellipse cx="20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/>
+    <ellipse cx="-11.5" cy="-10" rx="4.6" ry="5.152" fill="#553244"/><circle cx="-12.972" cy="-12.024000000000001" r="1.9319999999999997" fill="#fff"/><circle cx="-10.120000000000001" cy="-8.344" r="0.8739999999999999" fill="#fff" opacity=".85"/><ellipse cx="11.5" cy="-10" rx="4.6" ry="5.152" fill="#553244"/><circle cx="10.028" cy="-12.024000000000001" r="1.9319999999999997" fill="#fff"/><circle cx="12.879999999999999" cy="-8.344" r="0.8739999999999999" fill="#fff" opacity=".85"/><path d="M-8 6 q4 -4 8 0 q4 4 8 0" stroke="#553244" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+              <path d="M-17.5 -19 q6 4 12 0" stroke="#553244" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M5.5 -19 q6 4 12 0" stroke="#553244" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+              <path d="M23 -18 q5 7 0 11 q-5 -4 0 -11 z" fill="#7fd8ff"/>
+    <g transform="translate(20,-30) rotate(-16) scale(0.72)">
+    <path d="M0 0 L-16 -10 Q-21 0 -16 10 Z" fill="#7fe0c4"/>
+    <path d="M0 0 L16 -10 Q21 0 16 10 Z" fill="#7fe0c4"/>
+    <path d="M0 0 L-16 -10 Q-12 -3 -7 0 Z" fill="#3fbfa0" opacity=".5"/>
+    <path d="M0 0 L16 -10 Q12 -3 7 0 Z" fill="#3fbfa0" opacity=".5"/>
+    <circle r="5.2" fill="#3fbfa0"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#fff" opacity=".65"/>
+  </g>
+  </g>
+  </g></g>
+    <path d="M-34 -18 q-10 26 -4 48 M-46 -8 q-8 22 -2 40" stroke="#ff9a7a" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
+    <g>
+    <path d="M-58 0 l24 18 l-6 -18 z" fill="#ffd9ec"/>
+    <rect x="-108" y="-34" width="96" height="34" rx="15.454545454545453" fill="#ffd9ec"/>
+    <text x="-60" y="-11.600000000000001" text-anchor="middle"
+      font-size="15" font-weight="800" fill="#e0287f">byeee!</text></g>
+  </g>
+  <text x="158" y="522" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7a3f66"><tspan x="158" dy="0">It slipped. Instead of a grey</tspan><tspan x="158" dy="17">banner, the cutie gives a tiny</tspan><tspan x="158" dy="17">apologetic wave on the way down.</tspan><tspan x="158" dy="17">Cute heartbreak.</tspan></text>
+
+  <rect x="290" y="300" width="236" height="292" rx="22" fill="#fff" stroke="#7fe0c4" stroke-width="3"/>
+    <rect x="290" y="300" width="236" height="40" rx="20" fill="#7fe0c4"/>
+    <text x="408" y="327" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">THE PILE MOVED</text>
+  <g transform="translate(408,436)">
+    <rect x="-96" y="-58" width="88" height="96" rx="12" fill="#ffeef7"/>
+    <rect x="8" y="-58" width="88" height="96" rx="12" fill="#e6fff6"/>
+    <text x="-52" y="-66" text-anchor="middle" font-size="11" font-weight="800" fill="#a4548a">before</text>
+    <text x="52" y="-66" text-anchor="middle" font-size="11" font-weight="800" fill="#7fe0c4">after</text>
+    <g transform="translate(-70,16) scale(.30)"><g>
+    <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#e0a96c" transform="rotate(-24 -27 16)"/>
+    <ellipse cx="27" cy="16" rx="11" ry="9" fill="#e0a96c" transform="rotate(24 27 16)"/>
+    <ellipse cx="-16" cy="36" rx="13" ry="11" fill="#e0a96c"/>
+    <ellipse cx="16" cy="36" rx="13" ry="11" fill="#e0a96c"/>
+    <ellipse cx="-16" cy="37" rx="7" ry="5.5" fill="#ffe6c8"/>
+    <ellipse cx="16" cy="37" rx="7" ry="5.5" fill="#ffe6c8"/>
+    <ellipse cx="0" cy="22" rx="25" ry="21" fill="#f0c08a"/>
+    <ellipse cx="0" cy="25" rx="14" ry="12" fill="#ffe6c8" opacity=".75"/>
+    <circle cx="-25" cy="-27" r="13" fill="#f0c08a"/><circle cx="-25" cy="-27" r="6.6" fill="#ffe6c8"/>
+    <circle cx="25" cy="-27" r="13" fill="#f0c08a"/><circle cx="25" cy="-27" r="6.6" fill="#ffe6c8"/>
+    <circle cx="0" cy="-8" r="28" fill="#f0c08a"/>
+    <ellipse cx="0" cy="4" rx="15" ry="11.5" fill="#ffe6c8"/>
+    <ellipse cx="0" cy="-1" rx="5.4" ry="4.2" fill="#553244"/>
+    <path d="M0 3 v3.5 M0 6.5 q-5 4.5 -8.5 .5 M0 6.5 q5 4.5 8.5 .5" stroke="#553244" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="-13.1" cy="-13.2" r="2.1" fill="#fff"/><circle cx="-10" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/><ellipse cx="11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="9.9" cy="-13.2" r="2.1" fill="#fff"/><circle cx="13" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/>
+    <ellipse cx="-20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/><ellipse cx="20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/>
+    <g transform="translate(20,-30) rotate(-16) scale(0.72)">
+    <path d="M0 0 L-16 -10 Q-21 0 -16 10 Z" fill="#ff87b8"/>
+    <path d="M0 0 L16 -10 Q21 0 16 10 Z" fill="#ff87b8"/>
+    <path d="M0 0 L-16 -10 Q-12 -3 -7 0 Z" fill="#e4568f" opacity=".5"/>
+    <path d="M0 0 L16 -10 Q12 -3 7 0 Z" fill="#e4568f" opacity=".5"/>
+    <circle r="5.2" fill="#e4568f"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#fff" opacity=".65"/>
+  </g>
+  </g></g>
+    <g transform="translate(-40,20) scale(.30)"><g>
+    <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#a06b46" transform="rotate(-24 -27 16)"/>
+    <ellipse cx="27" cy="16" rx="11" ry="9" fill="#a06b46" transform="rotate(24 27 16)"/>
+    <ellipse cx="-16" cy="36" rx="13" ry="11" fill="#a06b46"/>
+    <ellipse cx="16" cy="36" rx="13" ry="11" fill="#a06b46"/>
+    <ellipse cx="-16" cy="37" rx="7" ry="5.5" fill="#e8c9ab"/>
+    <ellipse cx="16" cy="37" rx="7" ry="5.5" fill="#e8c9ab"/>
+    <ellipse cx="0" cy="22" rx="25" ry="21" fill="#b98058"/>
+    <ellipse cx="0" cy="25" rx="14" ry="12" fill="#e8c9ab" opacity=".75"/>
+    <circle cx="-25" cy="-27" r="13" fill="#b98058"/><circle cx="-25" cy="-27" r="6.6" fill="#e8c9ab"/>
+    <circle cx="25" cy="-27" r="13" fill="#b98058"/><circle cx="25" cy="-27" r="6.6" fill="#e8c9ab"/>
+    <circle cx="0" cy="-8" r="28" fill="#b98058"/>
+    <ellipse cx="0" cy="4" rx="15" ry="11.5" fill="#e8c9ab"/>
+    <ellipse cx="0" cy="-1" rx="5.4" ry="4.2" fill="#553244"/>
+    <path d="M0 3 v3.5 M0 6.5 q-5 4.5 -8.5 .5 M0 6.5 q5 4.5 8.5 .5" stroke="#553244" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="-13.1" cy="-13.2" r="2.1" fill="#fff"/><circle cx="-10" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/><ellipse cx="11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="9.9" cy="-13.2" r="2.1" fill="#fff"/><circle cx="13" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/>
+    <ellipse cx="-20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/><ellipse cx="20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/>
+    <g transform="translate(20,-30) rotate(-16) scale(0.72)">
+    <path d="M0 0 L-16 -10 Q-21 0 -16 10 Z" fill="#c9a4ff"/>
+    <path d="M0 0 L16 -10 Q21 0 16 10 Z" fill="#c9a4ff"/>
+    <path d="M0 0 L-16 -10 Q-12 -3 -7 0 Z" fill="#9a6ded" opacity=".5"/>
+    <path d="M0 0 L16 -10 Q12 -3 7 0 Z" fill="#9a6ded" opacity=".5"/>
+    <circle r="5.2" fill="#9a6ded"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#fff" opacity=".65"/>
+  </g>
+  </g></g>
+    <g transform="translate(-56,-10) scale(.26)"><g>
+    <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#dcd0ba" transform="rotate(-24 -27 16)"/>
+    <ellipse cx="27" cy="16" rx="11" ry="9" fill="#dcd0ba" transform="rotate(24 27 16)"/>
+    <ellipse cx="-16" cy="36" rx="13" ry="11" fill="#dcd0ba"/>
+    <ellipse cx="16" cy="36" rx="13" ry="11" fill="#dcd0ba"/>
+    <ellipse cx="-16" cy="37" rx="7" ry="5.5" fill="#fffaf0"/>
+    <ellipse cx="16" cy="37" rx="7" ry="5.5" fill="#fffaf0"/>
+    <ellipse cx="0" cy="22" rx="25" ry="21" fill="#efe4d2"/>
+    <ellipse cx="0" cy="25" rx="14" ry="12" fill="#fffaf0" opacity=".75"/>
+    <circle cx="-25" cy="-27" r="13" fill="#efe4d2"/><circle cx="-25" cy="-27" r="6.6" fill="#fffaf0"/>
+    <circle cx="25" cy="-27" r="13" fill="#efe4d2"/><circle cx="25" cy="-27" r="6.6" fill="#fffaf0"/>
+    <circle cx="0" cy="-8" r="28" fill="#efe4d2"/>
+    <ellipse cx="0" cy="4" rx="15" ry="11.5" fill="#fffaf0"/>
+    <ellipse cx="0" cy="-1" rx="5.4" ry="4.2" fill="#553244"/>
+    <path d="M0 3 v3.5 M0 6.5 q-5 4.5 -8.5 .5 M0 6.5 q5 4.5 8.5 .5" stroke="#553244" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="-13.1" cy="-13.2" r="2.1" fill="#fff"/><circle cx="-10" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/><ellipse cx="11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="9.9" cy="-13.2" r="2.1" fill="#fff"/><circle cx="13" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/>
+    <ellipse cx="-20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/><ellipse cx="20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/>
+    <g transform="translate(20,-30) rotate(-16) scale(0.72)">
+    <path d="M0 0 L-16 -10 Q-21 0 -16 10 Z" fill="#ff4d6d"/>
+    <path d="M0 0 L16 -10 Q21 0 16 10 Z" fill="#ff4d6d"/>
+    <path d="M0 0 L-16 -10 Q-12 -3 -7 0 Z" fill="#c81f45" opacity=".5"/>
+    <path d="M0 0 L16 -10 Q12 -3 7 0 Z" fill="#c81f45" opacity=".5"/>
+    <circle r="5.2" fill="#c81f45"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#fff" opacity=".65"/>
+  </g>
+  </g></g>
+    <g transform="translate(30,22) scale(.30)"><g>
+    <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#e0a96c" transform="rotate(-24 -27 16)"/>
+    <ellipse cx="27" cy="16" rx="11" ry="9" fill="#e0a96c" transform="rotate(24 27 16)"/>
+    <ellipse cx="-16" cy="36" rx="13" ry="11" fill="#e0a96c"/>
+    <ellipse cx="16" cy="36" rx="13" ry="11" fill="#e0a96c"/>
+    <ellipse cx="-16" cy="37" rx="7" ry="5.5" fill="#ffe6c8"/>
+    <ellipse cx="16" cy="37" rx="7" ry="5.5" fill="#ffe6c8"/>
+    <ellipse cx="0" cy="22" rx="25" ry="21" fill="#f0c08a"/>
+    <ellipse cx="0" cy="25" rx="14" ry="12" fill="#ffe6c8" opacity=".75"/>
+    <circle cx="-25" cy="-27" r="13" fill="#f0c08a"/><circle cx="-25" cy="-27" r="6.6" fill="#ffe6c8"/>
+    <circle cx="25" cy="-27" r="13" fill="#f0c08a"/><circle cx="25" cy="-27" r="6.6" fill="#ffe6c8"/>
+    <circle cx="0" cy="-8" r="28" fill="#f0c08a"/>
+    <ellipse cx="0" cy="4" rx="15" ry="11.5" fill="#ffe6c8"/>
+    <ellipse cx="0" cy="-1" rx="5.4" ry="4.2" fill="#553244"/>
+    <path d="M0 3 v3.5 M0 6.5 q-5 4.5 -8.5 .5 M0 6.5 q5 4.5 8.5 .5" stroke="#553244" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="-13.1" cy="-13.2" r="2.1" fill="#fff"/><circle cx="-10" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/><ellipse cx="11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="9.9" cy="-13.2" r="2.1" fill="#fff"/><circle cx="13" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/>
+    <ellipse cx="-20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/><ellipse cx="20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/>
+    <g transform="translate(20,-30) rotate(-16) scale(0.72)">
+    <path d="M0 0 L-16 -10 Q-21 0 -16 10 Z" fill="#ff87b8"/>
+    <path d="M0 0 L16 -10 Q21 0 16 10 Z" fill="#ff87b8"/>
+    <path d="M0 0 L-16 -10 Q-12 -3 -7 0 Z" fill="#e4568f" opacity=".5"/>
+    <path d="M0 0 L16 -10 Q12 -3 7 0 Z" fill="#e4568f" opacity=".5"/>
+    <circle r="5.2" fill="#e4568f"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#fff" opacity=".65"/>
+  </g>
+  </g></g>
+    <g transform="translate(66,24) scale(.30)"><g>
+    <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#a06b46" transform="rotate(-24 -27 16)"/>
+    <ellipse cx="27" cy="16" rx="11" ry="9" fill="#a06b46" transform="rotate(24 27 16)"/>
+    <ellipse cx="-16" cy="36" rx="13" ry="11" fill="#a06b46"/>
+    <ellipse cx="16" cy="36" rx="13" ry="11" fill="#a06b46"/>
+    <ellipse cx="-16" cy="37" rx="7" ry="5.5" fill="#e8c9ab"/>
+    <ellipse cx="16" cy="37" rx="7" ry="5.5" fill="#e8c9ab"/>
+    <ellipse cx="0" cy="22" rx="25" ry="21" fill="#b98058"/>
+    <ellipse cx="0" cy="25" rx="14" ry="12" fill="#e8c9ab" opacity=".75"/>
+    <circle cx="-25" cy="-27" r="13" fill="#b98058"/><circle cx="-25" cy="-27" r="6.6" fill="#e8c9ab"/>
+    <circle cx="25" cy="-27" r="13" fill="#b98058"/><circle cx="25" cy="-27" r="6.6" fill="#e8c9ab"/>
+    <circle cx="0" cy="-8" r="28" fill="#b98058"/>
+    <ellipse cx="0" cy="4" rx="15" ry="11.5" fill="#e8c9ab"/>
+    <ellipse cx="0" cy="-1" rx="5.4" ry="4.2" fill="#553244"/>
+    <path d="M0 3 v3.5 M0 6.5 q-5 4.5 -8.5 .5 M0 6.5 q5 4.5 8.5 .5" stroke="#553244" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="-13.1" cy="-13.2" r="2.1" fill="#fff"/><circle cx="-10" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/><ellipse cx="11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="9.9" cy="-13.2" r="2.1" fill="#fff"/><circle cx="13" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/>
+    <ellipse cx="-20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/><ellipse cx="20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/>
+    <g transform="translate(20,-30) rotate(-16) scale(0.72)">
+    <path d="M0 0 L-16 -10 Q-21 0 -16 10 Z" fill="#c9a4ff"/>
+    <path d="M0 0 L16 -10 Q21 0 16 10 Z" fill="#c9a4ff"/>
+    <path d="M0 0 L-16 -10 Q-12 -3 -7 0 Z" fill="#9a6ded" opacity=".5"/>
+    <path d="M0 0 L16 -10 Q12 -3 7 0 Z" fill="#9a6ded" opacity=".5"/>
+    <circle r="5.2" fill="#9a6ded"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#fff" opacity=".65"/>
+  </g>
+  </g></g>
+    <g transform="translate(48,-24) scale(.32)"><g>
+    <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#dcd0ba" transform="rotate(-24 -27 16)"/>
+    <ellipse cx="27" cy="16" rx="11" ry="9" fill="#dcd0ba" transform="rotate(24 27 16)"/>
+    <ellipse cx="-16" cy="36" rx="13" ry="11" fill="#dcd0ba"/>
+    <ellipse cx="16" cy="36" rx="13" ry="11" fill="#dcd0ba"/>
+    <ellipse cx="-16" cy="37" rx="7" ry="5.5" fill="#fffaf0"/>
+    <ellipse cx="16" cy="37" rx="7" ry="5.5" fill="#fffaf0"/>
+    <ellipse cx="0" cy="22" rx="25" ry="21" fill="#efe4d2"/>
+    <ellipse cx="0" cy="25" rx="14" ry="12" fill="#fffaf0" opacity=".75"/>
+    <circle cx="-25" cy="-27" r="13" fill="#efe4d2"/><circle cx="-25" cy="-27" r="6.6" fill="#fffaf0"/>
+    <circle cx="25" cy="-27" r="13" fill="#efe4d2"/><circle cx="25" cy="-27" r="6.6" fill="#fffaf0"/>
+    <circle cx="0" cy="-8" r="28" fill="#efe4d2"/>
+    <ellipse cx="0" cy="4" rx="15" ry="11.5" fill="#fffaf0"/>
+    <ellipse cx="0" cy="-1" rx="5.4" ry="4.2" fill="#553244"/>
+    <path d="M0 3 v3.5 M0 6.5 q-5 4.5 -8.5 .5 M0 6.5 q5 4.5 8.5 .5" stroke="#553244" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="-13.1" cy="-13.2" r="2.1" fill="#fff"/><circle cx="-10" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/><ellipse cx="11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="9.9" cy="-13.2" r="2.1" fill="#fff"/><circle cx="13" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/>
+    <ellipse cx="-20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/><ellipse cx="20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/>
+    <g transform="translate(20,-30) rotate(-16) scale(0.72)">
+    <path d="M0 0 L-16 -10 Q-21 0 -16 10 Z" fill="#ff4d6d"/>
+    <path d="M0 0 L16 -10 Q21 0 16 10 Z" fill="#ff4d6d"/>
+    <path d="M0 0 L-16 -10 Q-12 -3 -7 0 Z" fill="#c81f45" opacity=".5"/>
+    <path d="M0 0 L16 -10 Q12 -3 7 0 Z" fill="#c81f45" opacity=".5"/>
+    <circle r="5.2" fill="#c81f45"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#fff" opacity=".65"/>
+  </g>
+  </g></g>
+    <circle cx="48" cy="-24" r="24" fill="none" stroke="#7fe0c4" stroke-width="3" stroke-dasharray="6 5"/>
+    <path d="M-4 -4 h14 m-6 -6 l6 6 l-6 6" stroke="#7fe0c4" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <g>
+    <path d="M-34 48 l-6 -18 l24 18 z" fill="#e6fff6"/>
+    <rect x="-56" y="48" width="168" height="32" rx="14.545454545454545" fill="#e6fff6"/>
+    <text x="28" y="68.32" text-anchor="middle"
+      font-size="12" font-weight="800" fill="#e0287f">Sir Roosevelt is on top now!</text></g>
+  </g>
+  <text x="408" y="522" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7a3f66"><tspan x="408" dy="0">A miss still shoves the pile —</tspan><tspan x="408" dy="17">the game already does this. It</tspan><tspan x="408" dy="17">just never says so. One line of</tspan><tspan x="408" dy="17">text turns a loss into progress</tspan><tspan x="408" dy="17">you can see.</tspan></text>
+
+  <rect x="540" y="300" width="236" height="292" rx="22" fill="#fff" stroke="#c9a4ff" stroke-width="3"/>
+    <rect x="540" y="300" width="236" height="40" rx="20" fill="#c9a4ff"/>
+    <text x="658" y="327" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">SO CLOSE</text>
+  <g transform="translate(658,438)">
+    <g transform="translate(0,-46) scale(.9)"><g transform="scale(1,1)">
+    <circle cx="-25" cy="-27" r="13" fill="#b9c8f2"/><circle cx="-25" cy="-27" r="6.6" fill="#e6ecff"/>
+    <circle cx="25" cy="-27" r="13" fill="#b9c8f2"/><circle cx="25" cy="-27" r="6.6" fill="#e6ecff"/>
+    <circle cx="0" cy="-8" r="28" fill="#b9c8f2"/>
+    <ellipse cx="0" cy="4" rx="15" ry="11.5" fill="#e6ecff"/>
+    <ellipse cx="0" cy="-1" rx="5.4" ry="4.2" fill="#553244"/>
+    <ellipse cx="-20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/><ellipse cx="20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/>
+    <ellipse cx="-11.5" cy="-11" rx="5.6" ry="6.4" fill="#fff" stroke="#553244" stroke-width="2"/>
+    <ellipse cx="-11.5" cy="-13.6" rx="3.3" ry="3.7" fill="#553244"/>
+    <circle cx="-12.6" cy="-15" r="1.3" fill="#fff"/><ellipse cx="11.5" cy="-11" rx="5.6" ry="6.4" fill="#fff" stroke="#553244" stroke-width="2"/>
+    <ellipse cx="11.5" cy="-13.6" rx="3.3" ry="3.7" fill="#553244"/>
+    <circle cx="10.4" cy="-15" r="1.3" fill="#fff"/><path d="M-3.5 5 q3.5 3.6 7 0" stroke="#553244" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M-17.5 -20 q6 4 12 0" stroke="#553244" stroke-width="2.6" fill="none" stroke-linecap="round"/><path d="M5.5 -20 q6 4 12 0" stroke="#553244" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <g transform="translate(20,-30) rotate(-16) scale(0.72)">
+    <path d="M0 0 L-16 -10 Q-21 0 -16 10 Z" fill="#ffb37a"/>
+    <path d="M0 0 L16 -10 Q21 0 16 10 Z" fill="#ffb37a"/>
+    <path d="M0 0 L-16 -10 Q-12 -3 -7 0 Z" fill="#f08c42" opacity=".5"/>
+    <path d="M0 0 L16 -10 Q12 -3 7 0 Z" fill="#f08c42" opacity=".5"/>
+    <circle r="5.2" fill="#f08c42"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#fff" opacity=".65"/>
+  </g>
+  </g></g>
+    <rect x="-88" y="18" width="176" height="22" rx="11" fill="#ffeef7"/>
+    <rect x="-88" y="18" width="150" height="22" rx="11" fill="#c9a4ff"/>
+    <circle cx="62" cy="29" r="15" fill="#fff" stroke="#c9a4ff" stroke-width="3"/>
+    <text x="62" y="35" text-anchor="middle" font-size="13" font-weight="800" fill="#c9a4ff">!</text>
+    <text x="0" y="66" text-anchor="middle" font-size="14" font-weight="800" fill="#c9a4ff">one whisker away</text>
+  </g>
+  <text x="658" y="522" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7a3f66"><tspan x="658" dy="0">The game already knows exactly</tspan><tspan x="658" dy="17">how close you were — it is the</tspan><tspan x="658" dy="17">aim number. Show it. “One</tspan><tspan x="658" dy="17">whisker away” hurts in the good</tspan><tspan x="658" dy="17">way.</tspan></text>
+
+  <g>
+    <rect x="40" y="614" width="356" height="168" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
+    <rect x="40" y="614" width="356" height="168" rx="16" fill="#e0287f" opacity=".07"/>
+    <g><circle cx="60" cy="634" r="15" fill="#e0287f" stroke="#fff" stroke-width="3.5"/>
+    <text x="60" y="640" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">8</text></g>
+    <text x="82" y="640" font-size="15.5" font-weight="800" fill="#e0287f">What must NOT change</text>
+    <text x="54" y="662" font-size="13" font-weight="600" fill="#7a3f66">
+      <tspan x="54" dy="0">The odds. Nothing on this page makes a grab more</tspan><tspan x="54" dy="17">likely, and nothing here is a pity prize. The</tspan><tspan x="54" dy="17">README promises the game is honest and not rigged,</tspan><tspan x="54" dy="17">and that promise is worth more than any new</tspan><tspan x="54" dy="17">feature. A miss should feel better. It should not</tspan><tspan x="54" dy="17">be worth less.</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="420" y="614" width="356" height="168" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4" opacity=".97"/>
+    <rect x="420" y="614" width="356" height="168" rx="16" fill="#c9a4ff" opacity=".07"/>
+    <g><circle cx="440" cy="634" r="15" fill="#c9a4ff" stroke="#fff" stroke-width="3.5"/>
+    <text x="440" y="640" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">9</text></g>
+    <text x="462" y="640" font-size="15.5" font-weight="800" fill="#c9a4ff">What could change (Ella’s call)</text>
+    <text x="434" y="662" font-size="13" font-weight="600" fill="#7a3f66">
+      <tspan x="434" dy="0">Should three misses in a row earn a “keep going!”</tspan><tspan x="434" dy="17">from your favourite cutie? Should the pile ever be</tspan><tspan x="434" dy="17">re-shuffled after ten misses? Should the machine</tspan><tspan x="434" dy="17">ever say sorry? These change how the game feels</tspan><tspan x="434" dy="17">about losing, so they are Ella’s decisions and not</tspan><tspan x="434" dy="17">anybody else’s.</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(40,800)">
+    <rect x="0" y="0" width="736" height="204" rx="20" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <text x="20" y="32" font-size="17" font-weight="800" fill="#e0287f">The three-second rule 🕒</text>
+    <text x="20" y="66" font-size="14" font-weight="600" fill="#7a3f66"><tspan x="20" dy="0">Every drop ends in one of three ways: caught, slipped, or fumbled. Each ending gets three</tspan><tspan x="20" dy="21">seconds of the game’s full attention — a face, a sound, a sentence, and something that changed</tspan><tspan x="20" dy="21">in the pit. Three seconds × three endings is the entire feature. If a player cannot tell those</tspan><tspan x="20" dy="21">three endings apart with the sound off, it is not finished yet.</tspan></text>
+    <text x="20" y="164" font-size="13" font-weight="800" fill="#a4548a"><tspan x="20" dy="0">caught → confetti, the name, an album flash · slipped → the wave, “so close”, the meter · fumbled → the</tspan><tspan x="20" dy="19">pile moves, and the game says what moved</tspan></text>
+    <text x="20" y="200" font-size="13" font-weight="800" fill="#a4548a">Decision ID: CMC-2026-___</text>
+  </g>
+
+<!-- footer -->
+<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
+<text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 7</text>
+</svg>

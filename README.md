@@ -74,3 +74,13 @@ requests, nothing to install.
 - **Progress** — saved to `localStorage`; there's a reset button in the album.
 - **Extras** — confetti, screen sparkles, haptics on mobile, and a full
   `prefers-reduced-motion` path.
+
+## 📓 The development binder
+
+Ella's development binder lives in [`docs/`](docs/) — a 43-page printable master with
+twelve full-page concept plates for **Version 2.0, The Big Cuteness Update**.
+
+**[Read the PDF →](docs/pdf/claw-machine-cuties-development-binder.pdf)**
+
+The plates are drawn with the game's own art code, so every cutie on them is the real
+cutie. Rebuild everything with `node docs/binder/build.mjs`.

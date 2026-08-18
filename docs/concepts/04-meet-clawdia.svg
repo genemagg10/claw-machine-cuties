@@ -1,0 +1,200 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 816 1056"
+  width="816" height="1056" font-family="'Baloo 2','Nunito',ui-rounded,'SF Pro Rounded','Hiragino Maru Gothic ProN','Comic Sans MS',system-ui,sans-serif">
+<defs>
+  <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
+    <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
+    <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
+  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
+  
+</defs>
+
+<rect width="816" height="1056" fill="#fffaf6"/>
+
+<!-- header band -->
+<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
+<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">Meet Clawdia</text>
+<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
+  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">5</text></g>
+<g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
+    <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
+      fill="#fff" letter-spacing="1">PROPOSED</text></g>
+<text x="137.2" y="122" font-size="15" font-weight="700" fill="#a4548a">the claw gets a face, a name, and feelings</text>
+
+
+  <g>
+    <rect x="40" y="152" width="490" height="140" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
+    <rect x="40" y="152" width="490" height="140" rx="16" fill="#e0287f" opacity=".07"/>
+    
+    <text x="54" y="178" font-size="15.5" font-weight="800" fill="#e0287f">The claw is already the main character</text>
+    <text x="54" y="200" font-size="13" font-weight="600" fill="#7a3f66">
+      <tspan x="54" dy="0">You look at the claw the entire game. You cheer</tspan><tspan x="54" dy="17">for it, you beg it, you shout at it. It is on</tspan><tspan x="54" dy="17">screen more than any plushie — and right now it</tspan><tspan x="54" dy="17">has no face and no name. Giving it one costs a</tspan><tspan x="54" dy="17">nose, two eyes and a mouth, and turns every single</tspan><tspan x="54" dy="17">drop into a little story about somebody trying</tspan><tspan x="54" dy="17">their best.</tspan>
+    </text>
+  </g>
+  <g transform="translate(560,158)">
+    <rect x="0" y="0" width="216" height="128" rx="20" fill="#ffd447" opacity=".25"/>
+    <rect x="0" y="0" width="216" height="128" rx="20" fill="none" stroke="#e8a417" stroke-width="2.4"/>
+    <text x="108" y="30" text-anchor="middle" font-size="15" font-weight="800" fill="#e8a417">NAME HER 🎀</text>
+    <text x="108" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#7a3f66">Clawdia · Snippy · Grabby</text>
+    <text x="108" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#7a3f66">Pinchy · Miss Grabbers</text>
+    <text x="108" y="108" text-anchor="middle" font-size="12.5" font-weight="800" fill="#a4548a">Ella's name: _____________</text>
+  </g>
+  <g transform="translate(152,420)">
+      <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
+      <circle cx="0" cy="-24" r="82" fill="#ffeef7"/>
+      <g transform="translate(0,-46) scale(1.5)"><g transform="scale(1)">
+    <g class="prong" opacity=".85" transform="rotate(0)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="-10.35" cy="34" r="6.12" fill="#d4dcec" stroke="#8fa0c0" stroke-width="2"/></g>
+    <g transform="rotate(0)"><path d="M0 2 C-9 15.96 -20 23.1 -23 42" stroke="#c9d4e8" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C-9 15.96 -20 23.1 -23 42" stroke="#8fa0c0" stroke-width="4.08" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="-23" cy="42" r="8.16" fill="#eaf0fb" stroke="#8fa0c0" stroke-width="2"/></g>
+    <g transform="rotate(0)"><path d="M0 2 C9 15.96 20 23.1 23 42" stroke="#c9d4e8" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C9 15.96 20 23.1 23 42" stroke="#8fa0c0" stroke-width="4.08" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="23" cy="42" r="8.16" fill="#eaf0fb" stroke="#8fa0c0" stroke-width="2"/></g>
+    <ellipse cy="-4" rx="25" ry="15" fill="#dfe7f5"/>
+    <ellipse cy="-8" rx="25" ry="15" fill="#f2f6ff"/>
+    <rect x="-11" y="-36" width="22" height="26" rx="7" fill="#c9d4e8"/>
+    <ellipse cx="-7" cy="-9" rx="4" ry="4.6" fill="#553244"/>
+    <circle cx="-8.2" cy="-10.8" r="1.6" fill="#fff"/><ellipse cx="7" cy="-9" rx="4" ry="4.6" fill="#553244"/>
+    <circle cx="5.8" cy="-10.8" r="1.6" fill="#fff"/><path d="M-7 -3 q3.5 3.15 7 0" stroke="#553244" stroke-width="2.3" fill="none" stroke-linecap="round"/><ellipse cx="-13" cy="-3" rx="5" ry="3.2" fill="#ff9ec9" opacity=".48"/><ellipse cx="13" cy="-3" rx="5" ry="3.2" fill="#ff9ec9" opacity=".48"/>
+    <ellipse cx="-9" cy="-13" rx="7" ry="4" fill="#fff" opacity=".85" transform="rotate(-18 -9 -13)"/>
+  </g></g>
+      <text x="0" y="76" text-anchor="middle" font-size="17" font-weight="800" fill="#e0287f">Waiting</text>
+      <text x="0" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">parked at the top, blinking,</tspan><tspan x="0" dy="15">ready when you are</tspan></text>
+    </g><g transform="translate(402,420)">
+      <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
+      <circle cx="0" cy="-24" r="82" fill="#ffeef7"/>
+      <g transform="translate(0,-46) scale(1.5)"><g transform="scale(1)">
+    <g class="prong" opacity=".85" transform="rotate(0)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="-10.35" cy="34" r="6.12" fill="#d4dcec" stroke="#8fa0c0" stroke-width="2"/></g>
+    <g transform="rotate(0)"><path d="M0 2 C-9 15.96 -20 23.1 -23 42" stroke="#c9d4e8" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C-9 15.96 -20 23.1 -23 42" stroke="#8fa0c0" stroke-width="4.08" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="-23" cy="42" r="8.16" fill="#eaf0fb" stroke="#8fa0c0" stroke-width="2"/></g>
+    <g transform="rotate(0)"><path d="M0 2 C9 15.96 20 23.1 23 42" stroke="#c9d4e8" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C9 15.96 20 23.1 23 42" stroke="#8fa0c0" stroke-width="4.08" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="23" cy="42" r="8.16" fill="#eaf0fb" stroke="#8fa0c0" stroke-width="2"/></g>
+    <ellipse cy="-4" rx="25" ry="15" fill="#dfe7f5"/>
+    <ellipse cy="-8" rx="25" ry="15" fill="#f2f6ff"/>
+    <rect x="-11" y="-36" width="22" height="26" rx="7" fill="#c9d4e8"/>
+    <path d="M-11 -11 q4 -4 8 0" stroke="#553244" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+                            <path d="M3 -11 q4 -4 8 0" stroke="#553244" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+                            <ellipse cx="-7" cy="-7" rx="3.4" ry="3.9099999999999997" fill="#553244"/>
+    <circle cx="-8.02" cy="-8.53" r="1.36" fill="#fff"/><ellipse cx="7" cy="-7" rx="3.4" ry="3.9099999999999997" fill="#553244"/>
+    <circle cx="5.98" cy="-8.53" r="1.36" fill="#fff"/>
+                            <path d="M-3 -1 h6" stroke="#553244" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="-13" cy="-3" rx="5" ry="3.2" fill="#ff9ec9" opacity=".48"/><ellipse cx="13" cy="-3" rx="5" ry="3.2" fill="#ff9ec9" opacity=".48"/>
+    <ellipse cx="-9" cy="-13" rx="7" ry="4" fill="#fff" opacity=".85" transform="rotate(-18 -9 -13)"/>
+  </g></g>
+      <text x="0" y="76" text-anchor="middle" font-size="17" font-weight="800" fill="#e0287f">Aiming</text>
+      <text x="0" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">you are moving her — she</tspan><tspan x="0" dy="15">squints at the pile</tspan></text>
+    </g><g transform="translate(652,420)">
+      <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
+      <circle cx="0" cy="-24" r="82" fill="#ffeef7"/>
+      <g transform="translate(0,-46) scale(1.5)"><g transform="scale(1)">
+    <g class="prong" opacity=".85" transform="rotate(-14.040000000000001)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="-10.35" cy="34" r="6.12" fill="#d4dcec" stroke="#8fa0c0" stroke-width="2"/></g>
+    <g transform="rotate(23.400000000000002)"><path d="M0 2 C-9 15.96 -20 23.1 -23 42" stroke="#c9d4e8" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C-9 15.96 -20 23.1 -23 42" stroke="#8fa0c0" stroke-width="4.08" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="-23" cy="42" r="8.16" fill="#eaf0fb" stroke="#8fa0c0" stroke-width="2"/></g>
+    <g transform="rotate(-23.400000000000002)"><path d="M0 2 C9 15.96 20 23.1 23 42" stroke="#c9d4e8" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C9 15.96 20 23.1 23 42" stroke="#8fa0c0" stroke-width="4.08" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="23" cy="42" r="8.16" fill="#eaf0fb" stroke="#8fa0c0" stroke-width="2"/></g>
+    <ellipse cy="-4" rx="25" ry="15" fill="#dfe7f5"/>
+    <ellipse cy="-8" rx="25" ry="15" fill="#f2f6ff"/>
+    <rect x="-11" y="-36" width="22" height="26" rx="7" fill="#c9d4e8"/>
+    <path d="M-11 -12 l7 4 l-7 4" stroke="#553244" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M11 -12 l-7 4 l7 4" stroke="#553244" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M-5 -1 h10 M-3 -3 v4 M0 -3 v4 M3 -3 v4" stroke="#553244" stroke-width="1.8" stroke-linecap="round"/><ellipse cx="-13" cy="-3" rx="5" ry="3.2" fill="#ff9ec9" opacity=".48"/><ellipse cx="13" cy="-3" rx="5" ry="3.2" fill="#ff9ec9" opacity=".48"/>
+    <ellipse cx="-9" cy="-13" rx="7" ry="4" fill="#fff" opacity=".85" transform="rotate(-18 -9 -13)"/>
+  </g></g>
+      <text x="0" y="76" text-anchor="middle" font-size="17" font-weight="800" fill="#e0287f">SQUEEZE!</text>
+      <text x="0" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">the prongs close. She is</tspan><tspan x="0" dy="15">trying so hard.</tspan></text>
+    </g><g transform="translate(152,688)">
+      <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
+      <circle cx="0" cy="-24" r="82" fill="#ffeef7"/>
+      <g transform="translate(0,-46) scale(1.5)"><g transform="scale(1)">
+    <g class="prong" opacity=".85" transform="rotate(-12.48)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="-10.35" cy="34" r="6.12" fill="#d4dcec" stroke="#8fa0c0" stroke-width="2"/></g>
+    <g transform="rotate(20.8)"><path d="M0 2 C-9 15.96 -20 23.1 -23 42" stroke="#c9d4e8" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C-9 15.96 -20 23.1 -23 42" stroke="#8fa0c0" stroke-width="4.08" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="-23" cy="42" r="8.16" fill="#eaf0fb" stroke="#8fa0c0" stroke-width="2"/></g>
+    <g transform="rotate(-20.8)"><path d="M0 2 C9 15.96 20 23.1 23 42" stroke="#c9d4e8" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C9 15.96 20 23.1 23 42" stroke="#8fa0c0" stroke-width="4.08" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="23" cy="42" r="8.16" fill="#eaf0fb" stroke="#8fa0c0" stroke-width="2"/></g>
+    <ellipse cy="-4" rx="25" ry="15" fill="#dfe7f5"/>
+    <ellipse cy="-8" rx="25" ry="15" fill="#f2f6ff"/>
+    <rect x="-11" y="-36" width="22" height="26" rx="7" fill="#c9d4e8"/>
+    <path d="M-12 -8 q5 -7 10 0" stroke="#553244" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+                            <path d="M2 -8 q5 -7 10 0" stroke="#553244" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+                            <path d="M-7 -1 q7 8 14 0 z" fill="#553244"/><ellipse cx="-13" cy="-3" rx="5" ry="3.2" fill="#ff9ec9" opacity=".48"/><ellipse cx="13" cy="-3" rx="5" ry="3.2" fill="#ff9ec9" opacity=".48"/><path transform="translate(-19,-16) scale(0.42)" d="M0 -10 Q1.6 -1.6 10 0 Q1.6 1.6 0 10 Q-1.6 1.6 -10 0 Q-1.6 -1.6 0 -10 Z" fill="#fff6bd"/><path transform="translate(18,-14) scale(0.34)" d="M0 -10 Q1.6 -1.6 10 0 Q1.6 1.6 0 10 Q-1.6 1.6 -10 0 Q-1.6 -1.6 0 -10 Z" fill="#fff6bd"/>
+    <ellipse cx="-9" cy="-13" rx="7" ry="4" fill="#fff" opacity=".85" transform="rotate(-18 -9 -13)"/>
+  </g></g>
+      <text x="0" y="76" text-anchor="middle" font-size="17" font-weight="800" fill="#e0287f">Got it!</text>
+      <text x="0" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">she is carrying a cutie to the</tspan><tspan x="0" dy="15">chute</tspan></text>
+    </g><g transform="translate(402,688)">
+      <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
+      <circle cx="0" cy="-24" r="82" fill="#ffeef7"/>
+      <g transform="translate(0,-46) scale(1.5)"><g transform="scale(1)">
+    <g class="prong" opacity=".85" transform="rotate(0)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="-10.35" cy="34" r="6.12" fill="#d4dcec" stroke="#8fa0c0" stroke-width="2"/></g>
+    <g transform="rotate(0)"><path d="M0 2 C-9 15.96 -20 23.1 -23 42" stroke="#c9d4e8" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C-9 15.96 -20 23.1 -23 42" stroke="#8fa0c0" stroke-width="4.08" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="-23" cy="42" r="8.16" fill="#eaf0fb" stroke="#8fa0c0" stroke-width="2"/></g>
+    <g transform="rotate(0)"><path d="M0 2 C9 15.96 20 23.1 23 42" stroke="#c9d4e8" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C9 15.96 20 23.1 23 42" stroke="#8fa0c0" stroke-width="4.08" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="23" cy="42" r="8.16" fill="#eaf0fb" stroke="#8fa0c0" stroke-width="2"/></g>
+    <ellipse cy="-4" rx="25" ry="15" fill="#dfe7f5"/>
+    <ellipse cy="-8" rx="25" ry="15" fill="#f2f6ff"/>
+    <rect x="-11" y="-36" width="22" height="26" rx="7" fill="#c9d4e8"/>
+    <ellipse cx="-7" cy="-9" rx="4.6" ry="5.289999999999999" fill="#553244"/>
+    <circle cx="-8.379999999999999" cy="-11.07" r="1.8399999999999999" fill="#fff"/><ellipse cx="7" cy="-9" rx="4.6" ry="5.289999999999999" fill="#553244"/>
+    <circle cx="5.62" cy="-11.07" r="1.8399999999999999" fill="#fff"/>
+                            <ellipse cy="0" rx="4" ry="5" fill="#553244"/>
+                            <path d="M17 -14 q5 6 0 10 q-5 -4 0 -10 z" fill="#7fd8ff"/><ellipse cx="-13" cy="-3" rx="5" ry="3.2" fill="#ff9ec9" opacity=".48"/><ellipse cx="13" cy="-3" rx="5" ry="3.2" fill="#ff9ec9" opacity=".48"/>
+    <ellipse cx="-9" cy="-13" rx="7" ry="4" fill="#fff" opacity=".85" transform="rotate(-18 -9 -13)"/>
+  </g></g>
+      <text x="0" y="76" text-anchor="middle" font-size="17" font-weight="800" fill="#e0287f">Oh no</text>
+      <text x="0" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">the cutie slipped. She feels</tspan><tspan x="0" dy="15">terrible.</tspan></text>
+    </g><g transform="translate(652,688)">
+      <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
+      <circle cx="0" cy="-24" r="82" fill="#ffeef7"/>
+      <g transform="translate(0,-46) scale(1.5)"><g transform="scale(1)">
+    <g class="prong" opacity=".85" transform="rotate(0)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="-10.35" cy="34" r="6.12" fill="#d4dcec" stroke="#8fa0c0" stroke-width="2"/></g>
+    <g transform="rotate(0)"><path d="M0 2 C-9 15.96 -20 23.1 -23 42" stroke="#c9d4e8" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C-9 15.96 -20 23.1 -23 42" stroke="#8fa0c0" stroke-width="4.08" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="-23" cy="42" r="8.16" fill="#eaf0fb" stroke="#8fa0c0" stroke-width="2"/></g>
+    <g transform="rotate(0)"><path d="M0 2 C9 15.96 20 23.1 23 42" stroke="#c9d4e8" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M0 2 C9 15.96 20 23.1 23 42" stroke="#8fa0c0" stroke-width="4.08" fill="none" stroke-linecap="round" opacity=".5"/>
+    <circle cx="23" cy="42" r="8.16" fill="#eaf0fb" stroke="#8fa0c0" stroke-width="2"/></g>
+    <ellipse cy="-4" rx="25" ry="15" fill="#dfe7f5"/>
+    <ellipse cy="-8" rx="25" ry="15" fill="#f2f6ff"/>
+    <rect x="-11" y="-36" width="22" height="26" rx="7" fill="#c9d4e8"/>
+    <path d="M-11 -8 q4 5 8 0" stroke="#553244" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+                            <path d="M3 -8 q4 5 8 0" stroke="#553244" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+                            <ellipse cy="0" rx="3" ry="3.6" fill="#553244"/><ellipse cx="-13" cy="-3" rx="5" ry="3.2" fill="#ff9ec9" opacity=".48"/><ellipse cx="13" cy="-3" rx="5" ry="3.2" fill="#ff9ec9" opacity=".48"/>
+                            <text x="15" y="-14" font-size="11" font-weight="800" fill="#9fb0d0">z</text>
+                            <text x="22" y="-22" font-size="14" font-weight="800" fill="#9fb0d0">z</text>
+    <ellipse cx="-9" cy="-13" rx="7" ry="4" fill="#fff" opacity=".85" transform="rotate(-18 -9 -13)"/>
+  </g></g>
+      <text x="0" y="76" text-anchor="middle" font-size="17" font-weight="800" fill="#e0287f">Snoozing</text>
+      <text x="0" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">nobody has played for a minute</tspan></text>
+    </g>
+  <g transform="translate(40,832)">
+    <rect x="0" y="0" width="736" height="146" rx="20" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <text x="20" y="30" font-size="16" font-weight="800" fill="#e0287f">Why this is the cheapest big idea in the binder</text>
+    <text x="20" y="58" font-size="13.5" font-weight="600" fill="#7a3f66"><tspan x="20" dy="0">The claw already changes between six states in the code: idle, falling, closing, lifting, travelling and</tspan><tspan x="20" dy="20">returning. Those six states are exactly the six faces on this page. Nothing new has to be invented — the game</tspan><tspan x="20" dy="20">already knows how the claw feels. It just is not showing it yet.</tspan></text>
+    <text x="20" y="130" font-size="13" font-weight="800" fill="#a4548a">Decision ID: CMC-2026-___    ·    Page label: PROPOSED</text>
+  </g>
+
+<!-- footer -->
+<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
+<text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 5</text>
+</svg>

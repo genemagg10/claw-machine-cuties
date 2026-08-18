@@ -1,0 +1,376 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 816 1056"
+  width="816" height="1056" font-family="'Baloo 2','Nunito',ui-rounded,'SF Pro Rounded','Hiragino Maru Gothic ProN','Comic Sans MS',system-ui,sans-serif">
+<defs>
+  <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
+    <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
+    <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
+  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
+  
+</defs>
+
+<rect width="816" height="1056" fill="#fffaf6"/>
+
+<!-- header band -->
+<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
+<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">The Sticker Scrapbook</text>
+<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
+  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">10</text></g>
+<g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
+    <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
+      fill="#fff" letter-spacing="1">PROPOSED</text></g>
+<text x="137.2" y="122" font-size="15" font-weight="700" fill="#a4548a">the album becomes something worth showing people</text>
+
+
+  <g>
+    <rect x="40" y="150" width="736" height="102" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
+    <rect x="40" y="150" width="736" height="102" rx="16" fill="#e0287f" opacity=".07"/>
+    
+    <text x="54" y="176" font-size="15.5" font-weight="800" fill="#e0287f">The album already exists. It just needs to look like a treasure.</text>
+    <text x="54" y="198" font-size="13" font-weight="600" fill="#7a3f66">
+      <tspan x="54" dy="0">Every cutie you have ever caught is remembered, including how many times. That is the making of a proper</tspan><tspan x="54" dy="17">collector’s scrapbook: photo corners, sticky tape, the date you caught it, a ribbon for the rare ones,</tspan><tspan x="54" dy="17">and a shadowy question mark for the ones still out there.</tspan>
+    </text>
+  </g>
+
+  <rect x="26" y="266" width="764" height="384" rx="20" fill="#fffdf8" stroke="#e8d8c8" stroke-width="3"/>
+  <path d="M408 266 V650" stroke="#e8d8c8" stroke-width="3" stroke-dasharray="8 8"/>
+  <text x="44" y="286" font-size="15" font-weight="800" fill="#e0287f">🧸 Teddy Bear Bonanza — 5 of 8 found</text>
+  <g transform="translate(44,292)">
+      <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff4fa"/>
+      <g transform="translate(66,78) scale(.62)"><g>
+    <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#e0a96c" transform="rotate(-24 -27 16)"/>
+    <ellipse cx="27" cy="16" rx="11" ry="9" fill="#e0a96c" transform="rotate(24 27 16)"/>
+    <ellipse cx="-16" cy="36" rx="13" ry="11" fill="#e0a96c"/>
+    <ellipse cx="16" cy="36" rx="13" ry="11" fill="#e0a96c"/>
+    <ellipse cx="-16" cy="37" rx="7" ry="5.5" fill="#ffe6c8"/>
+    <ellipse cx="16" cy="37" rx="7" ry="5.5" fill="#ffe6c8"/>
+    <ellipse cx="0" cy="22" rx="25" ry="21" fill="#f0c08a"/>
+    <ellipse cx="0" cy="25" rx="14" ry="12" fill="#ffe6c8" opacity=".75"/>
+    <circle cx="-25" cy="-27" r="13" fill="#f0c08a"/><circle cx="-25" cy="-27" r="6.6" fill="#ffe6c8"/>
+    <circle cx="25" cy="-27" r="13" fill="#f0c08a"/><circle cx="25" cy="-27" r="6.6" fill="#ffe6c8"/>
+    <circle cx="0" cy="-8" r="28" fill="#f0c08a"/>
+    <ellipse cx="0" cy="4" rx="15" ry="11.5" fill="#ffe6c8"/>
+    <ellipse cx="0" cy="-1" rx="5.4" ry="4.2" fill="#553244"/>
+    <path d="M0 3 v3.5 M0 6.5 q-5 4.5 -8.5 .5 M0 6.5 q5 4.5 8.5 .5" stroke="#553244" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="-13.1" cy="-13.2" r="2.1" fill="#fff"/><circle cx="-10" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/><ellipse cx="11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="9.9" cy="-13.2" r="2.1" fill="#fff"/><circle cx="13" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/>
+    <ellipse cx="-20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/><ellipse cx="20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/>
+    <g transform="translate(20,-30) rotate(-16) scale(0.72)">
+    <path d="M0 0 L-16 -10 Q-21 0 -16 10 Z" fill="#ff87b8"/>
+    <path d="M0 0 L16 -10 Q21 0 16 10 Z" fill="#ff87b8"/>
+    <path d="M0 0 L-16 -10 Q-12 -3 -7 0 Z" fill="#e4568f" opacity=".5"/>
+    <path d="M0 0 L16 -10 Q12 -3 7 0 Z" fill="#e4568f" opacity=".5"/>
+    <circle r="5.2" fill="#e4568f"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#fff" opacity=".65"/>
+  </g>
+  </g></g>
+      <text x="66" y="130" text-anchor="middle" font-size="12.5" font-weight="800" fill="#e0287f">Honeypaw</text>
+      <text x="66" y="146" text-anchor="middle" font-size="9.5" font-weight="700" fill="#a4548a">caught 3 Aug</text>
+      
+      <rect x="-8" y="-8" width="46" height="20" rx="3"
+    fill="#ffd447" opacity=".72" transform="rotate(-14 15 2)"/>
+      <rect x="98" y="142" width="44" height="20" rx="3"
+    fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
+    </g><g transform="translate(192,292)">
+      <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff4fa"/>
+      <g transform="translate(66,78) scale(.62)"><g>
+    <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#f3ddc7" transform="rotate(-24 -27 16)"/>
+    <ellipse cx="27" cy="16" rx="11" ry="9" fill="#f3ddc7" transform="rotate(24 27 16)"/>
+    <ellipse cx="-16" cy="36" rx="13" ry="11" fill="#f3ddc7"/>
+    <ellipse cx="16" cy="36" rx="13" ry="11" fill="#f3ddc7"/>
+    <ellipse cx="-16" cy="37" rx="7" ry="5.5" fill="#fffaf3"/>
+    <ellipse cx="16" cy="37" rx="7" ry="5.5" fill="#fffaf3"/>
+    <ellipse cx="0" cy="22" rx="25" ry="21" fill="#fff1e2"/>
+    <ellipse cx="0" cy="25" rx="14" ry="12" fill="#fffaf3" opacity=".75"/>
+    <circle cx="-25" cy="-27" r="13" fill="#fff1e2"/><circle cx="-25" cy="-27" r="6.6" fill="#fffaf3"/>
+    <circle cx="25" cy="-27" r="13" fill="#fff1e2"/><circle cx="25" cy="-27" r="6.6" fill="#fffaf3"/>
+    <circle cx="0" cy="-8" r="28" fill="#fff1e2"/>
+    <ellipse cx="0" cy="4" rx="15" ry="11.5" fill="#fffaf3"/>
+    <ellipse cx="0" cy="-1" rx="5.4" ry="4.2" fill="#553244"/>
+    <path d="M0 3 v3.5 M0 6.5 q-5 4.5 -8.5 .5 M0 6.5 q5 4.5 8.5 .5" stroke="#553244" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="-13.1" cy="-13.2" r="2.1" fill="#fff"/><circle cx="-10" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/><ellipse cx="11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="9.9" cy="-13.2" r="2.1" fill="#fff"/><circle cx="13" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/>
+    <ellipse cx="-20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/><ellipse cx="20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/>
+    <g transform="translate(20,-30) rotate(-16) scale(0.72)">
+    <path d="M0 0 L-16 -10 Q-21 0 -16 10 Z" fill="#7fe0c4"/>
+    <path d="M0 0 L16 -10 Q21 0 16 10 Z" fill="#7fe0c4"/>
+    <path d="M0 0 L-16 -10 Q-12 -3 -7 0 Z" fill="#3fbfa0" opacity=".5"/>
+    <path d="M0 0 L16 -10 Q12 -3 7 0 Z" fill="#3fbfa0" opacity=".5"/>
+    <circle r="5.2" fill="#3fbfa0"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#fff" opacity=".65"/>
+  </g>
+  </g></g>
+      <text x="66" y="130" text-anchor="middle" font-size="12.5" font-weight="800" fill="#e0287f">Marshmellow</text>
+      <text x="66" y="146" text-anchor="middle" font-size="9.5" font-weight="700" fill="#a4548a">caught 5 Aug</text>
+      
+      <rect x="-8" y="-8" width="46" height="20" rx="3"
+    fill="#ffd447" opacity=".72" transform="rotate(-14 15 2)"/>
+      <rect x="98" y="142" width="44" height="20" rx="3"
+    fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
+    </g><g transform="translate(340,292)">
+      <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff4fa"/>
+      <g transform="translate(66,78) scale(.62)"><g>
+    <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#a06b46" transform="rotate(-24 -27 16)"/>
+    <ellipse cx="27" cy="16" rx="11" ry="9" fill="#a06b46" transform="rotate(24 27 16)"/>
+    <ellipse cx="-16" cy="36" rx="13" ry="11" fill="#a06b46"/>
+    <ellipse cx="16" cy="36" rx="13" ry="11" fill="#a06b46"/>
+    <ellipse cx="-16" cy="37" rx="7" ry="5.5" fill="#e8c9ab"/>
+    <ellipse cx="16" cy="37" rx="7" ry="5.5" fill="#e8c9ab"/>
+    <ellipse cx="0" cy="22" rx="25" ry="21" fill="#b98058"/>
+    <ellipse cx="0" cy="25" rx="14" ry="12" fill="#e8c9ab" opacity=".75"/>
+    <circle cx="-25" cy="-27" r="13" fill="#b98058"/><circle cx="-25" cy="-27" r="6.6" fill="#e8c9ab"/>
+    <circle cx="25" cy="-27" r="13" fill="#b98058"/><circle cx="25" cy="-27" r="6.6" fill="#e8c9ab"/>
+    <circle cx="0" cy="-8" r="28" fill="#b98058"/>
+    <ellipse cx="0" cy="4" rx="15" ry="11.5" fill="#e8c9ab"/>
+    <ellipse cx="0" cy="-1" rx="5.4" ry="4.2" fill="#553244"/>
+    <path d="M0 3 v3.5 M0 6.5 q-5 4.5 -8.5 .5 M0 6.5 q5 4.5 8.5 .5" stroke="#553244" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="-13.1" cy="-13.2" r="2.1" fill="#fff"/><circle cx="-10" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/><ellipse cx="11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="9.9" cy="-13.2" r="2.1" fill="#fff"/><circle cx="13" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/>
+    <ellipse cx="-20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/><ellipse cx="20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/>
+    <g transform="translate(20,-30) rotate(-16) scale(0.72)">
+    <path d="M0 0 L-16 -10 Q-21 0 -16 10 Z" fill="#c9a4ff"/>
+    <path d="M0 0 L16 -10 Q21 0 16 10 Z" fill="#c9a4ff"/>
+    <path d="M0 0 L-16 -10 Q-12 -3 -7 0 Z" fill="#9a6ded" opacity=".5"/>
+    <path d="M0 0 L16 -10 Q12 -3 7 0 Z" fill="#9a6ded" opacity=".5"/>
+    <circle r="5.2" fill="#9a6ded"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#fff" opacity=".65"/>
+  </g>
+  </g></g>
+      <text x="66" y="130" text-anchor="middle" font-size="12.5" font-weight="800" fill="#e0287f">Cocoa Puff</text>
+      <text x="66" y="146" text-anchor="middle" font-size="9.5" font-weight="700" fill="#a4548a">caught 9 Aug</text>
+      
+      <rect x="-8" y="-8" width="46" height="20" rx="3"
+    fill="#ffd447" opacity=".72" transform="rotate(-14 15 2)"/>
+      <rect x="98" y="142" width="44" height="20" rx="3"
+    fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
+    </g><g transform="translate(488,292)">
+      <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff4fa"/>
+      <g transform="translate(66,78) scale(.62)"><g>
+    <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#f0b96f" transform="rotate(-24 -27 16)"/>
+    <ellipse cx="27" cy="16" rx="11" ry="9" fill="#f0b96f" transform="rotate(24 27 16)"/>
+    <ellipse cx="-16" cy="36" rx="13" ry="11" fill="#f0b96f"/>
+    <ellipse cx="16" cy="36" rx="13" ry="11" fill="#f0b96f"/>
+    <ellipse cx="-16" cy="37" rx="7" ry="5.5" fill="#fff0d4"/>
+    <ellipse cx="16" cy="37" rx="7" ry="5.5" fill="#fff0d4"/>
+    <ellipse cx="0" cy="22" rx="25" ry="21" fill="#ffcf8f"/>
+    <ellipse cx="0" cy="25" rx="14" ry="12" fill="#fff0d4" opacity=".75"/>
+    <circle cx="-25" cy="-27" r="13" fill="#ffcf8f"/><circle cx="-25" cy="-27" r="6.6" fill="#fff0d4"/>
+    <circle cx="25" cy="-27" r="13" fill="#ffcf8f"/><circle cx="25" cy="-27" r="6.6" fill="#fff0d4"/>
+    <circle cx="0" cy="-8" r="28" fill="#ffcf8f"/>
+    <ellipse cx="0" cy="4" rx="15" ry="11.5" fill="#fff0d4"/>
+    <ellipse cx="0" cy="-1" rx="5.4" ry="4.2" fill="#553244"/>
+    <path d="M0 3 v3.5 M0 6.5 q-5 4.5 -8.5 .5 M0 6.5 q5 4.5 8.5 .5" stroke="#553244" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="-13.1" cy="-13.2" r="2.1" fill="#fff"/><circle cx="-10" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/><ellipse cx="11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="9.9" cy="-13.2" r="2.1" fill="#fff"/><circle cx="13" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/>
+    <ellipse cx="-20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/><ellipse cx="20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/>
+    <g transform="translate(20,-30) rotate(-16) scale(0.72)">
+    <path d="M0 0 L-16 -10 Q-21 0 -16 10 Z" fill="#86c8ff"/>
+    <path d="M0 0 L16 -10 Q21 0 16 10 Z" fill="#86c8ff"/>
+    <path d="M0 0 L-16 -10 Q-12 -3 -7 0 Z" fill="#4d9ce8" opacity=".5"/>
+    <path d="M0 0 L16 -10 Q12 -3 7 0 Z" fill="#4d9ce8" opacity=".5"/>
+    <circle r="5.2" fill="#4d9ce8"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#fff" opacity=".65"/>
+  </g>
+  </g></g>
+      <text x="66" y="130" text-anchor="middle" font-size="12.5" font-weight="800" fill="#e0287f">Butterscotch</text>
+      <text x="66" y="146" text-anchor="middle" font-size="9.5" font-weight="700" fill="#a4548a">caught 11 Aug</text>
+      
+      <rect x="-8" y="-8" width="46" height="20" rx="3"
+    fill="#ffd447" opacity=".72" transform="rotate(-14 15 2)"/>
+      <rect x="98" y="142" width="44" height="20" rx="3"
+    fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
+    </g><g transform="translate(636,292)">
+      <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#efe6ec"/>
+      <g transform="translate(66,78) scale(.62)" opacity=".22"><g>
+    <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#8b7b87" transform="rotate(-24 -27 16)"/>
+    <ellipse cx="27" cy="16" rx="11" ry="9" fill="#8b7b87" transform="rotate(24 27 16)"/>
+    <ellipse cx="-16" cy="36" rx="13" ry="11" fill="#8b7b87"/>
+    <ellipse cx="16" cy="36" rx="13" ry="11" fill="#8b7b87"/>
+    <ellipse cx="-16" cy="37" rx="7" ry="5.5" fill="#8b7b87"/>
+    <ellipse cx="16" cy="37" rx="7" ry="5.5" fill="#8b7b87"/>
+    <ellipse cx="0" cy="22" rx="25" ry="21" fill="#8b7b87"/>
+    <ellipse cx="0" cy="25" rx="14" ry="12" fill="#8b7b87" opacity=".75"/>
+    <circle cx="-25" cy="-27" r="13" fill="#8b7b87"/><circle cx="-25" cy="-27" r="6.6" fill="#8b7b87"/>
+    <circle cx="25" cy="-27" r="13" fill="#8b7b87"/><circle cx="25" cy="-27" r="6.6" fill="#8b7b87"/>
+    <circle cx="0" cy="-8" r="28" fill="#8b7b87"/>
+    <ellipse cx="0" cy="4" rx="15" ry="11.5" fill="#8b7b87"/>
+    <ellipse cx="0" cy="-1" rx="5.4" ry="4.2" fill="#8b7b87"/>
+    <path d="M0 3 v3.5 M0 6.5 q-5 4.5 -8.5 .5 M0 6.5 q5 4.5 8.5 .5" stroke="#8b7b87" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#8b7b87"/><circle cx="-13.1" cy="-13.2" r="2.1" fill="#8b7b87"/><circle cx="-10" cy="-9.2" r="0.95" fill="#8b7b87" opacity=".85"/><ellipse cx="11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#8b7b87"/><circle cx="9.9" cy="-13.2" r="2.1" fill="#8b7b87"/><circle cx="13" cy="-9.2" r="0.95" fill="#8b7b87" opacity=".85"/>
+    <ellipse cx="-20" cy="-1" rx="7" ry="4.48" fill="#8b7b87" opacity=".48"/><ellipse cx="20" cy="-1" rx="7" ry="4.48" fill="#8b7b87" opacity=".48"/>
+    <g transform="translate(20,-30) rotate(-16) scale(0.72)">
+    <path d="M0 0 L-16 -10 Q-21 0 -16 10 Z" fill="#8b7b87"/>
+    <path d="M0 0 L16 -10 Q21 0 16 10 Z" fill="#8b7b87"/>
+    <path d="M0 0 L-16 -10 Q-12 -3 -7 0 Z" fill="#8b7b87" opacity=".5"/>
+    <path d="M0 0 L16 -10 Q12 -3 7 0 Z" fill="#8b7b87" opacity=".5"/>
+    <circle r="5.2" fill="#8b7b87"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#8b7b87" opacity=".65"/>
+  </g>
+  </g></g>
+           <text x="66" y="72" text-anchor="middle" font-size="34" font-weight="800" fill="#a9959f">?</text>
+      <text x="66" y="130" text-anchor="middle" font-size="12.5" font-weight="800" fill="#a9959f">? ? ?</text>
+      <text x="66" y="146" text-anchor="middle" font-size="9.5" font-weight="700" fill="#a4548a">not caught yet</text>
+      
+      <rect x="-8" y="-8" width="46" height="20" rx="3"
+    fill="#ffd447" opacity=".72" transform="rotate(-14 15 2)"/>
+      <rect x="98" y="142" width="44" height="20" rx="3"
+    fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
+    </g><g transform="translate(44,470)">
+      <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff4fa"/>
+      <g transform="translate(66,78) scale(.62)"><g>
+    <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#c08b56" transform="rotate(-24 -27 16)"/>
+    <ellipse cx="27" cy="16" rx="11" ry="9" fill="#c08b56" transform="rotate(24 27 16)"/>
+    <ellipse cx="-16" cy="36" rx="13" ry="11" fill="#c08b56"/>
+    <ellipse cx="16" cy="36" rx="13" ry="11" fill="#c08b56"/>
+    <ellipse cx="-16" cy="37" rx="7" ry="5.5" fill="#f5dcc0"/>
+    <ellipse cx="16" cy="37" rx="7" ry="5.5" fill="#f5dcc0"/>
+    <ellipse cx="0" cy="22" rx="25" ry="21" fill="#d8a06a"/>
+    <ellipse cx="0" cy="25" rx="14" ry="12" fill="#f5dcc0" opacity=".75"/>
+    <circle cx="-25" cy="-27" r="13" fill="#d8a06a"/><circle cx="-25" cy="-27" r="6.6" fill="#f5dcc0"/>
+    <circle cx="25" cy="-27" r="13" fill="#d8a06a"/><circle cx="25" cy="-27" r="6.6" fill="#f5dcc0"/>
+    <circle cx="0" cy="-8" r="28" fill="#d8a06a"/>
+    <ellipse cx="0" cy="4" rx="15" ry="11.5" fill="#f5dcc0"/>
+    <ellipse cx="0" cy="-1" rx="5.4" ry="4.2" fill="#553244"/>
+    <path d="M0 3 v3.5 M0 6.5 q-5 4.5 -8.5 .5 M0 6.5 q5 4.5 8.5 .5" stroke="#553244" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="-13.1" cy="-13.2" r="2.1" fill="#fff"/><circle cx="-10" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/><ellipse cx="11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#553244"/><circle cx="9.9" cy="-13.2" r="2.1" fill="#fff"/><circle cx="13" cy="-9.2" r="0.95" fill="#fff" opacity=".85"/>
+    <ellipse cx="-20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/><ellipse cx="20" cy="-1" rx="7" ry="4.48" fill="#ff87b8" opacity=".48"/>
+    <g transform="translate(20,-30) rotate(-16) scale(0.72)">
+    <path d="M0 0 L-16 -10 Q-21 0 -16 10 Z" fill="#ff8a6b"/>
+    <path d="M0 0 L16 -10 Q21 0 16 10 Z" fill="#ff8a6b"/>
+    <path d="M0 0 L-16 -10 Q-12 -3 -7 0 Z" fill="#e85c3c" opacity=".5"/>
+    <path d="M0 0 L16 -10 Q12 -3 7 0 Z" fill="#e85c3c" opacity=".5"/>
+    <circle r="5.2" fill="#e85c3c"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#fff" opacity=".65"/>
+  </g>
+  </g></g>
+      <text x="66" y="130" text-anchor="middle" font-size="12.5" font-weight="800" fill="#e0287f">Caramel Chip</text>
+      <text x="66" y="146" text-anchor="middle" font-size="9.5" font-weight="700" fill="#a4548a">caught 16 Aug</text>
+      
+      <rect x="-8" y="-8" width="46" height="20" rx="3"
+    fill="#ffd447" opacity=".72" transform="rotate(-14 15 2)"/>
+      <rect x="98" y="142" width="44" height="20" rx="3"
+    fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
+    </g><g transform="translate(192,470)">
+      <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#efe6ec"/>
+      <g transform="translate(66,78) scale(.62)" opacity=".22"><g>
+    <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#8b7b87" transform="rotate(-24 -27 16)"/>
+    <ellipse cx="27" cy="16" rx="11" ry="9" fill="#8b7b87" transform="rotate(24 27 16)"/>
+    <ellipse cx="-16" cy="36" rx="13" ry="11" fill="#8b7b87"/>
+    <ellipse cx="16" cy="36" rx="13" ry="11" fill="#8b7b87"/>
+    <ellipse cx="-16" cy="37" rx="7" ry="5.5" fill="#8b7b87"/>
+    <ellipse cx="16" cy="37" rx="7" ry="5.5" fill="#8b7b87"/>
+    <ellipse cx="0" cy="22" rx="25" ry="21" fill="#8b7b87"/>
+    <ellipse cx="0" cy="25" rx="14" ry="12" fill="#8b7b87" opacity=".75"/>
+    <circle cx="-25" cy="-27" r="13" fill="#8b7b87"/><circle cx="-25" cy="-27" r="6.6" fill="#8b7b87"/>
+    <circle cx="25" cy="-27" r="13" fill="#8b7b87"/><circle cx="25" cy="-27" r="6.6" fill="#8b7b87"/>
+    <circle cx="0" cy="-8" r="28" fill="#8b7b87"/>
+    <ellipse cx="0" cy="4" rx="15" ry="11.5" fill="#8b7b87"/>
+    <ellipse cx="0" cy="-1" rx="5.4" ry="4.2" fill="#8b7b87"/>
+    <path d="M0 3 v3.5 M0 6.5 q-5 4.5 -8.5 .5 M0 6.5 q5 4.5 8.5 .5" stroke="#8b7b87" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#8b7b87"/><circle cx="-13.1" cy="-13.2" r="2.1" fill="#8b7b87"/><circle cx="-10" cy="-9.2" r="0.95" fill="#8b7b87" opacity=".85"/><ellipse cx="11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#8b7b87"/><circle cx="9.9" cy="-13.2" r="2.1" fill="#8b7b87"/><circle cx="13" cy="-9.2" r="0.95" fill="#8b7b87" opacity=".85"/>
+    <ellipse cx="-20" cy="-1" rx="7" ry="4.48" fill="#8b7b87" opacity=".48"/><ellipse cx="20" cy="-1" rx="7" ry="4.48" fill="#8b7b87" opacity=".48"/>
+    <g transform="translate(20,-30) rotate(-16) scale(0.72)">
+    <path d="M0 0 L-16 -10 Q-21 0 -16 10 Z" fill="#8b7b87"/>
+    <path d="M0 0 L16 -10 Q21 0 16 10 Z" fill="#8b7b87"/>
+    <path d="M0 0 L-16 -10 Q-12 -3 -7 0 Z" fill="#8b7b87" opacity=".5"/>
+    <path d="M0 0 L16 -10 Q12 -3 7 0 Z" fill="#8b7b87" opacity=".5"/>
+    <circle r="5.2" fill="#8b7b87"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#8b7b87" opacity=".65"/>
+  </g>
+  </g></g>
+           <text x="66" y="72" text-anchor="middle" font-size="34" font-weight="800" fill="#a9959f">?</text>
+      <text x="66" y="130" text-anchor="middle" font-size="12.5" font-weight="800" fill="#a9959f">? ? ?</text>
+      <text x="66" y="146" text-anchor="middle" font-size="9.5" font-weight="700" fill="#a4548a">not caught yet</text>
+      
+      <rect x="-8" y="-8" width="46" height="20" rx="3"
+    fill="#ffd447" opacity=".72" transform="rotate(-14 15 2)"/>
+      <rect x="98" y="142" width="44" height="20" rx="3"
+    fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
+    </g><g transform="translate(340,470)">
+      <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#efe6ec"/>
+      <g transform="translate(66,78) scale(.62)" opacity=".22"><g>
+    <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#8b7b87" transform="rotate(-24 -27 16)"/>
+    <ellipse cx="27" cy="16" rx="11" ry="9" fill="#8b7b87" transform="rotate(24 27 16)"/>
+    <ellipse cx="-16" cy="36" rx="13" ry="11" fill="#8b7b87"/>
+    <ellipse cx="16" cy="36" rx="13" ry="11" fill="#8b7b87"/>
+    <ellipse cx="-16" cy="37" rx="7" ry="5.5" fill="#8b7b87"/>
+    <ellipse cx="16" cy="37" rx="7" ry="5.5" fill="#8b7b87"/>
+    <ellipse cx="0" cy="22" rx="25" ry="21" fill="#8b7b87"/>
+    <ellipse cx="0" cy="25" rx="14" ry="12" fill="#8b7b87" opacity=".75"/>
+    <circle cx="-25" cy="-27" r="13" fill="#8b7b87"/><circle cx="-25" cy="-27" r="6.6" fill="#8b7b87"/>
+    <circle cx="25" cy="-27" r="13" fill="#8b7b87"/><circle cx="25" cy="-27" r="6.6" fill="#8b7b87"/>
+    <circle cx="0" cy="-8" r="28" fill="#8b7b87"/>
+    <ellipse cx="0" cy="4" rx="15" ry="11.5" fill="#8b7b87"/>
+    <ellipse cx="0" cy="-1" rx="5.4" ry="4.2" fill="#8b7b87"/>
+    <path d="M0 3 v3.5 M0 6.5 q-5 4.5 -8.5 .5 M0 6.5 q5 4.5 8.5 .5" stroke="#8b7b87" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="-11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#8b7b87"/><circle cx="-13.1" cy="-13.2" r="2.1" fill="#8b7b87"/><circle cx="-10" cy="-9.2" r="0.95" fill="#8b7b87" opacity=".85"/><ellipse cx="11.5" cy="-11" rx="5" ry="5.6000000000000005" fill="#8b7b87"/><circle cx="9.9" cy="-13.2" r="2.1" fill="#8b7b87"/><circle cx="13" cy="-9.2" r="0.95" fill="#8b7b87" opacity=".85"/>
+    <ellipse cx="-20" cy="-1" rx="7" ry="4.48" fill="#8b7b87" opacity=".48"/><ellipse cx="20" cy="-1" rx="7" ry="4.48" fill="#8b7b87" opacity=".48"/>
+    <g transform="translate(20,-30) rotate(-16) scale(0.72)">
+    <path d="M0 0 L-16 -10 Q-21 0 -16 10 Z" fill="#8b7b87"/>
+    <path d="M0 0 L16 -10 Q21 0 16 10 Z" fill="#8b7b87"/>
+    <path d="M0 0 L-16 -10 Q-12 -3 -7 0 Z" fill="#8b7b87" opacity=".5"/>
+    <path d="M0 0 L16 -10 Q12 -3 7 0 Z" fill="#8b7b87" opacity=".5"/>
+    <circle r="5.2" fill="#8b7b87"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#8b7b87" opacity=".65"/>
+  </g>
+  </g></g>
+           <text x="66" y="72" text-anchor="middle" font-size="34" font-weight="800" fill="#a9959f">?</text>
+      <text x="66" y="130" text-anchor="middle" font-size="12.5" font-weight="800" fill="#a9959f">? ? ?</text>
+      <text x="66" y="146" text-anchor="middle" font-size="9.5" font-weight="700" fill="#a4548a">not caught yet</text>
+      
+      <rect x="-8" y="-8" width="46" height="20" rx="3"
+    fill="#ffd447" opacity=".72" transform="rotate(-14 15 2)"/>
+      <rect x="98" y="142" width="44" height="20" rx="3"
+    fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
+    </g>
+  <g transform="translate(492,470)">
+    <rect x="0" y="0" width="280" height="156" rx="12" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <text x="140" y="30" text-anchor="middle" font-size="14" font-weight="800" fill="#e0287f">this machine</text>
+    <rect x="26" y="44" width="228" height="22" rx="11" fill="#fff"/>
+    <rect x="26" y="44" width="142" height="22" rx="11" fill="#e0287f"/>
+    <text x="140" y="86" text-anchor="middle" font-size="13" font-weight="800" fill="#a4548a">5 of 8 kinds · 11 caught · 34 tries</text>
+    <text x="140" y="112" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7a3f66">Still missing: Blueberry Bear,</text>
+    <text x="140" y="130" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7a3f66">Caramel Chip, Sir Roosevelt 👑</text>
+    <text x="140" y="148" text-anchor="middle" font-size="11" font-weight="800" fill="#e8a417">the legendary is still out there</text>
+  </g>
+
+  <g>
+    <rect x="40" y="674" width="236" height="148" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
+    <rect x="40" y="674" width="236" height="148" rx="16" fill="#e0287f" opacity=".07"/>
+    <g><circle cx="60" cy="694" r="15" fill="#e0287f" stroke="#fff" stroke-width="3.5"/>
+    <text x="60" y="700" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">1</text></g>
+    <text x="82" y="700" font-size="15.5" font-weight="800" fill="#e0287f">Photo corners and tape</text>
+    <text x="54" y="722" font-size="13" font-weight="600" fill="#7a3f66">
+      <tspan x="54" dy="0">Every cutie sits in its own</tspan><tspan x="54" dy="17">little polaroid, taped into the</tspan><tspan x="54" dy="17">book. It looks like something a</tspan><tspan x="54" dy="17">person made, not a menu.</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="292" y="674" width="236" height="148" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4" opacity=".97"/>
+    <rect x="292" y="674" width="236" height="148" rx="16" fill="#c9a4ff" opacity=".07"/>
+    <g><circle cx="312" cy="694" r="15" fill="#c9a4ff" stroke="#fff" stroke-width="3.5"/>
+    <text x="312" y="700" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">2</text></g>
+    <text x="334" y="700" font-size="15.5" font-weight="800" fill="#c9a4ff">Shadows, not blanks</text>
+    <text x="306" y="722" font-size="13" font-weight="600" fill="#7a3f66">
+      <tspan x="306" dy="0">A cutie you have not caught</tspan><tspan x="306" dy="17">shows as a grey shape with a</tspan><tspan x="306" dy="17">question mark. You can see the</tspan><tspan x="306" dy="17">shape you are hunting for.</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="544" y="674" width="232" height="148" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4" opacity=".97"/>
+    <rect x="544" y="674" width="232" height="148" rx="16" fill="#7fe0c4" opacity=".07"/>
+    <g><circle cx="564" cy="694" r="15" fill="#7fe0c4" stroke="#fff" stroke-width="3.5"/>
+    <text x="564" y="700" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">3</text></g>
+    <text x="586" y="700" font-size="15.5" font-weight="800" fill="#7fe0c4">The day you caught it</text>
+    <text x="558" y="722" font-size="13" font-weight="600" fill="#7a3f66">
+      <tspan x="558" dy="0">The book remembers the date.</tspan><tspan x="558" dy="17">Months later that is the best</tspan><tspan x="558" dy="17">part of the whole page.</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(40,834)">
+    <rect x="0" y="0" width="736" height="164" rx="20" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <text x="20" y="30" font-size="16" font-weight="800" fill="#e0287f">One honest warning ⚠️</text>
+    <text x="20" y="60" font-size="14" font-weight="600" fill="#7a3f66"><tspan x="20" dy="0">Showing the shape of a cutie you have not caught yet is a promise: it says “this one is really in</tspan><tspan x="20" dy="21">there”. That promise has to stay true. If a legendary is one-in-fifteen, the book should not pretend it</tspan><tspan x="20" dy="21">is around the corner. The game’s whole personality is that it is hard and it is honest — the scrapbook</tspan><tspan x="20" dy="21">has to be honest too.</tspan></text>
+    <text x="20" y="146" font-size="13" font-weight="800" fill="#a4548a">Ella decides: do the missing ones show as shadows, silhouette outlines, or stay completely secret?</text>
+  </g>
+
+<!-- footer -->
+<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
+<text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 10</text>
+</svg>
