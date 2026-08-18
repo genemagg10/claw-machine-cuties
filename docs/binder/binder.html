@@ -13,7 +13,7 @@
 @page { size: letter; margin: 0; }
 :root{
   --ink:#553244; --deep:#7a3f66; --mute:#a4548a; --hot:#e0287f; --pink:#ff5c9d;
-  --soft:#ffd9ec; --blush:#fff2f9; --cream:#fffaf6; --line:#f3c4de;
+  --soft:#ffd9ec; --blush:#ffffff; --cream:#ffffff; --line:#f3c4de;
   --mint:#7fe0c4; --sky:#7fd8ff; --lemon:#ffd447; --lilac:#c9a4ff; --gold:#e8a417; --peach:#ff9a7a;
 }
 *{box-sizing:border-box}
@@ -53,18 +53,18 @@ a{color:var(--hot)}
 .label.proposed{background:var(--hot)}
 .label.workshop{background:var(--lilac)}
 
-.box{border:2.2px solid var(--line);background:var(--blush);border-radius:14px;padding:8px 12px;margin:.08in 0}
-.box.hot{border-color:var(--hot);background:#fff4f9}
-.box.mint{border-color:var(--mint);background:#effffa}
-.box.lemon{border-color:var(--gold);background:#fffbe9}
-.box.sky{border-color:var(--sky);background:#f0fbff}
+.box{border:2px solid var(--line);border-left:7px solid var(--line);background:#fff;border-radius:12px;padding:8px 12px;margin:.08in 0}
+.box.hot{border-color:var(--hot);background:#fff}
+.box.mint{border-color:var(--mint);background:#fff}
+.box.lemon{border-color:var(--gold);background:#fff}
+.box.sky{border-color:var(--sky);background:#fff}
 .box h4{margin-top:0}
 .box p:last-child{margin-bottom:0}
 
 table{border-collapse:collapse;width:100%;margin:.07in 0;font-size:8.9pt}
-th,td{border:1.4px solid var(--line);padding:3.5px 6px;text-align:left}
-thead th{background:var(--soft);color:var(--deep);font-weight:800}
-tbody th{background:var(--blush);font-weight:800;color:var(--deep);width:1.5in}
+th,td{border:0;border-bottom:1.3px solid var(--line);padding:4px 7px 3.5px;text-align:left;vertical-align:top}
+thead th{background:#fff;color:var(--hot);font-weight:800;border-bottom:2.6px solid var(--hot)}
+tbody th{background:#fff;font-weight:800;color:var(--deep);width:1.5in;padding-left:0}
 td{text-align:center}
 table.left td{text-align:left}
 
@@ -79,8 +79,8 @@ table.left td{text-align:left}
 .tag{font-size:8.6pt;font-weight:700;color:var(--mute);margin:0 0 .04in}
 
 .master{height:100%;display:flex;flex-direction:column}
-.masterTop{font-size:8pt;font-weight:800;letter-spacing:1.8px;color:#fff;background:var(--lilac);
-  border-radius:999px;padding:4px 14px;display:inline-block;align-self:flex-start}
+.masterTop{font-size:8pt;font-weight:800;letter-spacing:1.8px;color:var(--lilac);background:#fff;
+  border:2px solid var(--lilac);border-radius:999px;padding:3px 13px;display:inline-block;align-self:flex-start}
 .master h2{margin:.12in 0 .03in}
 .blurb{font-size:10.4pt;font-weight:700;color:var(--mute);margin:0 0 .08in}
 .mHead{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;font-size:8.2pt;font-weight:800;
@@ -96,7 +96,6 @@ table.left td{text-align:left}
 .checks{display:inline-block;margin-top:3px;color:var(--deep)}
 .decid{float:right}
 
-.cover{background:linear-gradient(160deg,#fff3fb,#ffdff2 45%,#e9c6ff);display:grid;place-items:center;text-align:center}
 .toc td:first-child{width:.6in;text-align:center;font-weight:800;color:var(--hot)}
 .toc td{text-align:left}
 </style></head><body>
@@ -106,35 +105,34 @@ table.left td{text-align:left}
      ========================================================= -->
 <div class="page plateOnly"><div class="plateWrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 816 1056" class="plate" font-family="'Baloo 2','Nunito',ui-rounded,'SF Pro Rounded','Hiragino Maru Gothic ProN','Comic Sans MS',system-ui,sans-serif">
 <defs>
-  <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
-    <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
-    <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
   <linearGradient id="gRibbon" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff5c9d"/><stop offset="1" stop-color="#c9a4ff"/></linearGradient>
-  <radialGradient id="gGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
 </defs>
-<rect width="816" height="1056" fill="url(#gDream)"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- sunburst -->
-<g opacity=".3"><polygon points="408,-40 408.0000000000001,-1540 538.7336141214872,-1534.2920471376183" fill="#fff"/><polygon points="408,-40 921.0302149885032,-1449.5389311788624 1041.927392611049,-1399.461680554975" fill="#fff"/><polygon points="408,-40 1372.181414529809,-1189.066664678467 1468.6601717798214,-1100.6601717798212" fill="#fff"/><polygon points="408,-40 1707.038105676658,-789.9999999999999 1767.461680554975,-673.9273926110492" fill="#fff"/><polygon points="408,-40 1885.211629518312,-300.4722665003955 1902.2920471376183,-170.73361412148725" fill="#fff"/><polygon points="408,-40 1885.211629518312,220.4722665003955 1856.8887394336025,348.2285676537811" fill="#fff"/><polygon points="408,-40 1707.038105676658,709.9999999999999 1636.7280664334878,820.3646545265691" fill="#fff"/><polygon points="408,-40 1372.181414529809,1109.066664678467 1268.3646545265692,1188.7280664334878" fill="#fff"/><polygon points="408,-40 921.0302149885032,1369.5389311788624 796.228567653781,1408.8887394336025" fill="#fff"/><polygon points="408,-40 408.0000000000001,1460 277.26638587851266,1454.2920471376183" fill="#fff"/><polygon points="408,-40 -105.03021498850308,1369.5389311788626 -225.92739261104896,1319.4616805549751" fill="#fff"/><polygon points="408,-40 -556.181414529809,1109.066664678467 -652.6601717798212,1020.6601717798214" fill="#fff"/><polygon points="408,-40 -891.038105676658,709.9999999999999 -951.4616805549749,593.9273926110493" fill="#fff"/><polygon points="408,-40 -1069.211629518312,220.4722665003954 -1086.2920471376183,90.73361412148796" fill="#fff"/><polygon points="408,-40 -1069.211629518312,-300.47226650039573 -1040.8887394336027,-428.22856765378054" fill="#fff"/><polygon points="408,-40 -891.038105676658,-790.0000000000001 -820.728066433488,-900.3646545265688" fill="#fff"/><polygon points="408,-40 -556.1814145298092,-1189.0666646784669 -452.36465452656955,-1268.7280664334874" fill="#fff"/><polygon points="408,-40 -105.0302149885041,-1449.5389311788624 19.771432346219058,-1488.8887394336025" fill="#fff"/></g>
+<!-- a drawn frame instead of a printed background -->
+<rect x="22" y="22" width="772" height="1012" rx="26" fill="none" stroke="#ff5c9d" stroke-width="4"/>
+<rect x="32" y="32" width="752" height="992" rx="20" fill="none" stroke="#f3c4de" stroke-width="2"/>
+<circle cx="52" cy="52" r="5.5" fill="#e0287f"/><circle cx="764" cy="52" r="5.5" fill="#e0287f"/><circle cx="52" cy="1004" r="5.5" fill="#e0287f"/><circle cx="764" cy="1004" r="5.5" fill="#e0287f"/>
 
-<g clip-path="url(#floorClip)"><rect x="0" y="770" width="816" height="286" fill="#ffc9ea"/><polygon points="233.14285714285714,770 262.2857142857143,770 200.7619047619048,773.5308641975308 159.31428571428575,773.5308641975308" fill="#ffe6f6" opacity="0.25"/><polygon points="291.42857142857144,770 320.57142857142856,770 283.65714285714284,773.5308641975308 242.20952380952383,773.5308641975308" fill="#ffe6f6" opacity="0.25"/><polygon points="349.7142857142857,770 378.85714285714283,770 366.552380952381,773.5308641975308 325.1047619047619,773.5308641975308" fill="#ffe6f6" opacity="0.25"/><polygon points="408,770 437.14285714285717,770 449.447619047619,773.5308641975308 408,773.5308641975308" fill="#ffe6f6" opacity="0.25"/><polygon points="466.2857142857143,770 495.42857142857144,770 532.3428571428572,773.5308641975308 490.8952380952381,773.5308641975308" fill="#ffe6f6" opacity="0.25"/><polygon points="524.5714285714286,770 553.7142857142858,770 615.2380952380952,773.5308641975308 573.7904761904762,773.5308641975308" fill="#ffe6f6" opacity="0.25"/><polygon points="582.8571428571429,770 612,770 698.1333333333333,773.5308641975308 656.6857142857143,773.5308641975308" fill="#ffe6f6" opacity="0.25"/><polygon points="117.86666666666667,773.5308641975308 159.31428571428575,773.5308641975308 85.48571428571432,784.1234567901234 31.73333333333335,784.1234567901234" fill="#ffe6f6" opacity="0.29"/><polygon points="200.7619047619048,773.5308641975308 242.20952380952383,773.5308641975308 192.99047619047622,784.1234567901234 139.23809523809524,784.1234567901234" fill="#ffe6f6" opacity="0.29"/><polygon points="283.65714285714284,773.5308641975308 325.1047619047619,773.5308641975308 300.4952380952381,784.1234567901234 246.74285714285716,784.1234567901234" fill="#ffe6f6" opacity="0.29"/><polygon points="366.552380952381,773.5308641975308 408,773.5308641975308 408,784.1234567901234 354.2476190476191,784.1234567901234" fill="#ffe6f6" opacity="0.29"/><polygon points="449.447619047619,773.5308641975308 490.8952380952381,773.5308641975308 515.5047619047618,784.1234567901234 461.7523809523809,784.1234567901234" fill="#ffe6f6" opacity="0.29"/><polygon points="532.3428571428572,773.5308641975308 573.7904761904762,773.5308641975308 623.0095238095238,784.1234567901234 569.2571428571429,784.1234567901234" fill="#ffe6f6" opacity="0.29"/><polygon points="615.2380952380952,773.5308641975308 656.6857142857143,773.5308641975308 730.5142857142857,784.1234567901234 676.7619047619048,784.1234567901234" fill="#ffe6f6" opacity="0.29"/><polygon points="698.1333333333333,773.5308641975308 739.5809523809523,773.5308641975308 838.0190476190476,784.1234567901234 784.2666666666667,784.1234567901234" fill="#ffe6f6" opacity="0.29"/><polygon points="85.48571428571432,784.1234567901234 139.23809523809524,784.1234567901234 77.71428571428572,801.7777777777778 11.657142857142844,801.7777777777778" fill="#ffe6f6" opacity="0.34"/><polygon points="192.99047619047622,784.1234567901234 246.74285714285716,784.1234567901234 209.82857142857142,801.7777777777778 143.7714285714286,801.7777777777778" fill="#ffe6f6" opacity="0.34"/><polygon points="300.4952380952381,784.1234567901234 354.2476190476191,784.1234567901234 341.9428571428572,801.7777777777778 275.8857142857143,801.7777777777778" fill="#ffe6f6" opacity="0.34"/><polygon points="408,784.1234567901234 461.7523809523809,784.1234567901234 474.0571428571428,801.7777777777778 408,801.7777777777778" fill="#ffe6f6" opacity="0.34"/><polygon points="515.5047619047618,784.1234567901234 569.2571428571429,784.1234567901234 606.1714285714286,801.7777777777778 540.1142857142856,801.7777777777778" fill="#ffe6f6" opacity="0.34"/><polygon points="623.0095238095238,784.1234567901234 676.7619047619048,784.1234567901234 738.2857142857142,801.7777777777778 672.2285714285714,801.7777777777778" fill="#ffe6f6" opacity="0.34"/><polygon points="730.5142857142857,784.1234567901234 784.2666666666667,784.1234567901234 870.4,801.7777777777778 804.3428571428572,801.7777777777778" fill="#ffe6f6" opacity="0.34"/><polygon points="-54.39999999999998,801.7777777777778 11.657142857142844,801.7777777777778 -62.17142857142852,826.4938271604938 -140.5333333333333,826.4938271604938" fill="#ffe6f6" opacity="0.38"/><polygon points="77.71428571428572,801.7777777777778 143.7714285714286,801.7777777777778 94.55238095238099,826.4938271604938 16.190476190476204,826.4938271604938" fill="#ffe6f6" opacity="0.38"/><polygon points="209.82857142857142,801.7777777777778 275.8857142857143,801.7777777777778 251.2761904761905,826.4938271604938 172.91428571428574,826.4938271604938" fill="#ffe6f6" opacity="0.38"/><polygon points="341.9428571428572,801.7777777777778 408,801.7777777777778 408,826.4938271604938 329.6380952380953,826.4938271604938" fill="#ffe6f6" opacity="0.38"/><polygon points="474.0571428571428,801.7777777777778 540.1142857142856,801.7777777777778 564.7238095238095,826.4938271604938 486.3619047619047,826.4938271604938" fill="#ffe6f6" opacity="0.38"/><polygon points="606.1714285714286,801.7777777777778 672.2285714285714,801.7777777777778 721.447619047619,826.4938271604938 643.0857142857143,826.4938271604938" fill="#ffe6f6" opacity="0.38"/><polygon points="738.2857142857142,801.7777777777778 804.3428571428572,801.7777777777778 878.1714285714286,826.4938271604938 799.8095238095239,826.4938271604938" fill="#ffe6f6" opacity="0.38"/><polygon points="870.4,801.7777777777778 936.4571428571428,801.7777777777778 1034.895238095238,826.4938271604938 956.5333333333333,826.4938271604938" fill="#ffe6f6" opacity="0.38"/><polygon points="-62.17142857142852,826.4938271604938 16.190476190476204,826.4938271604938 -45.33333333333337,858.2716049382716 -136,858.2716049382716" fill="#ffe6f6" opacity="0.43"/><polygon points="94.55238095238099,826.4938271604938 172.91428571428574,826.4938271604938 136,858.2716049382716 45.333333333333314,858.2716049382716" fill="#ffe6f6" opacity="0.43"/><polygon points="251.2761904761905,826.4938271604938 329.6380952380953,826.4938271604938 317.3333333333333,858.2716049382716 226.66666666666666,858.2716049382716" fill="#ffe6f6" opacity="0.43"/><polygon points="408,826.4938271604938 486.3619047619047,826.4938271604938 498.6666666666667,858.2716049382716 408,858.2716049382716" fill="#ffe6f6" opacity="0.43"/><polygon points="564.7238095238095,826.4938271604938 643.0857142857143,826.4938271604938 680,858.2716049382716 589.3333333333334,858.2716049382716" fill="#ffe6f6" opacity="0.43"/><polygon points="721.447619047619,826.4938271604938 799.8095238095239,826.4938271604938 861.3333333333334,858.2716049382716 770.6666666666667,858.2716049382716" fill="#ffe6f6" opacity="0.43"/><polygon points="878.1714285714286,826.4938271604938 956.5333333333333,826.4938271604938 1042.6666666666665,858.2716049382716 952,858.2716049382716" fill="#ffe6f6" opacity="0.43"/><polygon points="-226.66666666666663,858.2716049382716 -136,858.2716049382716 -209.82857142857142,897.1111111111111 -312.79999999999995,897.1111111111111" fill="#ffe6f6" opacity="0.47"/><polygon points="-45.33333333333337,858.2716049382716 45.333333333333314,858.2716049382716 -3.8857142857142435,897.1111111111111 -106.85714285714289,897.1111111111111" fill="#ffe6f6" opacity="0.47"/><polygon points="136,858.2716049382716 226.66666666666666,858.2716049382716 202.05714285714288,897.1111111111111 99.08571428571429,897.1111111111111" fill="#ffe6f6" opacity="0.47"/><polygon points="317.3333333333333,858.2716049382716 408,858.2716049382716 408,897.1111111111111 305.02857142857147,897.1111111111111" fill="#ffe6f6" opacity="0.47"/><polygon points="498.6666666666667,858.2716049382716 589.3333333333334,858.2716049382716 613.9428571428571,897.1111111111111 510.97142857142853,897.1111111111111" fill="#ffe6f6" opacity="0.47"/><polygon points="680,858.2716049382716 770.6666666666667,858.2716049382716 819.8857142857142,897.1111111111111 716.9142857142857,897.1111111111111" fill="#ffe6f6" opacity="0.47"/><polygon points="861.3333333333334,858.2716049382716 952,858.2716049382716 1025.8285714285714,897.1111111111111 922.8571428571429,897.1111111111111" fill="#ffe6f6" opacity="0.47"/><polygon points="1042.6666666666665,858.2716049382716 1133.3333333333335,858.2716049382716 1231.7714285714285,897.1111111111111 1128.8,897.1111111111111" fill="#ffe6f6" opacity="0.47"/><polygon points="-209.82857142857142,897.1111111111111 -106.85714285714289,897.1111111111111 -168.3809523809524,943.0123456790124 -283.65714285714284,943.0123456790124" fill="#ffe6f6" opacity="0.52"/><polygon points="-3.8857142857142435,897.1111111111111 99.08571428571429,897.1111111111111 62.17142857142858,943.0123456790124 -53.10476190476186,943.0123456790124" fill="#ffe6f6" opacity="0.52"/><polygon points="202.05714285714288,897.1111111111111 305.02857142857147,897.1111111111111 292.72380952380956,943.0123456790124 177.44761904761907,943.0123456790124" fill="#ffe6f6" opacity="0.52"/><polygon points="408,897.1111111111111 510.97142857142853,897.1111111111111 523.2761904761904,943.0123456790124 408,943.0123456790124" fill="#ffe6f6" opacity="0.52"/><polygon points="613.9428571428571,897.1111111111111 716.9142857142857,897.1111111111111 753.8285714285714,943.0123456790124 638.5523809523809,943.0123456790124" fill="#ffe6f6" opacity="0.52"/><polygon points="819.8857142857142,897.1111111111111 922.8571428571429,897.1111111111111 984.3809523809524,943.0123456790124 869.1047619047619,943.0123456790124" fill="#ffe6f6" opacity="0.52"/><polygon points="1025.8285714285714,897.1111111111111 1128.8,897.1111111111111 1214.9333333333334,943.0123456790124 1099.6571428571428,943.0123456790124" fill="#ffe6f6" opacity="0.52"/><polygon points="-398.9333333333333,943.0123456790124 -283.65714285714284,943.0123456790124 -357.48571428571427,995.9753086419753 -485.0666666666666,995.9753086419753" fill="#ffe6f6" opacity="0.56"/><polygon points="-168.3809523809524,943.0123456790124 -53.10476190476186,943.0123456790124 -102.32380952380947,995.9753086419753 -229.90476190476193,995.9753086419753" fill="#ffe6f6" opacity="0.56"/><polygon points="62.17142857142858,943.0123456790124 177.44761904761907,943.0123456790124 152.83809523809526,995.9753086419753 25.257142857142867,995.9753086419753" fill="#ffe6f6" opacity="0.56"/><polygon points="292.72380952380956,943.0123456790124 408,943.0123456790124 408,995.9753086419753 280.41904761904766,995.9753086419753" fill="#ffe6f6" opacity="0.56"/><polygon points="523.2761904761904,943.0123456790124 638.5523809523809,943.0123456790124 663.1619047619047,995.9753086419753 535.5809523809523,995.9753086419753" fill="#ffe6f6" opacity="0.56"/><polygon points="753.8285714285714,943.0123456790124 869.1047619047619,943.0123456790124 918.3238095238095,995.9753086419753 790.7428571428571,995.9753086419753" fill="#ffe6f6" opacity="0.56"/><polygon points="984.3809523809524,943.0123456790124 1099.6571428571428,943.0123456790124 1173.4857142857143,995.9753086419753 1045.904761904762,995.9753086419753" fill="#ffe6f6" opacity="0.56"/><polygon points="1214.9333333333334,943.0123456790124 1330.2095238095237,943.0123456790124 1428.647619047619,995.9753086419753 1301.0666666666666,995.9753086419753" fill="#ffe6f6" opacity="0.56"/><polygon points="-357.48571428571427,995.9753086419753 -229.90476190476193,995.9753086419753 -291.42857142857144,1056 -431.3142857142857,1056" fill="#ffe6f6" opacity="0.61"/><polygon points="-102.32380952380947,995.9753086419753 25.257142857142867,995.9753086419753 -11.657142857142844,1056 -151.5428571428571,1056" fill="#ffe6f6" opacity="0.61"/><polygon points="152.83809523809526,995.9753086419753 280.41904761904766,995.9753086419753 268.11428571428576,1056 128.22857142857146,1056" fill="#ffe6f6" opacity="0.61"/><polygon points="408,995.9753086419753 535.5809523809523,995.9753086419753 547.8857142857142,1056 408,1056" fill="#ffe6f6" opacity="0.61"/><polygon points="663.1619047619047,995.9753086419753 790.7428571428571,995.9753086419753 827.6571428571428,1056 687.7714285714285,1056" fill="#ffe6f6" opacity="0.61"/><polygon points="918.3238095238095,995.9753086419753 1045.904761904762,995.9753086419753 1107.4285714285716,1056 967.5428571428571,1056" fill="#ffe6f6" opacity="0.61"/><polygon points="1173.4857142857143,995.9753086419753 1301.0666666666666,995.9753086419753 1387.1999999999998,1056 1247.3142857142857,1056" fill="#ffe6f6" opacity="0.61"/></g><clipPath id="floorClip"><rect x="0" y="770" width="816" height="286"/></clipPath>
-<text x="70" y="250" font-size="30" opacity=".85">🧸</text><text x="748" y="232" font-size="26" opacity=".85">🎀</text><text x="120" y="470" font-size="22" opacity=".85">✨</text><text x="720" y="480" font-size="28" opacity=".85">🦄</text><text x="60" y="660" font-size="24" opacity=".85">💖</text><text x="762" y="660" font-size="26" opacity=".85">⭐</text><text x="96" y="830" font-size="22" opacity=".85">🍬</text><text x="726" y="812" font-size="24" opacity=".85">🦋</text><text x="44" y="400" font-size="22" opacity=".85">🐰</text><text x="770" y="380" font-size="22" opacity=".85">🦕</text>
+<clipPath id="floorClip"><rect x="36" y="780" width="744" height="232" rx="14"/></clipPath>
+  <g clip-path="url(#floorClip)" stroke="#f3c4de" fill="none" stroke-linecap="round">
+    <path d="M280.56 782 L-300 1010" stroke-width="1.6"/><path d="M301.8 782 L-182 1010" stroke-width="1.6"/><path d="M323.04 782 L-64 1010" stroke-width="1.6"/><path d="M344.28 782 L54 1010" stroke-width="1.6"/><path d="M365.52 782 L172 1010" stroke-width="1.6"/><path d="M386.76 782 L290 1010" stroke-width="1.6"/><path d="M408 782 L408 1010" stroke-width="1.6"/><path d="M429.24 782 L526 1010" stroke-width="1.6"/><path d="M450.48 782 L644 1010" stroke-width="1.6"/><path d="M471.72 782 L762 1010" stroke-width="1.6"/><path d="M492.96 782 L880 1010" stroke-width="1.6"/><path d="M514.2 782 L998 1010" stroke-width="1.6"/><path d="M535.44 782 L1116 1010" stroke-width="1.6"/>
+    <path d="M338 788 H478" stroke-width="1.6"/><path d="M268 807 H548" stroke-width="1.6"/><path d="M198 839 H618" stroke-width="1.6"/><path d="M128 883 H688" stroke-width="1.6"/><path d="M58 940 H758" stroke-width="1.6"/><path d="M-12 1010 H828" stroke-width="1.6"/>
+    <path d="M0 782 H816" stroke="#ffd9ec" stroke-width="3"/>
+  </g>
+<text x="70" y="250" font-size="30" opacity=".9">🧸</text><text x="748" y="232" font-size="26" opacity=".9">🎀</text><text x="120" y="470" font-size="22" opacity=".9">✨</text><text x="720" y="480" font-size="28" opacity=".9">🦄</text><text x="60" y="660" font-size="24" opacity=".9">💖</text><text x="762" y="660" font-size="26" opacity=".9">⭐</text><text x="96" y="830" font-size="22" opacity=".9">🍬</text><text x="726" y="812" font-size="24" opacity=".9">🦋</text><text x="44" y="400" font-size="22" opacity=".9">🐰</text><text x="770" y="380" font-size="22" opacity=".9">🦕</text>
 
 <!-- title -->
 <g text-anchor="middle">
-  <text x="408" y="118" font-size="19" font-weight="800" fill="#c9539a" letter-spacing="7">DEVELOPMENT BINDER</text>
-  <g>
-    <text x="408" y="200" font-size="70" font-weight="800" fill="#ef65ab">CLAW MACHINE</text>
-    <text x="408" y="196" font-size="70" font-weight="800" fill="#fff">CLAW MACHINE</text>
-    <text x="408" y="272" font-size="70" font-weight="800" fill="#ef65ab">CUTIES</text>
-    <text x="408" y="268" font-size="70" font-weight="800" fill="#fff">CUTIES</text>
-  </g>
-  <text x="408" y="308" font-size="18" font-weight="700" fill="#a4548a">the game · the cuties · the big new ideas · the plan</text>
+  <text x="408" y="122" font-size="19" font-weight="800" fill="#a4548a" letter-spacing="7">DEVELOPMENT BINDER</text>
+  <path d="M236 140 H580" stroke="#f3c4de" stroke-width="2.4" stroke-linecap="round"/>
+  <text x="408" y="206" font-size="70" font-weight="800" fill="#e0287f">CLAW MACHINE</text>
+  <text x="408" y="278" font-size="70" font-weight="800" fill="#e0287f">CUTIES</text>
+  <text x="408" y="314" font-size="18" font-weight="700" fill="#a4548a">the game · the cuties · the big new ideas · the plan</text>
 </g>
 
 <!-- hero cabinet -->
-<circle cx="408" cy="600" r="300" fill="url(#gGlow)"/>
-<g transform="translate(408,318) scale(.545) translate(-320,0)"><defs>
+<g transform="translate(408,324) scale(.545) translate(-320,0)"><defs>
     <linearGradient id="gShine" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".42" stop-color="#fff" stop-opacity=".07"/>
       <stop offset=".62" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
@@ -574,15 +572,14 @@ table.left td{text-align:left}
   <text x="408" y="634" text-anchor="middle" font-size="26">🦄💖🦄</text></g>
 
 <!-- ribbon -->
-<g transform="translate(408,860)">
+<g transform="translate(408,862)">
   <path d="M-300 -34 h600 l-26 34 l26 34 h-600 l26 -34 z" fill="url(#gRibbon)"/>
-  <path d="M-300 -34 h600 l-26 34 l26 34 h-600 l26 -34 z" fill="none" stroke="#fff" stroke-width="3" opacity=".7"/>
   <text x="0" y="9" text-anchor="middle" font-size="27" font-weight="800" fill="#fff">Version 2.0 — THE BIG CUTENESS UPDATE</text>
 </g>
 
 <!-- credit block -->
 <g transform="translate(408,946)">
-  <rect x="-292" y="-24" width="584" height="86" rx="26" fill="#fff" opacity=".92"/>
+  <rect x="-292" y="-24" width="584" height="86" rx="26" fill="#fff" stroke="#ff5c9d" stroke-width="3"/>
   <text x="0" y="6" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">Made for Ella — Creator, Owner &amp; Game Boss</text>
   <text x="0" y="36" text-anchor="middle" font-size="14.5" font-weight="700" fill="#a4548a">Working master · August 2026 · Game checked at build 1c0c853 · Ella makes the final choices</text>
 </g>
@@ -704,19 +701,18 @@ table.left td{text-align:left}
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">The Arcade Right Now</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">2</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">The Arcade Right Now</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">2</text></g>
 <g><rect x="40" y="104" width="74.80000000000001" height="26" rx="13" fill="#7fe0c4" opacity=".95"/>
     <text x="77.4" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">CURRENT</text></g>
@@ -1101,8 +1097,8 @@ table.left td{text-align:left}
   <text x="408" y="634" text-anchor="middle" font-size="26">🧸💖🧸</text></g>
 
   <g>
-    <rect x="452" y="166" width="326" height="142" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="452" y="166" width="326" height="142" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="452" y="166" width="326" height="142" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M468 166 H762 " stroke="#e0287f" stroke-width="0" fill="none"/>
     
     <text x="466" y="192" font-size="15.5" font-weight="800" fill="#e0287f">What the game is today</text>
     <text x="466" y="214" font-size="13" font-weight="600" fill="#7a3f66">
@@ -1110,8 +1106,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="452" y="318" width="326" height="142" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="452" y="318" width="326" height="142" rx="16" fill="#c9a4ff" opacity=".07"/>
+    <rect x="452" y="318" width="326" height="142" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4"/>
+    <path d="M468 318 H762 " stroke="#c9a4ff" stroke-width="0" fill="none"/>
     
     <text x="466" y="344" font-size="15.5" font-weight="800" fill="#c9a4ff">It is one file</text>
     <text x="466" y="366" font-size="13" font-weight="600" fill="#7a3f66">
@@ -1119,8 +1115,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="452" y="470" width="326" height="122" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4" opacity=".97"/>
-    <rect x="452" y="470" width="326" height="122" rx="16" fill="#7fe0c4" opacity=".07"/>
+    <rect x="452" y="470" width="326" height="122" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4"/>
+    <path d="M468 470 H762 " stroke="#7fe0c4" stroke-width="0" fill="none"/>
     
     <text x="466" y="496" font-size="15.5" font-weight="800" fill="#7fe0c4">The grab is honest</text>
     <text x="466" y="518" font-size="13" font-weight="600" fill="#7a3f66">
@@ -1656,7 +1652,7 @@ table.left td{text-align:left}
     </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 2</text>
 </svg></div></div>
@@ -3047,19 +3043,18 @@ table.left td{text-align:left}
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">Everybody Look Up!</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">3</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">Everybody Look Up!</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">3</text></g>
 <g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
     <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">PROPOSED</text></g>
@@ -3067,7 +3062,7 @@ table.left td{text-align:left}
 
 
   <defs><clipPath id="pitCrop"><rect x="40" y="172" width="356" height="332" rx="14"/></clipPath></defs>
-  <rect x="40" y="172" width="356" height="332" rx="14" fill="#ffeef7"/>
+  <rect x="40" y="172" width="356" height="332" rx="14" fill="#ffffff"/>
   <g clip-path="url(#pitCrop)"><g transform="translate(-40.0,88.8) scale(0.8)"><defs>
     <linearGradient id="gShine" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".42" stop-color="#fff" stop-opacity=".07"/>
@@ -3564,8 +3559,9 @@ table.left td{text-align:left}
   </g></g>
     <ellipse cx="0" cy="98" rx="72" ry="23" fill="#e0287f" fill-opacity=".14" stroke="#e0287f" stroke-width="5" stroke-dasharray="12 9"/>
     <g>
-    <path d="M-72 -20 l24 18 l-6 -18 z" fill="#ffd9ec"/>
-    <rect x="-158" y="-62" width="132" height="42" rx="19.09090909090909" fill="#ffd9ec"/>
+    <path d="M-72 -20 l24 18 l-6 -18 z" fill="#ffd9ec" />
+    <rect x="-158" y="-62" width="132" height="42" rx="19.09090909090909" fill="#ffd9ec" />
+    <rect x="-156" y="-60" width="128" height="38" rx="17.5" fill="#ffd9ec"/>
     <text x="-92" y="-34.16" text-anchor="middle"
       font-size="19" font-weight="800" fill="#e0287f">pick me!!</text></g>
     <text x="118" y="-52" font-size="26">🌟</text>
@@ -3573,8 +3569,8 @@ table.left td{text-align:left}
   <text x="596" y="580" text-anchor="middle" font-size="13.5" font-weight="800" fill="#a4548a">close up · the one you would actually get</text>
 
   <g>
-    <rect x="40" y="608" width="176" height="176" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="608" width="176" height="176" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="608" width="176" height="176" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 608 H200 " stroke="#e0287f" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="628" r="15" fill="#e0287f" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="634" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">1</text></g>
     <text x="82" y="634" font-size="15.5" font-weight="800" fill="#e0287f">Eyes that follow</text>
@@ -3583,8 +3579,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="232" y="608" width="176" height="176" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="232" y="608" width="176" height="176" rx="16" fill="#c9a4ff" opacity=".07"/>
+    <rect x="232" y="608" width="176" height="176" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4"/>
+    <path d="M248 608 H392 " stroke="#c9a4ff" stroke-width="0" fill="none"/>
     <g><circle cx="252" cy="628" r="15" fill="#c9a4ff" stroke="#fff" stroke-width="3.5"/>
     <text x="252" y="634" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">2</text></g>
     <text x="274" y="634" font-size="15.5" font-weight="800" fill="#c9a4ff">The chosen one</text>
@@ -3593,8 +3589,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="424" y="608" width="176" height="176" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4" opacity=".97"/>
-    <rect x="424" y="608" width="176" height="176" rx="16" fill="#7fe0c4" opacity=".07"/>
+    <rect x="424" y="608" width="176" height="176" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4"/>
+    <path d="M440 608 H584 " stroke="#7fe0c4" stroke-width="0" fill="none"/>
     <g><circle cx="444" cy="628" r="15" fill="#7fe0c4" stroke="#fff" stroke-width="3.5"/>
     <text x="444" y="634" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">3</text></g>
     <text x="466" y="634" font-size="15.5" font-weight="800" fill="#7fe0c4">A ring on the floor</text>
@@ -3603,8 +3599,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="616" y="608" width="176" height="176" rx="16" fill="#fff" stroke="#e8a417" stroke-width="2.4" opacity=".97"/>
-    <rect x="616" y="608" width="176" height="176" rx="16" fill="#e8a417" opacity=".07"/>
+    <rect x="616" y="608" width="176" height="176" rx="16" fill="#fff" stroke="#e8a417" stroke-width="2.4"/>
+    <path d="M632 608 H776 " stroke="#e8a417" stroke-width="0" fill="none"/>
     <g><circle cx="636" cy="628" r="15" fill="#e8a417" stroke="#fff" stroke-width="3.5"/>
     <text x="636" y="634" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">4</text></g>
     <text x="658" y="634" font-size="15.5" font-weight="800" fill="#e8a417">Almost free</text>
@@ -3614,14 +3610,14 @@ table.left td{text-align:left}
   </g>
 
   <g transform="translate(40,838)">
-    <rect x="0" y="0" width="736" height="140" rx="20" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="736" height="140" rx="20" fill="#ffffff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="20" y="30" font-size="16" font-weight="800" fill="#e0287f">Ella decides 🩷</text>
     <text x="20" y="58" font-size="13.5" font-weight="600" fill="#7a3f66"><tspan x="20" dy="0">Should the cuties look sleepy when nobody has dropped in a while? Should the chosen one say something out</tspan><tspan x="20" dy="20">loud, or only sparkle? Should the floor ring be a dashed circle, a spotlight, or a little heart?</tspan></text>
     <text x="20" y="124" font-size="13" font-weight="800" fill="#a4548a">Decision ID: CMC-2026-___</text>
   </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 3</text>
 </svg></div></div>
@@ -3631,19 +3627,18 @@ table.left td{text-align:left}
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">The Cutie Feelings Sheet</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">4</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">The Cutie Feelings Sheet</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">4</text></g>
 <g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
     <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">PROPOSED</text></g>
@@ -3651,8 +3646,8 @@ table.left td{text-align:left}
 
 
   <g>
-    <rect x="40" y="150" width="736" height="112" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="150" width="736" height="112" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="150" width="736" height="112" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 150 H760 " stroke="#e0287f" stroke-width="0" fill="none"/>
     
     <text x="54" y="176" font-size="15.5" font-weight="800" fill="#e0287f">One drawing, thirteen feelings</text>
     <text x="54" y="198" font-size="13" font-weight="600" fill="#7a3f66">
@@ -3955,13 +3950,13 @@ table.left td{text-align:left}
       <text x="0" y="74" text-anchor="middle" font-size="10.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">you have not dropped</tspan><tspan x="0" dy="14">in a while</tspan></text>
     </g>
   <g transform="translate(40,866)">
-    <rect x="0" y="0" width="736" height="132" rx="20" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="736" height="132" rx="20" fill="#ffffff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="20" y="30" font-size="16" font-weight="800" fill="#e0287f">Ella decides 🩷</text>
     <text x="20" y="58" font-size="13.5" font-weight="600" fill="#7a3f66"><tspan x="20" dy="0">Which feelings make the cut? Are any missing — grumpy, hungry, ticklish,</tspan><tspan x="20" dy="20">sparkly-because-it-is-your-birthday? And do bunnies, dinos, butterflies, candies and unicorns all</tspan><tspan x="20" dy="20">get the same set, or does each kind get one feeling that only it can do?</tspan></text>
   </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 4</text>
 </svg></div></div>
@@ -3971,19 +3966,18 @@ table.left td{text-align:left}
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">Meet Clawdia</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">5</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">Meet Clawdia</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">5</text></g>
 <g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
     <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">PROPOSED</text></g>
@@ -3991,8 +3985,8 @@ table.left td{text-align:left}
 
 
   <g>
-    <rect x="40" y="152" width="490" height="140" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="152" width="490" height="140" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="152" width="490" height="140" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 152 H514 " stroke="#e0287f" stroke-width="0" fill="none"/>
     
     <text x="54" y="178" font-size="15.5" font-weight="800" fill="#e0287f">The claw is already the main character</text>
     <text x="54" y="200" font-size="13" font-weight="600" fill="#7a3f66">
@@ -4009,7 +4003,7 @@ table.left td{text-align:left}
   </g>
   <g transform="translate(152,420)">
       <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
-      <circle cx="0" cy="-24" r="82" fill="#ffeef7"/>
+      <circle cx="0" cy="-24" r="82" fill="none" stroke="#f3c4de" stroke-width="2.2" stroke-dasharray="5 7"/>
       <g transform="translate(0,-46) scale(1.5)"><g transform="scale(1)">
     <g class="prong" opacity=".85" transform="rotate(0)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
     <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
@@ -4032,7 +4026,7 @@ table.left td{text-align:left}
       <text x="0" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">parked at the top, blinking,</tspan><tspan x="0" dy="15">ready when you are</tspan></text>
     </g><g transform="translate(402,420)">
       <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
-      <circle cx="0" cy="-24" r="82" fill="#ffeef7"/>
+      <circle cx="0" cy="-24" r="82" fill="none" stroke="#f3c4de" stroke-width="2.2" stroke-dasharray="5 7"/>
       <g transform="translate(0,-46) scale(1.5)"><g transform="scale(1)">
     <g class="prong" opacity=".85" transform="rotate(0)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
     <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
@@ -4058,7 +4052,7 @@ table.left td{text-align:left}
       <text x="0" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">you are moving her — she</tspan><tspan x="0" dy="15">squints at the pile</tspan></text>
     </g><g transform="translate(652,420)">
       <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
-      <circle cx="0" cy="-24" r="82" fill="#ffeef7"/>
+      <circle cx="0" cy="-24" r="82" fill="none" stroke="#f3c4de" stroke-width="2.2" stroke-dasharray="5 7"/>
       <g transform="translate(0,-46) scale(1.5)"><g transform="scale(1)">
     <g class="prong" opacity=".85" transform="rotate(-14.040000000000001)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
     <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
@@ -4081,7 +4075,7 @@ table.left td{text-align:left}
       <text x="0" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">the prongs close. She is</tspan><tspan x="0" dy="15">trying so hard.</tspan></text>
     </g><g transform="translate(152,688)">
       <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
-      <circle cx="0" cy="-24" r="82" fill="#ffeef7"/>
+      <circle cx="0" cy="-24" r="82" fill="none" stroke="#f3c4de" stroke-width="2.2" stroke-dasharray="5 7"/>
       <g transform="translate(0,-46) scale(1.5)"><g transform="scale(1)">
     <g class="prong" opacity=".85" transform="rotate(-12.48)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
     <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
@@ -4104,7 +4098,7 @@ table.left td{text-align:left}
       <text x="0" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">she is carrying a cutie to the</tspan><tspan x="0" dy="15">chute</tspan></text>
     </g><g transform="translate(402,688)">
       <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
-      <circle cx="0" cy="-24" r="82" fill="#ffeef7"/>
+      <circle cx="0" cy="-24" r="82" fill="none" stroke="#f3c4de" stroke-width="2.2" stroke-dasharray="5 7"/>
       <g transform="translate(0,-46) scale(1.5)"><g transform="scale(1)">
     <g class="prong" opacity=".85" transform="rotate(0)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
     <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
@@ -4129,7 +4123,7 @@ table.left td{text-align:left}
       <text x="0" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">the cutie slipped. She feels</tspan><tspan x="0" dy="15">terrible.</tspan></text>
     </g><g transform="translate(652,688)">
       <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
-      <circle cx="0" cy="-24" r="82" fill="#ffeef7"/>
+      <circle cx="0" cy="-24" r="82" fill="none" stroke="#f3c4de" stroke-width="2.2" stroke-dasharray="5 7"/>
       <g transform="translate(0,-46) scale(1.5)"><g transform="scale(1)">
     <g class="prong" opacity=".85" transform="rotate(0)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
     <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
@@ -4154,14 +4148,14 @@ table.left td{text-align:left}
       <text x="0" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">nobody has played for a minute</tspan></text>
     </g>
   <g transform="translate(40,832)">
-    <rect x="0" y="0" width="736" height="146" rx="20" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="736" height="146" rx="20" fill="#ffffff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="20" y="30" font-size="16" font-weight="800" fill="#e0287f">Why this is the cheapest big idea in the binder</text>
     <text x="20" y="58" font-size="13.5" font-weight="600" fill="#7a3f66"><tspan x="20" dy="0">The claw already changes between six states in the code: idle, falling, closing, lifting, travelling and</tspan><tspan x="20" dy="20">returning. Those six states are exactly the six faces on this page. Nothing new has to be invented — the game</tspan><tspan x="20" dy="20">already knows how the claw feels. It just is not showing it yet.</tspan></text>
     <text x="20" y="130" font-size="13" font-weight="800" fill="#a4548a">Decision ID: CMC-2026-___    ·    Page label: PROPOSED</text>
   </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 5</text>
 </svg></div></div>
@@ -4171,19 +4165,18 @@ table.left td{text-align:left}
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">Cabinet Glow-Up</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">6</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">Cabinet Glow-Up</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">6</text></g>
 <g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
     <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">PROPOSED</text></g>
@@ -5041,8 +5034,8 @@ table.left td{text-align:left}
   <path d="M394 356 h28 m-10 -10 l10 10 l-10 10" stroke="#e0287f" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
   <g>
-    <rect x="40" y="552" width="176" height="190" rx="16" fill="#fff" stroke="#e8a417" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="552" width="176" height="190" rx="16" fill="#e8a417" opacity=".07"/>
+    <rect x="40" y="552" width="176" height="190" rx="16" fill="#fff" stroke="#e8a417" stroke-width="2.4"/>
+    <path d="M56 552 H200 " stroke="#e8a417" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="572" r="15" fill="#e8a417" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="578" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">1</text></g>
     <text x="82" y="578" font-size="15.5" font-weight="800" fill="#e8a417">Real light</text>
@@ -5051,8 +5044,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="232" y="552" width="176" height="190" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="232" y="552" width="176" height="190" rx="16" fill="#c9a4ff" opacity=".07"/>
+    <rect x="232" y="552" width="176" height="190" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4"/>
+    <path d="M248 552 H392 " stroke="#c9a4ff" stroke-width="0" fill="none"/>
     <g><circle cx="252" cy="572" r="15" fill="#c9a4ff" stroke="#fff" stroke-width="3.5"/>
     <text x="252" y="578" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">2</text></g>
     <text x="274" y="578" font-size="15.5" font-weight="800" fill="#c9a4ff">A soft floor</text>
@@ -5061,8 +5054,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="424" y="552" width="176" height="190" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4" opacity=".97"/>
-    <rect x="424" y="552" width="176" height="190" rx="16" fill="#7fe0c4" opacity=".07"/>
+    <rect x="424" y="552" width="176" height="190" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4"/>
+    <path d="M440 552 H584 " stroke="#7fe0c4" stroke-width="0" fill="none"/>
     <g><circle cx="444" cy="572" r="15" fill="#7fe0c4" stroke="#fff" stroke-width="3.5"/>
     <text x="444" y="578" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">3</text></g>
     <text x="466" y="578" font-size="15.5" font-weight="800" fill="#7fe0c4">Rounder, glossier</text>
@@ -5071,8 +5064,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="616" y="552" width="176" height="190" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="616" y="552" width="176" height="190" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="616" y="552" width="176" height="190" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M632 552 H776 " stroke="#e0287f" stroke-width="0" fill="none"/>
     <g><circle cx="636" cy="572" r="15" fill="#e0287f" stroke="#fff" stroke-width="3.5"/>
     <text x="636" y="578" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">4</text></g>
     <text x="658" y="578" font-size="15.5" font-weight="800" fill="#e0287f">A roof mascot</text>
@@ -5082,8 +5075,8 @@ table.left td{text-align:left}
   </g>
 
   <g>
-    <rect x="40" y="760" width="240" height="156" rx="16" fill="#fff" stroke="#ff9a7a" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="760" width="240" height="156" rx="16" fill="#ff9a7a" opacity=".07"/>
+    <rect x="40" y="760" width="240" height="156" rx="16" fill="#fff" stroke="#ff9a7a" stroke-width="2.4"/>
+    <path d="M56 760 H264 " stroke="#ff9a7a" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="780" r="15" fill="#ff9a7a" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="786" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">5</text></g>
     <text x="82" y="786" font-size="15.5" font-weight="800" fill="#ff9a7a">A heart-shaped prize hole</text>
@@ -5092,8 +5085,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="296" y="760" width="240" height="156" rx="16" fill="#fff" stroke="#7fd8ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="296" y="760" width="240" height="156" rx="16" fill="#7fd8ff" opacity=".07"/>
+    <rect x="296" y="760" width="240" height="156" rx="16" fill="#fff" stroke="#7fd8ff" stroke-width="2.4"/>
+    <path d="M312 760 H520 " stroke="#7fd8ff" stroke-width="0" fill="none"/>
     <g><circle cx="316" cy="780" r="15" fill="#7fd8ff" stroke="#fff" stroke-width="3.5"/>
     <text x="316" y="786" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">6</text></g>
     <text x="338" y="786" font-size="15.5" font-weight="800" fill="#7fd8ff">A progress meter</text>
@@ -5102,8 +5095,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="552" y="760" width="224" height="156" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="552" y="760" width="224" height="156" rx="16" fill="#c9a4ff" opacity=".07"/>
+    <rect x="552" y="760" width="224" height="156" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4"/>
+    <path d="M568 760 H760 " stroke="#c9a4ff" stroke-width="0" fill="none"/>
     <g><circle cx="572" cy="780" r="15" fill="#c9a4ff" stroke="#fff" stroke-width="3.5"/>
     <text x="572" y="786" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">7</text></g>
     <text x="594" y="786" font-size="15.5" font-weight="800" fill="#c9a4ff">Bunting, clouds, sparkles</text>
@@ -5113,13 +5106,13 @@ table.left td{text-align:left}
   </g>
 
   <g transform="translate(40,934)">
-    <rect x="0" y="0" width="736" height="66" rx="18" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="736" height="66" rx="18" fill="#ffffff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="20" y="28" font-size="14.5" font-weight="800" fill="#e0287f">Drawn with shapes in code — no picture files. The game still opens instantly.</text>
     <text x="20" y="52" font-size="13.5" font-weight="700" fill="#a4548a">Ella decides which upgrades happen first, and whether every machine gets the same treatment.</text>
   </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 6</text>
 </svg></div></div>
@@ -5129,19 +5122,18 @@ table.left td{text-align:left}
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">The Miss That Feels Good</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">7</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">The Miss That Feels Good</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">7</text></g>
 <g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
     <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">PROPOSED</text></g>
@@ -5149,8 +5141,8 @@ table.left td{text-align:left}
 
 
   <g>
-    <rect x="40" y="150" width="736" height="124" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="150" width="736" height="124" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="150" width="736" height="124" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 150 H760 " stroke="#e0287f" stroke-width="0" fill="none"/>
     
     <text x="54" y="176" font-size="15.5" font-weight="800" fill="#e0287f">Four out of every five drops are a miss. That is the game.</text>
     <text x="54" y="198" font-size="13" font-weight="600" fill="#7a3f66">
@@ -5211,8 +5203,9 @@ table.left td{text-align:left}
   </g></g>
     <path d="M-34 -18 q-10 26 -4 48 M-46 -8 q-8 22 -2 40" stroke="#ff9a7a" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
     <g>
-    <path d="M-58 0 l24 18 l-6 -18 z" fill="#ffd9ec"/>
-    <rect x="-108" y="-34" width="96" height="34" rx="15.454545454545453" fill="#ffd9ec"/>
+    <path d="M-58 0 l24 18 l-6 -18 z" fill="#ffd9ec" />
+    <rect x="-108" y="-34" width="96" height="34" rx="15.454545454545453" fill="#ffd9ec" />
+    <rect x="-106" y="-32" width="92" height="30" rx="14.166666666666668" fill="#ffd9ec"/>
     <text x="-60" y="-11.600000000000001" text-anchor="middle"
       font-size="15" font-weight="800" fill="#e0287f">byeee!</text></g>
   </g>
@@ -5222,8 +5215,8 @@ table.left td{text-align:left}
     <rect x="290" y="300" width="236" height="40" rx="20" fill="#7fe0c4"/>
     <text x="408" y="327" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">THE PILE MOVED</text>
   <g transform="translate(408,436)">
-    <rect x="-96" y="-58" width="88" height="96" rx="12" fill="#ffeef7"/>
-    <rect x="8" y="-58" width="88" height="96" rx="12" fill="#e6fff6"/>
+    <rect x="-96" y="-58" width="88" height="96" rx="12" fill="#fff" stroke="#f3c4de" stroke-width="2"/>
+    <rect x="8" y="-58" width="88" height="96" rx="12" fill="#fff" stroke="#7fe0c4" stroke-width="2"/>
     <text x="-52" y="-66" text-anchor="middle" font-size="11" font-weight="800" fill="#a4548a">before</text>
     <text x="52" y="-66" text-anchor="middle" font-size="11" font-weight="800" fill="#7fe0c4">after</text>
     <g transform="translate(-70,16) scale(.30)"><g>
@@ -5379,8 +5372,9 @@ table.left td{text-align:left}
     <circle cx="48" cy="-24" r="24" fill="none" stroke="#7fe0c4" stroke-width="3" stroke-dasharray="6 5"/>
     <path d="M-4 -4 h14 m-6 -6 l6 6 l-6 6" stroke="#7fe0c4" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
     <g>
-    <path d="M-34 48 l-6 -18 l24 18 z" fill="#e6fff6"/>
-    <rect x="-56" y="48" width="168" height="32" rx="14.545454545454545" fill="#e6fff6"/>
+    <path d="M-34 48 l-6 -18 l24 18 z" fill="#fff" stroke="#7fe0c4" stroke-width="2"/>
+    <rect x="-56" y="48" width="168" height="32" rx="14.545454545454545" fill="#fff" stroke="#7fe0c4" stroke-width="2"/>
+    <rect x="-54" y="50" width="164" height="28" rx="13.333333333333334" fill="#fff"/>
     <text x="28" y="68.32" text-anchor="middle"
       font-size="12" font-weight="800" fill="#e0287f">Sir Roosevelt is on top now!</text></g>
   </g>
@@ -5410,7 +5404,7 @@ table.left td{text-align:left}
     <circle r="5.2" fill="#f08c42"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#fff" opacity=".65"/>
   </g>
   </g></g>
-    <rect x="-88" y="18" width="176" height="22" rx="11" fill="#ffeef7"/>
+    <rect x="-88" y="18" width="176" height="22" rx="11" fill="#fff" stroke="#c9a4ff" stroke-width="2"/>
     <rect x="-88" y="18" width="150" height="22" rx="11" fill="#c9a4ff"/>
     <circle cx="62" cy="29" r="15" fill="#fff" stroke="#c9a4ff" stroke-width="3"/>
     <text x="62" y="35" text-anchor="middle" font-size="13" font-weight="800" fill="#c9a4ff">!</text>
@@ -5419,8 +5413,8 @@ table.left td{text-align:left}
   <text x="658" y="522" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7a3f66"><tspan x="658" dy="0">The game already knows exactly</tspan><tspan x="658" dy="17">how close you were — it is the</tspan><tspan x="658" dy="17">aim number. Show it. “One</tspan><tspan x="658" dy="17">whisker away” hurts in the good</tspan><tspan x="658" dy="17">way.</tspan></text>
 
   <g>
-    <rect x="40" y="614" width="356" height="168" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="614" width="356" height="168" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="614" width="356" height="168" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 614 H380 " stroke="#e0287f" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="634" r="15" fill="#e0287f" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="640" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">8</text></g>
     <text x="82" y="640" font-size="15.5" font-weight="800" fill="#e0287f">What must NOT change</text>
@@ -5429,8 +5423,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="420" y="614" width="356" height="168" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="420" y="614" width="356" height="168" rx="16" fill="#c9a4ff" opacity=".07"/>
+    <rect x="420" y="614" width="356" height="168" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4"/>
+    <path d="M436 614 H760 " stroke="#c9a4ff" stroke-width="0" fill="none"/>
     <g><circle cx="440" cy="634" r="15" fill="#c9a4ff" stroke="#fff" stroke-width="3.5"/>
     <text x="440" y="640" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">9</text></g>
     <text x="462" y="640" font-size="15.5" font-weight="800" fill="#c9a4ff">What could change (Ella’s call)</text>
@@ -5440,7 +5434,7 @@ table.left td{text-align:left}
   </g>
 
   <g transform="translate(40,800)">
-    <rect x="0" y="0" width="736" height="204" rx="20" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="736" height="204" rx="20" fill="#ffffff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="20" y="32" font-size="17" font-weight="800" fill="#e0287f">The three-second rule 🕒</text>
     <text x="20" y="66" font-size="14" font-weight="600" fill="#7a3f66"><tspan x="20" dy="0">Every drop ends in one of three ways: caught, slipped, or fumbled. Each ending gets three</tspan><tspan x="20" dy="21">seconds of the game’s full attention — a face, a sound, a sentence, and something that changed</tspan><tspan x="20" dy="21">in the pit. Three seconds × three endings is the entire feature. If a player cannot tell those</tspan><tspan x="20" dy="21">three endings apart with the sound off, it is not finished yet.</tspan></text>
     <text x="20" y="164" font-size="13" font-weight="800" fill="#a4548a"><tspan x="20" dy="0">caught → confetti, the name, an album flash · slipped → the wave, “so close”, the meter · fumbled → the</tspan><tspan x="20" dy="19">pile moves, and the game says what moved</tspan></text>
@@ -5448,7 +5442,7 @@ table.left td{text-align:left}
   </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 7</text>
 </svg></div></div>
@@ -5458,19 +5452,18 @@ table.left td{text-align:left}
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">Six New Machines to Dream About</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">8</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">Six New Machines to Dream About</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">8</text></g>
 <g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
     <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">PROPOSED</text></g>
@@ -5478,8 +5471,8 @@ table.left td{text-align:left}
 
 
   <g>
-    <rect x="40" y="150" width="736" height="100" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="150" width="736" height="100" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="150" width="736" height="100" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 150 H760 " stroke="#e0287f" stroke-width="0" fill="none"/>
     
     <text x="54" y="176" font-size="15.5" font-weight="800" fill="#e0287f">Six machines exist. These are six that could.</text>
     <text x="54" y="198" font-size="13" font-weight="600" fill="#7a3f66">
@@ -5515,7 +5508,7 @@ table.left td{text-align:left}
       <text x="128" y="46" font-size="13" font-weight="800" fill="#a4548a">“eight cats, eight teacups”</text>
       <text x="128" y="72" font-size="12.5" font-weight="800" fill="#e0287f">THE TWIST</text>
       <text x="128" y="92" font-size="12.5" font-weight="600" fill="#7a3f66"><tspan x="128" dy="0">One cat wakes up now and then</tspan><tspan x="128" dy="18">and bats the pile around while</tspan><tspan x="128" dy="18">you are still aiming.</tspan></text>
-      <rect x="128" y="164" width="216" height="24" rx="12" fill="#ffeef7"/>
+      <rect x="128" y="164" width="216" height="24" rx="12" fill="#fff" stroke="#f3c4de" stroke-width="2"/>
       <text x="236" y="181" text-anchor="middle" font-size="11.5" font-weight="800" fill="#a4548a">8 cuties still to be designed</text>
     </g><g transform="translate(430,268)">
       <g transform="translate(0,0) scale(0.86)">
@@ -5536,7 +5529,7 @@ table.left td{text-align:left}
       <text x="128" y="46" font-size="13" font-weight="800" fill="#a4548a">“sea cuties in slow motion”</text>
       <text x="128" y="72" font-size="12.5" font-weight="800" fill="#e0287f">THE TWIST</text>
       <text x="128" y="92" font-size="12.5" font-weight="600" fill="#7a3f66"><tspan x="128" dy="0">The pit is full of water.</tspan><tspan x="128" dy="18">Everything falls slowly and</tspan><tspan x="128" dy="18">drifts sideways. Patience</tspan><tspan x="128" dy="18">beats speed here.</tspan></text>
-      <rect x="128" y="164" width="216" height="24" rx="12" fill="#ffeef7"/>
+      <rect x="128" y="164" width="216" height="24" rx="12" fill="#fff" stroke="#f3c4de" stroke-width="2"/>
       <text x="236" y="181" text-anchor="middle" font-size="11.5" font-weight="800" fill="#a4548a">8 cuties still to be designed</text>
     </g><g transform="translate(44,500)">
       <g transform="translate(0,0) scale(0.86)">
@@ -5587,7 +5580,7 @@ table.left td{text-align:left}
       <text x="128" y="46" font-size="13" font-weight="800" fill="#a4548a">“gravity took the day off”</text>
       <text x="128" y="72" font-size="12.5" font-weight="800" fill="#e0287f">THE TWIST</text>
       <text x="128" y="92" font-size="12.5" font-weight="600" fill="#7a3f66"><tspan x="128" dy="0">Low gravity. Cuties float back</tspan><tspan x="128" dy="18">down after a miss instead of</tspan><tspan x="128" dy="18">thudding, so the pile never</tspan><tspan x="128" dy="18">settles the same way twice.</tspan></text>
-      <rect x="128" y="164" width="216" height="24" rx="12" fill="#ffeef7"/>
+      <rect x="128" y="164" width="216" height="24" rx="12" fill="#fff" stroke="#f3c4de" stroke-width="2"/>
       <text x="236" y="181" text-anchor="middle" font-size="11.5" font-weight="800" fill="#a4548a">8 cuties still to be designed</text>
     </g><g transform="translate(430,500)">
       <g transform="translate(0,0) scale(0.86)">
@@ -5617,7 +5610,7 @@ table.left td{text-align:left}
       <text x="128" y="46" font-size="13" font-weight="800" fill="#a4548a">“shhh, they are napping”</text>
       <text x="128" y="72" font-size="12.5" font-weight="800" fill="#e0287f">THE TWIST</text>
       <text x="128" y="92" font-size="12.5" font-weight="600" fill="#7a3f66"><tspan x="128" dy="0">The calm machine. Big soft</tspan><tspan x="128" dy="18">sheep, gentle grip, slow</tspan><tspan x="128" dy="18">music. Somewhere to go when</tspan><tspan x="128" dy="18">the unicorn machine has been</tspan><tspan x="128" dy="18">mean.</tspan></text>
-      <rect x="128" y="164" width="216" height="24" rx="12" fill="#ffeef7"/>
+      <rect x="128" y="164" width="216" height="24" rx="12" fill="#fff" stroke="#f3c4de" stroke-width="2"/>
       <text x="236" y="181" text-anchor="middle" font-size="11.5" font-weight="800" fill="#a4548a">8 cuties still to be designed</text>
     </g><g transform="translate(44,732)">
       <g transform="translate(0,0) scale(0.86)">
@@ -5638,7 +5631,7 @@ table.left td{text-align:left}
       <text x="128" y="46" font-size="13" font-weight="800" fill="#a4548a">“boing boing boing”</text>
       <text x="128" y="72" font-size="12.5" font-weight="800" fill="#e0287f">THE TWIST</text>
       <text x="128" y="92" font-size="12.5" font-weight="600" fill="#7a3f66"><tspan x="128" dy="0">Bouncy mushroom cuties. Miss</tspan><tspan x="128" dy="18">one and it springs, launching</tspan><tspan x="128" dy="18">two more into the air. Chaos,</tspan><tspan x="128" dy="18">but fair chaos.</tspan></text>
-      <rect x="128" y="164" width="216" height="24" rx="12" fill="#ffeef7"/>
+      <rect x="128" y="164" width="216" height="24" rx="12" fill="#fff" stroke="#f3c4de" stroke-width="2"/>
       <text x="236" y="181" text-anchor="middle" font-size="11.5" font-weight="800" fill="#a4548a">8 cuties still to be designed</text>
     </g><g transform="translate(430,732)">
       <g transform="translate(0,0) scale(0.86)">
@@ -5713,16 +5706,16 @@ table.left td{text-align:left}
       <text x="128" y="46" font-size="13" font-weight="800" fill="#a4548a">“nobody knows what is in there”</text>
       <text x="128" y="72" font-size="12.5" font-weight="800" fill="#e0287f">THE TWIST</text>
       <text x="128" y="92" font-size="12.5" font-weight="600" fill="#7a3f66"><tspan x="128" dy="0">You can only see silhouettes</tspan><tspan x="128" dy="18">through frosted glass. You</tspan><tspan x="128" dy="18">find out what you caught when</tspan><tspan x="128" dy="18">it lands in the chute.</tspan></text>
-      <rect x="128" y="164" width="216" height="24" rx="12" fill="#ffeef7"/>
+      <rect x="128" y="164" width="216" height="24" rx="12" fill="#fff" stroke="#f3c4de" stroke-width="2"/>
       <text x="236" y="181" text-anchor="middle" font-size="11.5" font-weight="800" fill="#a4548a">8 cuties still to be designed</text>
     </g>
   <g transform="translate(40,956)">
-    <rect x="0" y="0" width="736" height="42" rx="16" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="736" height="42" rx="16" fill="#ffffff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="20" y="27" font-size="13.5" font-weight="800" fill="#a4548a">Ella picks: which one is machine number 7 · what the eight cuties inside are called · which twist is worth building first</text>
   </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 8</text>
 </svg></div></div>
@@ -5732,19 +5725,18 @@ table.left td{text-align:left}
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">The Cutie Home</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">9</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">The Cutie Home</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">9</text></g>
 <g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
     <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">PROPOSED</text></g>
@@ -5752,8 +5744,8 @@ table.left td{text-align:left}
 
 
   <g>
-    <rect x="40" y="150" width="736" height="102" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="150" width="736" height="102" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="150" width="736" height="102" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 150 H760 " stroke="#e0287f" stroke-width="0" fill="none"/>
     
     <text x="54" y="176" font-size="15.5" font-weight="800" fill="#e0287f">You win forty-eight plushies. Right now they go in a list.</text>
     <text x="54" y="198" font-size="13" font-weight="600" fill="#7a3f66">
@@ -6152,8 +6144,8 @@ table.left td{text-align:left}
   </g></g>
 
   <g>
-    <rect x="536" y="272" width="240" height="122" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="536" y="272" width="240" height="122" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="536" y="272" width="240" height="122" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M552 272 H760 " stroke="#e0287f" stroke-width="0" fill="none"/>
     <g><circle cx="556" cy="292" r="15" fill="#e0287f" stroke="#fff" stroke-width="3.5"/>
     <text x="556" y="298" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">1</text></g>
     <text x="578" y="298" font-size="15.5" font-weight="800" fill="#e0287f">Drag them anywhere</text>
@@ -6162,8 +6154,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="536" y="408" width="240" height="116" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="536" y="408" width="240" height="116" rx="16" fill="#c9a4ff" opacity=".07"/>
+    <rect x="536" y="408" width="240" height="116" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4"/>
+    <path d="M552 408 H760 " stroke="#c9a4ff" stroke-width="0" fill="none"/>
     <g><circle cx="556" cy="428" r="15" fill="#c9a4ff" stroke="#fff" stroke-width="3.5"/>
     <text x="556" y="434" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">2</text></g>
     <text x="578" y="434" font-size="15.5" font-weight="800" fill="#c9a4ff">The room grows</text>
@@ -6172,8 +6164,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="536" y="538" width="240" height="138" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4" opacity=".97"/>
-    <rect x="536" y="538" width="240" height="138" rx="16" fill="#7fe0c4" opacity=".07"/>
+    <rect x="536" y="538" width="240" height="138" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4"/>
+    <path d="M552 538 H760 " stroke="#7fe0c4" stroke-width="0" fill="none"/>
     <g><circle cx="556" cy="558" r="15" fill="#7fe0c4" stroke="#fff" stroke-width="3.5"/>
     <text x="556" y="564" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">3</text></g>
     <text x="578" y="564" font-size="15.5" font-weight="800" fill="#7fe0c4">Your favourite</text>
@@ -6183,8 +6175,8 @@ table.left td{text-align:left}
   </g>
 
   <g>
-    <rect x="40" y="700" width="356" height="176" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="700" width="356" height="176" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="700" width="356" height="176" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 700 H380 " stroke="#e0287f" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="720" r="15" fill="#e0287f" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="726" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">4</text></g>
     <text x="82" y="726" font-size="15.5" font-weight="800" fill="#e0287f">Why this is the big one</text>
@@ -6193,8 +6185,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="420" y="700" width="356" height="176" rx="16" fill="#fff" stroke="#7fd8ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="420" y="700" width="356" height="176" rx="16" fill="#7fd8ff" opacity=".07"/>
+    <rect x="420" y="700" width="356" height="176" rx="16" fill="#fff" stroke="#7fd8ff" stroke-width="2.4"/>
+    <path d="M436 700 H760 " stroke="#7fd8ff" stroke-width="0" fill="none"/>
     <g><circle cx="440" cy="720" r="15" fill="#7fd8ff" stroke="#fff" stroke-width="3.5"/>
     <text x="440" y="726" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">5</text></g>
     <text x="462" y="726" font-size="15.5" font-weight="800" fill="#7fd8ff">What it needs from the code</text>
@@ -6204,13 +6196,13 @@ table.left td{text-align:left}
   </g>
 
   <g transform="translate(40,896)">
-    <rect x="0" y="0" width="736" height="110" rx="20" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="736" height="110" rx="20" fill="#ffffff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="20" y="30" font-size="16" font-weight="800" fill="#e0287f">Ella decides 🩷</text>
     <text x="20" y="58" font-size="13.5" font-weight="600" fill="#7a3f66"><tspan x="20" dy="0">What is the room called — the Cutie Home, the Plushie House, the Cuddle Club? Is it one room that grows,</tspan><tspan x="20" dy="20">or one room per machine? Can a doubled cutie be given away to a friend, or does everybody stay?</tspan></text>
   </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 9</text>
 </svg></div></div>
@@ -6220,19 +6212,18 @@ table.left td{text-align:left}
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">The Sticker Scrapbook</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">10</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">The Sticker Scrapbook</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">10</text></g>
 <g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
     <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">PROPOSED</text></g>
@@ -6240,8 +6231,8 @@ table.left td{text-align:left}
 
 
   <g>
-    <rect x="40" y="150" width="736" height="102" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="150" width="736" height="102" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="150" width="736" height="102" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 150 H760 " stroke="#e0287f" stroke-width="0" fill="none"/>
     
     <text x="54" y="176" font-size="15.5" font-weight="800" fill="#e0287f">The album already exists. It just needs to look like a treasure.</text>
     <text x="54" y="198" font-size="13" font-weight="600" fill="#7a3f66">
@@ -6249,12 +6240,12 @@ table.left td{text-align:left}
     </text>
   </g>
 
-  <rect x="26" y="266" width="764" height="384" rx="20" fill="#fffdf8" stroke="#e8d8c8" stroke-width="3"/>
+  <rect x="26" y="266" width="764" height="384" rx="20" fill="#fff" stroke="#e8d8c8" stroke-width="3"/>
   <path d="M408 266 V650" stroke="#e8d8c8" stroke-width="3" stroke-dasharray="8 8"/>
   <text x="44" y="286" font-size="15" font-weight="800" fill="#e0287f">🧸 Teddy Bear Bonanza — 5 of 8 found</text>
   <g transform="translate(44,292)">
       <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
-      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff4fa"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff" stroke="#f3c4de" stroke-width="1.8" stroke-dasharray=""/>
       <g transform="translate(66,78) scale(.62)"><g>
     <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#e0a96c" transform="rotate(-24 -27 16)"/>
     <ellipse cx="27" cy="16" rx="11" ry="9" fill="#e0a96c" transform="rotate(24 27 16)"/>
@@ -6289,7 +6280,7 @@ table.left td{text-align:left}
     fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
     </g><g transform="translate(192,292)">
       <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
-      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff4fa"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff" stroke="#f3c4de" stroke-width="1.8" stroke-dasharray=""/>
       <g transform="translate(66,78) scale(.62)"><g>
     <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#f3ddc7" transform="rotate(-24 -27 16)"/>
     <ellipse cx="27" cy="16" rx="11" ry="9" fill="#f3ddc7" transform="rotate(24 27 16)"/>
@@ -6324,7 +6315,7 @@ table.left td{text-align:left}
     fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
     </g><g transform="translate(340,292)">
       <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
-      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff4fa"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff" stroke="#f3c4de" stroke-width="1.8" stroke-dasharray=""/>
       <g transform="translate(66,78) scale(.62)"><g>
     <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#a06b46" transform="rotate(-24 -27 16)"/>
     <ellipse cx="27" cy="16" rx="11" ry="9" fill="#a06b46" transform="rotate(24 27 16)"/>
@@ -6359,7 +6350,7 @@ table.left td{text-align:left}
     fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
     </g><g transform="translate(488,292)">
       <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
-      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff4fa"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff" stroke="#f3c4de" stroke-width="1.8" stroke-dasharray=""/>
       <g transform="translate(66,78) scale(.62)"><g>
     <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#f0b96f" transform="rotate(-24 -27 16)"/>
     <ellipse cx="27" cy="16" rx="11" ry="9" fill="#f0b96f" transform="rotate(24 27 16)"/>
@@ -6394,7 +6385,7 @@ table.left td{text-align:left}
     fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
     </g><g transform="translate(636,292)">
       <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
-      <rect x="9" y="9" width="114" height="104" rx="6" fill="#efe6ec"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff" stroke="#c9bcc4" stroke-width="1.8" stroke-dasharray="6 5"/>
       <g transform="translate(66,78) scale(.62)" opacity=".22"><g>
     <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#8b7b87" transform="rotate(-24 -27 16)"/>
     <ellipse cx="27" cy="16" rx="11" ry="9" fill="#8b7b87" transform="rotate(24 27 16)"/>
@@ -6430,7 +6421,7 @@ table.left td{text-align:left}
     fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
     </g><g transform="translate(44,470)">
       <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
-      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff4fa"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff" stroke="#f3c4de" stroke-width="1.8" stroke-dasharray=""/>
       <g transform="translate(66,78) scale(.62)"><g>
     <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#c08b56" transform="rotate(-24 -27 16)"/>
     <ellipse cx="27" cy="16" rx="11" ry="9" fill="#c08b56" transform="rotate(24 27 16)"/>
@@ -6465,7 +6456,7 @@ table.left td{text-align:left}
     fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
     </g><g transform="translate(192,470)">
       <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
-      <rect x="9" y="9" width="114" height="104" rx="6" fill="#efe6ec"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff" stroke="#c9bcc4" stroke-width="1.8" stroke-dasharray="6 5"/>
       <g transform="translate(66,78) scale(.62)" opacity=".22"><g>
     <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#8b7b87" transform="rotate(-24 -27 16)"/>
     <ellipse cx="27" cy="16" rx="11" ry="9" fill="#8b7b87" transform="rotate(24 27 16)"/>
@@ -6501,7 +6492,7 @@ table.left td{text-align:left}
     fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
     </g><g transform="translate(340,470)">
       <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
-      <rect x="9" y="9" width="114" height="104" rx="6" fill="#efe6ec"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff" stroke="#c9bcc4" stroke-width="1.8" stroke-dasharray="6 5"/>
       <g transform="translate(66,78) scale(.62)" opacity=".22"><g>
     <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#8b7b87" transform="rotate(-24 -27 16)"/>
     <ellipse cx="27" cy="16" rx="11" ry="9" fill="#8b7b87" transform="rotate(24 27 16)"/>
@@ -6537,9 +6528,9 @@ table.left td{text-align:left}
     fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
     </g>
   <g transform="translate(492,470)">
-    <rect x="0" y="0" width="280" height="156" rx="12" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="280" height="156" rx="12" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="140" y="30" text-anchor="middle" font-size="14" font-weight="800" fill="#e0287f">this machine</text>
-    <rect x="26" y="44" width="228" height="22" rx="11" fill="#fff"/>
+    <rect x="26" y="44" width="228" height="22" rx="11" fill="#fff" stroke="#f3c4de" stroke-width="1.8"/>
     <rect x="26" y="44" width="142" height="22" rx="11" fill="#e0287f"/>
     <text x="140" y="86" text-anchor="middle" font-size="13" font-weight="800" fill="#a4548a">5 of 8 kinds · 11 caught · 34 tries</text>
     <text x="140" y="112" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7a3f66">Still missing: Blueberry Bear,</text>
@@ -6548,8 +6539,8 @@ table.left td{text-align:left}
   </g>
 
   <g>
-    <rect x="40" y="674" width="236" height="148" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="674" width="236" height="148" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="674" width="236" height="148" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 674 H260 " stroke="#e0287f" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="694" r="15" fill="#e0287f" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="700" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">1</text></g>
     <text x="82" y="700" font-size="15.5" font-weight="800" fill="#e0287f">Photo corners and tape</text>
@@ -6558,8 +6549,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="292" y="674" width="236" height="148" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="292" y="674" width="236" height="148" rx="16" fill="#c9a4ff" opacity=".07"/>
+    <rect x="292" y="674" width="236" height="148" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4"/>
+    <path d="M308 674 H512 " stroke="#c9a4ff" stroke-width="0" fill="none"/>
     <g><circle cx="312" cy="694" r="15" fill="#c9a4ff" stroke="#fff" stroke-width="3.5"/>
     <text x="312" y="700" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">2</text></g>
     <text x="334" y="700" font-size="15.5" font-weight="800" fill="#c9a4ff">Shadows, not blanks</text>
@@ -6568,8 +6559,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="544" y="674" width="232" height="148" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4" opacity=".97"/>
-    <rect x="544" y="674" width="232" height="148" rx="16" fill="#7fe0c4" opacity=".07"/>
+    <rect x="544" y="674" width="232" height="148" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4"/>
+    <path d="M560 674 H760 " stroke="#7fe0c4" stroke-width="0" fill="none"/>
     <g><circle cx="564" cy="694" r="15" fill="#7fe0c4" stroke="#fff" stroke-width="3.5"/>
     <text x="564" y="700" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">3</text></g>
     <text x="586" y="700" font-size="15.5" font-weight="800" fill="#7fe0c4">The day you caught it</text>
@@ -6579,14 +6570,14 @@ table.left td{text-align:left}
   </g>
 
   <g transform="translate(40,834)">
-    <rect x="0" y="0" width="736" height="164" rx="20" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="736" height="164" rx="20" fill="#ffffff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="20" y="30" font-size="16" font-weight="800" fill="#e0287f">One honest warning ⚠️</text>
     <text x="20" y="60" font-size="14" font-weight="600" fill="#7a3f66"><tspan x="20" dy="0">Showing the shape of a cutie you have not caught yet is a promise: it says “this one is really in</tspan><tspan x="20" dy="21">there”. That promise has to stay true. If a legendary is one-in-fifteen, the book should not pretend it</tspan><tspan x="20" dy="21">is around the corner. The game’s whole personality is that it is hard and it is honest — the scrapbook</tspan><tspan x="20" dy="21">has to be honest too.</tspan></text>
     <text x="20" y="146" font-size="13" font-weight="800" fill="#a4548a">Ella decides: do the missing ones show as shadows, silhouette outlines, or stay completely secret?</text>
   </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 10</text>
 </svg></div></div>
@@ -6596,19 +6587,18 @@ table.left td{text-align:left}
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">The Bow Boutique</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">11</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">The Bow Boutique</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">11</text></g>
 <g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
     <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">PROPOSED</text></g>
@@ -6616,8 +6606,8 @@ table.left td{text-align:left}
 
 
   <g>
-    <rect x="40" y="150" width="736" height="102" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="150" width="736" height="102" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="150" width="736" height="102" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 150 H760 " stroke="#e0287f" stroke-width="0" fill="none"/>
     
     <text x="54" y="176" font-size="15.5" font-weight="800" fill="#e0287f">You will catch Mochi eleven times. What are the other ten for?</text>
     <text x="54" y="198" font-size="13" font-weight="600" fill="#7a3f66">
@@ -6625,7 +6615,7 @@ table.left td{text-align:left}
     </text>
   </g>
 
-  <rect x="40" y="272" width="380" height="256" rx="20" fill="#fff8fc" stroke="#e0287f" stroke-width="3"/>
+  <rect x="40" y="272" width="380" height="256" rx="20" fill="#fff" stroke="#e0287f" stroke-width="3"/>
   <text x="230" y="298" text-anchor="middle" font-size="16" font-weight="800" fill="#e0287f">THE PEGBOARD</text>
   <circle cx="60" cy="316" r="2" fill="#f3c4de"/><circle cx="100" cy="316" r="2" fill="#f3c4de"/><circle cx="140" cy="316" r="2" fill="#f3c4de"/><circle cx="180" cy="316" r="2" fill="#f3c4de"/><circle cx="220" cy="316" r="2" fill="#f3c4de"/><circle cx="260" cy="316" r="2" fill="#f3c4de"/><circle cx="300" cy="316" r="2" fill="#f3c4de"/><circle cx="340" cy="316" r="2" fill="#f3c4de"/><circle cx="380" cy="316" r="2" fill="#f3c4de"/><circle cx="420" cy="316" r="2" fill="#f3c4de"/><circle cx="60" cy="382" r="2" fill="#f3c4de"/><circle cx="100" cy="382" r="2" fill="#f3c4de"/><circle cx="140" cy="382" r="2" fill="#f3c4de"/><circle cx="180" cy="382" r="2" fill="#f3c4de"/><circle cx="220" cy="382" r="2" fill="#f3c4de"/><circle cx="260" cy="382" r="2" fill="#f3c4de"/><circle cx="300" cy="382" r="2" fill="#f3c4de"/><circle cx="340" cy="382" r="2" fill="#f3c4de"/><circle cx="380" cy="382" r="2" fill="#f3c4de"/><circle cx="420" cy="382" r="2" fill="#f3c4de"/><circle cx="60" cy="448" r="2" fill="#f3c4de"/><circle cx="100" cy="448" r="2" fill="#f3c4de"/><circle cx="140" cy="448" r="2" fill="#f3c4de"/><circle cx="180" cy="448" r="2" fill="#f3c4de"/><circle cx="220" cy="448" r="2" fill="#f3c4de"/><circle cx="260" cy="448" r="2" fill="#f3c4de"/><circle cx="300" cy="448" r="2" fill="#f3c4de"/><circle cx="340" cy="448" r="2" fill="#f3c4de"/><circle cx="380" cy="448" r="2" fill="#f3c4de"/><circle cx="420" cy="448" r="2" fill="#f3c4de"/><circle cx="60" cy="514" r="2" fill="#f3c4de"/><circle cx="100" cy="514" r="2" fill="#f3c4de"/><circle cx="140" cy="514" r="2" fill="#f3c4de"/><circle cx="180" cy="514" r="2" fill="#f3c4de"/><circle cx="220" cy="514" r="2" fill="#f3c4de"/><circle cx="260" cy="514" r="2" fill="#f3c4de"/><circle cx="300" cy="514" r="2" fill="#f3c4de"/><circle cx="340" cy="514" r="2" fill="#f3c4de"/><circle cx="380" cy="514" r="2" fill="#f3c4de"/><circle cx="420" cy="514" r="2" fill="#f3c4de"/>
   <g transform="translate(92,356)">
@@ -6734,15 +6724,15 @@ table.left td{text-align:left}
   <g transform="translate(560,446) scale(1.5)">
     <path d="M-24 0 q24 14 48 0 l0 10 q-24 12 -48 0 z" fill="#7fe0c4"/><path d="M14 8 l14 26 l-12 4 l-10 -26 z" fill="#7fe0c4"/></g>
   <g transform="translate(700,340)">
-    <rect x="-52" y="-24" width="104" height="48" rx="14" fill="#ffeef7"/>
+    <rect x="-52" y="-24" width="104" height="48" rx="14" fill="#fff" stroke="#f3c4de" stroke-width="2"/>
     <text x="0" y="-2" text-anchor="middle" font-size="12.5" font-weight="800" fill="#e0287f">Honeypaw ×11</text>
     <text x="0" y="16" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a">10 spare · 3 tokens</text>
   </g>
   <text x="608" y="512" text-anchor="middle" font-size="12.5" font-weight="700" fill="#a4548a">tap a thing on the pegboard to try it on</text>
 
   <g>
-    <rect x="40" y="552" width="236" height="140" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="552" width="236" height="140" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="552" width="236" height="140" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 552 H260 " stroke="#e0287f" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="572" r="15" fill="#e0287f" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="578" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">1</text></g>
     <text x="82" y="578" font-size="15.5" font-weight="800" fill="#e0287f">Doubles become useful</text>
@@ -6751,8 +6741,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="292" y="552" width="236" height="140" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4" opacity=".97"/>
-    <rect x="292" y="552" width="236" height="140" rx="16" fill="#7fe0c4" opacity=".07"/>
+    <rect x="292" y="552" width="236" height="140" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4"/>
+    <path d="M308 552 H512 " stroke="#7fe0c4" stroke-width="0" fill="none"/>
     <g><circle cx="312" cy="572" r="15" fill="#7fe0c4" stroke="#fff" stroke-width="3.5"/>
     <text x="312" y="578" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">2</text></g>
     <text x="334" y="578" font-size="15.5" font-weight="800" fill="#7fe0c4">It changes nothing else</text>
@@ -6761,8 +6751,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="544" y="552" width="232" height="140" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="544" y="552" width="232" height="140" rx="16" fill="#c9a4ff" opacity=".07"/>
+    <rect x="544" y="552" width="232" height="140" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4"/>
+    <path d="M560 552 H760 " stroke="#c9a4ff" stroke-width="0" fill="none"/>
     <g><circle cx="564" cy="572" r="15" fill="#c9a4ff" stroke="#fff" stroke-width="3.5"/>
     <text x="564" y="578" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">3</text></g>
     <text x="586" y="578" font-size="15.5" font-weight="800" fill="#c9a4ff">It shows up everywhere</text>
@@ -6772,8 +6762,8 @@ table.left td{text-align:left}
   </g>
 
   <g>
-    <rect x="40" y="712" width="356" height="148" rx="16" fill="#fff" stroke="#e8a417" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="712" width="356" height="148" rx="16" fill="#e8a417" opacity=".07"/>
+    <rect x="40" y="712" width="356" height="148" rx="16" fill="#fff" stroke="#e8a417" stroke-width="2.4"/>
+    <path d="M56 712 H380 " stroke="#e8a417" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="732" r="15" fill="#e8a417" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="738" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">4</text></g>
     <text x="82" y="738" font-size="15.5" font-weight="800" fill="#e8a417">The eight starter accessories</text>
@@ -6782,8 +6772,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="420" y="712" width="356" height="148" rx="16" fill="#fff" stroke="#ff9a7a" stroke-width="2.4" opacity=".97"/>
-    <rect x="420" y="712" width="356" height="148" rx="16" fill="#ff9a7a" opacity=".07"/>
+    <rect x="420" y="712" width="356" height="148" rx="16" fill="#fff" stroke="#ff9a7a" stroke-width="2.4"/>
+    <path d="M436 712 H760 " stroke="#ff9a7a" stroke-width="0" fill="none"/>
     <g><circle cx="440" cy="732" r="15" fill="#ff9a7a" stroke="#fff" stroke-width="3.5"/>
     <text x="440" y="738" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">5</text></g>
     <text x="462" y="738" font-size="15.5" font-weight="800" fill="#ff9a7a">Where they come from</text>
@@ -6793,13 +6783,13 @@ table.left td{text-align:left}
   </g>
 
   <g transform="translate(40,880)">
-    <rect x="0" y="0" width="736" height="122" rx="20" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="736" height="122" rx="20" fill="#ffffff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="20" y="30" font-size="16" font-weight="800" fill="#e0287f">Ella decides 🩷</text>
     <text x="20" y="58" font-size="13.5" font-weight="600" fill="#7a3f66"><tspan x="20" dy="0">How many spares make a token — three, or five? Can a cutie wear two things at once? Is there one</tspan><tspan x="20" dy="20">accessory only Ella has, that nobody else can ever earn? (There should be.)</tspan></text>
   </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 11</text>
 </svg></div></div>
@@ -6809,19 +6799,18 @@ table.left td{text-align:left}
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">The Biggest Parade Ever</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">12</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">The Biggest Parade Ever</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">12</text></g>
 <g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
     <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">PROPOSED</text></g>
@@ -6830,11 +6819,11 @@ table.left td{text-align:left}
 
   <defs>
     <linearGradient id="pSky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#3b2a58"/><stop offset=".55" stop-color="#7a4f92"/><stop offset="1" stop-color="#ff9ec9"/></linearGradient>
+      <stop offset="0" stop-color="#6d5c92"/><stop offset=".55" stop-color="#a684c2"/><stop offset="1" stop-color="#ffcde6"/></linearGradient>
   </defs>
-  <rect x="26" y="176" width="764" height="430" rx="22" fill="url(#pSky)"/>
+  <rect x="26" y="196" width="764" height="410" rx="22" fill="url(#pSky)"/>
   <g clip-path="url(#pClip)">
-    <clipPath id="pClip"><rect x="26" y="176" width="764" height="430" rx="22"/></clipPath>
+    <clipPath id="pClip"><rect x="26" y="196" width="764" height="410" rx="22"/></clipPath>
     <circle cx="124" cy="257" r="1.9" fill="#fff" opacity="0.68"/><circle cx="472" cy="359" r="2.7" fill="#fff" opacity="0.63"/><circle cx="371" cy="318" r="2.0" fill="#fff" opacity="0.55"/><circle cx="429" cy="281" r="2.9" fill="#fff" opacity="0.96"/><circle cx="43" cy="330" r="1.6" fill="#fff" opacity="0.40"/><circle cx="278" cy="336" r="1.4" fill="#fff" opacity="0.58"/><circle cx="191" cy="209" r="2.4" fill="#fff" opacity="0.57"/><circle cx="199" cy="360" r="2.8" fill="#fff" opacity="0.54"/><circle cx="43" cy="384" r="1.1" fill="#fff" opacity="0.94"/><circle cx="463" cy="282" r="2.8" fill="#fff" opacity="0.69"/><circle cx="150" cy="192" r="1.3" fill="#fff" opacity="0.96"/><circle cx="656" cy="318" r="1.9" fill="#fff" opacity="0.85"/><circle cx="488" cy="358" r="2.1" fill="#fff" opacity="0.74"/><circle cx="463" cy="269" r="2.1" fill="#fff" opacity="0.89"/><circle cx="345" cy="353" r="1.3" fill="#fff" opacity="0.85"/><circle cx="204" cy="236" r="2.0" fill="#fff" opacity="0.50"/><circle cx="110" cy="327" r="1.5" fill="#fff" opacity="0.74"/><circle cx="704" cy="286" r="2.5" fill="#fff" opacity="0.92"/><circle cx="357" cy="204" r="2.1" fill="#fff" opacity="0.61"/><circle cx="441" cy="297" r="1.2" fill="#fff" opacity="0.64"/><circle cx="427" cy="211" r="2.7" fill="#fff" opacity="0.67"/><circle cx="70" cy="306" r="2.4" fill="#fff" opacity="0.61"/><circle cx="551" cy="332" r="2.0" fill="#fff" opacity="0.85"/><circle cx="292" cy="297" r="3.0" fill="#fff" opacity="0.57"/><circle cx="591" cy="285" r="2.5" fill="#fff" opacity="0.65"/><circle cx="275" cy="299" r="2.4" fill="#fff" opacity="0.94"/><circle cx="474" cy="293" r="1.2" fill="#fff" opacity="0.94"/><circle cx="255" cy="207" r="2.5" fill="#fff" opacity="0.93"/><circle cx="692" cy="267" r="2.4" fill="#fff" opacity="0.60"/><circle cx="460" cy="375" r="2.9" fill="#fff" opacity="0.68"/><circle cx="238" cy="319" r="2.4" fill="#fff" opacity="0.57"/><circle cx="737" cy="240" r="1.2" fill="#fff" opacity="0.59"/><circle cx="757" cy="351" r="1.6" fill="#fff" opacity="0.56"/><circle cx="244" cy="364" r="1.8" fill="#fff" opacity="0.86"/><circle cx="717" cy="343" r="2.6" fill="#fff" opacity="0.57"/><circle cx="691" cy="332" r="2.0" fill="#fff" opacity="0.67"/><circle cx="142" cy="248" r="2.0" fill="#fff" opacity="0.87"/><circle cx="530" cy="292" r="1.1" fill="#fff" opacity="0.55"/><circle cx="439" cy="255" r="2.0" fill="#fff" opacity="0.82"/><circle cx="415" cy="382" r="1.7" fill="#fff" opacity="0.76"/>
     <!-- fireworks -->
     <g><path d="M180 250 l44.0 0.0" stroke="#ffd447" stroke-width="2.6" stroke-linecap="round" opacity=".85"/>
@@ -6891,8 +6880,8 @@ table.left td{text-align:left}
     <text x="408" y="342" text-anchor="middle" font-size="30" font-weight="800" fill="#e0287f">🎉 ELLA CLEARED THE WHOLE ARCADE 🎉</text>
     <text x="635" y="191" font-size="20" opacity=".9">💖</text><text x="403" y="270" font-size="21" opacity=".9">⭐</text><text x="655" y="485" font-size="13" opacity=".9">✨</text><text x="726" y="431" font-size="15" opacity=".9">🌸</text><text x="347" y="296" font-size="20" opacity=".9">🎀</text><text x="499" y="333" font-size="15" opacity=".9">💫</text><text x="494" y="230" font-size="14" opacity=".9">🌟</text><text x="42" y="448" font-size="17" opacity=".9">💖</text><text x="759" y="426" font-size="11" opacity=".9">⭐</text><text x="54" y="468" font-size="17" opacity=".9">✨</text><text x="700" y="194" font-size="19" opacity=".9">🌸</text><text x="473" y="393" font-size="16" opacity=".9">🎀</text><text x="141" y="234" font-size="18" opacity=".9">💫</text><text x="69" y="480" font-size="14" opacity=".9">🌟</text><text x="326" y="381" font-size="18" opacity=".9">💖</text><text x="709" y="401" font-size="15" opacity=".9">⭐</text><text x="280" y="202" font-size="14" opacity=".9">✨</text><text x="434" y="223" font-size="21" opacity=".9">🌸</text><text x="100" y="250" font-size="20" opacity=".9">🎀</text><text x="352" y="485" font-size="13" opacity=".9">💫</text><text x="436" y="204" font-size="15" opacity=".9">🌟</text><text x="397" y="369" font-size="14" opacity=".9">💖</text><text x="733" y="307" font-size="20" opacity=".9">⭐</text><text x="701" y="327" font-size="17" opacity=".9">✨</text><text x="196" y="199" font-size="13" opacity=".9">🌸</text><text x="253" y="480" font-size="15" opacity=".9">🎀</text><text x="597" y="478" font-size="14" opacity=".9">💫</text><text x="248" y="383" font-size="14" opacity=".9">🌟</text><text x="659" y="256" font-size="20" opacity=".9">💖</text><text x="700" y="301" font-size="12" opacity=".9">⭐</text><text x="326" y="341" font-size="17" opacity=".9">✨</text><text x="548" y="278" font-size="22" opacity=".9">🌸</text><text x="582" y="318" font-size="16" opacity=".9">🎀</text><text x="117" y="370" font-size="12" opacity=".9">💫</text><text x="427" y="470" font-size="17" opacity=".9">🌟</text><text x="481" y="344" font-size="11" opacity=".9">💖</text><text x="363" y="378" font-size="18" opacity=".9">⭐</text><text x="55" y="271" font-size="14" opacity=".9">✨</text><text x="143" y="425" font-size="11" opacity=".9">🌸</text><text x="234" y="278" font-size="21" opacity=".9">🎀</text><text x="341" y="252" font-size="13" opacity=".9">💫</text><text x="124" y="459" font-size="21" opacity=".9">🌟</text><text x="501" y="325" font-size="19" opacity=".9">💖</text><text x="233" y="191" font-size="13" opacity=".9">⭐</text><text x="612" y="487" font-size="21" opacity=".9">✨</text><text x="443" y="401" font-size="17" opacity=".9">🌸</text>
     <!-- road -->
-    <rect x="26" y="510" width="764" height="96" fill="#5b3a52"/>
-    <rect x="26" y="510" width="764" height="8" fill="#7a5c74"/>
+    <rect x="26" y="510" width="764" height="96" fill="#8f7189"/>
+    <rect x="26" y="510" width="764" height="8" fill="#ab93a5"/>
     <rect x="40" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="90" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="140" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="190" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="240" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="290" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="340" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="390" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="440" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="490" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="540" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="590" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="640" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="690" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="740" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="790" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/>
     <g transform="translate(92,452) scale(0.74)">
       <g transform="translate(0,-52) scale(.8)"><g>
@@ -6924,8 +6913,8 @@ table.left td{text-align:left}
       <path d="M-52 8 h104 l-9 30 h-86 z" fill="#ff8fbe"/>
       <path d="M-52 8 h104 l-3 8 h-98 z" fill="#fff" opacity=".55"/>
       <path d="M-50 -6 h20 l-10 15 z" fill="#ffd447"/><path d="M-24 -6 h20 l-10 15 z" fill="#fff"/><path d="M2 -6 h20 l-10 15 z" fill="#ffd447"/><path d="M28 -6 h20 l-10 15 z" fill="#fff"/>
-      <circle cx="-30" cy="42" r="13" fill="#5b3a52"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
-      <circle cx="30" cy="42" r="13" fill="#5b3a52"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="-30" cy="42" r="13" fill="#4a3044"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="30" cy="42" r="13" fill="#4a3044"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
       <rect x="-46" y="16" width="92" height="16" rx="8" fill="#fff" opacity=".92"/>
       <text x="0" y="28" text-anchor="middle" font-size="11" font-weight="800" fill="#b8437f">Sir Roosevelt</text>
       <!-- NEW: a balloon on every float -->
@@ -6965,8 +6954,8 @@ table.left td{text-align:left}
       <path d="M-52 8 h104 l-9 30 h-86 z" fill="#7fd8ff"/>
       <path d="M-52 8 h104 l-3 8 h-98 z" fill="#fff" opacity=".55"/>
       <path d="M-50 -6 h20 l-10 15 z" fill="#c9a4ff"/><path d="M-24 -6 h20 l-10 15 z" fill="#fff"/><path d="M2 -6 h20 l-10 15 z" fill="#c9a4ff"/><path d="M28 -6 h20 l-10 15 z" fill="#fff"/>
-      <circle cx="-30" cy="42" r="13" fill="#5b3a52"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
-      <circle cx="30" cy="42" r="13" fill="#5b3a52"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="-30" cy="42" r="13" fill="#4a3044"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="30" cy="42" r="13" fill="#4a3044"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
       <rect x="-46" y="16" width="92" height="16" rx="8" fill="#fff" opacity=".92"/>
       <text x="0" y="28" text-anchor="middle" font-size="11" font-weight="800" fill="#b8437f">Mochi</text>
       <!-- NEW: a balloon on every float -->
@@ -6999,8 +6988,8 @@ table.left td{text-align:left}
       <path d="M-52 8 h104 l-9 30 h-86 z" fill="#a4f0a0"/>
       <path d="M-52 8 h104 l-3 8 h-98 z" fill="#fff" opacity=".55"/>
       <path d="M-50 -6 h20 l-10 15 z" fill="#ff9a7a"/><path d="M-24 -6 h20 l-10 15 z" fill="#fff"/><path d="M2 -6 h20 l-10 15 z" fill="#ff9a7a"/><path d="M28 -6 h20 l-10 15 z" fill="#fff"/>
-      <circle cx="-30" cy="42" r="13" fill="#5b3a52"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
-      <circle cx="30" cy="42" r="13" fill="#5b3a52"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="-30" cy="42" r="13" fill="#4a3044"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="30" cy="42" r="13" fill="#4a3044"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
       <rect x="-46" y="16" width="92" height="16" rx="8" fill="#fff" opacity=".92"/>
       <text x="0" y="28" text-anchor="middle" font-size="11" font-weight="800" fill="#b8437f">Rainbow Rawr</text>
       <!-- NEW: a balloon on every float -->
@@ -7039,8 +7028,8 @@ table.left td{text-align:left}
       <path d="M-52 8 h104 l-9 30 h-86 z" fill="#ffd447"/>
       <path d="M-52 8 h104 l-3 8 h-98 z" fill="#fff" opacity=".55"/>
       <path d="M-50 -6 h20 l-10 15 z" fill="#ff8fbe"/><path d="M-24 -6 h20 l-10 15 z" fill="#fff"/><path d="M2 -6 h20 l-10 15 z" fill="#ff8fbe"/><path d="M28 -6 h20 l-10 15 z" fill="#fff"/>
-      <circle cx="-30" cy="42" r="13" fill="#5b3a52"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
-      <circle cx="30" cy="42" r="13" fill="#5b3a52"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="-30" cy="42" r="13" fill="#4a3044"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="30" cy="42" r="13" fill="#4a3044"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
       <rect x="-46" y="16" width="92" height="16" rx="8" fill="#fff" opacity=".92"/>
       <text x="0" y="28" text-anchor="middle" font-size="11" font-weight="800" fill="#b8437f">Aurora</text>
       <!-- NEW: a balloon on every float -->
@@ -7058,8 +7047,8 @@ table.left td{text-align:left}
       <path d="M-52 8 h104 l-9 30 h-86 z" fill="#c9a4ff"/>
       <path d="M-52 8 h104 l-3 8 h-98 z" fill="#fff" opacity=".55"/>
       <path d="M-50 -6 h20 l-10 15 z" fill="#7fd8ff"/><path d="M-24 -6 h20 l-10 15 z" fill="#fff"/><path d="M2 -6 h20 l-10 15 z" fill="#7fd8ff"/><path d="M28 -6 h20 l-10 15 z" fill="#fff"/>
-      <circle cx="-30" cy="42" r="13" fill="#5b3a52"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
-      <circle cx="30" cy="42" r="13" fill="#5b3a52"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="-30" cy="42" r="13" fill="#4a3044"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="30" cy="42" r="13" fill="#4a3044"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
       <rect x="-46" y="16" width="92" height="16" rx="8" fill="#fff" opacity=".92"/>
       <text x="0" y="28" text-anchor="middle" font-size="11" font-weight="800" fill="#b8437f">Cupcakey</text>
       <!-- NEW: a balloon on every float -->
@@ -7099,8 +7088,8 @@ table.left td{text-align:left}
       <path d="M-52 8 h104 l-9 30 h-86 z" fill="#ff9a7a"/>
       <path d="M-52 8 h104 l-3 8 h-98 z" fill="#fff" opacity=".55"/>
       <path d="M-50 -6 h20 l-10 15 z" fill="#a4f0a0"/><path d="M-24 -6 h20 l-10 15 z" fill="#fff"/><path d="M2 -6 h20 l-10 15 z" fill="#a4f0a0"/><path d="M28 -6 h20 l-10 15 z" fill="#fff"/>
-      <circle cx="-30" cy="42" r="13" fill="#5b3a52"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
-      <circle cx="30" cy="42" r="13" fill="#5b3a52"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="-30" cy="42" r="13" fill="#4a3044"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="30" cy="42" r="13" fill="#4a3044"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
       <rect x="-46" y="16" width="92" height="16" rx="8" fill="#fff" opacity=".92"/>
       <text x="0" y="28" text-anchor="middle" font-size="11" font-weight="800" fill="#b8437f">Celestia</text>
       <!-- NEW: a balloon on every float -->
@@ -7428,11 +7417,11 @@ table.left td{text-align:left}
   </g>
   </g></g></g>
   </g>
-  <rect x="26" y="176" width="764" height="430" rx="22" fill="none" stroke="#e0287f" stroke-width="4"/>
+  <rect x="26" y="196" width="764" height="410" rx="22" fill="none" stroke="#e0287f" stroke-width="4"/>
 
   <g>
-    <rect x="40" y="626" width="236" height="150" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="626" width="236" height="150" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="626" width="236" height="150" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 626 H260 " stroke="#e0287f" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="646" r="15" fill="#e0287f" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="652" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">1</text></g>
     <text x="82" y="652" font-size="15.5" font-weight="800" fill="#e0287f">It already happens</text>
@@ -7441,8 +7430,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="292" y="626" width="236" height="150" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="292" y="626" width="236" height="150" rx="16" fill="#c9a4ff" opacity=".07"/>
+    <rect x="292" y="626" width="236" height="150" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4"/>
+    <path d="M308 626 H512 " stroke="#c9a4ff" stroke-width="0" fill="none"/>
     <g><circle cx="312" cy="646" r="15" fill="#c9a4ff" stroke="#fff" stroke-width="3.5"/>
     <text x="312" y="652" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">2</text></g>
     <text x="334" y="652" font-size="15.5" font-weight="800" fill="#c9a4ff">Night, stars, fireworks</text>
@@ -7451,8 +7440,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="544" y="626" width="232" height="150" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4" opacity=".97"/>
-    <rect x="544" y="626" width="232" height="150" rx="16" fill="#7fe0c4" opacity=".07"/>
+    <rect x="544" y="626" width="232" height="150" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4"/>
+    <path d="M560 626 H760 " stroke="#7fe0c4" stroke-width="0" fill="none"/>
     <g><circle cx="564" cy="646" r="15" fill="#7fe0c4" stroke="#fff" stroke-width="3.5"/>
     <text x="564" y="652" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">3</text></g>
     <text x="586" y="652" font-size="15.5" font-weight="800" fill="#7fe0c4">A cheering crowd</text>
@@ -7462,8 +7451,8 @@ table.left td{text-align:left}
   </g>
 
   <g>
-    <rect x="40" y="794" width="356" height="148" rx="16" fill="#fff" stroke="#e8a417" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="794" width="356" height="148" rx="16" fill="#e8a417" opacity=".07"/>
+    <rect x="40" y="794" width="356" height="148" rx="16" fill="#fff" stroke="#e8a417" stroke-width="2.4"/>
+    <path d="M56 794 H380 " stroke="#e8a417" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="814" r="15" fill="#e8a417" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="820" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">4</text></g>
     <text x="82" y="820" font-size="15.5" font-weight="800" fill="#e8a417">Balloons, banners, a band</text>
@@ -7472,8 +7461,8 @@ table.left td{text-align:left}
     </text>
   </g>
   <g>
-    <rect x="420" y="794" width="356" height="148" rx="16" fill="#fff" stroke="#ff9a7a" stroke-width="2.4" opacity=".97"/>
-    <rect x="420" y="794" width="356" height="148" rx="16" fill="#ff9a7a" opacity=".07"/>
+    <rect x="420" y="794" width="356" height="148" rx="16" fill="#fff" stroke="#ff9a7a" stroke-width="2.4"/>
+    <path d="M436 794 H760 " stroke="#ff9a7a" stroke-width="0" fill="none"/>
     <g><circle cx="440" cy="814" r="15" fill="#ff9a7a" stroke="#fff" stroke-width="3.5"/>
     <text x="440" y="820" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">5</text></g>
     <text x="462" y="820" font-size="15.5" font-weight="800" fill="#ff9a7a">The last parade is different</text>
@@ -7483,13 +7472,13 @@ table.left td{text-align:left}
   </g>
 
   <g transform="translate(40,942)">
-    <rect x="0" y="0" width="736" height="62" rx="16" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="736" height="62" rx="16" fill="#ffffff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="20" y="26" font-size="13.5" font-weight="800" fill="#a4548a">Ella decides: what the banner says · who leads the parade ·</text>
     <text x="20" y="48" font-size="13.5" font-weight="800" fill="#a4548a">whether it can be watched again later from the album</text>
   </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 12</text>
 </svg></div></div>

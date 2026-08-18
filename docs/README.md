@@ -13,6 +13,21 @@ ever mixes up a dream with a fact.
 **[`pdf/claw-machine-cuties-development-binder.pdf`](pdf/claw-machine-cuties-development-binder.pdf)**
 — 43 pages, US Letter, ready for a three-ring binder with fourteen divider tabs.
 
+### 🖨 It is built to be kind to a printer
+
+Every page is **white paper** — no page tints, no printed bands, no filled table
+headers. Colour is used where it carries meaning (a heading, a rule, a label chip,
+a border) and nowhere else. Average coverage is **4.7% of a page**, and 25 of the 43
+pages are under 5%.
+
+The one deliberate exception is **Plate 11, the parade** (17%): its whole argument is
+that a dark sky makes the confetti pop, so showing it on white would misrepresent the
+design. Skip that page if you are printing on fumes.
+
+The rule the binder follows: **binder furniture is white; artwork that depicts the game
+keeps the game's real colours.** A mock-up of a pink cabinet has to be pink, or it is
+not a mock-up any more.
+
 ## 🎨 The twelve concept plates
 
 Full-page mock-ups of what Version 2.0 could look like. Every cutie on every plate is

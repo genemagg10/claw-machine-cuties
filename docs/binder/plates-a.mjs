@@ -15,53 +15,60 @@ export function cover() {
     ['🧸', 70, 250, 30], ['🎀', 748, 232, 26], ['✨', 120, 470, 22], ['🦄', 720, 480, 28],
     ['💖', 60, 660, 24], ['⭐', 762, 660, 26], ['🍬', 96, 830, 22], ['🦋', 726, 812, 24],
     ['🐰', 44, 400, 22], ['🦕', 770, 380, 22]
-  ].map(([e, x, y, s]) => `<text x="${x}" y="${y}" font-size="${s}" opacity=".85">${e}</text>`).join('');
+  ].map(([e, x, y, s]) => `<text x="${x}" y="${y}" font-size="${s}" opacity=".9">${e}</text>`).join('');
+
+  /* a floor drawn in lines instead of filled tiles — same perspective, a fraction of the ink */
+  const floor = `<clipPath id="floorClip"><rect x="36" y="780" width="744" height="232" rx="14"/></clipPath>
+  <g clip-path="url(#floorClip)" stroke="${P.line}" fill="none" stroke-linecap="round">
+    ${Array.from({ length: 13 }, (_, i) => {
+      const x = -300 + i * 118;
+      return `<path d="M${408 + (x - 408) * .18} 782 L${x} 1010" stroke-width="1.6"/>`;
+    }).join('')}
+    ${Array.from({ length: 6 }, (_, i) => {
+      const t = (i + 1) / 6, y = 782 + 228 * t * t;
+      return `<path d="M${(408 - 420 * t).toFixed(0)} ${y.toFixed(0)} H${(408 + 420 * t).toFixed(0)}" stroke-width="1.6"/>`;
+    }).join('')}
+    <path d="M0 782 H816" stroke="${P.soft}" stroke-width="3"/>
+  </g>`;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${PAGE.w} ${PAGE.h}" width="${PAGE.w}" height="${PAGE.h}" font-family="${FONT}">
 <defs>
-  ${dreamBg('gDream')}
   <linearGradient id="gRibbon" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff5c9d"/><stop offset="1" stop-color="#c9a4ff"/></linearGradient>
-  <radialGradient id="gGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
 </defs>
-<rect width="${PAGE.w}" height="${PAGE.h}" fill="url(#gDream)"/>
+<rect width="${PAGE.w}" height="${PAGE.h}" fill="#ffffff"/>
 
-<!-- sunburst -->
-<g opacity=".3">${Array.from({ length: 36 }, (_, i) => {
-    const a = (i * 10 - 90) * Math.PI / 180, a2 = ((i * 10) + 5 - 90) * Math.PI / 180;
-    return i % 2 ? '' : `<polygon points="408,-40 ${408 + Math.cos(a) * 1500},${-40 + Math.sin(a) * 1500} ${408 + Math.cos(a2) * 1500},${-40 + Math.sin(a2) * 1500}" fill="#fff"/>`;
-  }).join('')}</g>
+<!-- a drawn frame instead of a printed background -->
+<rect x="22" y="22" width="${PAGE.w - 44}" height="${PAGE.h - 44}" rx="26" fill="none" stroke="${P.pink}" stroke-width="4"/>
+<rect x="32" y="32" width="${PAGE.w - 64}" height="${PAGE.h - 64}" rx="20" fill="none" stroke="${P.line}" stroke-width="2"/>
+${[[52, 52], [764, 52], [52, 1004], [764, 1004]].map(c =>
+  `<circle cx="${c[0]}" cy="${c[1]}" r="5.5" fill="${P.hot}"/>`).join('')}
 
-${arcadeFloor(770, 286, PAGE.w, '#ffc9ea', '#ffe6f6')}
+${floor}
 ${floaters}
 
 <!-- title -->
 <g text-anchor="middle">
-  <text x="408" y="118" font-size="19" font-weight="800" fill="#c9539a" letter-spacing="7">DEVELOPMENT BINDER</text>
-  <g>
-    <text x="408" y="200" font-size="70" font-weight="800" fill="#ef65ab">CLAW MACHINE</text>
-    <text x="408" y="196" font-size="70" font-weight="800" fill="#fff">CLAW MACHINE</text>
-    <text x="408" y="272" font-size="70" font-weight="800" fill="#ef65ab">CUTIES</text>
-    <text x="408" y="268" font-size="70" font-weight="800" fill="#fff">CUTIES</text>
-  </g>
-  <text x="408" y="308" font-size="18" font-weight="700" fill="#a4548a">the game · the cuties · the big new ideas · the plan</text>
+  <text x="408" y="122" font-size="19" font-weight="800" fill="${P.mute}" letter-spacing="7">DEVELOPMENT BINDER</text>
+  <path d="M236 140 H580" stroke="${P.line}" stroke-width="2.4" stroke-linecap="round"/>
+  <text x="408" y="206" font-size="70" font-weight="800" fill="${P.hot}">CLAW MACHINE</text>
+  <text x="408" y="278" font-size="70" font-weight="800" fill="${P.hot}">CUTIES</text>
+  <text x="408" y="314" font-size="18" font-weight="700" fill="${P.mute}">the game · the cuties · the big new ideas · the plan</text>
 </g>
 
 <!-- hero cabinet -->
-<circle cx="408" cy="600" r="300" fill="url(#gGlow)"/>
-<g transform="translate(408,318) scale(.545) translate(-320,0)">${scene}</g>
+<g transform="translate(408,324) scale(.545) translate(-320,0)">${scene}</g>
 
 <!-- ribbon -->
-<g transform="translate(408,860)">
+<g transform="translate(408,862)">
   <path d="M-300 -34 h600 l-26 34 l26 34 h-600 l26 -34 z" fill="url(#gRibbon)"/>
-  <path d="M-300 -34 h600 l-26 34 l26 34 h-600 l26 -34 z" fill="none" stroke="#fff" stroke-width="3" opacity=".7"/>
   <text x="0" y="9" text-anchor="middle" font-size="27" font-weight="800" fill="#fff">Version 2.0 — THE BIG CUTENESS UPDATE</text>
 </g>
 
 <!-- credit block -->
 <g transform="translate(408,946)">
-  <rect x="-292" y="-24" width="584" height="86" rx="26" fill="#fff" opacity=".92"/>
-  <text x="0" y="6" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">Made for Ella — Creator, Owner &amp; Game Boss</text>
-  <text x="0" y="36" text-anchor="middle" font-size="14.5" font-weight="700" fill="#a4548a">Working master · August 2026 · Game checked at build 1c0c853 · Ella makes the final choices</text>
+  <rect x="-292" y="-24" width="584" height="86" rx="26" fill="#fff" stroke="${P.pink}" stroke-width="3"/>
+  <text x="0" y="6" text-anchor="middle" font-size="24" font-weight="800" fill="${P.hot}">Made for Ella — Creator, Owner &amp; Game Boss</text>
+  <text x="0" y="36" text-anchor="middle" font-size="14.5" font-weight="700" fill="${P.mute}">Working master · August 2026 · Game checked at build 1c0c853 · Ella makes the final choices</text>
 </g>
 </svg>`;
 }
@@ -219,7 +226,7 @@ export function clawdia() {
     const x = 152 + (i % 3) * 250, y = 420 + Math.floor(i / 3) * 268;
     return `<g transform="translate(${x},${y})">
       <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="${P.line}" stroke-width="2.4"/>
-      <circle cx="0" cy="-24" r="82" fill="${P.blush}"/>
+      <circle cx="0" cy="-24" r="82" fill="none" stroke="${P.line}" stroke-width="2.2" stroke-dasharray="5 7"/>
       <g transform="translate(0,-46) scale(1.5)">${clawSVG(k === 'squeeze' ? .1 : k === 'proud' ? .2 : 1, 1, { face: k })}</g>
       <text x="0" y="76" text-anchor="middle" font-size="17" font-weight="800" fill="${P.hot}">${t}</text>
       ${lines(d, 0, 98, 30, 15, `text-anchor="middle" font-size="11.5" font-weight="700" fill="${P.mute}"`)}

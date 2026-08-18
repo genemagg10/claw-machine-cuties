@@ -4,19 +4,18 @@
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">Six New Machines to Dream About</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">8</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">Six New Machines to Dream About</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">8</text></g>
 <g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
     <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">PROPOSED</text></g>
@@ -24,8 +23,8 @@
 
 
   <g>
-    <rect x="40" y="150" width="736" height="100" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="150" width="736" height="100" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="150" width="736" height="100" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 150 H760 " stroke="#e0287f" stroke-width="0" fill="none"/>
     
     <text x="54" y="176" font-size="15.5" font-weight="800" fill="#e0287f">Six machines exist. These are six that could.</text>
     <text x="54" y="198" font-size="13" font-weight="600" fill="#7a3f66">
@@ -61,7 +60,7 @@
       <text x="128" y="46" font-size="13" font-weight="800" fill="#a4548a">“eight cats, eight teacups”</text>
       <text x="128" y="72" font-size="12.5" font-weight="800" fill="#e0287f">THE TWIST</text>
       <text x="128" y="92" font-size="12.5" font-weight="600" fill="#7a3f66"><tspan x="128" dy="0">One cat wakes up now and then</tspan><tspan x="128" dy="18">and bats the pile around while</tspan><tspan x="128" dy="18">you are still aiming.</tspan></text>
-      <rect x="128" y="164" width="216" height="24" rx="12" fill="#ffeef7"/>
+      <rect x="128" y="164" width="216" height="24" rx="12" fill="#fff" stroke="#f3c4de" stroke-width="2"/>
       <text x="236" y="181" text-anchor="middle" font-size="11.5" font-weight="800" fill="#a4548a">8 cuties still to be designed</text>
     </g><g transform="translate(430,268)">
       <g transform="translate(0,0) scale(0.86)">
@@ -82,7 +81,7 @@
       <text x="128" y="46" font-size="13" font-weight="800" fill="#a4548a">“sea cuties in slow motion”</text>
       <text x="128" y="72" font-size="12.5" font-weight="800" fill="#e0287f">THE TWIST</text>
       <text x="128" y="92" font-size="12.5" font-weight="600" fill="#7a3f66"><tspan x="128" dy="0">The pit is full of water.</tspan><tspan x="128" dy="18">Everything falls slowly and</tspan><tspan x="128" dy="18">drifts sideways. Patience</tspan><tspan x="128" dy="18">beats speed here.</tspan></text>
-      <rect x="128" y="164" width="216" height="24" rx="12" fill="#ffeef7"/>
+      <rect x="128" y="164" width="216" height="24" rx="12" fill="#fff" stroke="#f3c4de" stroke-width="2"/>
       <text x="236" y="181" text-anchor="middle" font-size="11.5" font-weight="800" fill="#a4548a">8 cuties still to be designed</text>
     </g><g transform="translate(44,500)">
       <g transform="translate(0,0) scale(0.86)">
@@ -133,7 +132,7 @@
       <text x="128" y="46" font-size="13" font-weight="800" fill="#a4548a">“gravity took the day off”</text>
       <text x="128" y="72" font-size="12.5" font-weight="800" fill="#e0287f">THE TWIST</text>
       <text x="128" y="92" font-size="12.5" font-weight="600" fill="#7a3f66"><tspan x="128" dy="0">Low gravity. Cuties float back</tspan><tspan x="128" dy="18">down after a miss instead of</tspan><tspan x="128" dy="18">thudding, so the pile never</tspan><tspan x="128" dy="18">settles the same way twice.</tspan></text>
-      <rect x="128" y="164" width="216" height="24" rx="12" fill="#ffeef7"/>
+      <rect x="128" y="164" width="216" height="24" rx="12" fill="#fff" stroke="#f3c4de" stroke-width="2"/>
       <text x="236" y="181" text-anchor="middle" font-size="11.5" font-weight="800" fill="#a4548a">8 cuties still to be designed</text>
     </g><g transform="translate(430,500)">
       <g transform="translate(0,0) scale(0.86)">
@@ -163,7 +162,7 @@
       <text x="128" y="46" font-size="13" font-weight="800" fill="#a4548a">“shhh, they are napping”</text>
       <text x="128" y="72" font-size="12.5" font-weight="800" fill="#e0287f">THE TWIST</text>
       <text x="128" y="92" font-size="12.5" font-weight="600" fill="#7a3f66"><tspan x="128" dy="0">The calm machine. Big soft</tspan><tspan x="128" dy="18">sheep, gentle grip, slow</tspan><tspan x="128" dy="18">music. Somewhere to go when</tspan><tspan x="128" dy="18">the unicorn machine has been</tspan><tspan x="128" dy="18">mean.</tspan></text>
-      <rect x="128" y="164" width="216" height="24" rx="12" fill="#ffeef7"/>
+      <rect x="128" y="164" width="216" height="24" rx="12" fill="#fff" stroke="#f3c4de" stroke-width="2"/>
       <text x="236" y="181" text-anchor="middle" font-size="11.5" font-weight="800" fill="#a4548a">8 cuties still to be designed</text>
     </g><g transform="translate(44,732)">
       <g transform="translate(0,0) scale(0.86)">
@@ -184,7 +183,7 @@
       <text x="128" y="46" font-size="13" font-weight="800" fill="#a4548a">“boing boing boing”</text>
       <text x="128" y="72" font-size="12.5" font-weight="800" fill="#e0287f">THE TWIST</text>
       <text x="128" y="92" font-size="12.5" font-weight="600" fill="#7a3f66"><tspan x="128" dy="0">Bouncy mushroom cuties. Miss</tspan><tspan x="128" dy="18">one and it springs, launching</tspan><tspan x="128" dy="18">two more into the air. Chaos,</tspan><tspan x="128" dy="18">but fair chaos.</tspan></text>
-      <rect x="128" y="164" width="216" height="24" rx="12" fill="#ffeef7"/>
+      <rect x="128" y="164" width="216" height="24" rx="12" fill="#fff" stroke="#f3c4de" stroke-width="2"/>
       <text x="236" y="181" text-anchor="middle" font-size="11.5" font-weight="800" fill="#a4548a">8 cuties still to be designed</text>
     </g><g transform="translate(430,732)">
       <g transform="translate(0,0) scale(0.86)">
@@ -259,16 +258,16 @@
       <text x="128" y="46" font-size="13" font-weight="800" fill="#a4548a">“nobody knows what is in there”</text>
       <text x="128" y="72" font-size="12.5" font-weight="800" fill="#e0287f">THE TWIST</text>
       <text x="128" y="92" font-size="12.5" font-weight="600" fill="#7a3f66"><tspan x="128" dy="0">You can only see silhouettes</tspan><tspan x="128" dy="18">through frosted glass. You</tspan><tspan x="128" dy="18">find out what you caught when</tspan><tspan x="128" dy="18">it lands in the chute.</tspan></text>
-      <rect x="128" y="164" width="216" height="24" rx="12" fill="#ffeef7"/>
+      <rect x="128" y="164" width="216" height="24" rx="12" fill="#fff" stroke="#f3c4de" stroke-width="2"/>
       <text x="236" y="181" text-anchor="middle" font-size="11.5" font-weight="800" fill="#a4548a">8 cuties still to be designed</text>
     </g>
   <g transform="translate(40,956)">
-    <rect x="0" y="0" width="736" height="42" rx="16" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="736" height="42" rx="16" fill="#ffffff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="20" y="27" font-size="13.5" font-weight="800" fill="#a4548a">Ella picks: which one is machine number 7 · what the eight cuties inside are called · which twist is worth building first</text>
   </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 8</text>
 </svg>

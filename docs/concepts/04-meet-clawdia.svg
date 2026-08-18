@@ -4,19 +4,18 @@
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">Meet Clawdia</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">5</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">Meet Clawdia</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">5</text></g>
 <g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
     <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">PROPOSED</text></g>
@@ -24,8 +23,8 @@
 
 
   <g>
-    <rect x="40" y="152" width="490" height="140" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="152" width="490" height="140" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="152" width="490" height="140" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 152 H514 " stroke="#e0287f" stroke-width="0" fill="none"/>
     
     <text x="54" y="178" font-size="15.5" font-weight="800" fill="#e0287f">The claw is already the main character</text>
     <text x="54" y="200" font-size="13" font-weight="600" fill="#7a3f66">
@@ -42,7 +41,7 @@
   </g>
   <g transform="translate(152,420)">
       <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
-      <circle cx="0" cy="-24" r="82" fill="#ffeef7"/>
+      <circle cx="0" cy="-24" r="82" fill="none" stroke="#f3c4de" stroke-width="2.2" stroke-dasharray="5 7"/>
       <g transform="translate(0,-46) scale(1.5)"><g transform="scale(1)">
     <g class="prong" opacity=".85" transform="rotate(0)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
     <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
@@ -65,7 +64,7 @@
       <text x="0" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">parked at the top, blinking,</tspan><tspan x="0" dy="15">ready when you are</tspan></text>
     </g><g transform="translate(402,420)">
       <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
-      <circle cx="0" cy="-24" r="82" fill="#ffeef7"/>
+      <circle cx="0" cy="-24" r="82" fill="none" stroke="#f3c4de" stroke-width="2.2" stroke-dasharray="5 7"/>
       <g transform="translate(0,-46) scale(1.5)"><g transform="scale(1)">
     <g class="prong" opacity=".85" transform="rotate(0)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
     <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
@@ -91,7 +90,7 @@
       <text x="0" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">you are moving her — she</tspan><tspan x="0" dy="15">squints at the pile</tspan></text>
     </g><g transform="translate(652,420)">
       <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
-      <circle cx="0" cy="-24" r="82" fill="#ffeef7"/>
+      <circle cx="0" cy="-24" r="82" fill="none" stroke="#f3c4de" stroke-width="2.2" stroke-dasharray="5 7"/>
       <g transform="translate(0,-46) scale(1.5)"><g transform="scale(1)">
     <g class="prong" opacity=".85" transform="rotate(-14.040000000000001)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
     <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
@@ -114,7 +113,7 @@
       <text x="0" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">the prongs close. She is</tspan><tspan x="0" dy="15">trying so hard.</tspan></text>
     </g><g transform="translate(152,688)">
       <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
-      <circle cx="0" cy="-24" r="82" fill="#ffeef7"/>
+      <circle cx="0" cy="-24" r="82" fill="none" stroke="#f3c4de" stroke-width="2.2" stroke-dasharray="5 7"/>
       <g transform="translate(0,-46) scale(1.5)"><g transform="scale(1)">
     <g class="prong" opacity=".85" transform="rotate(-12.48)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
     <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
@@ -137,7 +136,7 @@
       <text x="0" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">she is carrying a cutie to the</tspan><tspan x="0" dy="15">chute</tspan></text>
     </g><g transform="translate(402,688)">
       <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
-      <circle cx="0" cy="-24" r="82" fill="#ffeef7"/>
+      <circle cx="0" cy="-24" r="82" fill="none" stroke="#f3c4de" stroke-width="2.2" stroke-dasharray="5 7"/>
       <g transform="translate(0,-46) scale(1.5)"><g transform="scale(1)">
     <g class="prong" opacity=".85" transform="rotate(0)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
     <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
@@ -162,7 +161,7 @@
       <text x="0" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">the cutie slipped. She feels</tspan><tspan x="0" dy="15">terrible.</tspan></text>
     </g><g transform="translate(652,688)">
       <rect x="-108" y="-126" width="216" height="248" rx="24" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
-      <circle cx="0" cy="-24" r="82" fill="#ffeef7"/>
+      <circle cx="0" cy="-24" r="82" fill="none" stroke="#f3c4de" stroke-width="2.2" stroke-dasharray="5 7"/>
       <g transform="translate(0,-46) scale(1.5)"><g transform="scale(1)">
     <g class="prong" opacity=".85" transform="rotate(0)"><path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#aab8d2" stroke-width="9" fill="none" stroke-linecap="round"/>
     <path d="M0 2 C-4.05 12.92 -9 18.700000000000003 -10.35 34" stroke="#8fa0c0" stroke-width="3.06" fill="none" stroke-linecap="round" opacity=".5"/>
@@ -187,14 +186,14 @@
       <text x="0" y="98" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a"><tspan x="0" dy="0">nobody has played for a minute</tspan></text>
     </g>
   <g transform="translate(40,832)">
-    <rect x="0" y="0" width="736" height="146" rx="20" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="736" height="146" rx="20" fill="#ffffff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="20" y="30" font-size="16" font-weight="800" fill="#e0287f">Why this is the cheapest big idea in the binder</text>
     <text x="20" y="58" font-size="13.5" font-weight="600" fill="#7a3f66"><tspan x="20" dy="0">The claw already changes between six states in the code: idle, falling, closing, lifting, travelling and</tspan><tspan x="20" dy="20">returning. Those six states are exactly the six faces on this page. Nothing new has to be invented — the game</tspan><tspan x="20" dy="20">already knows how the claw feels. It just is not showing it yet.</tspan></text>
     <text x="20" y="130" font-size="13" font-weight="800" fill="#a4548a">Decision ID: CMC-2026-___    ·    Page label: PROPOSED</text>
   </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 5</text>
 </svg>

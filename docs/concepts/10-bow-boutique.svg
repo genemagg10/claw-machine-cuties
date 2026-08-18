@@ -4,19 +4,18 @@
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">The Bow Boutique</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">11</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">The Bow Boutique</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">11</text></g>
 <g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
     <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">PROPOSED</text></g>
@@ -24,8 +23,8 @@
 
 
   <g>
-    <rect x="40" y="150" width="736" height="102" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="150" width="736" height="102" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="150" width="736" height="102" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 150 H760 " stroke="#e0287f" stroke-width="0" fill="none"/>
     
     <text x="54" y="176" font-size="15.5" font-weight="800" fill="#e0287f">You will catch Mochi eleven times. What are the other ten for?</text>
     <text x="54" y="198" font-size="13" font-weight="600" fill="#7a3f66">
@@ -33,7 +32,7 @@
     </text>
   </g>
 
-  <rect x="40" y="272" width="380" height="256" rx="20" fill="#fff8fc" stroke="#e0287f" stroke-width="3"/>
+  <rect x="40" y="272" width="380" height="256" rx="20" fill="#fff" stroke="#e0287f" stroke-width="3"/>
   <text x="230" y="298" text-anchor="middle" font-size="16" font-weight="800" fill="#e0287f">THE PEGBOARD</text>
   <circle cx="60" cy="316" r="2" fill="#f3c4de"/><circle cx="100" cy="316" r="2" fill="#f3c4de"/><circle cx="140" cy="316" r="2" fill="#f3c4de"/><circle cx="180" cy="316" r="2" fill="#f3c4de"/><circle cx="220" cy="316" r="2" fill="#f3c4de"/><circle cx="260" cy="316" r="2" fill="#f3c4de"/><circle cx="300" cy="316" r="2" fill="#f3c4de"/><circle cx="340" cy="316" r="2" fill="#f3c4de"/><circle cx="380" cy="316" r="2" fill="#f3c4de"/><circle cx="420" cy="316" r="2" fill="#f3c4de"/><circle cx="60" cy="382" r="2" fill="#f3c4de"/><circle cx="100" cy="382" r="2" fill="#f3c4de"/><circle cx="140" cy="382" r="2" fill="#f3c4de"/><circle cx="180" cy="382" r="2" fill="#f3c4de"/><circle cx="220" cy="382" r="2" fill="#f3c4de"/><circle cx="260" cy="382" r="2" fill="#f3c4de"/><circle cx="300" cy="382" r="2" fill="#f3c4de"/><circle cx="340" cy="382" r="2" fill="#f3c4de"/><circle cx="380" cy="382" r="2" fill="#f3c4de"/><circle cx="420" cy="382" r="2" fill="#f3c4de"/><circle cx="60" cy="448" r="2" fill="#f3c4de"/><circle cx="100" cy="448" r="2" fill="#f3c4de"/><circle cx="140" cy="448" r="2" fill="#f3c4de"/><circle cx="180" cy="448" r="2" fill="#f3c4de"/><circle cx="220" cy="448" r="2" fill="#f3c4de"/><circle cx="260" cy="448" r="2" fill="#f3c4de"/><circle cx="300" cy="448" r="2" fill="#f3c4de"/><circle cx="340" cy="448" r="2" fill="#f3c4de"/><circle cx="380" cy="448" r="2" fill="#f3c4de"/><circle cx="420" cy="448" r="2" fill="#f3c4de"/><circle cx="60" cy="514" r="2" fill="#f3c4de"/><circle cx="100" cy="514" r="2" fill="#f3c4de"/><circle cx="140" cy="514" r="2" fill="#f3c4de"/><circle cx="180" cy="514" r="2" fill="#f3c4de"/><circle cx="220" cy="514" r="2" fill="#f3c4de"/><circle cx="260" cy="514" r="2" fill="#f3c4de"/><circle cx="300" cy="514" r="2" fill="#f3c4de"/><circle cx="340" cy="514" r="2" fill="#f3c4de"/><circle cx="380" cy="514" r="2" fill="#f3c4de"/><circle cx="420" cy="514" r="2" fill="#f3c4de"/>
   <g transform="translate(92,356)">
@@ -142,15 +141,15 @@
   <g transform="translate(560,446) scale(1.5)">
     <path d="M-24 0 q24 14 48 0 l0 10 q-24 12 -48 0 z" fill="#7fe0c4"/><path d="M14 8 l14 26 l-12 4 l-10 -26 z" fill="#7fe0c4"/></g>
   <g transform="translate(700,340)">
-    <rect x="-52" y="-24" width="104" height="48" rx="14" fill="#ffeef7"/>
+    <rect x="-52" y="-24" width="104" height="48" rx="14" fill="#fff" stroke="#f3c4de" stroke-width="2"/>
     <text x="0" y="-2" text-anchor="middle" font-size="12.5" font-weight="800" fill="#e0287f">Honeypaw ×11</text>
     <text x="0" y="16" text-anchor="middle" font-size="11.5" font-weight="700" fill="#a4548a">10 spare · 3 tokens</text>
   </g>
   <text x="608" y="512" text-anchor="middle" font-size="12.5" font-weight="700" fill="#a4548a">tap a thing on the pegboard to try it on</text>
 
   <g>
-    <rect x="40" y="552" width="236" height="140" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="552" width="236" height="140" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="552" width="236" height="140" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 552 H260 " stroke="#e0287f" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="572" r="15" fill="#e0287f" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="578" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">1</text></g>
     <text x="82" y="578" font-size="15.5" font-weight="800" fill="#e0287f">Doubles become useful</text>
@@ -159,8 +158,8 @@
     </text>
   </g>
   <g>
-    <rect x="292" y="552" width="236" height="140" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4" opacity=".97"/>
-    <rect x="292" y="552" width="236" height="140" rx="16" fill="#7fe0c4" opacity=".07"/>
+    <rect x="292" y="552" width="236" height="140" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4"/>
+    <path d="M308 552 H512 " stroke="#7fe0c4" stroke-width="0" fill="none"/>
     <g><circle cx="312" cy="572" r="15" fill="#7fe0c4" stroke="#fff" stroke-width="3.5"/>
     <text x="312" y="578" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">2</text></g>
     <text x="334" y="578" font-size="15.5" font-weight="800" fill="#7fe0c4">It changes nothing else</text>
@@ -169,8 +168,8 @@
     </text>
   </g>
   <g>
-    <rect x="544" y="552" width="232" height="140" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="544" y="552" width="232" height="140" rx="16" fill="#c9a4ff" opacity=".07"/>
+    <rect x="544" y="552" width="232" height="140" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4"/>
+    <path d="M560 552 H760 " stroke="#c9a4ff" stroke-width="0" fill="none"/>
     <g><circle cx="564" cy="572" r="15" fill="#c9a4ff" stroke="#fff" stroke-width="3.5"/>
     <text x="564" y="578" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">3</text></g>
     <text x="586" y="578" font-size="15.5" font-weight="800" fill="#c9a4ff">It shows up everywhere</text>
@@ -180,8 +179,8 @@
   </g>
 
   <g>
-    <rect x="40" y="712" width="356" height="148" rx="16" fill="#fff" stroke="#e8a417" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="712" width="356" height="148" rx="16" fill="#e8a417" opacity=".07"/>
+    <rect x="40" y="712" width="356" height="148" rx="16" fill="#fff" stroke="#e8a417" stroke-width="2.4"/>
+    <path d="M56 712 H380 " stroke="#e8a417" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="732" r="15" fill="#e8a417" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="738" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">4</text></g>
     <text x="82" y="738" font-size="15.5" font-weight="800" fill="#e8a417">The eight starter accessories</text>
@@ -190,8 +189,8 @@
     </text>
   </g>
   <g>
-    <rect x="420" y="712" width="356" height="148" rx="16" fill="#fff" stroke="#ff9a7a" stroke-width="2.4" opacity=".97"/>
-    <rect x="420" y="712" width="356" height="148" rx="16" fill="#ff9a7a" opacity=".07"/>
+    <rect x="420" y="712" width="356" height="148" rx="16" fill="#fff" stroke="#ff9a7a" stroke-width="2.4"/>
+    <path d="M436 712 H760 " stroke="#ff9a7a" stroke-width="0" fill="none"/>
     <g><circle cx="440" cy="732" r="15" fill="#ff9a7a" stroke="#fff" stroke-width="3.5"/>
     <text x="440" y="738" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">5</text></g>
     <text x="462" y="738" font-size="15.5" font-weight="800" fill="#ff9a7a">Where they come from</text>
@@ -201,13 +200,13 @@
   </g>
 
   <g transform="translate(40,880)">
-    <rect x="0" y="0" width="736" height="122" rx="20" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="736" height="122" rx="20" fill="#ffffff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="20" y="30" font-size="16" font-weight="800" fill="#e0287f">Ella decides 🩷</text>
     <text x="20" y="58" font-size="13.5" font-weight="600" fill="#7a3f66"><tspan x="20" dy="0">How many spares make a token — three, or five? Can a cutie wear two things at once? Is there one</tspan><tspan x="20" dy="20">accessory only Ella has, that nobody else can ever earn? (There should be.)</tspan></text>
   </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 11</text>
 </svg>

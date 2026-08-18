@@ -4,19 +4,18 @@
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">Cabinet Glow-Up</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">6</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">Cabinet Glow-Up</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">6</text></g>
 <g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
     <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">PROPOSED</text></g>
@@ -874,8 +873,8 @@
   <path d="M394 356 h28 m-10 -10 l10 10 l-10 10" stroke="#e0287f" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
   <g>
-    <rect x="40" y="552" width="176" height="190" rx="16" fill="#fff" stroke="#e8a417" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="552" width="176" height="190" rx="16" fill="#e8a417" opacity=".07"/>
+    <rect x="40" y="552" width="176" height="190" rx="16" fill="#fff" stroke="#e8a417" stroke-width="2.4"/>
+    <path d="M56 552 H200 " stroke="#e8a417" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="572" r="15" fill="#e8a417" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="578" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">1</text></g>
     <text x="82" y="578" font-size="15.5" font-weight="800" fill="#e8a417">Real light</text>
@@ -884,8 +883,8 @@
     </text>
   </g>
   <g>
-    <rect x="232" y="552" width="176" height="190" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="232" y="552" width="176" height="190" rx="16" fill="#c9a4ff" opacity=".07"/>
+    <rect x="232" y="552" width="176" height="190" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4"/>
+    <path d="M248 552 H392 " stroke="#c9a4ff" stroke-width="0" fill="none"/>
     <g><circle cx="252" cy="572" r="15" fill="#c9a4ff" stroke="#fff" stroke-width="3.5"/>
     <text x="252" y="578" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">2</text></g>
     <text x="274" y="578" font-size="15.5" font-weight="800" fill="#c9a4ff">A soft floor</text>
@@ -894,8 +893,8 @@
     </text>
   </g>
   <g>
-    <rect x="424" y="552" width="176" height="190" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4" opacity=".97"/>
-    <rect x="424" y="552" width="176" height="190" rx="16" fill="#7fe0c4" opacity=".07"/>
+    <rect x="424" y="552" width="176" height="190" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4"/>
+    <path d="M440 552 H584 " stroke="#7fe0c4" stroke-width="0" fill="none"/>
     <g><circle cx="444" cy="572" r="15" fill="#7fe0c4" stroke="#fff" stroke-width="3.5"/>
     <text x="444" y="578" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">3</text></g>
     <text x="466" y="578" font-size="15.5" font-weight="800" fill="#7fe0c4">Rounder, glossier</text>
@@ -904,8 +903,8 @@
     </text>
   </g>
   <g>
-    <rect x="616" y="552" width="176" height="190" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="616" y="552" width="176" height="190" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="616" y="552" width="176" height="190" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M632 552 H776 " stroke="#e0287f" stroke-width="0" fill="none"/>
     <g><circle cx="636" cy="572" r="15" fill="#e0287f" stroke="#fff" stroke-width="3.5"/>
     <text x="636" y="578" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">4</text></g>
     <text x="658" y="578" font-size="15.5" font-weight="800" fill="#e0287f">A roof mascot</text>
@@ -915,8 +914,8 @@
   </g>
 
   <g>
-    <rect x="40" y="760" width="240" height="156" rx="16" fill="#fff" stroke="#ff9a7a" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="760" width="240" height="156" rx="16" fill="#ff9a7a" opacity=".07"/>
+    <rect x="40" y="760" width="240" height="156" rx="16" fill="#fff" stroke="#ff9a7a" stroke-width="2.4"/>
+    <path d="M56 760 H264 " stroke="#ff9a7a" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="780" r="15" fill="#ff9a7a" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="786" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">5</text></g>
     <text x="82" y="786" font-size="15.5" font-weight="800" fill="#ff9a7a">A heart-shaped prize hole</text>
@@ -925,8 +924,8 @@
     </text>
   </g>
   <g>
-    <rect x="296" y="760" width="240" height="156" rx="16" fill="#fff" stroke="#7fd8ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="296" y="760" width="240" height="156" rx="16" fill="#7fd8ff" opacity=".07"/>
+    <rect x="296" y="760" width="240" height="156" rx="16" fill="#fff" stroke="#7fd8ff" stroke-width="2.4"/>
+    <path d="M312 760 H520 " stroke="#7fd8ff" stroke-width="0" fill="none"/>
     <g><circle cx="316" cy="780" r="15" fill="#7fd8ff" stroke="#fff" stroke-width="3.5"/>
     <text x="316" y="786" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">6</text></g>
     <text x="338" y="786" font-size="15.5" font-weight="800" fill="#7fd8ff">A progress meter</text>
@@ -935,8 +934,8 @@
     </text>
   </g>
   <g>
-    <rect x="552" y="760" width="224" height="156" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="552" y="760" width="224" height="156" rx="16" fill="#c9a4ff" opacity=".07"/>
+    <rect x="552" y="760" width="224" height="156" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4"/>
+    <path d="M568 760 H760 " stroke="#c9a4ff" stroke-width="0" fill="none"/>
     <g><circle cx="572" cy="780" r="15" fill="#c9a4ff" stroke="#fff" stroke-width="3.5"/>
     <text x="572" y="786" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">7</text></g>
     <text x="594" y="786" font-size="15.5" font-weight="800" fill="#c9a4ff">Bunting, clouds, sparkles</text>
@@ -946,13 +945,13 @@
   </g>
 
   <g transform="translate(40,934)">
-    <rect x="0" y="0" width="736" height="66" rx="18" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="736" height="66" rx="18" fill="#ffffff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="20" y="28" font-size="14.5" font-weight="800" fill="#e0287f">Drawn with shapes in code — no picture files. The game still opens instantly.</text>
     <text x="20" y="52" font-size="13.5" font-weight="700" fill="#a4548a">Ella decides which upgrades happen first, and whether every machine gets the same treatment.</text>
   </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 6</text>
 </svg>

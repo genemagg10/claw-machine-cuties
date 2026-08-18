@@ -13,9 +13,9 @@ export const P = {
   pink:   '#ff5c9d',
   hot:    '#e0287f',
   soft:   '#ffd9ec',
-  blush:  '#ffeef7',
-  cream:  '#fffaf6',
-  paper:  '#fff6fb',
+  blush:  '#ffffff',
+  cream:  '#ffffff',
+  paper:  '#ffffff',
   line:   '#f3c4de',
   mint:   '#7fe0c4',
   sky:    '#7fd8ff',
@@ -68,8 +68,8 @@ export function note(x, y, w, n, title, body, c, perLine, fixedH) {
   const ls = wrap(body, perLine || 34);
   const h = fixedH || (40 + ls.length * 17 + 12);
   return `<g>
-    <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="16" fill="#fff" stroke="${col}" stroke-width="2.4" opacity=".97"/>
-    <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="16" fill="${col}" opacity=".07"/>
+    <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="16" fill="#fff" stroke="${col}" stroke-width="2.4"/>
+    <path d="M${x + 16} ${y} H${x + w - 16} " stroke="${col}" stroke-width="0" fill="none"/>
     ${n != null ? pin(n, x + 20, y + 20, col) : ''}
     <text x="${x + (n != null ? 42 : 14)}" y="${y + 26}" font-size="15.5" font-weight="800" fill="${col}">${esc(title)}</text>
     <text x="${x + 14}" y="${y + 48}" font-size="13" font-weight="600" fill="${P.deep}">
@@ -121,26 +121,25 @@ export function plate({ num, kicker, title, sub, label, labelColor, body, defs, 
   width="${PAGE.w}" height="${PAGE.h}" font-family="${FONT}">
 <defs>
   ${dreamBg('gDream')}
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="${t}"/><stop offset="1" stop-color="${P.pink}"/></linearGradient>
   ${defs || ''}
 </defs>
 
-<rect width="${PAGE.w}" height="${PAGE.h}" fill="${P.cream}"/>
+<rect width="${PAGE.w}" height="${PAGE.h}" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H${PAGE.w} V96 Q${PAGE.w / 2} 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">${esc(kicker || 'CLAW MACHINE CUTIES · DEVELOPMENT BINDER')}</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">${esc(title)}</text>
-${num != null ? `<g><circle cx="${PAGE.w - 62}" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="${PAGE.w - 62}" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="${t}">${num}</text></g>` : ''}
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="${P.mute}" letter-spacing="2.4">${esc(kicker || 'CLAW MACHINE CUTIES · DEVELOPMENT BINDER')}</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="${t}">${esc(title)}</text>
+<path d="M40 93 H${PAGE.w - 40}" stroke="${t}" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="${t}" stroke-width="11" stroke-linecap="round"/>
+${num != null ? `<g><circle cx="${PAGE.w - 64}" cy="52" r="25" fill="${t}"/>
+  <text x="${PAGE.w - 64}" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">${num}</text></g>` : ''}
 ${label ? chip(40, 104, label, labelColor || P.leaf) : ''}
 ${sub ? `<text x="${label ? 40 + 16 + label.length * 8.4 + 14 : 40}" y="122" font-size="15" font-weight="700" fill="${P.mute}">${esc(sub)}</text>` : ''}
 
 ${body}
 
 <!-- footer -->
-<path d="M0 ${PAGE.h - 42} H${PAGE.w} V${PAGE.h} H0 Z" fill="${P.soft}" opacity=".7"/>
+<path d="M40 ${PAGE.h - 34} H${PAGE.w - 40}" stroke="${P.line}" stroke-width="2"/>
 <text x="40" y="${PAGE.h - 16}" font-size="12" font-weight="700" fill="${P.mute}">${esc(foot || 'Made for Ella — Creator, Owner & Game Boss')}</text>
 <text x="${PAGE.w - 40}" y="${PAGE.h - 16}" text-anchor="end" font-size="12" font-weight="700" fill="${P.mute}">Plate ${num != null ? num : '—'}</text>
 </svg>`;

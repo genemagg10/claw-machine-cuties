@@ -213,16 +213,18 @@ export function bearFull(c, mood, o) {
 }
 
 /* ---------- a rounded speech bubble with a tail ---------- */
-export function bubble(x, y, w, h, text, fill, tail, fs) {
+export function bubble(x, y, w, h, text, fill, tail, fs, edge) {
   const t = tail || 'bl';
   const tails = {
     bl: `M${x + 22} ${y + h} l-6 18 l24 -18 z`,
     br: `M${x + w - 46} ${y + h} l24 18 l-6 -18 z`,
     tl: `M${x + 22} ${y} l-6 -18 l24 18 z`
   };
+  const st = edge ? `stroke="${edge}" stroke-width="2"` : '';
   return `<g>
-    <path d="${tails[t]}" fill="${fill || '#fff'}"/>
-    <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${h / 2.2}" fill="${fill || '#fff'}"/>
+    <path d="${tails[t]}" fill="${fill || '#fff'}" ${st}/>
+    <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${h / 2.2}" fill="${fill || '#fff'}" ${st}/>
+    <rect x="${x + 2}" y="${y + 2}" width="${w - 4}" height="${h - 4}" rx="${h / 2.4}" fill="${fill || '#fff'}"/>
     <text x="${x + w / 2}" y="${y + h / 2 + (fs || 17) * .36}" text-anchor="middle"
       font-size="${fs || 17}" font-weight="800" fill="${P.hot}">${text}</text></g>`;
 }

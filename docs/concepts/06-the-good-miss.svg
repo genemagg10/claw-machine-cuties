@@ -4,19 +4,18 @@
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">The Miss That Feels Good</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">7</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">The Miss That Feels Good</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">7</text></g>
 <g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
     <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">PROPOSED</text></g>
@@ -24,8 +23,8 @@
 
 
   <g>
-    <rect x="40" y="150" width="736" height="124" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="150" width="736" height="124" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="150" width="736" height="124" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 150 H760 " stroke="#e0287f" stroke-width="0" fill="none"/>
     
     <text x="54" y="176" font-size="15.5" font-weight="800" fill="#e0287f">Four out of every five drops are a miss. That is the game.</text>
     <text x="54" y="198" font-size="13" font-weight="600" fill="#7a3f66">
@@ -86,8 +85,9 @@
   </g></g>
     <path d="M-34 -18 q-10 26 -4 48 M-46 -8 q-8 22 -2 40" stroke="#ff9a7a" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
     <g>
-    <path d="M-58 0 l24 18 l-6 -18 z" fill="#ffd9ec"/>
-    <rect x="-108" y="-34" width="96" height="34" rx="15.454545454545453" fill="#ffd9ec"/>
+    <path d="M-58 0 l24 18 l-6 -18 z" fill="#ffd9ec" />
+    <rect x="-108" y="-34" width="96" height="34" rx="15.454545454545453" fill="#ffd9ec" />
+    <rect x="-106" y="-32" width="92" height="30" rx="14.166666666666668" fill="#ffd9ec"/>
     <text x="-60" y="-11.600000000000001" text-anchor="middle"
       font-size="15" font-weight="800" fill="#e0287f">byeee!</text></g>
   </g>
@@ -97,8 +97,8 @@
     <rect x="290" y="300" width="236" height="40" rx="20" fill="#7fe0c4"/>
     <text x="408" y="327" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">THE PILE MOVED</text>
   <g transform="translate(408,436)">
-    <rect x="-96" y="-58" width="88" height="96" rx="12" fill="#ffeef7"/>
-    <rect x="8" y="-58" width="88" height="96" rx="12" fill="#e6fff6"/>
+    <rect x="-96" y="-58" width="88" height="96" rx="12" fill="#fff" stroke="#f3c4de" stroke-width="2"/>
+    <rect x="8" y="-58" width="88" height="96" rx="12" fill="#fff" stroke="#7fe0c4" stroke-width="2"/>
     <text x="-52" y="-66" text-anchor="middle" font-size="11" font-weight="800" fill="#a4548a">before</text>
     <text x="52" y="-66" text-anchor="middle" font-size="11" font-weight="800" fill="#7fe0c4">after</text>
     <g transform="translate(-70,16) scale(.30)"><g>
@@ -254,8 +254,9 @@
     <circle cx="48" cy="-24" r="24" fill="none" stroke="#7fe0c4" stroke-width="3" stroke-dasharray="6 5"/>
     <path d="M-4 -4 h14 m-6 -6 l6 6 l-6 6" stroke="#7fe0c4" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
     <g>
-    <path d="M-34 48 l-6 -18 l24 18 z" fill="#e6fff6"/>
-    <rect x="-56" y="48" width="168" height="32" rx="14.545454545454545" fill="#e6fff6"/>
+    <path d="M-34 48 l-6 -18 l24 18 z" fill="#fff" stroke="#7fe0c4" stroke-width="2"/>
+    <rect x="-56" y="48" width="168" height="32" rx="14.545454545454545" fill="#fff" stroke="#7fe0c4" stroke-width="2"/>
+    <rect x="-54" y="50" width="164" height="28" rx="13.333333333333334" fill="#fff"/>
     <text x="28" y="68.32" text-anchor="middle"
       font-size="12" font-weight="800" fill="#e0287f">Sir Roosevelt is on top now!</text></g>
   </g>
@@ -285,7 +286,7 @@
     <circle r="5.2" fill="#f08c42"/><circle cx="-1.4" cy="-1.6" r="1.6" fill="#fff" opacity=".65"/>
   </g>
   </g></g>
-    <rect x="-88" y="18" width="176" height="22" rx="11" fill="#ffeef7"/>
+    <rect x="-88" y="18" width="176" height="22" rx="11" fill="#fff" stroke="#c9a4ff" stroke-width="2"/>
     <rect x="-88" y="18" width="150" height="22" rx="11" fill="#c9a4ff"/>
     <circle cx="62" cy="29" r="15" fill="#fff" stroke="#c9a4ff" stroke-width="3"/>
     <text x="62" y="35" text-anchor="middle" font-size="13" font-weight="800" fill="#c9a4ff">!</text>
@@ -294,8 +295,8 @@
   <text x="658" y="522" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7a3f66"><tspan x="658" dy="0">The game already knows exactly</tspan><tspan x="658" dy="17">how close you were — it is the</tspan><tspan x="658" dy="17">aim number. Show it. “One</tspan><tspan x="658" dy="17">whisker away” hurts in the good</tspan><tspan x="658" dy="17">way.</tspan></text>
 
   <g>
-    <rect x="40" y="614" width="356" height="168" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="614" width="356" height="168" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="614" width="356" height="168" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 614 H380 " stroke="#e0287f" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="634" r="15" fill="#e0287f" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="640" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">8</text></g>
     <text x="82" y="640" font-size="15.5" font-weight="800" fill="#e0287f">What must NOT change</text>
@@ -304,8 +305,8 @@
     </text>
   </g>
   <g>
-    <rect x="420" y="614" width="356" height="168" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="420" y="614" width="356" height="168" rx="16" fill="#c9a4ff" opacity=".07"/>
+    <rect x="420" y="614" width="356" height="168" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4"/>
+    <path d="M436 614 H760 " stroke="#c9a4ff" stroke-width="0" fill="none"/>
     <g><circle cx="440" cy="634" r="15" fill="#c9a4ff" stroke="#fff" stroke-width="3.5"/>
     <text x="440" y="640" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">9</text></g>
     <text x="462" y="640" font-size="15.5" font-weight="800" fill="#c9a4ff">What could change (Ella’s call)</text>
@@ -315,7 +316,7 @@
   </g>
 
   <g transform="translate(40,800)">
-    <rect x="0" y="0" width="736" height="204" rx="20" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="736" height="204" rx="20" fill="#ffffff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="20" y="32" font-size="17" font-weight="800" fill="#e0287f">The three-second rule 🕒</text>
     <text x="20" y="66" font-size="14" font-weight="600" fill="#7a3f66"><tspan x="20" dy="0">Every drop ends in one of three ways: caught, slipped, or fumbled. Each ending gets three</tspan><tspan x="20" dy="21">seconds of the game’s full attention — a face, a sound, a sentence, and something that changed</tspan><tspan x="20" dy="21">in the pit. Three seconds × three endings is the entire feature. If a player cannot tell those</tspan><tspan x="20" dy="21">three endings apart with the sound off, it is not finished yet.</tspan></text>
     <text x="20" y="164" font-size="13" font-weight="800" fill="#a4548a"><tspan x="20" dy="0">caught → confetti, the name, an album flash · slipped → the wave, “so close”, the meter · fumbled → the</tspan><tspan x="20" dy="19">pile moves, and the game says what moved</tspan></text>
@@ -323,7 +324,7 @@
   </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 7</text>
 </svg>

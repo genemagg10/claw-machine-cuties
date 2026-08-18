@@ -4,19 +4,18 @@
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">The Biggest Parade Ever</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">12</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">The Biggest Parade Ever</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">12</text></g>
 <g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
     <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">PROPOSED</text></g>
@@ -25,11 +24,11 @@
 
   <defs>
     <linearGradient id="pSky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#3b2a58"/><stop offset=".55" stop-color="#7a4f92"/><stop offset="1" stop-color="#ff9ec9"/></linearGradient>
+      <stop offset="0" stop-color="#6d5c92"/><stop offset=".55" stop-color="#a684c2"/><stop offset="1" stop-color="#ffcde6"/></linearGradient>
   </defs>
-  <rect x="26" y="176" width="764" height="430" rx="22" fill="url(#pSky)"/>
+  <rect x="26" y="196" width="764" height="410" rx="22" fill="url(#pSky)"/>
   <g clip-path="url(#pClip)">
-    <clipPath id="pClip"><rect x="26" y="176" width="764" height="430" rx="22"/></clipPath>
+    <clipPath id="pClip"><rect x="26" y="196" width="764" height="410" rx="22"/></clipPath>
     <circle cx="124" cy="257" r="1.9" fill="#fff" opacity="0.68"/><circle cx="472" cy="359" r="2.7" fill="#fff" opacity="0.63"/><circle cx="371" cy="318" r="2.0" fill="#fff" opacity="0.55"/><circle cx="429" cy="281" r="2.9" fill="#fff" opacity="0.96"/><circle cx="43" cy="330" r="1.6" fill="#fff" opacity="0.40"/><circle cx="278" cy="336" r="1.4" fill="#fff" opacity="0.58"/><circle cx="191" cy="209" r="2.4" fill="#fff" opacity="0.57"/><circle cx="199" cy="360" r="2.8" fill="#fff" opacity="0.54"/><circle cx="43" cy="384" r="1.1" fill="#fff" opacity="0.94"/><circle cx="463" cy="282" r="2.8" fill="#fff" opacity="0.69"/><circle cx="150" cy="192" r="1.3" fill="#fff" opacity="0.96"/><circle cx="656" cy="318" r="1.9" fill="#fff" opacity="0.85"/><circle cx="488" cy="358" r="2.1" fill="#fff" opacity="0.74"/><circle cx="463" cy="269" r="2.1" fill="#fff" opacity="0.89"/><circle cx="345" cy="353" r="1.3" fill="#fff" opacity="0.85"/><circle cx="204" cy="236" r="2.0" fill="#fff" opacity="0.50"/><circle cx="110" cy="327" r="1.5" fill="#fff" opacity="0.74"/><circle cx="704" cy="286" r="2.5" fill="#fff" opacity="0.92"/><circle cx="357" cy="204" r="2.1" fill="#fff" opacity="0.61"/><circle cx="441" cy="297" r="1.2" fill="#fff" opacity="0.64"/><circle cx="427" cy="211" r="2.7" fill="#fff" opacity="0.67"/><circle cx="70" cy="306" r="2.4" fill="#fff" opacity="0.61"/><circle cx="551" cy="332" r="2.0" fill="#fff" opacity="0.85"/><circle cx="292" cy="297" r="3.0" fill="#fff" opacity="0.57"/><circle cx="591" cy="285" r="2.5" fill="#fff" opacity="0.65"/><circle cx="275" cy="299" r="2.4" fill="#fff" opacity="0.94"/><circle cx="474" cy="293" r="1.2" fill="#fff" opacity="0.94"/><circle cx="255" cy="207" r="2.5" fill="#fff" opacity="0.93"/><circle cx="692" cy="267" r="2.4" fill="#fff" opacity="0.60"/><circle cx="460" cy="375" r="2.9" fill="#fff" opacity="0.68"/><circle cx="238" cy="319" r="2.4" fill="#fff" opacity="0.57"/><circle cx="737" cy="240" r="1.2" fill="#fff" opacity="0.59"/><circle cx="757" cy="351" r="1.6" fill="#fff" opacity="0.56"/><circle cx="244" cy="364" r="1.8" fill="#fff" opacity="0.86"/><circle cx="717" cy="343" r="2.6" fill="#fff" opacity="0.57"/><circle cx="691" cy="332" r="2.0" fill="#fff" opacity="0.67"/><circle cx="142" cy="248" r="2.0" fill="#fff" opacity="0.87"/><circle cx="530" cy="292" r="1.1" fill="#fff" opacity="0.55"/><circle cx="439" cy="255" r="2.0" fill="#fff" opacity="0.82"/><circle cx="415" cy="382" r="1.7" fill="#fff" opacity="0.76"/>
     <!-- fireworks -->
     <g><path d="M180 250 l44.0 0.0" stroke="#ffd447" stroke-width="2.6" stroke-linecap="round" opacity=".85"/>
@@ -86,8 +85,8 @@
     <text x="408" y="342" text-anchor="middle" font-size="30" font-weight="800" fill="#e0287f">🎉 ELLA CLEARED THE WHOLE ARCADE 🎉</text>
     <text x="635" y="191" font-size="20" opacity=".9">💖</text><text x="403" y="270" font-size="21" opacity=".9">⭐</text><text x="655" y="485" font-size="13" opacity=".9">✨</text><text x="726" y="431" font-size="15" opacity=".9">🌸</text><text x="347" y="296" font-size="20" opacity=".9">🎀</text><text x="499" y="333" font-size="15" opacity=".9">💫</text><text x="494" y="230" font-size="14" opacity=".9">🌟</text><text x="42" y="448" font-size="17" opacity=".9">💖</text><text x="759" y="426" font-size="11" opacity=".9">⭐</text><text x="54" y="468" font-size="17" opacity=".9">✨</text><text x="700" y="194" font-size="19" opacity=".9">🌸</text><text x="473" y="393" font-size="16" opacity=".9">🎀</text><text x="141" y="234" font-size="18" opacity=".9">💫</text><text x="69" y="480" font-size="14" opacity=".9">🌟</text><text x="326" y="381" font-size="18" opacity=".9">💖</text><text x="709" y="401" font-size="15" opacity=".9">⭐</text><text x="280" y="202" font-size="14" opacity=".9">✨</text><text x="434" y="223" font-size="21" opacity=".9">🌸</text><text x="100" y="250" font-size="20" opacity=".9">🎀</text><text x="352" y="485" font-size="13" opacity=".9">💫</text><text x="436" y="204" font-size="15" opacity=".9">🌟</text><text x="397" y="369" font-size="14" opacity=".9">💖</text><text x="733" y="307" font-size="20" opacity=".9">⭐</text><text x="701" y="327" font-size="17" opacity=".9">✨</text><text x="196" y="199" font-size="13" opacity=".9">🌸</text><text x="253" y="480" font-size="15" opacity=".9">🎀</text><text x="597" y="478" font-size="14" opacity=".9">💫</text><text x="248" y="383" font-size="14" opacity=".9">🌟</text><text x="659" y="256" font-size="20" opacity=".9">💖</text><text x="700" y="301" font-size="12" opacity=".9">⭐</text><text x="326" y="341" font-size="17" opacity=".9">✨</text><text x="548" y="278" font-size="22" opacity=".9">🌸</text><text x="582" y="318" font-size="16" opacity=".9">🎀</text><text x="117" y="370" font-size="12" opacity=".9">💫</text><text x="427" y="470" font-size="17" opacity=".9">🌟</text><text x="481" y="344" font-size="11" opacity=".9">💖</text><text x="363" y="378" font-size="18" opacity=".9">⭐</text><text x="55" y="271" font-size="14" opacity=".9">✨</text><text x="143" y="425" font-size="11" opacity=".9">🌸</text><text x="234" y="278" font-size="21" opacity=".9">🎀</text><text x="341" y="252" font-size="13" opacity=".9">💫</text><text x="124" y="459" font-size="21" opacity=".9">🌟</text><text x="501" y="325" font-size="19" opacity=".9">💖</text><text x="233" y="191" font-size="13" opacity=".9">⭐</text><text x="612" y="487" font-size="21" opacity=".9">✨</text><text x="443" y="401" font-size="17" opacity=".9">🌸</text>
     <!-- road -->
-    <rect x="26" y="510" width="764" height="96" fill="#5b3a52"/>
-    <rect x="26" y="510" width="764" height="8" fill="#7a5c74"/>
+    <rect x="26" y="510" width="764" height="96" fill="#8f7189"/>
+    <rect x="26" y="510" width="764" height="8" fill="#ab93a5"/>
     <rect x="40" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="90" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="140" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="190" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="240" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="290" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="340" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="390" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="440" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="490" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="540" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="590" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="640" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="690" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="740" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/><rect x="790" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/>
     <g transform="translate(92,452) scale(0.74)">
       <g transform="translate(0,-52) scale(.8)"><g>
@@ -119,8 +118,8 @@
       <path d="M-52 8 h104 l-9 30 h-86 z" fill="#ff8fbe"/>
       <path d="M-52 8 h104 l-3 8 h-98 z" fill="#fff" opacity=".55"/>
       <path d="M-50 -6 h20 l-10 15 z" fill="#ffd447"/><path d="M-24 -6 h20 l-10 15 z" fill="#fff"/><path d="M2 -6 h20 l-10 15 z" fill="#ffd447"/><path d="M28 -6 h20 l-10 15 z" fill="#fff"/>
-      <circle cx="-30" cy="42" r="13" fill="#5b3a52"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
-      <circle cx="30" cy="42" r="13" fill="#5b3a52"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="-30" cy="42" r="13" fill="#4a3044"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="30" cy="42" r="13" fill="#4a3044"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
       <rect x="-46" y="16" width="92" height="16" rx="8" fill="#fff" opacity=".92"/>
       <text x="0" y="28" text-anchor="middle" font-size="11" font-weight="800" fill="#b8437f">Sir Roosevelt</text>
       <!-- NEW: a balloon on every float -->
@@ -160,8 +159,8 @@
       <path d="M-52 8 h104 l-9 30 h-86 z" fill="#7fd8ff"/>
       <path d="M-52 8 h104 l-3 8 h-98 z" fill="#fff" opacity=".55"/>
       <path d="M-50 -6 h20 l-10 15 z" fill="#c9a4ff"/><path d="M-24 -6 h20 l-10 15 z" fill="#fff"/><path d="M2 -6 h20 l-10 15 z" fill="#c9a4ff"/><path d="M28 -6 h20 l-10 15 z" fill="#fff"/>
-      <circle cx="-30" cy="42" r="13" fill="#5b3a52"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
-      <circle cx="30" cy="42" r="13" fill="#5b3a52"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="-30" cy="42" r="13" fill="#4a3044"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="30" cy="42" r="13" fill="#4a3044"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
       <rect x="-46" y="16" width="92" height="16" rx="8" fill="#fff" opacity=".92"/>
       <text x="0" y="28" text-anchor="middle" font-size="11" font-weight="800" fill="#b8437f">Mochi</text>
       <!-- NEW: a balloon on every float -->
@@ -194,8 +193,8 @@
       <path d="M-52 8 h104 l-9 30 h-86 z" fill="#a4f0a0"/>
       <path d="M-52 8 h104 l-3 8 h-98 z" fill="#fff" opacity=".55"/>
       <path d="M-50 -6 h20 l-10 15 z" fill="#ff9a7a"/><path d="M-24 -6 h20 l-10 15 z" fill="#fff"/><path d="M2 -6 h20 l-10 15 z" fill="#ff9a7a"/><path d="M28 -6 h20 l-10 15 z" fill="#fff"/>
-      <circle cx="-30" cy="42" r="13" fill="#5b3a52"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
-      <circle cx="30" cy="42" r="13" fill="#5b3a52"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="-30" cy="42" r="13" fill="#4a3044"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="30" cy="42" r="13" fill="#4a3044"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
       <rect x="-46" y="16" width="92" height="16" rx="8" fill="#fff" opacity=".92"/>
       <text x="0" y="28" text-anchor="middle" font-size="11" font-weight="800" fill="#b8437f">Rainbow Rawr</text>
       <!-- NEW: a balloon on every float -->
@@ -234,8 +233,8 @@
       <path d="M-52 8 h104 l-9 30 h-86 z" fill="#ffd447"/>
       <path d="M-52 8 h104 l-3 8 h-98 z" fill="#fff" opacity=".55"/>
       <path d="M-50 -6 h20 l-10 15 z" fill="#ff8fbe"/><path d="M-24 -6 h20 l-10 15 z" fill="#fff"/><path d="M2 -6 h20 l-10 15 z" fill="#ff8fbe"/><path d="M28 -6 h20 l-10 15 z" fill="#fff"/>
-      <circle cx="-30" cy="42" r="13" fill="#5b3a52"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
-      <circle cx="30" cy="42" r="13" fill="#5b3a52"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="-30" cy="42" r="13" fill="#4a3044"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="30" cy="42" r="13" fill="#4a3044"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
       <rect x="-46" y="16" width="92" height="16" rx="8" fill="#fff" opacity=".92"/>
       <text x="0" y="28" text-anchor="middle" font-size="11" font-weight="800" fill="#b8437f">Aurora</text>
       <!-- NEW: a balloon on every float -->
@@ -253,8 +252,8 @@
       <path d="M-52 8 h104 l-9 30 h-86 z" fill="#c9a4ff"/>
       <path d="M-52 8 h104 l-3 8 h-98 z" fill="#fff" opacity=".55"/>
       <path d="M-50 -6 h20 l-10 15 z" fill="#7fd8ff"/><path d="M-24 -6 h20 l-10 15 z" fill="#fff"/><path d="M2 -6 h20 l-10 15 z" fill="#7fd8ff"/><path d="M28 -6 h20 l-10 15 z" fill="#fff"/>
-      <circle cx="-30" cy="42" r="13" fill="#5b3a52"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
-      <circle cx="30" cy="42" r="13" fill="#5b3a52"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="-30" cy="42" r="13" fill="#4a3044"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="30" cy="42" r="13" fill="#4a3044"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
       <rect x="-46" y="16" width="92" height="16" rx="8" fill="#fff" opacity=".92"/>
       <text x="0" y="28" text-anchor="middle" font-size="11" font-weight="800" fill="#b8437f">Cupcakey</text>
       <!-- NEW: a balloon on every float -->
@@ -294,8 +293,8 @@
       <path d="M-52 8 h104 l-9 30 h-86 z" fill="#ff9a7a"/>
       <path d="M-52 8 h104 l-3 8 h-98 z" fill="#fff" opacity=".55"/>
       <path d="M-50 -6 h20 l-10 15 z" fill="#a4f0a0"/><path d="M-24 -6 h20 l-10 15 z" fill="#fff"/><path d="M2 -6 h20 l-10 15 z" fill="#a4f0a0"/><path d="M28 -6 h20 l-10 15 z" fill="#fff"/>
-      <circle cx="-30" cy="42" r="13" fill="#5b3a52"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
-      <circle cx="30" cy="42" r="13" fill="#5b3a52"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="-30" cy="42" r="13" fill="#4a3044"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="30" cy="42" r="13" fill="#4a3044"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
       <rect x="-46" y="16" width="92" height="16" rx="8" fill="#fff" opacity=".92"/>
       <text x="0" y="28" text-anchor="middle" font-size="11" font-weight="800" fill="#b8437f">Celestia</text>
       <!-- NEW: a balloon on every float -->
@@ -623,11 +622,11 @@
   </g>
   </g></g></g>
   </g>
-  <rect x="26" y="176" width="764" height="430" rx="22" fill="none" stroke="#e0287f" stroke-width="4"/>
+  <rect x="26" y="196" width="764" height="410" rx="22" fill="none" stroke="#e0287f" stroke-width="4"/>
 
   <g>
-    <rect x="40" y="626" width="236" height="150" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="626" width="236" height="150" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="626" width="236" height="150" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 626 H260 " stroke="#e0287f" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="646" r="15" fill="#e0287f" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="652" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">1</text></g>
     <text x="82" y="652" font-size="15.5" font-weight="800" fill="#e0287f">It already happens</text>
@@ -636,8 +635,8 @@
     </text>
   </g>
   <g>
-    <rect x="292" y="626" width="236" height="150" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="292" y="626" width="236" height="150" rx="16" fill="#c9a4ff" opacity=".07"/>
+    <rect x="292" y="626" width="236" height="150" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4"/>
+    <path d="M308 626 H512 " stroke="#c9a4ff" stroke-width="0" fill="none"/>
     <g><circle cx="312" cy="646" r="15" fill="#c9a4ff" stroke="#fff" stroke-width="3.5"/>
     <text x="312" y="652" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">2</text></g>
     <text x="334" y="652" font-size="15.5" font-weight="800" fill="#c9a4ff">Night, stars, fireworks</text>
@@ -646,8 +645,8 @@
     </text>
   </g>
   <g>
-    <rect x="544" y="626" width="232" height="150" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4" opacity=".97"/>
-    <rect x="544" y="626" width="232" height="150" rx="16" fill="#7fe0c4" opacity=".07"/>
+    <rect x="544" y="626" width="232" height="150" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4"/>
+    <path d="M560 626 H760 " stroke="#7fe0c4" stroke-width="0" fill="none"/>
     <g><circle cx="564" cy="646" r="15" fill="#7fe0c4" stroke="#fff" stroke-width="3.5"/>
     <text x="564" y="652" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">3</text></g>
     <text x="586" y="652" font-size="15.5" font-weight="800" fill="#7fe0c4">A cheering crowd</text>
@@ -657,8 +656,8 @@
   </g>
 
   <g>
-    <rect x="40" y="794" width="356" height="148" rx="16" fill="#fff" stroke="#e8a417" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="794" width="356" height="148" rx="16" fill="#e8a417" opacity=".07"/>
+    <rect x="40" y="794" width="356" height="148" rx="16" fill="#fff" stroke="#e8a417" stroke-width="2.4"/>
+    <path d="M56 794 H380 " stroke="#e8a417" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="814" r="15" fill="#e8a417" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="820" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">4</text></g>
     <text x="82" y="820" font-size="15.5" font-weight="800" fill="#e8a417">Balloons, banners, a band</text>
@@ -667,8 +666,8 @@
     </text>
   </g>
   <g>
-    <rect x="420" y="794" width="356" height="148" rx="16" fill="#fff" stroke="#ff9a7a" stroke-width="2.4" opacity=".97"/>
-    <rect x="420" y="794" width="356" height="148" rx="16" fill="#ff9a7a" opacity=".07"/>
+    <rect x="420" y="794" width="356" height="148" rx="16" fill="#fff" stroke="#ff9a7a" stroke-width="2.4"/>
+    <path d="M436 794 H760 " stroke="#ff9a7a" stroke-width="0" fill="none"/>
     <g><circle cx="440" cy="814" r="15" fill="#ff9a7a" stroke="#fff" stroke-width="3.5"/>
     <text x="440" y="820" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">5</text></g>
     <text x="462" y="820" font-size="15.5" font-weight="800" fill="#ff9a7a">The last parade is different</text>
@@ -678,13 +677,13 @@
   </g>
 
   <g transform="translate(40,942)">
-    <rect x="0" y="0" width="736" height="62" rx="16" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="736" height="62" rx="16" fill="#ffffff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="20" y="26" font-size="13.5" font-weight="800" fill="#a4548a">Ella decides: what the banner says · who leads the parade ·</text>
     <text x="20" y="48" font-size="13.5" font-weight="800" fill="#a4548a">whether it can be watched again later from the album</text>
   </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 12</text>
 </svg>

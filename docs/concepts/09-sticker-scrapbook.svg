@@ -4,19 +4,18 @@
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">The Sticker Scrapbook</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">10</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">The Sticker Scrapbook</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">10</text></g>
 <g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
     <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">PROPOSED</text></g>
@@ -24,8 +23,8 @@
 
 
   <g>
-    <rect x="40" y="150" width="736" height="102" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="150" width="736" height="102" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="150" width="736" height="102" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 150 H760 " stroke="#e0287f" stroke-width="0" fill="none"/>
     
     <text x="54" y="176" font-size="15.5" font-weight="800" fill="#e0287f">The album already exists. It just needs to look like a treasure.</text>
     <text x="54" y="198" font-size="13" font-weight="600" fill="#7a3f66">
@@ -33,12 +32,12 @@
     </text>
   </g>
 
-  <rect x="26" y="266" width="764" height="384" rx="20" fill="#fffdf8" stroke="#e8d8c8" stroke-width="3"/>
+  <rect x="26" y="266" width="764" height="384" rx="20" fill="#fff" stroke="#e8d8c8" stroke-width="3"/>
   <path d="M408 266 V650" stroke="#e8d8c8" stroke-width="3" stroke-dasharray="8 8"/>
   <text x="44" y="286" font-size="15" font-weight="800" fill="#e0287f">🧸 Teddy Bear Bonanza — 5 of 8 found</text>
   <g transform="translate(44,292)">
       <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
-      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff4fa"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff" stroke="#f3c4de" stroke-width="1.8" stroke-dasharray=""/>
       <g transform="translate(66,78) scale(.62)"><g>
     <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#e0a96c" transform="rotate(-24 -27 16)"/>
     <ellipse cx="27" cy="16" rx="11" ry="9" fill="#e0a96c" transform="rotate(24 27 16)"/>
@@ -73,7 +72,7 @@
     fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
     </g><g transform="translate(192,292)">
       <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
-      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff4fa"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff" stroke="#f3c4de" stroke-width="1.8" stroke-dasharray=""/>
       <g transform="translate(66,78) scale(.62)"><g>
     <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#f3ddc7" transform="rotate(-24 -27 16)"/>
     <ellipse cx="27" cy="16" rx="11" ry="9" fill="#f3ddc7" transform="rotate(24 27 16)"/>
@@ -108,7 +107,7 @@
     fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
     </g><g transform="translate(340,292)">
       <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
-      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff4fa"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff" stroke="#f3c4de" stroke-width="1.8" stroke-dasharray=""/>
       <g transform="translate(66,78) scale(.62)"><g>
     <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#a06b46" transform="rotate(-24 -27 16)"/>
     <ellipse cx="27" cy="16" rx="11" ry="9" fill="#a06b46" transform="rotate(24 27 16)"/>
@@ -143,7 +142,7 @@
     fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
     </g><g transform="translate(488,292)">
       <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
-      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff4fa"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff" stroke="#f3c4de" stroke-width="1.8" stroke-dasharray=""/>
       <g transform="translate(66,78) scale(.62)"><g>
     <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#f0b96f" transform="rotate(-24 -27 16)"/>
     <ellipse cx="27" cy="16" rx="11" ry="9" fill="#f0b96f" transform="rotate(24 27 16)"/>
@@ -178,7 +177,7 @@
     fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
     </g><g transform="translate(636,292)">
       <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
-      <rect x="9" y="9" width="114" height="104" rx="6" fill="#efe6ec"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff" stroke="#c9bcc4" stroke-width="1.8" stroke-dasharray="6 5"/>
       <g transform="translate(66,78) scale(.62)" opacity=".22"><g>
     <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#8b7b87" transform="rotate(-24 -27 16)"/>
     <ellipse cx="27" cy="16" rx="11" ry="9" fill="#8b7b87" transform="rotate(24 27 16)"/>
@@ -214,7 +213,7 @@
     fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
     </g><g transform="translate(44,470)">
       <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
-      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff4fa"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff" stroke="#f3c4de" stroke-width="1.8" stroke-dasharray=""/>
       <g transform="translate(66,78) scale(.62)"><g>
     <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#c08b56" transform="rotate(-24 -27 16)"/>
     <ellipse cx="27" cy="16" rx="11" ry="9" fill="#c08b56" transform="rotate(24 27 16)"/>
@@ -249,7 +248,7 @@
     fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
     </g><g transform="translate(192,470)">
       <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
-      <rect x="9" y="9" width="114" height="104" rx="6" fill="#efe6ec"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff" stroke="#c9bcc4" stroke-width="1.8" stroke-dasharray="6 5"/>
       <g transform="translate(66,78) scale(.62)" opacity=".22"><g>
     <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#8b7b87" transform="rotate(-24 -27 16)"/>
     <ellipse cx="27" cy="16" rx="11" ry="9" fill="#8b7b87" transform="rotate(24 27 16)"/>
@@ -285,7 +284,7 @@
     fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
     </g><g transform="translate(340,470)">
       <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
-      <rect x="9" y="9" width="114" height="104" rx="6" fill="#efe6ec"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff" stroke="#c9bcc4" stroke-width="1.8" stroke-dasharray="6 5"/>
       <g transform="translate(66,78) scale(.62)" opacity=".22"><g>
     <ellipse cx="-27" cy="16" rx="11" ry="9" fill="#8b7b87" transform="rotate(-24 -27 16)"/>
     <ellipse cx="27" cy="16" rx="11" ry="9" fill="#8b7b87" transform="rotate(24 27 16)"/>
@@ -321,9 +320,9 @@
     fill="#7fe0c4" opacity=".72" transform="rotate(9 120 152)"/>
     </g>
   <g transform="translate(492,470)">
-    <rect x="0" y="0" width="280" height="156" rx="12" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="280" height="156" rx="12" fill="#fff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="140" y="30" text-anchor="middle" font-size="14" font-weight="800" fill="#e0287f">this machine</text>
-    <rect x="26" y="44" width="228" height="22" rx="11" fill="#fff"/>
+    <rect x="26" y="44" width="228" height="22" rx="11" fill="#fff" stroke="#f3c4de" stroke-width="1.8"/>
     <rect x="26" y="44" width="142" height="22" rx="11" fill="#e0287f"/>
     <text x="140" y="86" text-anchor="middle" font-size="13" font-weight="800" fill="#a4548a">5 of 8 kinds · 11 caught · 34 tries</text>
     <text x="140" y="112" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7a3f66">Still missing: Blueberry Bear,</text>
@@ -332,8 +331,8 @@
   </g>
 
   <g>
-    <rect x="40" y="674" width="236" height="148" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="674" width="236" height="148" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="674" width="236" height="148" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 674 H260 " stroke="#e0287f" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="694" r="15" fill="#e0287f" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="700" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">1</text></g>
     <text x="82" y="700" font-size="15.5" font-weight="800" fill="#e0287f">Photo corners and tape</text>
@@ -342,8 +341,8 @@
     </text>
   </g>
   <g>
-    <rect x="292" y="674" width="236" height="148" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="292" y="674" width="236" height="148" rx="16" fill="#c9a4ff" opacity=".07"/>
+    <rect x="292" y="674" width="236" height="148" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4"/>
+    <path d="M308 674 H512 " stroke="#c9a4ff" stroke-width="0" fill="none"/>
     <g><circle cx="312" cy="694" r="15" fill="#c9a4ff" stroke="#fff" stroke-width="3.5"/>
     <text x="312" y="700" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">2</text></g>
     <text x="334" y="700" font-size="15.5" font-weight="800" fill="#c9a4ff">Shadows, not blanks</text>
@@ -352,8 +351,8 @@
     </text>
   </g>
   <g>
-    <rect x="544" y="674" width="232" height="148" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4" opacity=".97"/>
-    <rect x="544" y="674" width="232" height="148" rx="16" fill="#7fe0c4" opacity=".07"/>
+    <rect x="544" y="674" width="232" height="148" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4"/>
+    <path d="M560 674 H760 " stroke="#7fe0c4" stroke-width="0" fill="none"/>
     <g><circle cx="564" cy="694" r="15" fill="#7fe0c4" stroke="#fff" stroke-width="3.5"/>
     <text x="564" y="700" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">3</text></g>
     <text x="586" y="700" font-size="15.5" font-weight="800" fill="#7fe0c4">The day you caught it</text>
@@ -363,14 +362,14 @@
   </g>
 
   <g transform="translate(40,834)">
-    <rect x="0" y="0" width="736" height="164" rx="20" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="736" height="164" rx="20" fill="#ffffff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="20" y="30" font-size="16" font-weight="800" fill="#e0287f">One honest warning ⚠️</text>
     <text x="20" y="60" font-size="14" font-weight="600" fill="#7a3f66"><tspan x="20" dy="0">Showing the shape of a cutie you have not caught yet is a promise: it says “this one is really in</tspan><tspan x="20" dy="21">there”. That promise has to stay true. If a legendary is one-in-fifteen, the book should not pretend it</tspan><tspan x="20" dy="21">is around the corner. The game’s whole personality is that it is hard and it is honest — the scrapbook</tspan><tspan x="20" dy="21">has to be honest too.</tspan></text>
     <text x="20" y="146" font-size="13" font-weight="800" fill="#a4548a">Ella decides: do the missing ones show as shadows, silhouette outlines, or stay completely secret?</text>
   </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 10</text>
 </svg>

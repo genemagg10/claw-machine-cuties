@@ -175,8 +175,8 @@ export function goodMiss() {
 
   ${panel(290, 300, 236, 292, 'THE PILE MOVED', P.mint)}
   <g transform="translate(408,436)">
-    <rect x="-96" y="-58" width="88" height="96" rx="12" fill="${P.blush}"/>
-    <rect x="8" y="-58" width="88" height="96" rx="12" fill="#e6fff6"/>
+    <rect x="-96" y="-58" width="88" height="96" rx="12" fill="#fff" stroke="${P.line}" stroke-width="2"/>
+    <rect x="8" y="-58" width="88" height="96" rx="12" fill="#fff" stroke="${P.mint}" stroke-width="2"/>
     <text x="-52" y="-66" text-anchor="middle" font-size="11" font-weight="800" fill="${P.mute}">before</text>
     <text x="52" y="-66" text-anchor="middle" font-size="11" font-weight="800" fill="${P.mint}">after</text>
     <g transform="translate(-70,16) scale(.30)">${stuffyArt(t[0])}</g>
@@ -187,14 +187,14 @@ export function goodMiss() {
     <g transform="translate(48,-24) scale(.32)">${stuffyArt(t[7])}</g>
     <circle cx="48" cy="-24" r="24" fill="none" stroke="${P.mint}" stroke-width="3" stroke-dasharray="6 5"/>
     <path d="M-4 -4 h14 m-6 -6 l6 6 l-6 6" stroke="${P.mint}" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    ${bubble(-56, 48, 168, 32, 'Sir Roosevelt is on top now!', '#e6fff6', 'tl', 12)}
+    ${bubble(-56, 48, 168, 32, 'Sir Roosevelt is on top now!', '#fff', 'tl', 12, P.mint)}
   </g>
   ${lines('A miss still shoves the pile — the game already does this. It just never says so. One line of text turns a loss into progress you can see.', 408, 522, 33, 17, `text-anchor="middle" font-size="12.5" font-weight="700" fill="${P.deep}"`)}
 
   ${panel(540, 300, 236, 292, 'SO CLOSE', P.lilac)}
   <g transform="translate(658,438)">
     <g transform="translate(0,-46) scale(.9)">${bearHead(t[6].c, 'hopeful')}</g>
-    <rect x="-88" y="18" width="176" height="22" rx="11" fill="${P.blush}"/>
+    <rect x="-88" y="18" width="176" height="22" rx="11" fill="#fff" stroke="${P.lilac}" stroke-width="2"/>
     <rect x="-88" y="18" width="150" height="22" rx="11" fill="${P.lilac}"/>
     <circle cx="62" cy="29" r="15" fill="#fff" stroke="${P.lilac}" stroke-width="3"/>
     <text x="62" y="35" text-anchor="middle" font-size="13" font-weight="800" fill="${P.lilac}">!</text>
@@ -290,7 +290,7 @@ export function newMachines() {
       <text x="128" y="46" font-size="13" font-weight="800" fill="${P.mute}">“${d.tag}”</text>
       <text x="128" y="72" font-size="12.5" font-weight="800" fill="${P.hot}">THE TWIST</text>
       ${lines(d.gimmick, 128, 92, 30, 18, `font-size="12.5" font-weight="600" fill="${P.deep}"`)}
-      <rect x="128" y="164" width="216" height="24" rx="12" fill="${P.blush}"/>
+      <rect x="128" y="164" width="216" height="24" rx="12" fill="#fff" stroke="${P.line}" stroke-width="2"/>
       <text x="236" y="181" text-anchor="middle" font-size="11.5" font-weight="800" fill="${P.mute}">8 cuties still to be designed</text>
     </g>`;
   }).join('');
@@ -385,7 +385,7 @@ export function scrapbook() {
     const rare = v.rare;
     return `<g transform="translate(${x},${y})">
       <rect x="0" y="0" width="132" height="156" rx="8" fill="#fff" stroke="#e8d8e4" stroke-width="2"/>
-      <rect x="9" y="9" width="114" height="104" rx="6" fill="${found ? '#fff4fa' : '#efe6ec'}"/>
+      <rect x="9" y="9" width="114" height="104" rx="6" fill="#fff" stroke="${found ? P.line : '#c9bcc4'}" stroke-width="1.8" stroke-dasharray="${found ? '' : '6 5'}"/>
       ${found
         ? `<g transform="translate(66,78) scale(.62)">${stuffyArt(v)}</g>`
         : `<g transform="translate(66,78) scale(.62)" opacity=".22">${stuffyArt(v).replace(/fill="(?!none)[^"]*"/g, 'fill="#8b7b87"').replace(/stroke="(?!none)[^"]*"/g, 'stroke="#8b7b87"')}</g>
@@ -406,14 +406,14 @@ export function scrapbook() {
   const body = `
   ${note(40, 150, 736, null, 'The album already exists. It just needs to look like a treasure.', 'Every cutie you have ever caught is remembered, including how many times. That is the making of a proper collector’s scrapbook: photo corners, sticky tape, the date you caught it, a ribbon for the rare ones, and a shadowy question mark for the ones still out there.', P.hot, 104, 102)}
 
-  <rect x="26" y="266" width="764" height="384" rx="20" fill="#fffdf8" stroke="#e8d8c8" stroke-width="3"/>
+  <rect x="26" y="266" width="764" height="384" rx="20" fill="#fff" stroke="#e8d8c8" stroke-width="3"/>
   <path d="M408 266 V650" stroke="#e8d8c8" stroke-width="3" stroke-dasharray="8 8"/>
   <text x="44" y="286" font-size="15" font-weight="800" fill="${P.hot}">🧸 Teddy Bear Bonanza — 5 of 8 found</text>
   ${cards}
   <g transform="translate(492,470)">
-    <rect x="0" y="0" width="280" height="156" rx="12" fill="${P.blush}" stroke="${P.line}" stroke-width="2.4"/>
+    <rect x="0" y="0" width="280" height="156" rx="12" fill="#fff" stroke="${P.line}" stroke-width="2.4"/>
     <text x="140" y="30" text-anchor="middle" font-size="14" font-weight="800" fill="${P.hot}">this machine</text>
-    <rect x="26" y="44" width="228" height="22" rx="11" fill="#fff"/>
+    <rect x="26" y="44" width="228" height="22" rx="11" fill="#fff" stroke="${P.line}" stroke-width="1.8"/>
     <rect x="26" y="44" width="142" height="22" rx="11" fill="${P.hot}"/>
     <text x="140" y="86" text-anchor="middle" font-size="13" font-weight="800" fill="${P.mute}">5 of 8 kinds · 11 caught · 34 tries</text>
     <text x="140" y="112" text-anchor="middle" font-size="12.5" font-weight="700" fill="${P.deep}">Still missing: Blueberry Bear,</text>
@@ -476,7 +476,7 @@ export function boutique() {
   const body = `
   ${note(40, 150, 736, null, 'You will catch Mochi eleven times. What are the other ten for?', 'Doubles pile up fast — the album already counts them with a little ×3. Turn them into a currency: trade three doubles for one accessory, and every cutie you own can be dressed. Nothing here changes a grab, a difficulty or an unlock. It is pure decoration, which is exactly the point.', P.hot, 104, 102)}
 
-  <rect x="40" y="272" width="380" height="256" rx="20" fill="#fff8fc" stroke="${P.hot}" stroke-width="3"/>
+  <rect x="40" y="272" width="380" height="256" rx="20" fill="#fff" stroke="${P.hot}" stroke-width="3"/>
   <text x="230" y="298" text-anchor="middle" font-size="16" font-weight="800" fill="${P.hot}">THE PEGBOARD</text>
   ${Array.from({ length: 40 }, (_, i) => `<circle cx="${60 + (i % 10) * 40}" cy="${316 + Math.floor(i / 10) * 66}" r="2" fill="${P.line}"/>`).join('')}
   ${pegs}
@@ -488,7 +488,7 @@ export function boutique() {
   ${glasses(560, 404, 1.35)}
   ${scarf(560, 446, 1.5, '#7fe0c4')}
   <g transform="translate(700,340)">
-    <rect x="-52" y="-24" width="104" height="48" rx="14" fill="${P.blush}"/>
+    <rect x="-52" y="-24" width="104" height="48" rx="14" fill="#fff" stroke="${P.line}" stroke-width="2"/>
     <text x="0" y="-2" text-anchor="middle" font-size="12.5" font-weight="800" fill="${P.hot}">Honeypaw ×11</text>
     <text x="0" y="16" text-anchor="middle" font-size="11.5" font-weight="700" fill="${P.mute}">10 spare · 3 tokens</text>
   </g>
@@ -522,8 +522,8 @@ export function parade() {
       <path d="M-52 8 h104 l-9 30 h-86 z" fill="${h}"/>
       <path d="M-52 8 h104 l-3 8 h-98 z" fill="#fff" opacity=".55"/>
       ${[-40, -14, 12, 38].map((px, k) => `<path d="M${px - 10} -6 h20 l-10 15 z" fill="${k % 2 ? '#fff' : h2}"/>`).join('')}
-      <circle cx="-30" cy="42" r="13" fill="#5b3a52"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
-      <circle cx="30" cy="42" r="13" fill="#5b3a52"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="-30" cy="42" r="13" fill="#4a3044"/><circle cx="-30" cy="42" r="5.5" fill="#fff"/>
+      <circle cx="30" cy="42" r="13" fill="#4a3044"/><circle cx="30" cy="42" r="5.5" fill="#fff"/>
       <rect x="-46" y="16" width="92" height="16" rx="8" fill="#fff" opacity=".92"/>
       <text x="0" y="28" text-anchor="middle" font-size="11" font-weight="800" fill="#b8437f">${v.name}</text>
       <!-- NEW: a balloon on every float -->
@@ -550,11 +550,11 @@ export function parade() {
   const body = `
   <defs>
     <linearGradient id="pSky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#3b2a58"/><stop offset=".55" stop-color="#7a4f92"/><stop offset="1" stop-color="#ff9ec9"/></linearGradient>
+      <stop offset="0" stop-color="#6d5c92"/><stop offset=".55" stop-color="#a684c2"/><stop offset="1" stop-color="#ffcde6"/></linearGradient>
   </defs>
-  <rect x="26" y="176" width="764" height="430" rx="22" fill="url(#pSky)"/>
+  <rect x="26" y="196" width="764" height="410" rx="22" fill="url(#pSky)"/>
   <g clip-path="url(#pClip)">
-    <clipPath id="pClip"><rect x="26" y="176" width="764" height="430" rx="22"/></clipPath>
+    <clipPath id="pClip"><rect x="26" y="196" width="764" height="410" rx="22"/></clipPath>
     ${Array.from({ length: 40 }, (_, i) => { const r = rng(700 + i); return `<circle cx="${(40 + r() * 736).toFixed(0)}" cy="${(190 + r() * 200).toFixed(0)}" r="${(1 + r() * 2).toFixed(1)}" fill="#fff" opacity="${(.4 + r() * .6).toFixed(2)}"/>`; }).join('')}
     <!-- fireworks -->
     ${[[180, 250, '#ffd447'], [640, 232, '#7fe0c4'], [412, 214, '#ff8fbe']].map(f =>
@@ -566,13 +566,13 @@ export function parade() {
     <text x="408" y="342" text-anchor="middle" font-size="30" font-weight="800" fill="${P.hot}">🎉 ELLA CLEARED THE WHOLE ARCADE 🎉</text>
     ${confetti}
     <!-- road -->
-    <rect x="26" y="510" width="764" height="96" fill="#5b3a52"/>
-    <rect x="26" y="510" width="764" height="8" fill="#7a5c74"/>
+    <rect x="26" y="510" width="764" height="96" fill="#8f7189"/>
+    <rect x="26" y="510" width="764" height="8" fill="#ab93a5"/>
     ${Array.from({ length: 16 }, (_, i) => `<rect x="${40 + i * 50}" y="556" width="26" height="5" rx="2.5" fill="#ffd447" opacity=".7"/>`).join('')}
     ${floats}
     <g opacity=".92">${crowd}</g>
   </g>
-  <rect x="26" y="176" width="764" height="430" rx="22" fill="none" stroke="${P.hot}" stroke-width="4"/>
+  <rect x="26" y="196" width="764" height="410" rx="22" fill="none" stroke="${P.hot}" stroke-width="4"/>
 
   ${note(40, 626, 236, 1, 'It already happens', 'The parade is real and it is lovely. The floats roll, the cuties ride, the names are printed on the side. This page is about making it feel like the ending it is.', P.hot, 32, 150)}
   ${note(292, 626, 236, 2, 'Night, stars, fireworks', 'A dark sky makes the confetti and the plushies pop. Right now the parade happens in daylight, so the sparkles have nothing to sparkle against.', P.lilac, 32, 150)}

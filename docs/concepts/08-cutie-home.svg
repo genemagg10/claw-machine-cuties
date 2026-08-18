@@ -4,19 +4,18 @@
   <radialGradient id="gDream" cx="50%" cy="-8%" r="118%">
     <stop offset="0" stop-color="#fff3fb"/><stop offset=".34" stop-color="#ffdff2"/>
     <stop offset="1" stop-color="#e9c6ff"/></radialGradient>
-  <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#e0287f"/><stop offset="1" stop-color="#ff5c9d"/></linearGradient>
   
 </defs>
 
-<rect width="816" height="1056" fill="#fffaf6"/>
+<rect width="816" height="1056" fill="#ffffff"/>
 
-<!-- header band -->
-<path d="M0 0 H816 V96 Q408 122 0 96 Z" fill="url(#gHead)"/>
-<text x="40" y="38" font-size="13" font-weight="800" fill="#ffd9ec" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
-<text x="40" y="72" font-size="31" font-weight="800" fill="#fff">The Cutie Home</text>
-<g><circle cx="754" cy="46" r="27" fill="#fff" opacity=".95"/>
-  <text x="754" y="55" text-anchor="middle" font-size="24" font-weight="800" fill="#e0287f">9</text></g>
+<!-- masthead: ink only where it does something -->
+<text x="40" y="42" font-size="13" font-weight="800" fill="#a4548a" letter-spacing="2.4">CLAW MACHINE CUTIES · DEVELOPMENT BINDER</text>
+<text x="40" y="80" font-size="32" font-weight="800" fill="#e0287f">The Cutie Home</text>
+<path d="M40 93 H776" stroke="#e0287f" stroke-width="4" stroke-linecap="round"/>
+<path d="M40 93 H124" stroke="#e0287f" stroke-width="11" stroke-linecap="round"/>
+<g><circle cx="752" cy="52" r="25" fill="#e0287f"/>
+  <text x="752" y="61" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">9</text></g>
 <g><rect x="40" y="104" width="83.2" height="26" rx="13" fill="#e0287f" opacity=".95"/>
     <text x="81.6" y="122" text-anchor="middle" font-size="13" font-weight="800"
       fill="#fff" letter-spacing="1">PROPOSED</text></g>
@@ -24,8 +23,8 @@
 
 
   <g>
-    <rect x="40" y="150" width="736" height="102" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="150" width="736" height="102" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="150" width="736" height="102" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 150 H760 " stroke="#e0287f" stroke-width="0" fill="none"/>
     
     <text x="54" y="176" font-size="15.5" font-weight="800" fill="#e0287f">You win forty-eight plushies. Right now they go in a list.</text>
     <text x="54" y="198" font-size="13" font-weight="600" fill="#7a3f66">
@@ -424,8 +423,8 @@
   </g></g>
 
   <g>
-    <rect x="536" y="272" width="240" height="122" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="536" y="272" width="240" height="122" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="536" y="272" width="240" height="122" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M552 272 H760 " stroke="#e0287f" stroke-width="0" fill="none"/>
     <g><circle cx="556" cy="292" r="15" fill="#e0287f" stroke="#fff" stroke-width="3.5"/>
     <text x="556" y="298" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">1</text></g>
     <text x="578" y="298" font-size="15.5" font-weight="800" fill="#e0287f">Drag them anywhere</text>
@@ -434,8 +433,8 @@
     </text>
   </g>
   <g>
-    <rect x="536" y="408" width="240" height="116" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="536" y="408" width="240" height="116" rx="16" fill="#c9a4ff" opacity=".07"/>
+    <rect x="536" y="408" width="240" height="116" rx="16" fill="#fff" stroke="#c9a4ff" stroke-width="2.4"/>
+    <path d="M552 408 H760 " stroke="#c9a4ff" stroke-width="0" fill="none"/>
     <g><circle cx="556" cy="428" r="15" fill="#c9a4ff" stroke="#fff" stroke-width="3.5"/>
     <text x="556" y="434" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">2</text></g>
     <text x="578" y="434" font-size="15.5" font-weight="800" fill="#c9a4ff">The room grows</text>
@@ -444,8 +443,8 @@
     </text>
   </g>
   <g>
-    <rect x="536" y="538" width="240" height="138" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4" opacity=".97"/>
-    <rect x="536" y="538" width="240" height="138" rx="16" fill="#7fe0c4" opacity=".07"/>
+    <rect x="536" y="538" width="240" height="138" rx="16" fill="#fff" stroke="#7fe0c4" stroke-width="2.4"/>
+    <path d="M552 538 H760 " stroke="#7fe0c4" stroke-width="0" fill="none"/>
     <g><circle cx="556" cy="558" r="15" fill="#7fe0c4" stroke="#fff" stroke-width="3.5"/>
     <text x="556" y="564" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">3</text></g>
     <text x="578" y="564" font-size="15.5" font-weight="800" fill="#7fe0c4">Your favourite</text>
@@ -455,8 +454,8 @@
   </g>
 
   <g>
-    <rect x="40" y="700" width="356" height="176" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4" opacity=".97"/>
-    <rect x="40" y="700" width="356" height="176" rx="16" fill="#e0287f" opacity=".07"/>
+    <rect x="40" y="700" width="356" height="176" rx="16" fill="#fff" stroke="#e0287f" stroke-width="2.4"/>
+    <path d="M56 700 H380 " stroke="#e0287f" stroke-width="0" fill="none"/>
     <g><circle cx="60" cy="720" r="15" fill="#e0287f" stroke="#fff" stroke-width="3.5"/>
     <text x="60" y="726" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">4</text></g>
     <text x="82" y="726" font-size="15.5" font-weight="800" fill="#e0287f">Why this is the big one</text>
@@ -465,8 +464,8 @@
     </text>
   </g>
   <g>
-    <rect x="420" y="700" width="356" height="176" rx="16" fill="#fff" stroke="#7fd8ff" stroke-width="2.4" opacity=".97"/>
-    <rect x="420" y="700" width="356" height="176" rx="16" fill="#7fd8ff" opacity=".07"/>
+    <rect x="420" y="700" width="356" height="176" rx="16" fill="#fff" stroke="#7fd8ff" stroke-width="2.4"/>
+    <path d="M436 700 H760 " stroke="#7fd8ff" stroke-width="0" fill="none"/>
     <g><circle cx="440" cy="720" r="15" fill="#7fd8ff" stroke="#fff" stroke-width="3.5"/>
     <text x="440" y="726" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">5</text></g>
     <text x="462" y="726" font-size="15.5" font-weight="800" fill="#7fd8ff">What it needs from the code</text>
@@ -476,13 +475,13 @@
   </g>
 
   <g transform="translate(40,896)">
-    <rect x="0" y="0" width="736" height="110" rx="20" fill="#ffeef7" stroke="#f3c4de" stroke-width="2.4"/>
+    <rect x="0" y="0" width="736" height="110" rx="20" fill="#ffffff" stroke="#f3c4de" stroke-width="2.4"/>
     <text x="20" y="30" font-size="16" font-weight="800" fill="#e0287f">Ella decides 🩷</text>
     <text x="20" y="58" font-size="13.5" font-weight="600" fill="#7a3f66"><tspan x="20" dy="0">What is the room called — the Cutie Home, the Plushie House, the Cuddle Club? Is it one room that grows,</tspan><tspan x="20" dy="20">or one room per machine? Can a doubled cutie be given away to a friend, or does everybody stay?</tspan></text>
   </g>
 
 <!-- footer -->
-<path d="M0 1014 H816 V1056 H0 Z" fill="#ffd9ec" opacity=".7"/>
+<path d="M40 1022 H776" stroke="#f3c4de" stroke-width="2"/>
 <text x="40" y="1040" font-size="12" font-weight="700" fill="#a4548a">Made for Ella — Creator, Owner &amp; Game Boss</text>
 <text x="776" y="1040" text-anchor="end" font-size="12" font-weight="700" fill="#a4548a">Plate 9</text>
 </svg>
