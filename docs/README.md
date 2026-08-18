@@ -13,12 +13,23 @@ ever mixes up a dream with a fact.
 **[`pdf/claw-machine-cuties-development-binder.pdf`](pdf/claw-machine-cuties-development-binder.pdf)**
 — 43 pages, US Letter, ready for a three-ring binder with fourteen divider tabs.
 
-### 🖨 It is built to be kind to a printer
+### 🎨 Two covers
+
+The binder ships with the **illustrated cover** — a night arcade with all six machines
+lit up, a marquee frame of running bulbs, and every plushie drawn by the game's own
+code. It is a full-bleed painted page at **61% ink coverage**: a cover earns that, and
+it is one sheet.
+
+If you would rather not spend a cartridge on it, **`concepts/00-cover-ink-light.svg`**
+is the same cover as line art on white (3%). Swap it in by editing the `00-cover` row
+in `binder/build.mjs` to use `A.coverLight`, then rebuild.
+
+### 🖨 The rest is built to be kind to a printer
 
 Every page is **white paper** — no page tints, no printed bands, no filled table
 headers. Colour is used where it carries meaning (a heading, a rule, a label chip,
-a border) and nowhere else. Average coverage is **4.7% of a page**, and 25 of the 43
-pages are under 5%.
+a border) and nowhere else. Average coverage across the interior is **4.7% of a page**, and
+25 of the 43 pages are under 5%.
 
 The one deliberate exception is **Plate 11, the parade** (17%): its whole argument is
 that a dark sky makes the confetti pop, so showing it on white would misrepresent the
@@ -36,7 +47,8 @@ drawn by the game's **own art code**, so anything Ella approves can go straight 
 
 | Plate | Idea | Fixes |
 |---|---|---|
-| [Cover](concepts/00-cover.svg) | The binder cover | — |
+| [Cover](concepts/00-cover.svg) | The binder cover — illustrated | — |
+| [Cover](concepts/00-cover-ink-light.svg) | The same cover, ink-light | — |
 | [1](concepts/01-arcade-now.svg) | **The Arcade Right Now** — an honest snapshot | *(CURRENT)* |
 | [2](concepts/02-everybody-look-up.svg) | **Everybody Look Up!** — cuties that watch the claw, and a target ring | you can't tell what you're aiming at |
 | [3](concepts/03-feelings-sheet.svg) | **The Cutie Feelings Sheet** — one face layer, thirteen moods | losing is silent |

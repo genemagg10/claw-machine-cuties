@@ -3,9 +3,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import * as A from './plates-a.mjs';
 import * as B from './plates-b.mjs';
+import { coverOrnate } from './cover.mjs';
 
 export const PLATES = [
-  ['00-cover',                A.cover,        'Development Binder Cover'],
+  ['00-cover',                coverOrnate,    'Development Binder Cover — illustrated'],
+  ['00-cover-ink-light',      A.coverLight,   'Development Binder Cover — ink-light alternate'],
   ['01-arcade-now',           A.arcadeNow,    'The Arcade Right Now'],
   ['02-everybody-look-up',    A.lookUp,       'Everybody Look Up!'],
   ['03-feelings-sheet',       A.feelings,     'The Cutie Feelings Sheet'],

@@ -7,9 +7,10 @@ import { projX, projY, sOf } from './lib/game-cabinet.mjs';
 const M = MACHINES;
 
 /* ============================================================
-   PLATE 1 — THE COVER
+   PLATE 1 — THE COVER (ink-light alternate; the illustrated
+   cover that ships in the binder lives in cover.mjs)
    ============================================================ */
-export function cover() {
+export function coverLight() {
   const scene = cabinetScene(M[5], { seed: 41, count: 14, clawX: -18, clawZ: 62, clawY: 190, clawOpen: .8 });
   const floaters = [
     ['🧸', 70, 250, 30], ['🎀', 748, 232, 26], ['✨', 120, 470, 22], ['🦄', 720, 480, 28],
