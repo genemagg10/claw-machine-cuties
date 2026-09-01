@@ -22,6 +22,18 @@ unlocks the next one — and throws a parade in your honour.
 Every machine holds 8 collectable variants — 48 plushies in all, including
 rare ✨ and legendary 👑 ones. They all live in the album (📖).
 
+### 🐢🦉 …and one more
+
+<details>
+<summary>There's a secret seventh machine. (spoiler)</summary>
+
+Catch **two of every 👑 legendary** — the rarest plushie in each of the six
+machines — and a hidden cabinet appears in the arcade: the **Turtle & Owl
+Grove**, eight all-new turtles and owls (with their own rares and a legendary,
+Athena). Until then it shows up as a locked "???" machine that quietly tracks
+how many legendaries you've doubled up. That bumps the arcade to **56 plushies**.
+</details>
+
 ## Controls
 
 |  | Desktop | Mobile |

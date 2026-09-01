@@ -94,6 +94,10 @@ body{
 .card.done::after{content:"⭐";position:absolute;top:-8px;right:-6px;font-size:28px;animation:floaty 3s ease-in-out infinite;filter:drop-shadow(0 3px 4px rgba(210,110,20,.5))}
 .card.next{animation:wiggleCard 1.6s ease-in-out infinite}
 @keyframes wiggleCard{0%,100%{transform:rotate(-1.5deg) scale(1)}50%{transform:rotate(1.5deg) scale(1.03)}}
+.card.secret:not(.locked){background:linear-gradient(180deg,#f3fffb,#e4fff6);box-shadow:0 6px 0 #7fe0cf,0 12px 22px rgba(35,125,116,.24)}
+.card.secret:not(.locked):active{box-shadow:0 2px 0 #7fe0cf,0 6px 12px rgba(35,125,116,.22)}
+.card.secret:not(.locked) .nm{color:#1f8f83}
+.card.secret:not(.locked):not(.done)::before{content:"✨";position:absolute;top:-8px;left:-6px;font-size:24px;animation:floaty 3s ease-in-out infinite;filter:drop-shadow(0 3px 4px rgba(35,125,116,.4))}
 .dots{display:flex;gap:5px;justify-content:center;align-items:center}
 .dots i{font-style:normal;font-size:15px;line-height:1;filter:grayscale(1) opacity(.45);transition:.2s}
 .dots i.f{filter:none;transform:scale(1.18)}
@@ -692,7 +696,60 @@ function artUni(c) {
   </g>`;
 }
 
-const ARTISTS = { teddy: artTeddy, bunny: artBunny, dino: artDino, fly: artFly, candy: artCandy, uni: artUni };
+/* ---------------- TURTLE ---------------- */
+function artTurtle(c) {
+  const scute = (x, y, r) => `<path d="M${x} ${(y - r).toFixed(1)} l${(r * 0.87).toFixed(1)} ${(r * 0.5).toFixed(1)} v${r} l${(-r * 0.87).toFixed(1)} ${(r * 0.5).toFixed(1)} l${(-r * 0.87).toFixed(1)} ${(-r * 0.5).toFixed(1)} v${-r} z" fill="${c.shellSpot}" opacity=".55" stroke="${c.shellDark}" stroke-width="1.4"/>`;
+  return `<g>
+    <ellipse cx="-27" cy="33" rx="11" ry="8" fill="${c.skinDark}" transform="rotate(-18 -27 33)"/>
+    <ellipse cx="27" cy="33" rx="11" ry="8" fill="${c.skinDark}" transform="rotate(18 27 33)"/>
+    <ellipse cx="-31" cy="15" rx="10" ry="8" fill="${c.skin}" transform="rotate(-34 -31 15)"/>
+    <ellipse cx="31" cy="15" rx="10" ry="8" fill="${c.skin}" transform="rotate(34 31 15)"/>
+    <path d="M-36 11 l-4 -3 M-37 16 h-5 M-35 21 l-4 3" stroke="${c.skinDark}" stroke-width="1.6" stroke-linecap="round" opacity=".6"/>
+    <path d="M36 11 l4 -3 M37 16 h5 M35 21 l4 3" stroke="${c.skinDark}" stroke-width="1.6" stroke-linecap="round" opacity=".6"/>
+    <path d="M0 39 l-6 9 h12 z" fill="${c.skin}"/>
+    <ellipse cx="0" cy="23" rx="31" ry="19" fill="${c.belly}"/>
+    <ellipse cx="0" cy="10" rx="31" ry="27" fill="${c.shell}"/>
+    <path d="M-30 8 q30 -13 60 0" stroke="${c.shellDark}" stroke-width="2" opacity=".35" fill="none" stroke-linecap="round"/>
+    ${scute(0, 4, 9)}
+    ${scute(-18, 3, 7)}${scute(18, 3, 7)}
+    ${scute(-12, 20, 6.5)}${scute(12, 20, 6.5)}
+    ${scute(0, -12, 6.5)}
+    <path d="M-24 -4 q24 -10 48 0" stroke="#fff" stroke-width="3" opacity=".25" fill="none" stroke-linecap="round"/>
+    <ellipse cx="0" cy="-24" rx="16" ry="15" fill="${c.skin}"/>
+    <ellipse cx="0" cy="-19" rx="11" ry="8" fill="${c.belly}" opacity=".45"/>
+    ${eye(-6, -26, 4.6)}${eye(6, -26, 4.6)}
+    ${smile(-4, -18, 4)}
+    ${blush(-11, -20, 5, '#ff9dc6')}${blush(11, -20, 5, '#ff9dc6')}
+  </g>`;
+}
+
+/* ---------------- OWL ---------------- */
+function artOwl(c) {
+  return `<g>
+    <path d="M-13 39 v7 M-8 39 v7 M-3 39 v7" stroke="${c.beak}" stroke-width="3.2" stroke-linecap="round"/>
+    <path d="M13 39 v7 M8 39 v7 M3 39 v7" stroke="${c.beak}" stroke-width="3.2" stroke-linecap="round"/>
+    <path d="M-25 -20 l-7 -19 l17 9 z" fill="${c.feather}"/>
+    <path d="M25 -20 l7 -19 l-17 9 z" fill="${c.feather}"/>
+    <path d="M-24 -21 l-4 -11 l9 5 z" fill="${c.featherDark}" opacity=".55"/>
+    <path d="M24 -21 l4 -11 l-9 5 z" fill="${c.featherDark}" opacity=".55"/>
+    <ellipse cx="0" cy="10" rx="31" ry="31" fill="${c.feather}"/>
+    <path d="M-29 -2 q-11 13 -5 31 q9 4 13 -2 q-7 -15 -3 -29 z" fill="${c.wing}"/>
+    <path d="M29 -2 q11 13 5 31 q-9 4 -13 -2 q7 -15 3 -29 z" fill="${c.wing}"/>
+    <path d="M-25 6 q-4 11 -1 22 M-20 6 q-4 11 -1 22" stroke="${c.featherDark}" stroke-width="1.5" fill="none" opacity=".45" stroke-linecap="round"/>
+    <path d="M25 6 q4 11 1 22 M20 6 q4 11 1 22" stroke="${c.featherDark}" stroke-width="1.5" fill="none" opacity=".45" stroke-linecap="round"/>
+    <ellipse cx="0" cy="20" rx="17" ry="19" fill="${c.belly}"/>
+    <path d="M-10 12 q10 -6 20 0 M-11 21 q11 -6 22 0 M-9 29 q9 -5 18 0" stroke="${c.feather}" stroke-width="1.6" opacity=".3" fill="none" stroke-linecap="round"/>
+    <ellipse cx="0" cy="-9" rx="25" ry="22" fill="${c.belly}" opacity=".5"/>
+    <circle cx="-11" cy="-10" r="12.5" fill="#fff" stroke="${c.featherDark}" stroke-width="2"/>
+    <circle cx="11" cy="-10" r="12.5" fill="#fff" stroke="${c.featherDark}" stroke-width="2"/>
+    ${eye(-11, -9, 6.6)}${eye(11, -9, 6.6)}
+    <path d="M0 -2 l-5 7 l5 3 l5 -3 z" fill="${c.beak}"/>
+    ${blush(-20, 0, 5.5, '#ff9dc6')}${blush(20, 0, 5.5, '#ff9dc6')}
+    ${sparkleArt(-25, -25, .45, '#fff')}
+  </g>`;
+}
+
+const ARTISTS = { teddy: artTeddy, bunny: artBunny, dino: artDino, fly: artFly, candy: artCandy, uni: artUni, turtle: artTurtle, owl: artOwl };
 function stuffyArt(v) { return (ARTISTS[v.type] || artTeddy)(v.c); }
 function stuffySVG(v, withKey, cls) {
   return `<svg viewBox="-60 -72 120 130" class="${cls || ''}" xmlns="http://www.w3.org/2000/svg">${stuffyArt(v)}${withKey ? keyArt(28, 26, .95) : ''}</svg>`;
@@ -707,6 +764,8 @@ const D = (body, dark, belly, spike) => ({ body, dark, belly, spike });
 const F = (w, w2, dot, body) => ({ w, w2, dot, body });
 const C = (shape, a, b) => ({ shape, a, b });
 const U = (body, dark, snout, hoof, horn, mane) => ({ body, dark, snout, hoof, horn, mane });
+const TU = (shell, shellDark, shellSpot, skin, skinDark, belly) => ({ shell, shellDark, shellSpot, skin, skinDark, belly });
+const OW = (feather, featherDark, belly, wing, beak) => ({ feather, featherDark, belly, wing, beak });
 
 const MACHINES = [
   {
@@ -799,6 +858,22 @@ const MACHINES = [
       { id: 'u6', name: 'Sugar Crown', type: 'candy', rare: 1, c: C('lolli', '#ffd447', '#fff6d0') },
       { id: 'u7', name: 'Celestia', type: 'uni', rare: 2, c: U('#f2eaff', '#ded0f0', '#fff0fa', '#ffd447', '#ffd447', ['#ff8fbe', '#ffd447', '#87e8cf']) }
     ]
+  },
+  {
+    key: 'secret', name: 'Turtle & Owl Grove', emoji: '🐢', emoji2: '🦉', tag: 'a hush of shells and feathers', secret: true,
+    grip: 0.22, count: 14, size: 34,
+    skin: { body: '#6bd0c4', dark: '#37988e', trim: '#d6fff6', glass: '#effffb', light: '#ddfff6', marquee: '#237d74' },
+    rainbow: true,
+    roster: [
+      { id: 's0', name: 'Pebble', type: 'turtle', rare: 0, c: TU('#8fd85f', '#5fae32', '#eaffd4', '#a4e06a', '#7cbf48', '#fff0c8') },
+      { id: 's1', name: 'Whooo', type: 'owl', rare: 0, c: OW('#c9a4ff', '#9a6ded', '#f0e6ff', '#b48fe8', '#ffb347') },
+      { id: 's2', name: 'Kiwi', type: 'turtle', rare: 0, c: TU('#7fe0c4', '#4fbfa0', '#e2fff7', '#ffd98a', '#eabf5c', '#fff3d8') },
+      { id: 's3', name: 'Professor Hoot', type: 'owl', rare: 1, c: OW('#c69a6b', '#9c7040', '#f2e4cf', '#a9804f', '#ffb347') },
+      { id: 's4', name: 'Sandy', type: 'turtle', rare: 0, c: TU('#ffcf8f', '#e8ac5c', '#fff0d4', '#9fd86a', '#79b046', '#fff6e0') },
+      { id: 's5', name: 'Moonbeak', type: 'owl', rare: 0, c: OW('#7fc8ff', '#4d96e0', '#e6f3ff', '#6fb0e8', '#ffcf5c') },
+      { id: 's6', name: 'Jade Dome', type: 'turtle', rare: 1, c: TU('#5fd0a8', '#39a882', '#d6fff0', '#ffd447', '#e8a417', '#eafff8') },
+      { id: 's7', name: 'Athena', type: 'owl', rare: 2, c: OW('#d6c8ee', '#9f86cf', '#f3ecff', '#c6b4e6', '#ffd447') }
+    ]
   }
 ];
 const RARE_W = [1, .42, .15];
@@ -806,6 +881,15 @@ const RARE_LABEL = ['', '✨ rare', '👑 legendary'];
 const WINS_NEEDED = 3;
 const byId = {};
 MACHINES.forEach((m, mi) => m.roster.forEach(v => { v.mi = mi; byId[v.id] = v; }));
+
+/* the legendaries that gate the secret machine: one 👑 from each of the six
+   main machines (the secret machine's own legendary is not part of the key) */
+const SECRET_NEED = 2;
+const LEGENDARIES = [];
+MACHINES.forEach(m => { if (!m.secret) m.roster.forEach(v => { if (v.rare === 2) LEGENDARIES.push(v.id); }); });
+const legendaryCount = () => LEGENDARIES.filter(id => (save.got[id] || 0) >= SECRET_NEED).length;
+const legendaryComplete = () => LEGENDARIES.length > 0 && legendaryCount() === LEGENDARIES.length;
+const secretMachineIndex = () => MACHINES.findIndex(m => m.secret);
 
 function rollVariant(m) {
   let total = 0;
@@ -821,7 +905,7 @@ function rollVariant(m) {
 const SAVE_KEY = 'clawcuties.v1';
 let save = null;
 function freshSave() {
-  return { unlocked: 1, wins: MACHINES.map(() => 0), got: {}, tries: 0, muted: false, seenHelp: false, done: false };
+  return { unlocked: 1, wins: MACHINES.map(() => 0), got: {}, tries: 0, muted: false, seenHelp: false, done: false, secretSeen: false, secretDone: false };
 }
 function loadSave() {
   try {
@@ -830,7 +914,16 @@ function loadSave() {
       const s = JSON.parse(raw);
       const f = freshSave();
       save = Object.assign(f, s);
-      if (!Array.isArray(save.wins) || save.wins.length !== MACHINES.length) save.wins = f.wins;
+      // note: Object.assign above mutated f, so f.wins now mirrors the saved
+      // array — rebuild the template straight from MACHINES instead
+      if (!Array.isArray(save.wins)) save.wins = MACHINES.map(() => 0);
+      else if (save.wins.length !== MACHINES.length) {
+        // machine count changed (e.g. the secret grove was added) — keep old
+        // progress, pad new machines with zero rather than wiping everything
+        const w = MACHINES.map(() => 0);
+        save.wins.forEach((x, i) => { if (i < w.length) w[i] = x; });
+        save.wins = w;
+      }
       if (!save.got || typeof save.got !== 'object') save.got = {};
       return;
     }
@@ -857,7 +950,7 @@ function machineThumb(m, i) {
   return `<svg viewBox="0 0 100 105" class="thumb" xmlns="http://www.w3.org/2000/svg">
     <rect x="6" y="2" width="88" height="101" rx="12" fill="${s.body}"/>
     <rect x="6" y="2" width="88" height="20" rx="10" fill="${s.marquee}"/>
-    <text x="50" y="16.5" font-size="11" text-anchor="middle" fill="#fff">${m.emoji}${m.emoji}</text>
+    <text x="50" y="16.5" font-size="11" text-anchor="middle" fill="#fff">${m.emoji}${m.emoji2 || m.emoji}</text>
     <rect x="12" y="26" width="76" height="52" rx="8" fill="${s.glass}"/>
     <rect x="12" y="26" width="76" height="52" rx="8" fill="none" stroke="${s.trim}" stroke-width="3"/>
     <g transform="translate(28,62) scale(.30)">${stuffyArt(showcase[0])}</g>
@@ -876,15 +969,29 @@ function machineThumb(m, i) {
   </svg>`;
 }
 
+function isMachineLocked(m, i) {
+  return m.secret ? !legendaryComplete() : (i >= save.unlocked);
+}
+
 function renderLobby() {
   const grid = $('#machineGrid');
   grid.innerHTML = MACHINES.map((m, i) => {
-    const locked = i >= save.unlocked;
+    const locked = isMachineLocked(m, i);
     const w = save.wins[i], done = w >= WINS_NEEDED;
-    const isNext = !locked && !done && (i === save.unlocked - 1);
+    const isNext = !locked && !done && !m.secret && (i === save.unlocked - 1);
     const dots = Array.from({ length: WINS_NEEDED }, (_, k) =>
       `<i class="${k < w ? 'f' : ''}">${k === WINS_NEEDED - 1 ? '🔑' : '🩷'}</i>`).join('');
-    return `<button class="card ${locked ? 'locked' : ''} ${done ? 'done' : ''} ${isNext ? 'next' : ''}" data-i="${i}">
+    if (m.secret && locked) {
+      // keep the grove a mystery until the legendaries are all doubled up
+      return `<button class="card locked secret mystery" data-i="${i}">
+        ${secretMysteryThumb(m)}
+        <div class="nm">??? ? ? ?</div>
+        <div class="dots"></div>
+        <div class="lock">👑</div>
+        <div class="lockhint">catch 2 of every<br>👑 legendary (${legendaryCount()}/${LEGENDARIES.length})</div>
+      </button>`;
+    }
+    return `<button class="card ${locked ? 'locked' : ''} ${done ? 'done' : ''} ${isNext ? 'next' : ''} ${m.secret ? 'secret' : ''}" data-i="${i}">
       ${machineThumb(m, i)}
       <div class="nm">${m.name}</div>
       <div class="dots">${dots}</div>
@@ -893,20 +1000,44 @@ function renderLobby() {
   }).join('');
   $$('#machineGrid .card').forEach(el => el.addEventListener('click', () => {
     const i = +el.dataset.i;
-    if (i >= save.unlocked) { Sfx.bonk(); return; }
+    if (isMachineLocked(MACHINES[i], i)) { Sfx.bonk(); return; }
     Sfx.coin(); openMachine(i);
   }));
+}
+
+/* the locked, still-secret grove: a dark cabinet with a big ? and faint
+   turtle/owl ghosts, so you know something is in there without spoiling it */
+function secretMysteryThumb(m) {
+  const g0 = m.roster[0], g1 = m.roster[1];
+  return `<svg viewBox="0 0 100 105" class="thumb" xmlns="http://www.w3.org/2000/svg">
+    <rect x="6" y="2" width="88" height="101" rx="12" fill="#465468"/>
+    <rect x="6" y="2" width="88" height="20" rx="10" fill="#2f3a4a"/>
+    <text x="50" y="16.5" font-size="11" text-anchor="middle" fill="#cdd7e4">✨ ？ ✨</text>
+    <rect x="12" y="26" width="76" height="52" rx="8" fill="#37414f"/>
+    <rect x="12" y="26" width="76" height="52" rx="8" fill="none" stroke="#586678" stroke-width="3"/>
+    <g opacity=".22"><g transform="translate(33,60) scale(.26)">${stuffyArt(g0)}</g><g transform="translate(67,56) scale(.26)">${stuffyArt(g1)}</g></g>
+    <text x="50" y="63" font-size="38" text-anchor="middle" font-weight="900" fill="#9fb0c4" opacity=".85">?</text>
+    <rect x="12" y="82" width="76" height="17" rx="6" fill="#2f3a4a"/>
+    <circle cx="26" cy="90.5" r="5.5" fill="#586678"/><circle cx="24.5" cy="89" r="1.8" fill="#fff" opacity=".5"/>
+    <rect x="40" y="86" width="34" height="9" rx="4.5" fill="#586678" opacity=".7"/>
+  </svg>`;
 }
 
 /* ============================================================
    6. ALBUM
    ============================================================ */
 function renderAlbum() {
+  // the secret grove only counts toward the total once it has been revealed
+  const kindsTotal = MACHINES.reduce((n, m) => n + ((m.secret && !legendaryComplete()) ? 0 : m.roster.length), 0);
   $('#albumCount').innerHTML = `<span class="stat">🧸 ${totalGot()} caught</span>
-    <span class="stat">🌈 ${uniqueGot()}/${MACHINES.length * 8} kinds</span>
+    <span class="stat">🌈 ${uniqueGot()}/${kindsTotal} kinds</span>
     <span class="stat">🕹️ ${save.tries} tries</span>`;
   $('#albumBody').innerHTML = MACHINES.map((m, i) => {
-    const locked = i >= save.unlocked;
+    const locked = isMachineLocked(m, i);
+    if (m.secret && locked) {
+      return `<div class="albHead"><b>❓ ??? — a secret machine 🔒</b><div class="ln"></div></div>
+        <p style="opacity:.62;font-size:12px;margin:2px 2px 10px">Catch 👑 <b>2 of every legendary</b> to reveal it… (${legendaryCount()}/${LEGENDARIES.length}) 🐢🦉</p>`;
+    }
     return `<div class="albHead"><b>${m.emoji} ${m.name}${locked ? ' 🔒' : ''}</b><div class="ln"></div></div>
     <div class="albumGrid" style="display:grid;gap:9px;grid-template-columns:repeat(auto-fill,minmax(74px,1fr))">
     ${m.roster.map(v => {
@@ -972,7 +1103,7 @@ function buildCabinet(m) {
   <rect x="34" y="2" width="572" height="694" rx="34" fill="none" stroke="${s.dark}" stroke-width="5"/>
   <rect x="46" y="4" width="548" height="96" rx="26" fill="${s.marquee}"/>
   ${bulbs.join('')}
-  <text class="marqueeTxt" x="320" y="60" text-anchor="middle" fill="#fff" stroke="${s.dark}" stroke-width="5" paint-order="stroke" >${m.emoji} ${m.name.toUpperCase()} ${m.emoji}</text>
+  <text class="marqueeTxt" x="320" y="60" text-anchor="middle" fill="#fff" stroke="${s.dark}" stroke-width="5" paint-order="stroke" >${m.emoji} ${m.name.toUpperCase()} ${m.emoji2 || m.emoji}</text>
 
   <!-- interior box -->
   <g>
@@ -1464,13 +1595,16 @@ function helpModal() {
 function winModal(v, keyed) {
   const stars = v.rare ? `<p style="color:#e8a417;font-size:16px">${RARE_LABEL[v.rare]}!</p>` : '';
   const prog = save.wins[mi];
+  const nextMain = MACHINES.slice(mi + 1).find(x => !x.secret);   // never spoil the grove
+  const finale = M.secret || !nextMain;
+  const keyDest = M.secret ? 'the whole arcade' : (nextMain ? nextMain.name : 'the whole arcade');
   showModal(`
     <h2>${keyed ? '🔑 KEY GET! 🔑' : '🎉 YOU WIN! 🎉'}</h2>
     ${stuffySVG(v, keyed, 'prizeShow')}
     <h2 style="font-size:22px;margin:0">${v.name}</h2>
     ${stars}
     <p>${keyed
-      ? `It came with the golden key to <b>${MACHINES[mi + 1] ? MACHINES[mi + 1].name : 'the whole arcade'}</b>!`
+      ? `It came with the golden key to <b>${keyDest}</b>!`
       : `Plushie ${prog} of ${WINS_NEEDED} from ${M.name}. ${prog === WINS_NEEDED - 1 ? 'The next one carries the 🔑!' : 'Keep going!'}`}</p>
     <div class="rowbtns">
       ${keyed
@@ -1480,18 +1614,58 @@ function winModal(v, keyed) {
   const again = $('#again'), lob = $('#toLobby'), par = $('#toParade');
   if (again) again.onclick = () => { Sfx.tap(); closeModal(); };
   if (lob) lob.onclick = () => { Sfx.tap(); closeModal(); goLobby(); };
-  if (par) par.onclick = () => { Sfx.tap(); closeModal(); startParade(mi === MACHINES.length - 1); };
+  if (par) par.onclick = () => { Sfx.tap(); closeModal(); startParade(finale); };
 }
 
 function finaleModal() {
-  showModal(`<h2>👑 ARCADE MASTER 👑</h2>
-    <div style="font-size:52px;line-height:1.2">🧸🐰🦕<br>🦋🍬🦄</div>
-    <p>You cleared <b>every single machine</b>. The plushies have elected you mayor of the arcade.</p>
-    <p><span class="stat">🧸 ${totalGot()} plushies</span><span class="stat">🌈 ${uniqueGot()}/48 kinds</span><span class="stat">🕹️ ${save.tries} tries</span></p>
+  const secretDone = save.secretDone;
+  const kindsTotal = MACHINES.reduce((n, m) => n + ((m.secret && !legendaryComplete()) ? 0 : m.roster.length), 0);
+  const hint = (!secretDone && !legendaryComplete())
+    ? `<p style="color:#237d74">Psst… catch <b>2 of every 👑 legendary</b> and something hidden opens up. 🐢🦉</p>` : '';
+  showModal(`<h2>${secretDone ? '🐢 TRUE ARCADE LEGEND 🦉' : '👑 ARCADE MASTER 👑'}</h2>
+    <div style="font-size:52px;line-height:1.2">${secretDone ? '🧸🐰🦕<br>🦋🍬🦄<br>🐢🦉' : '🧸🐰🦕<br>🦋🍬🦄'}</div>
+    <p>${secretDone
+      ? 'You cleared <b>every machine — even the secret grove</b>. Turtles, owls and all. There is nothing left to catch.'
+      : 'You cleared <b>every single machine</b>. The plushies have elected you mayor of the arcade.'}</p>
+    ${hint}
+    <p><span class="stat">🧸 ${totalGot()} plushies</span><span class="stat">🌈 ${uniqueGot()}/${kindsTotal} kinds</span><span class="stat">🕹️ ${save.tries} tries</span></p>
     <div class="rowbtns"><button class="bigbtn" id="fin1">Back to the arcade</button>
     <button class="bigbtn alt" id="fin2">📖 See my album</button></div>`);
   $('#fin1').onclick = () => { Sfx.tap(); closeModal(); goLobby(); };
   $('#fin2').onclick = () => { Sfx.tap(); closeModal(); goLobby(); openAlbum(); };
+}
+
+/* the big reveal, shown the first time you land in the lobby after doubling
+   up every legendary */
+function secretUnlockModal() {
+  const idx = secretMachineIndex();
+  const m = MACHINES[idx];
+  const peek = [m.roster[0], m.roster[7], m.roster[3]];   // a turtle, the legendary owl, an owl
+  Sfx.key();
+  buzz([40, 40, 40, 40, 140]);
+  showModal(`
+    <h2>🐢 SECRET UNLOCKED 🦉</h2>
+    <div style="display:flex;justify-content:center;align-items:flex-end;gap:2px;margin:6px 0">
+      ${peek.map((v, k) => `<div style="width:${k === 1 ? 96 : 74}px">${stuffySVG(v)}</div>`).join('')}
+    </div>
+    <h2 style="font-size:22px;margin:0">${m.name}</h2>
+    <p>You caught <b>two of every 👑 legendary</b>, so the arcade rolled out a hidden cabinet — all turtles and owls. 🐢🦉</p>
+    <div class="rowbtns"><button class="bigbtn" id="secGo">🕹️ Play the grove</button>
+    <button class="bigbtn ghost" id="secLater">Maybe later</button></div>`);
+  $('#secGo').onclick = () => { Sfx.coin(); closeModal(); openMachine(secretMachineIndex()); };
+  $('#secLater').onclick = () => { Sfx.tap(); closeModal(); };
+  confetti(56, innerWidth / 2, innerHeight * .4, 1.15);
+  setTimeout(() => confetti(36, innerWidth * .25, innerHeight * .5), 320);
+  setTimeout(() => confetti(36, innerWidth * .75, innerHeight * .5), 560);
+}
+
+/* reveal the grove exactly once, whenever the player returns to the lobby with
+   the legendary set complete (covers grinding it out over many sessions too) */
+function maybeRevealSecret() {
+  if (legendaryComplete() && !save.secretSeen) {
+    save.secretSeen = true; persist();
+    setTimeout(secretUnlockModal, 480);
+  }
 }
 
 /* ============================================================
@@ -1632,9 +1806,15 @@ function endParade() {
 /* unlock happens the moment the key is won, the parade just celebrates it */
 function grantUnlock() {
   if (save.wins[mi] < WINS_NEEDED) return;
-  if (mi + 1 < MACHINES.length && save.unlocked < mi + 2) {
+  const m = MACHINES[mi];
+  if (m.secret) {                       // the grove is its own private victory lap
+    if (!save.secretDone) { save.secretDone = true; persist(); }
+    return;
+  }
+  const nextMain = MACHINES.slice(mi + 1).find(x => !x.secret);
+  if (nextMain && save.unlocked < mi + 2) {   // roll the sequential arcade forward
     save.unlocked = mi + 2; persist();
-  } else if (mi === MACHINES.length - 1 && !save.done) {
+  } else if (!nextMain && !save.done) {        // cleared the last main machine
     save.done = true; persist();
   }
 }
@@ -1650,6 +1830,7 @@ function goLobby() {
   cancelAnimationFrame(raf); raf = 0; lastT = 0;
   renderLobby();
   show('lobby');
+  maybeRevealSecret();
 }
 function openMachine(i) {
   mi = i; M = MACHINES[i];
@@ -1795,6 +1976,7 @@ function boot() {
   wireJoystick();
   renderLobby();
   setMuteUI();
+  maybeRevealSecret();   // returning players who already earned it get the reveal
 
   $('#btnDrop').addEventListener('pointerdown', e => { e.preventDefault(); Sfx.unlockAudio(); dropClaw(); });
   $('#btnBack').onclick = () => { Sfx.tap(); goLobby(); };
